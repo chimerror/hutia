@@ -23,3 +23,6 @@ sysinfo.txt
 # VIM Files
 *~
 *.swp
+
+# Non-distributable reference art
+/Art/References/

@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScrivenerProject Template="No" Version="1.5" Creator="SCRWIN-1.9.7.0" Device="JASMIT-COATL" Modified="2017-02-04 23:20:46 -0800" ModID="CC8CC9C5-A7BE-499F-8B42-C54503D745D0">
+    <Binder>
+        <BinderItem ID="0" UUID="B633558C-C89E-4743-88F4-E0714DE3BED2" Created="2017-02-02 11:01:49 -0800" Modified="2017-02-02 11:01:49 -0800" Type="DraftFolder">
+            <Title>Draft</Title>
+            <MetaData>
+                <IncludeInCompile>Yes</IncludeInCompile>
+            </MetaData>
+            <Children>
+                <BinderItem ID="4" UUID="A3A6299C-6909-485D-A5CF-D79D230422E4" Created="2017-02-02 11:09:21 -0800" Modified="2017-02-02 11:09:27 -0800" Type="Text">
+                    <Title>Plot</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                    </MetaData>
+                    <TextSettings>
+                        <Target Type="Words">0</Target>
+                    </TextSettings>
+                    <Children>
+                        <BinderItem ID="27" UUID="A3A91DEC-3A1B-45FA-BE7F-7FE8B63F752C" Created="2017-02-04 23:18:36 -0800" Modified="2017-02-04 23:18:44 -0800" Type="Folder">
+                            <Title>Day-By-Day</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                            </MetaData>
+                            <TextSettings>
+                                <Target Type="Words">0</Target>
+                            </TextSettings>
+                            <Children>
+                                <BinderItem ID="20" UUID="F88F6135-0474-44EB-A504-45AE64798876" Created="2017-02-03 21:17:02 -0800" Modified="2017-02-04 23:13:52 -0800" Type="Text">
+                                    <Title>June 1st</Title>
+                                    <MetaData>
+                                        <IncludeInCompile>Yes</IncludeInCompile>
+                                    </MetaData>
+                                    <TextSettings>
+                                        <Target Type="Words">0</Target>
+                                    </TextSettings>
+                                    <Children>
+                                        <BinderItem ID="21" UUID="C183B9EC-0D2C-451E-BF16-73BABA0339F5" Created="2017-02-04 23:00:45 -0800" Modified="2017-02-04 23:09:55 -0800" Type="Text">
+                                            <Title>Picking out clothes</Title>
+                                            <MetaData>
+                                                <IncludeInCompile>Yes</IncludeInCompile>
+                                            </MetaData>
+                                            <TextSettings>
+                                                <Target Type="Words">0</Target>
+                                            </TextSettings>
+                                        </BinderItem>
+                                        <BinderItem ID="22" UUID="F7BC2386-B338-4CDD-9AC6-637DAA37499D" Created="2017-02-04 23:01:31 -0800" Modified="2017-02-04 23:12:57 -0800" Type="Text">
+                                            <Title>Eat leftover pizza</Title>
+                                            <MetaData>
+                                                <IncludeInCompile>Yes</IncludeInCompile>
+                                            </MetaData>
+                                            <TextSettings>
+                                                <Target Type="Words">0</Target>
+                                            </TextSettings>
+                                        </BinderItem>
+                                        <BinderItem ID="25" UUID="B389C0C1-9FB7-4B97-BEAA-C2613EB28D8A" Created="2017-02-04 23:11:22 -0800" Modified="2017-02-04 23:11:25 -0800" Type="Text">
+                                            <Title>Bus Ride</Title>
+                                            <MetaData>
+                                                <IncludeInCompile>Yes</IncludeInCompile>
+                                            </MetaData>
+                                            <TextSettings>
+                                                <Target Type="Words">0</Target>
+                                            </TextSettings>
+                                        </BinderItem>
+                                        <BinderItem ID="23" UUID="39F8FD29-C2D9-49D7-98B2-53735C647165" Created="2017-02-04 23:03:40 -0800" Modified="2017-02-04 23:11:21 -0800" Type="Text">
+                                            <Title>Standup/Personal Conversation with Ramsey</Title>
+                                            <MetaData>
+                                                <IncludeInCompile>Yes</IncludeInCompile>
+                                            </MetaData>
+                                            <TextSettings>
+                                                <Target Type="Words">0</Target>
+                                            </TextSettings>
+                                        </BinderItem>
+                                        <BinderItem ID="24" UUID="390CF23A-576A-4761-A8F9-13C95BFF2752" Created="2017-02-04 23:08:25 -0800" Modified="2017-02-04 23:08:35 -0800" Type="Text">
+                                            <Title>Clara At Work</Title>
+                                            <MetaData>
+                                                <IncludeInCompile>Yes</IncludeInCompile>
+                                            </MetaData>
+                                            <TextSettings>
+                                                <Target Type="Words">0</Target>
+                                            </TextSettings>
+                                        </BinderItem>
+                                    </Children>
+                                </BinderItem>
+                                <BinderItem ID="26" UUID="357AC60A-01B6-4B2A-B935-85F6EFDAF4FF" Created="2017-02-04 23:13:59 -0800" Modified="2017-02-04 23:14:15 -0800" Type="Text">
+                                    <Title>June 2nd</Title>
+                                    <MetaData>
+                                        <IncludeInCompile>Yes</IncludeInCompile>
+                                    </MetaData>
+                                    <TextSettings>
+                                        <Target Type="Words">0</Target>
+                                    </TextSettings>
+                                </BinderItem>
+                            </Children>
+                        </BinderItem>
+                        <BinderItem ID="28" UUID="54E3F049-78CF-468C-9118-59AC2568E810" Created="2017-02-04 23:18:55 -0800" Modified="2017-02-04 23:20:44 -0800" Type="Text">
+                            <Title>Introduction</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                            </MetaData>
+                            <TextSettings>
+                                <Target Type="Words">0</Target>
+                            </TextSettings>
+                        </BinderItem>
+                    </Children>
+                </BinderItem>
+                <BinderItem ID="3" UUID="4608D7A1-B0B6-4982-AE87-FDDA30E39E7F" Created="2017-02-02 11:01:49 -0800" Modified="2017-02-02 11:09:18 -0800" Type="Text">
+                    <Title>Characters</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                    </MetaData>
+                    <TextSettings>
+                        <Target Type="Words">0</Target>
+                    </TextSettings>
+                    <Children>
+                        <BinderItem ID="6" UUID="D2531F58-5763-45C6-A16B-86C41E1F7125" Created="2017-02-02 11:10:21 -0800" Modified="2017-02-03 19:19:25 -0800" Type="Text">
+                            <Title>Latoya Miller</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>1241,0</TextSelection>
+                                <Target Type="Words">0</Target>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem ID="7" UUID="CF629E18-1A7A-4C8F-8329-887AE6B49515" Created="2017-02-02 11:10:27 -0800" Modified="2017-02-03 20:07:24 -0800" Type="Text">
+                            <Title>Clara Takemura</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>385,0</TextSelection>
+                                <Target Type="Words">0</Target>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem ID="8" UUID="D8FE17D7-42DC-440E-A910-0020ABBFD28E" Created="2017-02-02 11:13:34 -0800" Modified="2017-02-03 19:19:10 -0800" Type="Text">
+                            <Title>Ramsey Garcia</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>3315,0</TextSelection>
+                                <Target Type="Words">0</Target>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem ID="10" UUID="0EF7BE76-937E-4A1C-A472-813D95525A91" Created="2017-02-02 11:19:42 -0800" Modified="2017-02-03 20:36:17 -0800" Type="Text">
+                            <Title>0xF0C5</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>3430,0</TextSelection>
+                                <Target Type="Words">0</Target>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem ID="9" UUID="6272053F-6F75-4DBC-812F-817EC273BF43" Created="2017-02-02 11:19:36 -0800" Modified="2017-02-03 20:14:00 -0800" Type="Text">
+                            <Title>Jake Bell</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>25,0</TextSelection>
+                                <Target Type="Words">0</Target>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem ID="11" UUID="BF27A496-DCDD-48E9-8FEE-8E00AFB5752B" Created="2017-02-02 12:05:40 -0800" Modified="2017-02-03 19:19:31 -0800" Type="Text">
+                            <Title>Robert Takemura</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection Caret="194">0,194</TextSelection>
+                                <Target Type="Words">0</Target>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem ID="12" UUID="054735E6-6153-45A4-8AEB-5EBB4C475026" Created="2017-02-02 12:09:14 -0800" Modified="2017-02-03 19:19:36 -0800" Type="Text">
+                            <Title>Maddie Miller</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection Caret="527">0,527</TextSelection>
+                                <Target Type="Words">0</Target>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem ID="13" UUID="C218E30A-C511-4422-BC36-F13DE782AABE" Created="2017-02-02 12:10:50 -0800" Modified="2017-02-03 19:19:42 -0800" Type="Text">
+                            <Title>Paul Miller</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>654,0</TextSelection>
+                                <Target Type="Words">0</Target>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem ID="14" UUID="96580772-9342-4201-B16A-1C0ED68AA48C" Created="2017-02-03 20:12:02 -0800" Modified="2017-02-03 20:35:16 -0800" Type="Text">
+                            <Title>HOU-ND</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>1082,0</TextSelection>
+                                <Target Type="Words">0</Target>
+                            </TextSettings>
+                        </BinderItem>
+                    </Children>
+                </BinderItem>
+                <BinderItem ID="5" UUID="646AD684-E3A0-4225-9F9D-B34D95B435E9" Created="2017-02-02 11:09:45 -0800" Modified="2017-02-02 11:09:47 -0800" Type="Text">
+                    <Title>Concepts</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                    </MetaData>
+                    <TextSettings>
+                        <Target Type="Words">0</Target>
+                    </TextSettings>
+                    <Children>
+                        <BinderItem ID="16" UUID="7535C614-01A9-4BAB-B220-63F533A219C3" Created="2017-02-03 20:36:33 -0800" Modified="2017-02-03 20:54:23 -0800" Type="Text">
+                            <Title>AI</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>918,0</TextSelection>
+                                <Target Type="Words">0</Target>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem ID="18" UUID="C4CA4CA6-121B-4FEC-9E32-989B52E3283F" Created="2017-02-03 20:49:44 -0800" Modified="2017-02-03 21:16:50 -0800" Type="Text">
+                            <Title>Politics</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>1145,0</TextSelection>
+                                <Target Type="Words">0</Target>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem ID="19" UUID="2D2F2875-C9FB-418D-AE11-0D18995586DF" Created="2017-02-03 21:09:47 -0800" Modified="2017-02-03 21:15:24 -0800" Type="Text">
+                            <Title>Date</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                            </MetaData>
+                            <TextSettings>
+                                <TextSelection>285,0</TextSelection>
+                                <Target Type="Words">0</Target>
+                            </TextSettings>
+                        </BinderItem>
+                    </Children>
+                </BinderItem>
+            </Children>
+        </BinderItem>
+        <BinderItem ID="1" UUID="73F868C1-F8B7-4EB3-98EA-50DDECDC85E8" Created="2017-02-02 11:01:49 -0800" Modified="2017-02-02 11:01:49 -0800" Type="ResearchFolder">
+            <Title>Research</Title>
+            <MetaData>
+                <IncludeInCompile>Yes</IncludeInCompile>
+            </MetaData>
+            <Children>
+                <BinderItem ID="15" UUID="B29C16E7-2E3E-42B3-BC4C-34CBD2B5D035" Created="2017-02-03 20:18:42 -0800" Modified="2017-02-03 20:21:26 -0800" Type="Text">
+                    <Title>Cu Sith</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>1384,0</TextSelection>
+                        <Target Type="Words">0</Target>
+                    </TextSettings>
+                </BinderItem>
+            </Children>
+        </BinderItem>
+        <BinderItem ID="2" UUID="172240BE-D6EF-4F5B-A33E-9A377736FE5E" Created="2017-02-02 11:01:49 -0800" Modified="2017-02-02 11:01:49 -0800" Type="TrashFolder">
+            <Title>Trash</Title>
+            <MetaData>
+                <IncludeInCompile>Yes</IncludeInCompile>
+            </MetaData>
+            <Children>
+                <BinderItem ID="17" UUID="95BDDAF3-4F50-46A2-B8E3-790E8F3A2AD8" Created="2017-02-03 20:49:24 -0800" Modified="2017-02-03 20:49:24 -0800" Type="Text">
+                    <Title></Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                    </MetaData>
+                    <TextSettings>
+                        <Target Type="Words">0</Target>
+                    </TextSettings>
+                </BinderItem>
+            </Children>
+        </BinderItem>
+    </Binder>
+    <LabelSettings>
+        <Title>Label</Title>
+        <DefaultLabelID>-1</DefaultLabelID>
+        <Labels>
+            <Label ID="-1">No Label</Label>
+            <Label ID="0" Color="0.752941 0.752941 1.000000">Concept</Label>
+            <Label ID="1" Color="1.000000 0.752941 0.752941">Chapter</Label>
+        </Labels>
+    </LabelSettings>
+    <StatusSettings>
+        <Title>Status</Title>
+        <DefaultStatusID>-1</DefaultStatusID>
+        <StatusItems>
+            <Status ID="-1">No Status</Status>
+            <Status ID="0">N/A</Status>
+            <Status ID="1">To Do</Status>
+            <Status ID="2">First Draft</Status>
+            <Status ID="3">Revised Draft</Status>
+            <Status ID="4">Final Draft</Status>
+            <Status ID="5">Done</Status>
+        </StatusItems>
+    </StatusSettings>
+    <ProjectTargets>
+        <DraftTarget Type="Words" CountIncludedOnly="No" CurrentCompileGroupOnly="No">0</DraftTarget>
+        <SessionTarget Type="Words" CountDraftOnly="No" AllowNegatives="No" ResetType="Midnight" DeterminedFromDeadline="No" CanWriteOnDeadlineDate="Yes" WritingDays="">0</SessionTarget>
+        <PreviousSession Words="1650" Characters="9274" Date="2017-02-03 19:18:27 -0800"/>
+    </ProjectTargets>
+    <Collections>
+        <Collection Type="Binder" ID="3D48A03C-3A10-4802-AF5D-1C8EFD0D96A6" Color="0.901961 0.917647 0.933333">
+            <Title>Binder</Title>
+        </Collection>
+        <Collection Type="RecentSearch" ID="8B6D700E-93C3-4898-AA74-8ED5B0A1F804" Color="0.901961 0.901961 0.980392">
+            <Title>Search Results</Title>
+            <SearchSettings Operator="Exact" Type="All" Scope="All" CompileSetting="All" CaseSensitive="No"></SearchSettings>
+        </Collection>
+    </Collections>
+    <PrintSettings PaperType="Letter" LeftMargin="8.39057" RightMargin="8.39057" TopMargin="8.39057" BottomMargin="8.39057" Orientation="Portrait" Collates="No" ReverseOrder="No"/>
+</ScrivenerProject>
