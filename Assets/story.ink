@@ -15,13 +15,57 @@ VAR f0c5_object = 0
 // ------------------------------------------------------------------------------------------------
 // DEBUG MODE
 // ------------------------------------------------------------------------------------------------
-VAR debug = false
+VAR debug = true
 { debug:
     IN DEBUG MODE!
     * [Beginning...] -> intro
   - else:
     -> intro
 }
+
+=== debug_options(-> return_to)
+{ debug:
+    + [Debug Options]
+      -> show_debug_options ->
+      -> return_to
+}
+
+=== show_debug_options
+0xF0C5: dont tell anyone about these 1337 hax!!!
+Latoya L: {latoya_lewd}, O: {latoya_object}
+Clara L: {clara_lewd}, O: {clara_object}
+Ramsey L: {ramsey_lewd}, O: {ramsey_object}
+0xF0C5 L: {f0c5_lewd}, O: {f0c5_object}
+0xF0C5: who do you want to modify?
++ [Latoya]
+  -> modify_character("Latoya", latoya_lewd, latoya_object) ->
++ [Clara]
+  -> modify_character("Clara", clara_lewd, clara_object) ->
++ [Ramsey]
+  -> modify_character("Ramsey", ramsey_lewd, ramsey_object) ->
++ [0xF0C5]
+  -> modify_character("0xF0C5", f0c5_lewd, f0c5_object) ->
++ [Done]
+  -> done_with_opts
+- -> show_debug_options
+= done_with_opts
+->->
+
+=== modify_character(name, ref lewd_var, ref object_var)
+Modifying {name}. L: {lewd_var} O: {object_var}
++ [Make Lewder]
+  ~ raise(lewd_var)
++ [Make Purer]
+  ~ lower(lewd_var)
++ [Objectify More]
+  ~ raise(object_var)
++ [Subjectify More]
+  ~ lower(object_var)
++ [Done]
+  -> done_with_modification
+- -> modify_character(name, lewd_var, object_var)
+= done_with_modification
+->->
 
 // ------------------------------------------------------------------------------------------------
 // FUNCTIONS
@@ -57,7 +101,7 @@ Latoya: Ungh... #sleepy
 Latoya: Waking up is a pain...
 // music stops
 // music: latoya's theme, morning
-Latoya: "...Better.
+Latoya: ...Better.
 Latoya: #sigh
 Latoya: I might should've gotten my sleep schedule right when I had the chance last week.
 Latoya: But what is your first real day of work without being too damn tired? #miffed
@@ -66,6 +110,7 @@ Latoya: But what is your first real day of work without being too damn tired? #m
 // left-character: latoya, sleep clothes
 Latoya: Whew... That's better. #sigh
 Latoya: OK, what to wear? #bored
+<- debug_options(-> wake_up_day1)
 * [Probably best to go with something conservative.]
   Latoya: Good ol' reasonable Latoya Miller, she's such a proper lady... #sigh
   ~ raise(latoya_object)
@@ -86,9 +131,10 @@ Latoya: Well, here we go... #bored
 Latoya: Oh! #surprised
 Latoya: It looks like Clara fell asleep out here...
 // scene: Clara, sleeping on couch
-* [How dare she!]
+<- debug_options(-> living_room_morning_day1)
+* (angry) [How dare she!]
   Latoya: Aren't girlfriends supposed to sleep in bed with you? #miffed
-  ~ raise(clara_object)
+  <- debug_options(-> angry)
   * * [Oh well...]
       ~ lower(latoya_lewd)
       Latoya: Anyway...
@@ -97,15 +143,16 @@ Latoya: It looks like Clara fell asleep out here...
       ~ raise(clara_object)
       Latoya: Maybe I should make her a nice Speedy Toy with handles to carry her around... #sly
       Latoya: hee hee hee... #lewd
+  - - ~ raise(clara_object)
 * [I missed her...]
   ~ lower(latoya_lewd)
   ~ raise(latoya_object)
   Latoya: I wonder if our relationship is falling apart... #sad
   // beat
   Latoya: Can't dwell on that now...
-* [My little Speedy...]
+* (pleased) [My little Speedy...]
   Latoya: I really hope she got some good work done on her art. #slight-smile
-  ~ lower(clara_object)
+  <- debug_options(-> pleased)
   * * [Such a good girlfriend...]
       ~ lower(clara_object)
       ~ lower(latoya_object)
@@ -118,10 +165,15 @@ Latoya: It looks like Clara fell asleep out here...
       ~ raise(latoya_lewd)
       Latoya: Speedy really makes such a sweet toy for me to play with... #lewd
       Latoya: I'm glad she lets me... #slight-smile
-  - - Latoya: She's really been such a good girlfriend.
+  - - ~ lower(clara_object)
+        Latoya: She's really been such a good girlfriend.
 - Latoya: *gurgle* #surprised
+-> pizza
+
+= pizza
 Latoya: Huh, guess I'm kind of hungry... #embarassed
 Latoya: Clara has some leftover pizza there...
+<- debug_options(-> pizza)
 * (steal_pizza) [Yoink!]
   ~ raise(latoya_object)
   ~ raise(clara_object)
@@ -130,9 +182,15 @@ Latoya: Clara has some leftover pizza there...
   ~ lower(latoya_object)
   ~ lower(clara_object)
   Latoya: Nah, I'll just get something from the cafe.
-- Latoya: I wonder if I should wake her up?
+- Latoya: Hmmm...
+-> wake_her_up
+
+= wake_her_up
+Latoya: I wonder if I should wake her up?
+<- debug_options(-> wake_her_up)
 * (wake_up_clara) [Yeah.]
   Latoya: Yeah, it's a good idea...
+  <- debug_options(-> wake_up_clara)
   * * [It's for her own good.]
       ~ raise(clara_object)
       Latoya: She'd sleep the entire day away otherwise!
@@ -162,6 +220,11 @@ Clara: Like, whatever, Giggles. We totally know you can make anything like... #e
 Clara: Totes exciting! #victory-pose
 Latoya: If you say so...
 Clara: I do! #smug
+-> punch_or_kiss
+
+= punch_or_kiss
+She's just sitting there smiling, so proud of herself...
+<- debug_options(-> punch_or_kiss)
 * [I could kiss her...] #latoya-lewd #clara-lewd #latoya-subject
   ~ raise(latoya_lewd)
   ~ raise(clara_lewd)
