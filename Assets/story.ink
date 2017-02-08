@@ -19,6 +19,7 @@ VAR debug = true
 { debug:
     IN DEBUG MODE!
     * [Beginning...] -> intro
+    * [To Work...] -> work_day1
   - else:
     -> intro
 }
@@ -72,10 +73,13 @@ Modifying {name}. L: {lewd_var} O: {object_var}
 // ------------------------------------------------------------------------------------------------
 
 === function lower(ref x)
-    ~ x = x - 1
+    ~ alter(x, -1)
 
 === function raise(ref x)
-    ~ x = x + 1
+    ~ alter(x, 1)
+
+=== function alter(ref x, k)
+    ~ x = x + k
 
 // ------------------------------------------------------------------------------------------------
 // SCRIPT
@@ -126,7 +130,7 @@ Latoya: OK, what to wear? #bored
 
 === living_room_morning_day1
 // bg: Living Room
-// left-character: latoya, button-up shirt
+// left-character: latoya, button-up shirt, work badge
 Latoya: Well, here we go... #bored
 Latoya: Oh! #surprised
 Latoya: It looks like Clara fell asleep out here...
@@ -223,7 +227,7 @@ Clara: I do! #smug
 -> punch_or_kiss
 
 = punch_or_kiss
-She's just sitting there smiling, so proud of herself...
+Latoya: She's just sitting there smiling, so proud of herself...
 <- debug_options(-> punch_or_kiss)
 * [I could kiss her...] #latoya-lewd #clara-lewd #latoya-subject
   ~ raise(latoya_lewd)
@@ -248,4 +252,120 @@ She's just sitting there smiling, so proud of herself...
 - Latoya: Thanks for the vote of confidence...
 Clara: You're welcome. Have fun!
 Latoya: I'll try.
+-> work_day1
+
+=== work_day1
+// bg: Bus
+Latoya: Ugh, the number 8 is always so packed at this time. #miffed
+Latoya: This is why I took that sabbatical from Glaistig anyway.
+Latoya: But then again, having money to buy things was pretty nice... #bored
+Latoya: But is it really worth being packed in like sardines by a bunch of tech bros? #miffed
+// bg: Office
+Latoya: Ah, I've got a few minutes before stand-up... #bored
+Latoya: Maybe I'll just try to enjoy my coffee-- #sly
+// right-character: Ramsey
+Ramsey: Good morning, Latoya. #slight-smile
+Latoya: Oh, it's Ramsey. He's an old college buddy, though right now, he's more like my boss. #neutral
+Latoya: Huh, how should I say hi?
+<- debug_options(-> work_day1)
+* [Professional]
+  ~ alter(ramsey_object, 1)
+  ~ alter(ramsey_lewd, -3)
+  ~ alter(latoya_object, 1)
+  ~ alter(latoya_lewd, -2)
+  Latoya: Good morning! #serious
+* [Friendly]
+  ~ alter(ramsey_object, -1)
+  ~ alter(latoya_object, -1)
+  Latoya: Mornin', Rams! #smile
+  Ramsey: Heh. Unfortunately, I don't think any one calls me that on this team. #smile
+  Latoya: Ah, rats. No one calls you that yet, but I'll fix that!
+  Ramsey: Good luck! Maybe it'll take off.
+* [Silly]
+  ~ alter(ramsey_object, -3)
+  ~ alter(ramsey_lewd, 1)
+  ~ alter(latoya_object, -2)
+  ~ alter(latoya_lewd, 1)
+  Latoya: Hiya, Rams! #smile
+  Latoya: Lt. Giggles reporting for our offensive against the tyrannical bug empire, sir! #salute
+  Ramsey: Uh, heh. #happy-blushing
+  Ramsey: At ease, soldier. #sly
+  Latoya: Roger! #sly
+* (flirt) {latoya_lewd > 2} [Flirty]
+  Latoya: Good morning, Rams. You look rather delicious today... #sly
+  Ramsey: ... #shocked
+  Ramsey: Uh... that might not be quite work appropriate behavior... #happy-blushing
+  Latoya: Huh, how should I play this? #surprised
+  <- debug_options(-> flirt)
+  * * {latoya_object < 0} [Pivot with a joke]
+    ~ alter(ramsey_object, -2)
+    ~ alter(ramsey_lewd, 2)
+    ~ alter(latoya_object, 1)
+    Latoya: Oh, uh, sorry, I was talking to the coffee! #sly
+    Latoya: Not every brown thing I talk about is you, Rams.
+    Ramsey: Right. #miffed
+  * * {latoya_object < 2} [Apologize]
+    ~ alter(ramsey_object, -5)
+    ~ alter(ramsey_lewd, -2)
+    ~ alter(latoya_object, -1)
+    Latoya: I'm sorry, Ramsey. It's just easy to fall into familar patterns.
+    Ramsey: That's OK. It's just I have to be careful about that sort of stuff as a manager. #slight-smile
+    Ramsey: You understand, right?
+    Latoya: Yes. #slight-smile
+    Ramsey: Good. #serious
+  * * [Cut it out.]
+    Latoya: Oh, oops. #miffed
+    Ramsey: Right. #serious
+  * * [Keep going!]
+    ~ alter(ramsey_lewd, 2)
+    ~ alter(ramsey_object, 2)
+    ~ alter(latoya_lewd, 2)
+    ~ alter(latoya_object, 5)
+    Latoya: It isn't?
+    Latoya: Oh, I haven't watched those compliance videos yet. #sly
+    Latoya: You may need to discuss it with me in private.
+    Ramsey: Right... #huff
+  - - Latoya: That was smooth...
+  ~ alter(ramsey_lewd, 3)
+  ~ alter(ramsey_object, 3)
+  ~ alter(latoya_object, -3)
+  ~ alter(latoya_lewd, 3)
+- Ramsey: Ah, OK. Everyone is here. #serious
+Ramsey: Let's get started.
+-> ramsey_introduction
+
+= ramsey_introduction
+Latoya: Ramsey and I dated for a while last time I was working for Glaistig.
+Latoya: The benefits of dating a woman who is a relationship anarchist! #sly
+{ latoya_lewd > 0:
+    Latoya: Sometimes a girl needs a man who can boss her around.
+    Latoya: Can't always be playing with my submissive little Speedy toy.
+}
+Latoya: I got moved onto his team, and well, we had to end that. #miffed.
+Latoya: I haven't seen him much since I came back, but before I left...
+Latoya: ...I was pretty sure he wasn't really over me yet.
+Latoya: And honestly, Seattle can be a tough place to date if you're a tech bro.
+Latoya: But maybe they should try some queerness on for size? #sly
+Latoya: Silly boys.
+Latoya: Oh, it's almost my turn. #slight-smile
+// left-character: jake
+Jake: ...so yeah, hopefully I can get Ramsey to teach me how to use a profiler. #serious
+Ramsey: Hmm. I think I can do that. Is that all for your status?
+Jake: Yep.
+Ramsey: OK, Latoya?
+// left-character: latoya
+Latoya: Right. Well, I was hoping today would be my first day of real work. #serious
+Latoya: Orientation is done, and it looks like my permissions have gone through.
+Latoya: So you can move those to done.
+Ramsey: Right.
+Latoya: Next in my ramp-up is pulling the code down and seeing if it builds.
+Latoya: I'm not too worried, it doesn't look like they changed anything while I was gone.
+Latoya: No estimate updates. #slight-smile
+Ramsey: Good. Chat with Jake if you have questions, he just cut his teeth on the build last month.
+// right-character: jake
+Jake: Yeah, I'm an expert now, I guess. #smile
+Latoya: An expert? I've written code that's probably older than you, kid. #thinking #miffed
+Latoya: OK, will do. #serious
+// right-character: ramsey
+Ramsey: That's everyone. Stand-up's over.
 -> END
