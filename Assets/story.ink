@@ -15,7 +15,7 @@ VAR f0c5_object = 0
 // ------------------------------------------------------------------------------------------------
 // DEBUG MODE
 // ------------------------------------------------------------------------------------------------
-VAR debug = true
+VAR debug = false
 { debug:
     IN DEBUG MODE!
     * [Beginning...] -> intro
@@ -88,7 +88,7 @@ Modifying {name}. L: {lewd_var} O: {object_var}
 === intro ===
 // background: black
 blueena: Present day... Present time... #smug
-bluenna: hee hee hee heh... #grin
+blueena: hee hee hee heh... #grin
 blueena: HA HA HA HA HA HA HA HA! #laugh
 blueena: ;3 #smug
 // exeunt
