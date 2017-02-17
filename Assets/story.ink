@@ -86,20 +86,20 @@ Modifying {name}. L: {lewd_var} O: {object_var}
 // ------------------------------------------------------------------------------------------------
 
 === intro ===
-// background: black
+BG COLOR black
 blueena: Present day... Present time... #smug
 blueena: hee hee hee heh... #grin
 blueena: HA HA HA HA HA HA HA HA! #laugh
 blueena: ;3 #smug
 // exeunt
 title: hutia
-// fade to black
 -> wake_up_day1
 
 === wake_up_day1 ===
 // music: main theme
 // image: blue cell phone on bed screen shows an alarm ringing
 // a hand grabs the phone
+BG COLOR \#babab5
 // left-character: latoya, sleep clothes
 Latoya: Ungh... #sleepy
 Latoya: Waking up is a pain...
@@ -110,7 +110,7 @@ Latoya: #sigh
 Latoya: I might should've gotten my sleep schedule right when I had the chance last week.
 Latoya: But what is your first real day of work without being too damn tired? #miffed
 // scene: Latoya showering, only seen through shower curtain.
-// bg: Latoya's room
+BG IMAGE bedroom
 // left-character: latoya, sleep clothes
 Latoya: Whew... That's better. #sigh
 Latoya: OK, what to wear? #bored

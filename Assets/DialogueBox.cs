@@ -50,6 +50,10 @@ public class DialogueBox : MonoBehaviour
             {
                 _dialogueText.UnRead();
             }
+            else
+            {
+                GameManager.Instance.ContinueStory();
+            }
         }
 
         if (Input.GetButtonUp("Fire1") || Input.GetButtonUp("Submit"))
