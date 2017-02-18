@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour
 
     private readonly static Regex BackgroundParameters = new Regex(@"^(?<type>IMAGE|COLOR)\s(?<value>.+)$");
 
+    private readonly static Regex TitleParameters = new Regex(@"(COLOR\s+(?<color>#?\w+)\s+)?(?<title>.*)$");
+
     /// <summary>
     /// Regular expression for catching dialogue.
     /// </summary>
@@ -39,10 +41,12 @@ public class GameManager : MonoBehaviour
     /// </remarks>
     private readonly static Regex DialogueRegex = new Regex(@"^(?<speaker>\w+):(?<dialogue>.*)$");
 
+    public Color defaultBackgroundColor;
     public Image background;
     public TextAsset storyAsset;
     public DialogueBox dialogueBox;
     public ChoiceBox choiceBox;
+    public TitleBox titleBox;
 
     private AssetBundle _backgrounds;
     private Story _story;
@@ -50,6 +54,8 @@ public class GameManager : MonoBehaviour
 
     public void ContinueStory(int choice = -1)
     {
+        titleBox.gameObject.SetActive(false);
+
         if (choice > -1)
         {
             Debug.Log(choice);
@@ -96,6 +102,10 @@ public class GameManager : MonoBehaviour
                 UpdateBackground(parameters);
                 break;
 
+            case "TITLE":
+                ShowTitle(parameters);
+                break;
+
             default:
                 Debug.LogErrorFormat("Unknown directive: {0}", rawInput);
                 break;
@@ -107,7 +117,7 @@ public class GameManager : MonoBehaviour
     private void UpdateBackground(string parameters)
     {
         var regexMatch = BackgroundParameters.Match(parameters);
-        Debug.AssertFormat(regexMatch.Success, "Unknown background parameters: {0}", parameters);
+        Debug.AssertFormat(regexMatch.Success, "Unknown BG parameters: {0}", parameters);
 
         var value = regexMatch.Groups["value"].Value;
         switch (regexMatch.Groups["type"].Value)
@@ -124,8 +134,8 @@ public class GameManager : MonoBehaviour
                 Color color;
                 if (!ColorUtility.TryParseHtmlString(value, out color))
                 {
-                    Debug.LogErrorFormat("Unable to parse color: {0}", value);
-                    break;
+                    Debug.LogWarningFormat("Unable to parse color: {0}", value);
+                    color = defaultBackgroundColor;
                 }
                 background.sprite = null;
                 background.color = color;
@@ -134,6 +144,27 @@ public class GameManager : MonoBehaviour
             default:
                 Debug.LogErrorFormat("Unknown background type: {0}", value);
                 break;
+        }
+    }
+
+    private void ShowTitle(string parameters)
+    {
+        dialogueBox.gameObject.SetActive(false);
+        titleBox.gameObject.SetActive(true);
+
+        var regexMatch = TitleParameters.Match(parameters);
+        Debug.AssertFormat(regexMatch.Success, "Unknown TITLE parameters: {0}", parameters);
+
+        var title = regexMatch.Groups["title"].Value;
+        Color color;
+        if (regexMatch.Groups["color"].Success &&
+            ColorUtility.TryParseHtmlString(regexMatch.Groups["color"].Value, out color))
+        {
+            titleBox.SetText(title, color);
+        }
+        else
+        {
+            titleBox.SetText(title);
         }
     }
 

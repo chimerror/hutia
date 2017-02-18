@@ -92,18 +92,18 @@ blueena: hee hee hee heh... #grin
 blueena: HA HA HA HA HA HA HA HA! #laugh
 blueena: ;3 #smug
 // exeunt
-title: hutia
+TITLE hutia
 -> wake_up_day1
 
 === wake_up_day1 ===
 // music: main theme
 // image: blue cell phone on bed screen shows an alarm ringing
 // a hand grabs the phone
-BG COLOR \#babab5
 // left-character: latoya, sleep clothes
 Latoya: Ungh... #sleepy
 Latoya: Waking up is a pain...
 // music stops
+TITLE Day 00
 // music: latoya's theme, morning
 Latoya: ...Better.
 Latoya: #sigh
