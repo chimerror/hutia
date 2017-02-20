@@ -15,14 +15,27 @@ public class DialogueBox : MonoBehaviour
         if (string.IsNullOrEmpty(speaker))
         {
             _speakerBox.gameObject.SetActive(false);
+            _border.color = GameManager.Instance.defaultCharacterColor;
         }
         else
         {
+            Color color;
+            if (GameManager.Instance.CharacterColors.ContainsKey(speaker))
+            {
+                color = GameManager.Instance.CharacterColors[speaker];
+            }
+            else
+            {
+                color = GameManager.Instance.defaultCharacterColor;
+            }
+            _border.color = color;
+            _speakerBox.color = color;
             _speakerBox.gameObject.SetActive(true);
             _speakerText.text = speaker;
         }
 
         _dialogueText.Text = dialogue;
+
     }
 
     public void CompletedUnRead()
@@ -30,7 +43,7 @@ public class DialogueBox : MonoBehaviour
         GameManager.Instance.ContinueStory();
     }
 
-    private void Start()
+    private void Awake()
     {
         _border = transform.FindChild("Border").GetComponent<Image>();
         _speakerBox = transform.FindChild("Border/Speaker").GetComponent<Image>();

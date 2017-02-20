@@ -12,6 +12,12 @@ VAR ramsey_object = 0
 VAR f0c5_lewd = 0
 VAR f0c5_object = 0
 
+CHAR_COLOR \#25dddd Latoya
+CHAR_COLOR \#1cb3b3 blueena
+CHAR_COLOR \#ffac43 Clara
+CHAR_COLOR \#a4d648 Ramsey
+CHAR_COLOR \#c378ff 0xF0C5
+
 // ------------------------------------------------------------------------------------------------
 // DEBUG MODE
 // ------------------------------------------------------------------------------------------------

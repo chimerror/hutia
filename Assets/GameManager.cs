@@ -26,11 +26,13 @@ public class GameManager : MonoBehaviour
     /// one or more other characters, grouped as 'parameters' followed by the end of
     /// the string.
     /// </remarks>
-    private readonly static Regex DirectiveRegex = new Regex(@"^(?<directive>BG|TITLE|MUSIC|IMAGE|CHARACTER)\s+(?<parameters>.+)$");
+    private readonly static Regex DirectiveRegex = new Regex(@"^(?<directive>BG|TITLE|MUSIC|IMAGE|CHARACTER|CHAR_COLOR)\s+(?<parameters>.+)$");
 
     private readonly static Regex BackgroundParameters = new Regex(@"^(?<type>IMAGE|COLOR)\s(?<value>.+)$");
 
     private readonly static Regex TitleParameters = new Regex(@"(COLOR\s+(?<color>#?\w+)\s+)?(?<title>.*)$");
+
+    private readonly static Regex CharColorParameters = new Regex(@"^(?<color>#?\w+)\s+(?<name>.+)$");
 
     /// <summary>
     /// Regular expression for catching dialogue.
@@ -42,6 +44,7 @@ public class GameManager : MonoBehaviour
     private readonly static Regex DialogueRegex = new Regex(@"^(?<speaker>\w+):(?<dialogue>.*)$");
 
     public Color defaultBackgroundColor;
+    public Color defaultCharacterColor;
     public Image background;
     public TextAsset storyAsset;
     public DialogueBox dialogueBox;
@@ -51,33 +54,45 @@ public class GameManager : MonoBehaviour
     private AssetBundle _backgrounds;
     private Story _story;
     private bool _storyStarted;
+    private Dictionary<string, Color> _characterColors = new Dictionary<string, Color>();
+
+    public Dictionary<string, Color> CharacterColors
+    {
+        get
+        {
+            return _characterColors;
+        }
+    }
 
     public void ContinueStory(int choice = -1)
     {
-        titleBox.gameObject.SetActive(false);
-
         if (choice > -1)
         {
             Debug.Log(choice);
             _story.ChooseChoiceIndex(choice);
         }
 
-        if (_story.canContinue)
+        string rawInput = _story.canContinue ? _story.Continue() : null;
+        while (rawInput != null && DirectiveRegex.IsMatch(rawInput))
         {
-            choiceBox.gameObject.SetActive(false);
-            dialogueBox.gameObject.SetActive(true);
-
-            var rawInput = _story.Continue();
-
-            if (!PerformDirective(rawInput))
+            var waitForInput = PerformDirective(rawInput);
+            if (waitForInput)
             {
-                UpdateDialogue(rawInput);
+                return;
             }
+
+            rawInput = _story.canContinue ? _story.Continue() : null;
+        }
+
+        if (rawInput != null)
+        {
+            UpdateDialogue(rawInput);
         }
         else if (_story.currentChoices.Count > 0)
         {
             choiceBox.gameObject.SetActive(true);
             dialogueBox.gameObject.SetActive(false);
+            titleBox.gameObject.SetActive(false);
 
             choiceBox.SetChoices(_story.currentChoices);
         }
@@ -90,31 +105,27 @@ public class GameManager : MonoBehaviour
     private bool PerformDirective(string rawInput)
     {
         var regexMatch = DirectiveRegex.Match(rawInput);
-        if (!regexMatch.Success)
-        {
-            return false;
-        }
+        Debug.AssertFormat(regexMatch.Success, "Unknown directive sent to PerformDirective: {0}", rawInput);
 
         var parameters = regexMatch.Groups["parameters"].Value;
         switch (regexMatch.Groups["directive"].Value)
         {
             case "BG":
-                UpdateBackground(parameters);
-                break;
+                return UpdateBackground(parameters);
 
             case "TITLE":
-                ShowTitle(parameters);
-                break;
+                return ShowTitle(parameters);
+
+            case "CHAR_COLOR":
+                return SetCharacterColor(parameters);
 
             default:
                 Debug.LogErrorFormat("Unknown directive: {0}", rawInput);
-                break;
+                return false;
         }
-
-        return true;
     }
 
-    private void UpdateBackground(string parameters)
+    private bool UpdateBackground(string parameters)
     {
         var regexMatch = BackgroundParameters.Match(parameters);
         Debug.AssertFormat(regexMatch.Success, "Unknown BG parameters: {0}", parameters);
@@ -145,9 +156,11 @@ public class GameManager : MonoBehaviour
                 Debug.LogErrorFormat("Unknown background type: {0}", value);
                 break;
         }
+
+        return false; // Don't wait for input
     }
 
-    private void ShowTitle(string parameters)
+    private bool ShowTitle(string parameters)
     {
         dialogueBox.gameObject.SetActive(false);
         titleBox.gameObject.SetActive(true);
@@ -166,10 +179,34 @@ public class GameManager : MonoBehaviour
         {
             titleBox.SetText(title);
         }
+
+        return true; // Wait for input
+    }
+
+    private bool SetCharacterColor(string parameters)
+    {
+        var regexMatch = CharColorParameters.Match(parameters);
+        Debug.AssertFormat(regexMatch.Success, "Unknown CHAR_COLOR parameters: {0}", parameters);
+
+        var colorString = regexMatch.Groups["color"].Value;
+        Color color;
+        if (!ColorUtility.TryParseHtmlString(colorString, out color))
+        {
+            Debug.LogWarningFormat("Unable to parse color: {0}", parameters);
+            color = defaultCharacterColor;
+        }
+        var characterName = regexMatch.Groups["name"].Value;
+        _characterColors[characterName] = color;
+
+        return false; // Don't wait for input
     }
 
     private void UpdateDialogue(string rawDialogue)
     {
+        choiceBox.gameObject.SetActive(false);
+        dialogueBox.gameObject.SetActive(true);
+        titleBox.gameObject.SetActive(false);
+
         string speaker = null;
         string dialogue = null;
         var regexMatch = DialogueRegex.Match(rawDialogue);
