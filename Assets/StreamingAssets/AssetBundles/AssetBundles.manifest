@@ -1,7 +1,10 @@
 ManifestFileVersion: 0
-CRC: 156312946
+CRC: 323879917
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
       Name: backgrounds
+      Dependencies: {}
+    Info_1:
+      Name: characters
       Dependencies: {}

@@ -1,0 +1,67 @@
+ManifestFileVersion: 0
+CRC: 3942859531
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 32056d30d983867af747ed638f0f9904
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 4d24bf54f46935ed9e6cf78ac481bb9d
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/Characters/Latoya/smile.png
+- Assets/Characters/Ramsey/nervous.png
+- Assets/Characters/Latoya/nervous.png
+- Assets/Characters/Latoya/sleepy.png
+- Assets/Characters/Ramsey/sad.png
+- Assets/Characters/blueena/blushing-happily.png
+- Assets/Characters/Clara/blushing-happily.png
+- Assets/Characters/Latoya/laugh.png
+- Assets/Characters/Latoya/bored.png
+- Assets/Characters/Ramsey/smile.png
+- Assets/Characters/Jake/smile.png
+- Assets/Characters/blueena/sleepy.png
+- Assets/Characters/blueena/laugh.png
+- Assets/Characters/Clara/smile.png
+- Assets/Characters/Clara/laugh.png
+- Assets/Characters/Ramsey/sly.png
+- Assets/Characters/Latoya/sly.png
+- Assets/Characters/Ramsey/neutral.png
+- Assets/Characters/Clara/nervous.png
+- Assets/Characters/Clara/neutral.png
+- Assets/Characters/blueena/bored.png
+- Assets/Characters/Clara/sad.png
+- Assets/Characters/blueena/neutral.png
+- Assets/Characters/Latoya/neutral.png
+- Assets/Characters/blueena/angry.png
+- Assets/Characters/Latoya/miffed.png
+- Assets/Characters/Ramsey/angry.png
+- Assets/Characters/Clara/sly.png
+- Assets/Characters/Latoya/grin.png
+- Assets/Characters/blueena/smile.png
+- Assets/Characters/blueena/grin.png
+- Assets/Characters/Latoya/sad.png
+- Assets/Characters/Clara/angry.png
+- Assets/Characters/Latoya/blushing-happily.png
+- Assets/Characters/Ramsey/miffed.png
+- Assets/Characters/blueena/sad.png
+- Assets/Characters/Jake/bored.png
+- Assets/Characters/blueena/miffed.png
+- Assets/Characters/Clara/miffed.png
+- Assets/Characters/Clara/grin.png
+- Assets/Characters/blueena/sly.png
+- Assets/Characters/Latoya/angry.png
+- Assets/Characters/Ramsey/blushing-happily.png
+- Assets/Characters/blueena/nervous.png
+- Assets/Characters/Ramsey/grin.png
+- Assets/Characters/Ramsey/sleepy.png
+- Assets/Characters/Clara/bored.png
+- Assets/Characters/Ramsey/bored.png
+- Assets/Characters/Clara/sleepy.png
+- Assets/Characters/Ramsey/laugh.png
+Dependencies: []
