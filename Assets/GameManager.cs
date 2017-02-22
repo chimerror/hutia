@@ -33,6 +33,8 @@ public class GameManager : MonoBehaviour
 
     private readonly static Regex TitleParameters = new Regex(@"(COLOR\s+(?<color>#?\w+)\s+)?(?<title>.*)$");
 
+    private readonly static Regex ImageParameters = new Regex(@"^(?<name>[\w-]+)(\s+(?<delay>.+))?$");
+
     private readonly static Regex CharacterParameters = new Regex(@"^(?<position>FAR_LEFT|LEFT|CENTER|RIGHT|FAR_RIGHT|OFF)(\s+(?<name>\w+))?(\s+(?<mood>[\w-]+))?$");
 
     private readonly static Regex CharColorParameters = new Regex(@"^(?<color>#?\w+)\s+(?<name>.+)$");
@@ -53,6 +55,8 @@ public class GameManager : MonoBehaviour
     public DialogueBox dialogueBox;
     public ChoiceBox choiceBox;
     public TitleBox titleBox;
+    public Image imageBox;
+    public float defaultImageDelay = 0.500f;
     public Image farLeftCharacter;
     public Image leftCharacter;
     public Image centerCharacter;
@@ -60,9 +64,11 @@ public class GameManager : MonoBehaviour
     public Image farRightCharacter;
 
     private AssetBundle _backgrounds;
+    private AssetBundle _images;
     private AssetBundle _characters;
     private Story _story;
     private bool _storyStarted;
+    private bool _imageDelayOver = false;
     private Dictionary<string, Color> _characterColors = new Dictionary<string, Color>();
     private Dictionary<string, Image> _characterPositions = new Dictionary<string, Image>();
 
@@ -125,6 +131,9 @@ public class GameManager : MonoBehaviour
 
             case "TITLE":
                 return ShowTitle(parameters);
+
+            case "IMAGE":
+                return ShowImage(parameters);
 
             case "CHARACTER":
                 return HandleCharacter(parameters);
@@ -194,6 +203,53 @@ public class GameManager : MonoBehaviour
         }
 
         return true; // Wait for input
+    }
+
+    private bool ShowImage(string parameters)
+    {
+        dialogueBox.gameObject.SetActive(false);
+        titleBox.gameObject.SetActive(false);
+
+        var regexMatch = ImageParameters.Match(parameters);
+        Debug.AssertFormat(regexMatch.Success, "Unknown IMAGE parameters: {0}", parameters);
+
+        var name = regexMatch.Groups["name"].Value;
+        var imagePath = string.Format("assets/images/{0}.png", name);
+        var imageSprite = _images.LoadAsset<Sprite>(imagePath);
+        Debug.AssertFormat(imageSprite != null, "Unable to load image sprite: {0}", imagePath);
+        imageBox.sprite = imageSprite;
+
+        var controllerPath = string.Format("assets/images/{0}.controller", name);
+        var controller = _images.LoadAsset<RuntimeAnimatorController>(controllerPath);
+        var animator = imageBox.GetComponent<Animator>();
+        if (controller != null)
+        {
+            animator.runtimeAnimatorController = controller;
+            animator.enabled = true;
+        }
+        else
+        {
+            animator.runtimeAnimatorController = null;
+            animator.enabled = false;
+        }
+
+        var delay = defaultImageDelay;
+        if (regexMatch.Groups["delay"].Success)
+        {
+            var delayString = regexMatch.Groups["delay"].Value;
+            Debug.AssertFormat(float.TryParse(delayString, out delay), "Unable to parse image delay: {0}", parameters);
+        }
+        _imageDelayOver = false;
+        StartCoroutine(DelayForImage(delay));
+        imageBox.gameObject.SetActive(true);
+
+        return true; // Wait for input
+    }
+
+    private IEnumerator DelayForImage(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        _imageDelayOver = true;
     }
 
     private bool HandleCharacter(string parameters)
@@ -354,6 +410,8 @@ public class GameManager : MonoBehaviour
     {
         _backgrounds = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, "AssetBundles/backgrounds"));
         Debug.Assert(_backgrounds != null, "Couldn't load backgrounds!");
+        _images = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, "AssetBundles/images"));
+        Debug.Assert(_images != null, "Couldn't load images!");
         _characters = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, "AssetBundles/characters"));
         Debug.Assert(_characters != null, "Couldn't load characters!");
         _story = new Story(storyAsset.text);
@@ -368,6 +426,14 @@ public class GameManager : MonoBehaviour
         {
             ContinueStory();
             _storyStarted = true;
+        }
+
+        if (imageBox.gameObject.activeInHierarchy && _imageDelayOver && (Input.GetButtonUp("Fire1") || Input.GetButtonUp("Submit")))
+        {
+            imageBox.gameObject.SetActive(false);
+            imageBox.sprite = null;
+            imageBox.GetComponent<Animator>().runtimeAnimatorController = null;
+            ContinueStory();
         }
     }
 }

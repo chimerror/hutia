@@ -104,9 +104,7 @@ TITLE hutia
 
 === wake_up_day1 ===
 // music: main theme
-// image: blue cell phone on bed screen shows an alarm ringing
-// a hand grabs the phone
-// left-character: latoya, sleep clothes
+IMAGE LatoyaAlarm
 CHARACTER LEFT latoya sleepy
 Latoya: Ungh...
 Latoya: Waking up is a pain...
