@@ -66,6 +66,7 @@ public class GameManager : MonoBehaviour
     private AssetBundle _backgrounds;
     private AssetBundle _images;
     private AssetBundle _characters;
+    private AssetBundle _voices;
     private Story _story;
     private bool _storyStarted;
     private bool _imageDelayOver = false;
@@ -77,6 +78,14 @@ public class GameManager : MonoBehaviour
         get
         {
             return _characterColors;
+        }
+    }
+
+    public AssetBundle Voices
+    {
+        get
+        {
+            return _voices;
         }
     }
 
@@ -414,6 +423,8 @@ public class GameManager : MonoBehaviour
         Debug.Assert(_images != null, "Couldn't load images!");
         _characters = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, "AssetBundles/characters"));
         Debug.Assert(_characters != null, "Couldn't load characters!");
+        _voices = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, "AssetBundles/voices"));
+        Debug.Assert(_voices != null, "Couldn't load voices!");
         _story = new Story(storyAsset.text);
         _storyStarted = false;
         dialogueBox.gameObject.SetActive(false);

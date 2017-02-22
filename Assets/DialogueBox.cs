@@ -32,6 +32,12 @@ public class DialogueBox : MonoBehaviour
             _speakerBox.color = color;
             _speakerBox.gameObject.SetActive(true);
             _speakerText.text = speaker;
+
+            var clipPath = string.Format("assets/voices/{0}.ogg", speaker);
+            if (GameManager.Instance.Voices.Contains(clipPath))
+            {
+                dialogue = string.Format("<v={0}>{1}", speaker.ToLowerInvariant(), dialogue);
+            }
         }
 
         _dialogueText.Text = dialogue;

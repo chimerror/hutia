@@ -1,0 +1,18 @@
+ManifestFileVersion: 0
+CRC: 1233630766
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 72ac5972986f0ca1b0cd7e659132736b
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: c516f2a3b2b6b67ef759f6410a790acd
+HashAppended: 0
+ClassTypes:
+- Class: 83
+  Script: {instanceID: 0}
+Assets:
+- Assets/Voices/Latoya.ogg
+- Assets/Voices/Default.ogg
+- Assets/Voices/Clara.ogg
+Dependencies: []
