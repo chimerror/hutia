@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
     /// The start of the string, followed by one or more word characters grouped as 'speaker', followed by a colon,
     /// followed by any number of characters grouped as 'dialogue', followed by the end of the string.
     /// </remarks>
-    private readonly static Regex DialogueRegex = new Regex(@"^(?<speaker>\w+):(?<dialogue>.*)$");
+    private readonly static Regex DialogueRegex = new Regex(@"^(?<speaker>\w+):\s+(?<dialogue>.*)$");
 
     public Color defaultBackgroundColor;
     public Color defaultCharacterColor;

@@ -111,9 +111,10 @@ TITLE Day 00
 MUSIC LatoyasTheme ONCE
 CHARACTER LEFT latoya
 Latoya: ...Better.
-Latoya: *sigh*
-Latoya: I might should've gotten my sleep schedule right when I had the chance last week.
-Latoya: But what is your first real day of work without being too damn tired? #miffed
+Latoya: *sigh* #miffed
+Latoya: I might should've gotten my sleep schedule right.
+Latoya: After all, I had the chance last week.
+Latoya: But what is your first real day of work without being too damn tired?
 // scene: Latoya showering, only seen through shower curtain.
 BG IMAGE bedroom
 // left-character: latoya, sleep clothes
@@ -218,7 +219,8 @@ Latoya: I wonder if I should wake her up?
 CHARACTER RIGHT clara sleepy
 Clara: Good Morning, Giggles.
 { steal_pizza:
-    Clara: And, like, uh don't think I didn't see you totally stealing my pizza, my little scavenger. #sly
+    Clara: And, like, uh don't think I didn't see you totally stealing my pizza... #sly
+    Clara: ...you little scavenger.
     Latoya: Uh... #nervous
     Clara: You'll owe me...
 }
@@ -242,18 +244,16 @@ Latoya: She's just sitting there smiling, so proud of herself...
   Latoya: *kiss* #smile
   Clara: ! #nervous
   Latoya: . #sly
-  // beat
   Clara: ! #blushing-happily
 * [I could punch her...]
   ~ lower(latoya_lewd)
   ~ lower(clara_lewd)
-  Latoya: #miffed
+  Latoya: ... #miffed
   { latoya_lewd > 0:
       Clara: *kiss* #smile
       Latoya: ! #nervous
-      Clara: #sly
-      // beat
-      Latoya: #blushing-happily
+      Clara: . #sly
+      Latoya: ! #blushing-happily
   }
 - Latoya: Thanks for the vote of confidence...
 Clara: You're welcome. Have fun! #laugh
@@ -273,7 +273,8 @@ Latoya: Ah, I've got a few minutes before stand-up... #bored
 Latoya: Maybe I'll just try to enjoy my coffee-- #sly
 CHARACTER RIGHT ramsey
 Ramsey: Good morning, Latoya. #neutral
-Latoya: Oh, it's Ramsey. He's an old college buddy, though right now, he's more like my boss. #neutral
+Latoya: Oh, it's Ramsey. He's an old college buddy! #neutral
+Latoya: Though right now, he's more like my boss.
 Latoya: Huh, how should I say hi?
 <- debug_options(-> work_day1)
 * [Professional]
