@@ -21,7 +21,7 @@ CHAR_COLOR \#c378ff 0xF0C5
 // ------------------------------------------------------------------------------------------------
 // DEBUG MODE
 // ------------------------------------------------------------------------------------------------
-VAR debug = false
+VAR debug = true
 { debug:
     IN DEBUG MODE!
     * [Beginning...] -> intro
@@ -39,10 +39,6 @@ VAR debug = false
 
 === show_debug_options
 0xF0C5: dont tell anyone about these 1337 hax!!!
-Latoya L: {latoya_lewd}, O: {latoya_object}
-Clara L: {clara_lewd}, O: {clara_object}
-Ramsey L: {ramsey_lewd}, O: {ramsey_object}
-0xF0C5 L: {f0c5_lewd}, O: {f0c5_object}
 0xF0C5: who do you want to modify?
 + [Latoya]
   -> modify_character("Latoya", latoya_lewd, latoya_object) ->

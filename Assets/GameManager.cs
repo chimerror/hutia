@@ -65,6 +65,14 @@ public class GameManager : MonoBehaviour
     public Image rightCharacter;
     public Image farRightCharacter;
     public AudioSource musicSource;
+    public int latoyaLewd;
+    public int latoyaObject;
+    public int claraLewd;
+    public int claraObject;
+    public int ramseyLewd;
+    public int ramseyObject;
+    public int f0c5Lewd;
+    public int f0c5Object;
 
     private AssetBundle _backgrounds;
     private AssetBundle _music;
@@ -457,7 +465,25 @@ public class GameManager : MonoBehaviour
         Debug.Assert(_characters != null, "Couldn't load characters!");
         _voices = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, "AssetBundles/voices"));
         Debug.Assert(_voices != null, "Couldn't load voices!");
+
         _story = new Story(storyAsset.text);
+        latoyaLewd = (int)_story.variablesState["latoya_lewd"];
+        latoyaObject = (int)_story.variablesState["latoya_object"];
+        claraLewd = (int)_story.variablesState["clara_lewd"];
+        claraLewd = (int)_story.variablesState["clara_lewd"];
+        ramseyLewd = (int)_story.variablesState["ramsey_lewd"];
+        ramseyObject = (int)_story.variablesState["ramsey_object"];
+        f0c5Object = (int)_story.variablesState["f0c5_object"];
+        f0c5Object = (int)_story.variablesState["f0c5_object"];
+        _story.ObserveVariable("latoya_lewd", (varName, newValue) => latoyaLewd = (int)newValue);
+        _story.ObserveVariable("latoya_object", (varName, newValue) => latoyaObject = (int)newValue);
+        _story.ObserveVariable("clara_lewd", (varName, newValue) => claraLewd = (int)newValue);
+        _story.ObserveVariable("clara_lewd", (varName, newValue) => claraLewd = (int)newValue);
+        _story.ObserveVariable("ramsey_lewd", (varName, newValue) => ramseyLewd = (int)newValue);
+        _story.ObserveVariable("ramsey_object", (varName, newValue) => ramseyObject = (int)newValue);
+        _story.ObserveVariable("f0c5_object", (varName, newValue) => f0c5Object = (int)newValue);
+        _story.ObserveVariable("f0c5_object", (varName, newValue) => f0c5Object = (int)newValue);
+
         _storyStarted = false;
         dialogueBox.gameObject.SetActive(false);
         choiceBox.gameObject.SetActive(false);
