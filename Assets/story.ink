@@ -108,7 +108,7 @@ CHARACTER LEFT OFF
 // music stops
 TITLE Day 00
 // music: latoya's theme, morning
-MUSIC LatoyasTheme ONCE
+// MUSIC LatoyasTheme ONCE
 CHARACTER LEFT latoya
 Latoya: ...Better.
 Latoya: *sigh* #miffed
@@ -270,7 +270,7 @@ Latoya: But then again, having money to buy things was pretty nice... #bored
 Latoya: But is it really worth being packed in like sardines by a bunch of tech bros? #miffed
 // bg: Office
 Latoya: Ah, I've got a few minutes before stand-up... #bored
-Latoya: Maybe I'll just try to enjoy my coffee-- #sly
+Latoya: Maybe I'll just try to enjoy my coffee— #sly
 CHARACTER RIGHT ramsey
 Ramsey: Good morning, Latoya. #neutral
 Latoya: Oh, it's Ramsey. He's an old college buddy! #neutral
@@ -368,9 +368,10 @@ Latoya: Orientation is done, and it looks like my permissions have gone through.
 Latoya: So you can move those to done.
 Ramsey: Right.
 Latoya: Next in my ramp-up is pulling the code down and seeing if it builds.
-Latoya: I'm not too worried, it doesn't look like they changed anything while I was gone.
+Latoya: I'm not too worried, it doesn't look like anything changed while I was gone.
 Latoya: No estimate updates. #neutral
-Ramsey: Good. Chat with Jake if you have questions, he just cut his teeth on the build last month.
+Ramsey: Good. Chat with Jake if you have questions.
+Ramsey: He just cut his teeth on the build last month.
 CHARACTER RIGHT jake smile
 Jake: Yeah, I'm an expert now, I guess.
 Latoya: An expert? I've written code that's probably older than you, kid. #miffed
