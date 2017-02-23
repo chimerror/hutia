@@ -25,7 +25,8 @@ VAR debug = true
 { debug:
     IN DEBUG MODE!
     * [Beginning...] -> intro
-    * [To Work...] -> work_day1
+    * [To Work...] -> work_day0
+    * [Back Home...] -> ride_home_day0
   - else:
     -> intro
 }
@@ -96,9 +97,9 @@ blueena: HA HA HA HA HA HA HA HA! #laugh
 blueena: ;3 #sly
 CHARACTER OFF
 TITLE hutia
--> wake_up_day1
+-> wake_up_day0
 
-=== wake_up_day1 ===
+=== wake_up_day0 ===
 // music main theme
 IMAGE LatoyaAlarm
 CHARACTER LEFT latoya sleepy
@@ -120,7 +121,7 @@ BG IMAGE bedroom
 // left-character: latoya, sleep clothes
 Latoya: Whew... That's better. #neutral
 Latoya: OK, what to wear? #bored
-<- debug_options(-> wake_up_day1)
+<- debug_options(-> wake_up_day0)
 * [Probably best to go with something conservative.]
   Latoya: Good ol' reasonable Latoya Miller, she's such a proper lady... #miffed
   ~ raise(latoya_object)
@@ -132,16 +133,16 @@ Latoya: OK, what to wear? #bored
   Latoya: No, I'd better play it safe.
 - Latoya: Oh well...
 // Fade to black
--> living_room_morning_day1
+-> living_room_morning_day0
 
-=== living_room_morning_day1
+=== living_room_morning_day0
 // bg: Living Room
 // left-character: latoya, button-up shirt, work badge
 Latoya: Well, here we go... #bored
 Latoya: Oh! #nervous
 Latoya: It looks like Clara fell asleep out here...
 // scene: Clara, sleeping on couch
-<- debug_options(-> living_room_morning_day1)
+<- debug_options(-> living_room_morning_day0)
 * (angry) [How dare she!]
   Latoya: Aren't girlfriends supposed to sleep in bed with you? #miffed
   <- debug_options(-> angry)
@@ -259,9 +260,9 @@ Latoya: She's just sitting there smiling, so proud of herself...
 Clara: You're welcome. Have fun! #laugh
 Latoya: I'll try. #bored
 CHARACTER RIGHT OFF
--> work_day1
+-> work_day0
 
-=== work_day1
+=== work_day0
 // bg: Bus
 CHARACTER LEFT latoya
 Latoya: Ugh, the number 8 is always so packed at this time.
@@ -276,7 +277,7 @@ Ramsey: Good morning, Latoya. #neutral
 Latoya: Oh, it's Ramsey. He's an old college buddy! #neutral
 Latoya: Though right now, he's more like my boss.
 Latoya: Huh, how should I say hi?
-<- debug_options(-> work_day1)
+<- debug_options(-> work_day0)
 * [Professional]
   ~ alter(ramsey_object, 1)
   ~ alter(ramsey_lewd, -3)
@@ -378,4 +379,92 @@ Latoya: An expert? I've written code that's probably older than you, kid. #miffe
 CHARACTER RIGHT ramsey neutral
 Latoya: OK, will do. #bored
 Ramsey: That's everyone. Stand-up's over.
+-> ride_home_day0
+
+=== ride_home_day0
+// bg bus
+CHARACTER OFF
+CHARACTER LEFT latoya angry
+Latoya: Ugh, packed like sardines AND stuck in traffic!
+Latoya: Well, I guess I'll read up on this new framework we're using. #miffed
+Latoya: Every couple of months, some fool just decides to reinvent the wheel.
+{ latoya_object > 0:
+    Latoya: "Oh yes, we must absolutely architect a whole new DSL..." #angry
+    Latoya: "...In order to best get the low-hanging fruit without..."
+    Latoya: "...introducing cross-cutting conerns." Ugh.
+}
+Latoya: *sigh*
+Latoya: I guess that's why they pay me the big bucks. #bored
+{ latoya_object > 0:
+    Latoya: I think that guy over there is staring at me... #miffed
+    Latoya: He might think I'm crazy for ranting in my head.
+    Latoya: *sigh* #bored
+}
+Latoya: Well, let me read...
+Latoya: Oh, great, the author of this thinks he's a joker... #miffed
+-> living_room_day0
+
+=== living_room_day0
+// bg living room
+CHARACTER LEFT Latoya
+Latoya: Home sweet home! #smile
+CHARACTER RIGHT Clara miffed
+Latoya: Hmmm, looks like Clara is working in the studio... #miffed
+<- debug_options(-> living_room_day0)
++ { latoya_object < 1 } [Say hi to Clara.]
+  Latoya: Hmm... How to say hi?
+  + + [Just another day...]
+    Latoya: Evening, Speedy. #bored
+  + + {latoya_object < 0 } [Nice to see her after a long day...]
+    Latoya: Evening, Speedy. #smile
+  + + [Maybe some fun can happen tonight...]
+    Latoya: Evening, Speedy. #sly
+    ~ alter(latoya_lewd, 2)
+    ~ alter(clara_lewd, 2)
+  - - Clara: Oh, huh? Hi, Giggles! #smile
+  ~ alter(latoya_object, -2)
+  ~ alter(clara_object, -2)
++ [Probaby should leave her alone.]
+  Latoya: She's probably deep in "art space", I probably shouldn't bother her. #neutral
+  Latoya: Plus, I can hear her headphones bleeding a little.
+  Clara: Oh, hey, you're, like home! I totes wanted to mention something. #neutral
+  ~ alter(latoya_object, 2)
+  ~ alter(clara_object, 2)
++ [Just stick my head in.]
+  Latoya: I'll just stick my head in...
+  Latoya: That way, she can just ignore me if she's too busy.
+  Clara: Oh, hey, Giggles, you're home! #smile
+  ~ alter(latoya_object, -1)
+  ~ alter(clara_object, -1)
+- Clara: So like, I noticed something really sketchy with like, the computer. #nervous
+Latoya: Oh! The one in the bedroom? What exactly? #neutral
+Clara: I was like, downloading music to the thumb drive...
+Clara: ...and like, the antivirus came up...
+Clara: ...and it was all narcing on corrupted files...
+Clara: ...but on <i>the original copies</i> of the music...
+Clara: ...like the ones on the <i>bedroom computer</i>...
+CHARACTER LEFT Latoya miffed
+Clara: ...which is totes weird, right? #miffed
+Latoya: Yeah, it is...
+Clara: Cause like, why would those files be corrupted?
+Latoya: I'd expect your thumb drive to be corrupted.
+{ latoya_lewd > 0:
+    Latoya: Who knows where you stick that thing? #sly
+    Clara: Heh. #sly
+}
+Clara: Yeah, and there's like a weird... noise when I listen to the music... #neutral
+Clara: Like you hear in some of those hypnosis files?
+Clara: Then again, it totes made me focus like a champ today! #smile
+Latoya: That's really nice. #smile
+Latoya: I'll figure out what's going on.
+Latoya: I was doing some AI work to get back up to speed... #sly
+Latoya: It's possible I let it play with the data.
+Clara: Ooh, your foxy AI boyfriend? #sly
+Latoya: Well, I wrote it to be very gender neutral. It uses 'they' pronouns. #neutral
+Clara: Oh, like, sorry! #nervous
+Latoya: You're apologizing to an AI, they're not... it's not a person.
+Clara: That doesn't mean I can't be nice!
+Clara: Anyway, tell them to stop messing with my music... #sly
+Clara: It makes me... light-headed...
+Latoya: Uh-huh, OK.
 -> END
