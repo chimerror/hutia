@@ -31,7 +31,9 @@ public class GameManager : MonoBehaviour
 
     private readonly static Regex BackgroundParameters = new Regex(@"^(?<type>IMAGE|COLOR)\s(?<value>.+)$");
 
-    private readonly static Regex TitleParameters = new Regex(@"(COLOR\s+(?<color>#?\w+)\s+)?(?<title>.*)$");
+    private readonly static Regex TitleParameters = new Regex(@"^(COLOR\s+(?<color>#?\w+)\s+)?(?<title>.*)$");
+
+    private readonly static Regex MusicParameters = new Regex(@"^(?<name>[\w-]+)(\s+(?<loopSettings>LOOP|ONCE))?$");
 
     private readonly static Regex ImageParameters = new Regex(@"^(?<name>[\w-]+)(\s+(?<delay>.+))?$");
 
@@ -62,8 +64,10 @@ public class GameManager : MonoBehaviour
     public Image centerCharacter;
     public Image rightCharacter;
     public Image farRightCharacter;
+    public AudioSource musicSource;
 
     private AssetBundle _backgrounds;
+    private AssetBundle _music;
     private AssetBundle _images;
     private AssetBundle _characters;
     private AssetBundle _voices;
@@ -141,6 +145,9 @@ public class GameManager : MonoBehaviour
             case "TITLE":
                 return ShowTitle(parameters);
 
+            case "MUSIC":
+                return PlayMusic(parameters);
+
             case "IMAGE":
                 return ShowImage(parameters);
 
@@ -212,6 +219,29 @@ public class GameManager : MonoBehaviour
         }
 
         return true; // Wait for input
+    }
+
+    private bool PlayMusic(string parameters)
+    {
+        var regexMatch = MusicParameters.Match(parameters);
+        Debug.AssertFormat(regexMatch.Success, "Unknown MUSIC parameters: {0}", parameters);
+
+        var name = regexMatch.Groups["name"].Value;
+        if (name.Equals("OFF"))
+        {
+            musicSource.Stop();
+            musicSource.clip = null;
+            return false; // Don't wait for input
+        }
+
+        var path = string.Format("assets/music/{0}.ogg", name);
+        var clip = _music.LoadAsset<AudioClip>(path);
+        Debug.AssertFormat(clip != null, "Unable to load music clip: {0}", path);
+        musicSource.clip = clip;
+        musicSource.loop = !(regexMatch.Groups["loopSettings"].Success && regexMatch.Groups["loopSettings"].Value.Equals("ONCE"));
+        musicSource.Play();
+
+        return false; // Don't wait for input
     }
 
     private bool ShowImage(string parameters)
@@ -418,6 +448,8 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         _backgrounds = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, "AssetBundles/backgrounds"));
+        Debug.Assert(_backgrounds != null, "Couldn't load backgrounds!");
+        _music = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, "AssetBundles/music"));
         Debug.Assert(_backgrounds != null, "Couldn't load backgrounds!");
         _images = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, "AssetBundles/images"));
         Debug.Assert(_images != null, "Couldn't load images!");

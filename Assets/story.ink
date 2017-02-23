@@ -103,7 +103,7 @@ TITLE hutia
 -> wake_up_day1
 
 === wake_up_day1 ===
-// music: main theme
+// music main theme
 IMAGE LatoyaAlarm
 CHARACTER LEFT latoya sleepy
 Latoya: Ungh...
@@ -112,6 +112,7 @@ CHARACTER LEFT OFF
 // music stops
 TITLE Day 00
 // music: latoya's theme, morning
+MUSIC LatoyasTheme ONCE
 CHARACTER LEFT latoya
 Latoya: ...Better.
 Latoya: *sigh*
