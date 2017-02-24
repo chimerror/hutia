@@ -26,6 +26,7 @@ VAR debug = true
     IN DEBUG MODE!
     * [Beginning...] -> intro
     * [To Work...] -> work_day0
+    * [Chat With Ramsey...] -> chat_with_ramsey_day0
     * [Back Home...] -> ride_home_day0
   - else:
     -> intro
@@ -379,7 +380,131 @@ Latoya: An expert? I've written code that's probably older than you, kid. #miffe
 CHARACTER RIGHT ramsey neutral
 Latoya: OK, will do. #bored
 Ramsey: That's everyone. Stand-up's over.
+Latoya: Hmmm, I could focus on work or maybe chat with Ramsey some more...
+<- debug_options(-> ramsey_introduction)
+* [Focus on work.]
+  Latoya: Yeah, I guess he'll be too busy to chat with.
+  Latoya: Well, here we go...
+  ~ alter(ramsey_object, 2)
+  ~ alter(latoya_object, 2)
+  -> ride_home_day0
+* [Chat with Ramsey.]
+  ~ alter(ramsey_object, -2)
+  ~ alter(latoya_object, -2)
+  Latoya: Hey, Ramsey?
+  Ramsey: Oh?
+  Latoya: We haven't had a chance to catch up since I've been back, and... #neutral
+  Ramsey: Ah, yeah, we can chat, let's go to my office... #smile
+  Latoya: You have an office? #nervous
+  Latoya: While us plebes labor out here? #sly
+  Ramsey: Uh, yeah, I guess because I have to have one-on-ones and stuff... #nervous
+  -> chat_with_ramsey_day0
+
+=== chat_with_ramsey_day0
+// bg ramsey's office
+CHARACTER OFF
+CHARACTER RIGHT Ramsey
+Ramsey: See, it's pretty small... #miffed
+CHARACTER LEFT Latoya
+Latoya: Glaistig is still frugal as ever, I see. #miffed
+Ramsey: Yep. It's company principle after all... #laugh
+Ramsey: Kind of sad that our parents wished they could have a bigger office... #neutral
+Ramsey: But we just want to have one at all.
+Latoya: It's still pretty nice, isn't it? #neutral
+<- debug_options(-> chat_with_ramsey_day0)
+* [You could listen to music...]
+  ~ alter(ramsey_lewd, -2)
+  ~ alter(latoya_lewd, -2)
+  Latoya: I mean you can listen to music on speakers in here, I bet! #grin
+  Ramsey: I probably could... #sly
+  Ramsey: Then again, these walls are pretty thin... #bored
+  Latoya: Bah, that never stopped you from rocking out before! #laugh
+  Latoya: Rams, Air Guitar Superstar!
+  Ramsey: Oh, you flatter me. #blushing-happily
+* (flirt) [You could have some real fun in here...]
+  ~ alter(ramsey_lewd, 1)
+  ~ alter(latoya_lewd, 1)
+  Ramsey: What do you mean?
+  <- debug_options(-> flirt)
+  * * (keep_flirting) [Keep flirting...]
+    Latoya: You know, a lot like we did that one time in college. #sly
+    Ramsey: Where we were playing D&D in the living room? #sly
+    Ramsey: And I said you needed to have a DM conference?
+    Ramsey: Then you fondled me with our friends outside waiting?
+    Latoya: Yeah! #smile
+    Latoya: I guess I have sort of a public fetish... #blushing-happily
+    Ramsey: It's OK, it's one of the things I've always liked about you.
+    <- debug_options(-> keep_flirting)
+    * * * {latoya_object < 0} [Reminisce...]
+      ~ alter(latoya_object, -3)
+      ~ alter(ramsey_object, -3)
+      Latoya: That's nice to hear! #smile
+      Latoya: Though a lot of that had to do with you taking initiative... #sly
+      Latoya: I just expected the grope to be a tease, but you really... #smile
+      Latoya: ...Made it more. #sly
+      Ramsey: What can I say, I rolled a nat 20... #sly
+      -> what_happened
+    * * * {latoya_object >= 0} [Trail off...]
+      Latoya: Oh, you... #blushing-happily
+      Ramsey: . #sly
+    * * * [Why not relive old times?]
+      Latoya: Why not relive those times? #sly
+      Latoya: *kiss* #smile
+      Ramsey: ! #nervous
+      Ramsey: !!! #blushing-happily
+      ~ alter(latoya_lewd, 3)
+      ~ alter(ramsey_lewd, 3)
+      -> make_out
+  * * {latoya_object >= 0} [Work inappropriate stuff...]
+    Latoya: Oh, you know, real work inappropriate stuff, I guess. #bored
+    Ramsey: Yeah... Maybe we can get coffee later to talk about that... #nervous
+    -> what_happened
+  * * {latoya_object < 0} [Pivot!]
+    ~ alter(latoya_object, -5)
+    ~ alter(ramsey_object, -5)
+    Latoya: You know, host D&D games or something. #laugh
+    Ramsey: Ha! Apparently Jake has never played anything before 4th ed! #smile
+    Latoya: Oh, my, God, he is like a baby! #nervous
+    Ramsey: Yeah, but he's learning pretty quickly. I was the actual hiring manager... #neutral
+    Latoya: Huh. How did that feel? #neutral
+    Ramsey: A little tough, we went through a lot of people... #miffed
+    Ramsey: ...most of whom could barely solve a simple problem.
+    Ramsey: That's actually how I got promoted... #neutral
+    Latoya: Why's that? #nervous
+    Ramsey: Well, the old manager had actually taken a shining to you. #smile
+    Ramsey: Basically believed the project was a waste without your skills.
+    Latoya: You have to be kidding me!
+    Latoya: I thought that guy hated me!
+    Ramsey: Well, he didn't like how vocal you were about problems and... #miffed
+    Latoya: Oh, yeah, totally get it. Can't handle an angry black woman. #angry
+    Ramsey: Anyway, Jake is still learning. Though, he worked on that new hospital AI!
+    Latoya: Huh, I thought I heard about that. DAWG or something like that? #bored
+    Ramsey: HOU-ND, I believe. It was a joint project with his school. #neutral
+    Ramsey: Apparently it's already being used pretty regularly for diagnoses.
+    Ramsey: Obama had extended ACA funding for offering it to hospitals.
+    Ramsey: Though with the Republicans in power, who knows if it'll keep up? #miffed
+    Latoya: Ugh, that's right, the dumber Bush brother is president now. #angry
+    Latoya: I've been trying to forget.
+    Ramsey: Yeah... Clinton's loss was a real shock. #sad
+    -> what_happened
+  * * {latoya_lewd > 1} [Surprise kiss!]
+    ~ alter(latoya_lewd, 5)
+    ~ alter(ramsey_lewd, 5)
+    Latoya: *kiss* #smile
+    Ramsey: ! #nervous
+    Ramsey: !!! #blushing-happily
+    -> make_out
+- -> what_happened
+
+= make_out
+Latoya: TODO MAKEOUT
+-> what_happened
+
+= what_happened
+Ramsey: TODO TALK ABOUT BREAKUP
 -> ride_home_day0
+
+
 
 === ride_home_day0
 // bg bus
