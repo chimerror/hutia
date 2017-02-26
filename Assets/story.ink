@@ -18,6 +18,11 @@ CHAR_COLOR \#ffac43 Clara
 CHAR_COLOR \#a4d648 Ramsey
 CHAR_COLOR \#c378ff 0xF0C5
 
+// Story variables.
+VAR kissed_clara_day0 = false
+VAR flirted_with_ramsey_day0 = false
+VAR made_out_with_ramsey_day0 = false
+
 // ------------------------------------------------------------------------------------------------
 // DEBUG MODE
 // ------------------------------------------------------------------------------------------------
@@ -243,6 +248,7 @@ Latoya: She's just sitting there smiling, so proud of herself...
   ~ raise(latoya_lewd)
   ~ raise(clara_lewd)
   ~ lower(latoya_object)
+  ~ kissed_clara_day0 = true
   Latoya: *kiss* #smile
   Clara: ! #nervous
   Latoya: . #sly
@@ -256,6 +262,7 @@ Latoya: She's just sitting there smiling, so proud of herself...
       Latoya: ! #nervous
       Clara: . #sly
       Latoya: ! #blushing-happily
+      ~ kissed_clara_day0 = true
   }
 - Latoya: Thanks for the vote of confidence...
 Clara: You're welcome. Have fun! #laugh
@@ -303,6 +310,7 @@ Latoya: Huh, how should I say hi?
   Ramsey: At ease, soldier. #sly
   Latoya: Roger! #sly
 * (flirt) {latoya_lewd > 2} [Flirty]
+  ~ flirted_with_ramsey_day0 = true
   Latoya: Good morning, Rams. You look rather delicious today... #sly
   Ramsey: ... #nervous
   Ramsey: Uh... that might not be quite work appropriate behavior... #blushing-happily
@@ -497,7 +505,74 @@ Latoya: It's still pretty nice, isn't it? #neutral
 - -> what_happened
 
 = make_out
-Latoya: TODO MAKEOUT
+~ made_out_with_ramsey_day0 = true
+Latoya: I wasn't planning on starting a makeout session with Ramsey... #blushing-happily
+Latoya: But here I am...
+{ kissed_clara_day0:
+    Latoya: It might could be something in the air today.
+    Latoya: Clara and I don't normally kiss like that in the morning...
+    Latoya: Well, not recently anyway... #miffed
+}
+Latoya: Shit! Shit! That's right consent! #nervous
+Latoya: Though... he already has his arms around me... #blushing-happily
+Latoya: ...and the kiss hasn't stopped...
+* [No, consent is vital!]
+  ~ alter(latoya_object, -3)
+  ~ alter(ramsey_object, -2)
+  Latoya: Wait, uh, sorry, I've been kind of horny all day... #sad
+  { flirted_with_ramsey_day0:
+    Ramsey: Yeah, you're a pretty forward woman... #sly
+    Ramsey: But, not usually the type to flirt at work...
+    Latoya: Yeah...
+  }
+  Latoya: I need to ask: do you want to do this?
+  { ramsey_lewd > 0 && ramsey_object < 0:
+      Ramsey: Sure... It's... #neutral
+      Ramsey: Been a while... #sly
+    - else:
+      Ramsey: No, it's just... #sad
+      Ramsey: I really worry about breaking company policy.
+      Ramsey: I'm such a nerd! #angry
+      Latoya: No... It's OK, that's the right thing to do. #neutral
+      Latoya: Besides, you're a very lovely nerd, you know! #smile
+      -> what_happened
+    }
+    Latoya: OK, then. Let me grab that booty! #sly
+    Ramsey: !!! #blushing-happily
+* [I can assume...]
+  ~ alter(latoya_object, 3)
+  ~ alter(ramsey_object, 2)
+  Latoya: I can assume he's for it, can't I?
+  { ramsey_lewd < 0 || ramsey_object > 0:
+      Ramsey: No, I can't really do this, Latoya. #sad
+      Latoya: Yeah, I'm not sure what's come over me lately. #sad
+      Ramsey: I'm willing to talk, though...
+      Latoya: OK.
+      -> what_happened
+  }
+- Latoya: Such a bountiful booty, Rams! #sly
+Ramsey: Well, I've been doing some personal training on my glutes recently.
+Ramsey: It's supposed to help with my back pains. #miffed
+Latoya: Yeah, sitting in an office chair all day can't be the best... #neutral
+Latoya: So why not continue to sit in a Latoya-chair... #sly
+Ramsey: Gladly. #sly
+Latoya: It's funny that Ramsey isn't that much taller than me...
+Latoya: Clara is taller than him, after all...
+Latoya: But, he has this bulk that I find invigorating.
+Latoya: And his scent is so different than hers.
+Latoya: Clara smells of paint so very often, and I like that smell...
+Latoya: Ramsey, though... has that male musk just perfectly balanced.
+Latoya: That perfect balance between sweat and cleanliness.
+Latoya: And then, the feel of his tongue in my mouth...
+Latoya: He doesn't know his own strength, but I can bring it out in him...
+Latoya: Just as I can feel his cock up against me...
+Latoya: Oh, he's pulling away...
+Ramsey: Wow... #blushing-happily
+Ramsey: You still have such a strong kiss!
+Latoya: What, did you think I just stopped for a year?! #miffed
+Ramsey: No, No! #nervous
+Latoya: I know you and Clara never hit it off, but she can surprise you. #sly
+Ramsey: Actually, how are you two doing?
 -> what_happened
 
 = what_happened

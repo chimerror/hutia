@@ -1372,8 +1372,11 @@ MonoBehaviour:
   storyAsset: {fileID: 4900000, guid: 33e7fd5d0e1ee704d8c68b4082f4b14f, type: 3}
   variables:
   - latoya_lewd
-  trials: 100
-  stoppingPoint: Ugh, packed like sardines AND stuck in traffic
+  - latoya_object
+  - ramsey_lewd
+  - ramsey_object
+  trials: 500
+  stoppingPoint: Kind of sad that our parents wished they could have a bigger office...
 --- !u!4 &1615480575
 Transform:
   m_ObjectHideFlags: 0
