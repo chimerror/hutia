@@ -571,15 +571,67 @@ Ramsey: Wow... #blushing-happily
 Ramsey: You still have such a strong kiss!
 Latoya: What, did you think I just stopped for a year?! #miffed
 Ramsey: No, No! #nervous
-Latoya: I know you and Clara never hit it off, but she can surprise you. #sly
-Ramsey: Actually, how are you two doing?
+Latoya: I know you and Clara never played around, but she can surprise you. #sly
 -> what_happened
 
 = what_happened
-Ramsey: TODO TALK ABOUT BREAKUP
+Latoya: So anyway, I just kind of wanted to see how you were doing. #neutral
+{ made_out_with_ramsey_day0:
+    Ramsey: Honestly, somewhat a lot better, and somewhat stirred all up! #blushing-happily
+    Ramsey: Thanks to you. #sly
+    Latoya: ! #smile
+}
+Ramsey: Really for the most part, It's really the same old-same old. #miffed
+Ramsey: I mean, I guess becoming a lead is a pretty big career jump...
+Ramsey: But, then it really feels like... I'm missing something. #sad
+Latoya: Self-satisfaction?
+Ramsey: That's probably it. Just what's outside my life besides work is limited. #miffed
+Latoya: That's pretty much a guarantee here at Glaistig. #miffed
+Latoya: I warned you when you moved up here.
+Ramsey: I know, I know. #neutral
+Ramsey: It's funny because I told you everything was OK when we broke up... #sad
+Latoya: I knew it wasn't OK, Rams. #sly
+Ramsey: What?
+Latoya: Your family was pressuring you, but...
+Latoya: ...I could tell your eyes sparkled when I was around.
+Latoya: But you know what I told you most likely...
+Ramsey: Yeah, I wasn't ever going to be Clara. I'm just not that type of foraging partner. #miffed
+Latoya: Well, yeah. But you told me...
+Ramsey: Right. I didn't need a partner for my life...
+Ramsey: ...I just needed some relaxing sex and emotional intimacy.
+Latoya: Right. But I of course get why you can still have those lingering thoughts. #neutral
+Latoya: You're not the only one who can do stupid moody things...
+Ramsey: What do you mean? #neutral
+Latoya: So you asked how Clara and I weren't married? #miffed
+Ramsey: Right... Like a year ago...
+Latoya: I move like molasses, sometimes, all right?
+Latoya: Anyway, We were going to about three years ago. Then...
+Ramsey: Oh... #sad
+Latoya: Yeah, My dad died. #sad
+Latoya: That just left my mom, and well... #miffed
+Latoya: I suspect she's not sold on this bi lesbian thing...
+Ramsey: Has she told you that? #miffed
+Latoya: No... not really... #miffed
+Latoya: I just suspect it. But anyway, I cancelled the plans after the funeral.
+Latoya: Clara herself didn't seem to mind much. "Relationship anarchist", after all.
+Ramsey: Right. #neutral
+Latoya: It eats at me.
+Latoya: But honestly, we've been fine, though I feel like...
+Latoya: She was taking me for granted when I stayed at home...
+Latoya: But so was I...
+Latoya: And the bank account surely didn't like it. #angry
+Latoya: Why are my emotions so complicated they can't fix themselves in a year?
+Ramsey: Are anyones? #grin
+Latoya: Nope, I guess not. #laugh
+Ramsey: So we're just two moody sad sacks, aren't we? #laugh
+Latoya: Yep.
+Latoya: Well, I guess I'll go do some work. #smile
+Ramsey: Can we sad sacks teach a machine to hard sell stuffed animals? #sly
+Ramsey: Do we dare attempt such a feat?
+Latoya: We do it not because we are cool, but because... we... are... not. #angry
+Latoya: Thanks, Rams. #smile
+Ramsey: No problems, Giggles. #smile
 -> ride_home_day0
-
-
 
 === ride_home_day0
 // bg bus
