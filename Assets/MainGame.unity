@@ -1373,10 +1373,10 @@ MonoBehaviour:
   variables:
   - latoya_lewd
   - latoya_object
-  - ramsey_lewd
-  - ramsey_object
+  - clara_lewd
+  - clara_object
   trials: 500
-  stoppingPoint: Kind of sad that our parents wished they could have a bigger office...
+  stoppingPoint: 
 --- !u!4 &1615480575
 Transform:
   m_ObjectHideFlags: 0

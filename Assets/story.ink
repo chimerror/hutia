@@ -33,6 +33,7 @@ VAR debug = false
     * [To Work...] -> work_day0
     * [Chat With Ramsey...] -> chat_with_ramsey_day0
     * [Back Home...] -> ride_home_day0
+    * [Chat With Clara...] -> living_room_day0
   - else:
     -> intro
 }
@@ -719,4 +720,194 @@ Clara: That doesn't mean I can't be nice!
 Clara: Anyway, tell them to stop messing with my music... #sly
 Clara: It makes me... light-headed...
 Latoya: Uh-huh, OK.
+Latoya: Hmmm... Could be a good time to chat with Clara...
+* [Yeah, after all, she's my girlfriend...]
+  Latoya: So how did the rest of your day go?
+  -> chat_with_clara
+* [I should probably check what's up with the computer...]
+  Latoya: OK, off to see what that AI is up to... #sly
+  -> introducing_f0c5
+
+= chat_with_clara
+Clara: It went, like, really great! #smile
+Clara: Like, if you look over here, I finished three paintings today!
+Clara: I never finish even one, most days... #miffed
+Latoya: Huh, these are interesting... #miffed
+* [Seems more sexual than you normally do...]
+  ~ alter(latoya_lewd, -1)
+  ~ alter(latoya_object, 1)
+  ~ alter(clara_object, 2)
+  Latoya: This is a lot more sexual than most of your work... #blushing-happily
+  Clara: Oh, Giggles, you don't even know. #sly
+  Clara: I almost never draw titties, and boom, seven of them! #laugh
+  Latoya: Seven is an odd number. #miffed
+  Clara: No, duh. It's not dividable by two.
+  Clara: Thanks, Ms. Miller for the math lesson. #sly
+  Latoya: Hey! It'll be detention for you if you keep this up, Speedy. #angry
+* [This seems a weird subject...]
+  ~ alter(latoya_object, -2)
+  ~ alter(clara_object, -2)
+  Latoya: What is this? It's like a... savannah...
+  Clara: Yeah, coming out of a swimming pool! #smile
+  Clara: Like, I was just staring at the mountains from the balcony... #nervous
+  Clara: Listening to some music...
+  Clara: And it appeared before me like a dream...
+  Clara: I leapt to it, and there you go! #laugh
+  Latoya: And then this second one seems to be a bag for a toy?
+  Clara: Yeah, I remember seeing it next to the pool...
+  Latoya: Honestly, the gazelle with the seven tits almost seems normal after those. #bored
+  Clara: Seven! A magic number! #grin
+  Latoya: Brightest bright orange, too. It's pretty good, Speedy. #smile
+  * * [What do you think it means?]
+    ~ alter(latoya_object, -2)
+    ~ alter(clara_object, -2)
+    Latoya: What do you think it means? #miffed
+    Clara: Uh... #nervous
+    Clara: Like, uh, about the total lack of naturalness of...
+    Clara: The like, female form, in like the heteronormative culture...
+    Clara: ...of Late Capitalism...
+    Clara: ...and how grody that all is?
+    Clara: Because it like makes us sell our bodies? #blushing-happily
+    Latoya: Could be. #neutral
+    Latoya: The gazelle seems kind of like a toy, now that you mention it.
+    Clara: Oh yeah? #nervous
+    Latoya: Yeah, like one of those pool toys you could float on.
+    Clara: Ah, dude, I'm some kind of genius! #grin
+    Latoya: Some kind of something, at least... #sly
+    Clara: Hey! #miffed
+    Clara: A genius is something... #sly
+  * * [I'm happy with just the two, Speedy.]
+    ~ alter(latoya_lewd, 2)
+    ~ alter(clara_lewd, 2)
+    Latoya: I'm happy enough with just the two, Speedy. #sly
+    Latoya: You know that...
+    Clara: Aw, Ms. Miller, you know like, how to flatter a girl. #blushing-happily
+    Latoya: Well, I do right declare you're a right fine lady, Ms. Takemura...
+    { latoya_lewd > 0:
+        Latoya: You and I might just run off into the night... #smile
+        Clara: Oh, you'd do that with me?
+        Latoya: Oh, no, Ms. Takemura... Not together, I'd chase you down and nibble you all over! #grin
+        Latoya: *nibble* *nibble* *nibble*
+        Clara: ! #nervous
+        Clara: !!! #blushing-happily
+        Latoya: Hee hee hee...
+        Clara: Oh, like, grody. #miffed
+        Clara: Shh, call me after Daddy goes to bed. #sly
+        -> makeout
+    }
+  - - Latoya: You're a hoot, Speedy. #laugh
+- Clara: Well, I try. #grin
+-> relationship_talk
+
+= makeout
+Latoya: When Daddy goes to bed? Why wait? #sly
+Latoya: *nibble* *nibble* *nibble*
+Clara: Ahhh, tickly! #nervous
+Latoya: Oh... #sad
+Clara: Good tickly... #sly
+Latoya: Oh! #smile
+Latoya: Raaar! #laugh
+Clara: Eek! #blushing-happily
+Latoya: Part of why I love Clara is the way she squirms when I grab her...
+Latoya: She says feels like she's escaping from some sort of goo as I hold her...
+Latoya: I feel her wiry body wiggling through my arms, just slipping away...
+Latoya: So I grab her overalls to pull her back...
+Latoya: And stick my big hand under her shirt to play with her nipple...
+Latoya: Oh! She smells of paint, and a bit of sweat.
+Latoya: I'd never expected to fall in love with that odor...
+Latoya: But then, I'd never expected to fall in love with a woman...
+Latoya: I'm really pretty lucky.
+Latoya: Oh, she's actually breaking free...
+Clara: Oh, wow, like, Giggles, I'm sorry, but when you had my nipple in your hand...
+Latoya: Yeah? #sad
+Clara: I got a vision for another piece of art! You're my muse, babe! #laugh
+Latoya: Let me guess, a muse who needs to let you work... #miffed
+Clara: Right! #grin
+Latoya: Ok...
+-> relationship_talk
+
+= relationship_talk
+Latoya: So, can I just ask a quick question?
+Clara: Sure, Giggles, what's up? #neutral
+* { latoya_object >= 5 } [Eh... I guess I forgot it. (lie)]
+  ~ alter(latoya_object, 2)
+  ~ alter(clara_object, 2)
+  Latoya: Eh, I guess I forgot it. #miffed
+  Clara: Dude, I do that all the time! #neutral
+* { latoya_object < 4 } [I've been missing you...]
+  ~ alter(latoya_object, -3)
+  ~ alter(clara_object, -3)
+  Latoya: This feels a bit hard for me to say... but... #miffed
+  Latoya: I've been really missing you lately when I wake up...
+  Clara: Oh! #nervous
+  Clara: Yeah, I've been, like, really trying to find my mojo again...
+  Clara: There's this possible space opening up for my art, but... #miffed
+  Clara: Until today, everything I did was just totes terrible.
+  Clara: So I've been burning the midnight oil. #sad
+  Clara: I'm sorry, Latoya, I can make some more time...
+  Clara: *gulp* #nervous
+  Clara: Starting tomorrow.
+  * * [Tomorrow?]
+    ~ alter(latoya_object, 2)
+    ~ alter(clara_object, 2)
+    Latoya: Tomorrow? Why?
+    Clara: With these three, and this one I'm about to do... #miffed
+    Clara: I should, like, totes have enough! #smile
+    Clara: Then I'll show the gallery owner, and well, we'll see!
+    Latoya: Oh, OK...
+  * * [That's fine, Speedy...]
+    Latoya: Speedy, don't worry about that... #smile
+    Latoya: I know your art is important, and I want you to do well...
+    Latoya: I just feel a bit lonely perhaps... #sad
+    Clara: I understand! #blushing-happily
+    Clara: Well, I'll be totes done with this portfolio after tonight...
+  - - Clara: So mark your calendar! #laugh
+      Latoya: Will do! #laugh
+* { latoya_object < 0 } [Was I getting in your way?]
+  ~ alter(latoya_object, -4)
+  ~ alter(clara_object, -4)
+  Latoya: So, I felt kind of like I was getting in your way around here... #miffed
+  Latoya: ...when I was not working.
+  Clara: Oh, my God, Latoya, you can never be in my way! #nervous
+  Clara: I like, maybe did cut my art because I was afraid... #miffed
+  Clara: ...of being totes weird and distant...
+  Clara: ...Like I am when I get in my groove...
+  Clara: But, I loved having you around, Giggles! #smile
+  Clara: You kept me more organized.
+  Clara: Don't like, blame yourself for my weirdness... #blushing-happily
+* [Are you OK with me working?]
+  ~ alter(latoya_object, -1)
+  ~ alter(clara_object, -1)
+  Latoya: How do you feel about me going back to work? #bored
+  Clara: Like, I'd totally rather you be here! #smile
+  Clara: But, if you need to go to work... #miffed
+  Clara: ...Like, because you need to pay the bills...
+  Clara: Especially on my account... #sad
+  Clara: Well...
+  Latoya: I get it, Speedy. Sorry for troubling you about it. #blushing-happily
+  Latoya: I'd rather be here too...
+  Clara: Good to hear! #smile
+* { made_out_with_ramsey_day0 } [So, I made out with Ramsey...]
+  ~ alter(latoya_object, -3)
+  ~ alter(latoya_lewd, 1)
+  ~ alter(clara_object, -3)
+  ~ alter(clara_lewd, 1)
+  Latoya: I... uh... made out with Ramsey today at work. #blushing-happily
+  Clara: Whoa! Totes exciting! #nervous
+  Clara: Does he still have that totally grabbable bubble butt? #sly
+  Latoya: He does! But, it was just grabbing that and a long kiss. #smile
+  Latoya: Huh, I was kind of worried you'd be upset. #blushing-happily
+  Clara: Only if you didn't tell me, Giggles! #laugh
+  Clara: You know me!
+  Clara: Clara Michiko Takemura! Relationship Anarchist! #angry
+  Latoya: You almost make it too easy, Speedy. #sly
+  Clara: Huh? #nervous
+  Latoya: Just appreciating my Speedy Toy.
+  Clara: Heh. #sly
+- Clara: Anything else?
+Latoya: Nah, Let me go check on that computer... #neutral
+-> introducing_f0c5
+
+=== introducing_f0c5
+0xF0C5: TODO
 -> END
