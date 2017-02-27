@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1233630766
+CRC: 2019519643
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 72ac5972986f0ca1b0cd7e659132736b
+    Hash: 05cf5a9e46026d4a9ef10034bc5b5c07
   TypeTreeHash:
     serializedVersion: 2
     Hash: c516f2a3b2b6b67ef759f6410a790acd
@@ -14,5 +14,7 @@ ClassTypes:
 Assets:
 - Assets/Voices/Latoya.ogg
 - Assets/Voices/Default.ogg
+- Assets/Voices/0xF0C5.ogg
 - Assets/Voices/Clara.ogg
+- Assets/Voices/Ramsey.ogg
 Dependencies: []

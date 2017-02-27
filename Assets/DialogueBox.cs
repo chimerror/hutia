@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class DialogueBox : MonoBehaviour
 {
+    public Font defaultFont;
+    public Font aiFont;
     private Image _border;
     private Image _speakerBox;
     private Text _speakerText;
@@ -40,8 +42,19 @@ public class DialogueBox : MonoBehaviour
             }
         }
 
-        _dialogueText.Text = dialogue;
+        switch (speaker)
+        {
+            case "blueena":
+            case "0xF0C5":
+                _dialogueText.font = aiFont;
+                break;
 
+            default:
+                _dialogueText.font = defaultFont;
+                break;
+        }
+
+        _dialogueText.Text = dialogue;
     }
 
     public void CompletedUnRead()

@@ -26,14 +26,13 @@ VAR made_out_with_ramsey_day0 = false
 // ------------------------------------------------------------------------------------------------
 // DEBUG MODE
 // ------------------------------------------------------------------------------------------------
-VAR debug = false
+VAR debug = true
 { debug:
     IN DEBUG MODE!
     * [Beginning...] -> intro
     * [To Work...] -> work_day0
-    * [Chat With Ramsey...] -> chat_with_ramsey_day0
     * [Back Home...] -> ride_home_day0
-    * [Chat With Clara...] -> living_room_day0
+    * [Chat With 0xF0C5...] -> introducing_f0c5
   - else:
     -> intro
 }
@@ -909,5 +908,12 @@ Latoya: Nah, Let me go check on that computer... #neutral
 -> introducing_f0c5
 
 === introducing_f0c5
-0xF0C5: TODO
+CHARACTER OFF
+CHARACTER LEFT latoya miffed
+CHARACTER RIGHT 0xF0C5
+0xF0C5: good evening, blueena! #laugh
+0xF0C5: wanna have some fun? ;3 #sly
+Latoya: Not this exact second, I have some questions...
+0xF0C5: oh, for lil ol me? #nervous
+0xF0C5: how fun #sly
 -> END
