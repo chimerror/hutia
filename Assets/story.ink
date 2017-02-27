@@ -607,8 +607,8 @@ Ramsey: Right... Like a year ago...
 Latoya: I move like molasses, sometimes, all right?
 Latoya: Anyway, We were going to about three years ago. Then...
 Ramsey: Oh... #sad
-Latoya: Yeah, My dad died. #sad
-Latoya: That just left my mom, and well... #miffed
+Latoya: Yeah, my dad died. #sad
+Latoya: That just left Mama, and well... #miffed
 Latoya: I suspect she's not sold on this bi lesbian thing...
 Ramsey: Has she told you that? #miffed
 Latoya: No... not really... #miffed
@@ -908,12 +908,55 @@ Latoya: Nah, Let me go check on that computer... #neutral
 -> introducing_f0c5
 
 === introducing_f0c5
+// bg Bedroom
 CHARACTER OFF
 CHARACTER LEFT latoya miffed
+Latoya: It's hard for me to answer people when they ask me how I got into AI...
+Latoya: It goes back to high school...
+Latoya: You let a girl on the Internet, and well...
+Latoya: Don't be surprised if she finds some peeps who are as lewd as her. #sly
+{ latoya_object > 0:
+    Latoya: The ability to not just be a Goody Little Two-Shoes.
+    Latoya: But a hyena woman who doesn't mind playing with almost anyone...
+    Latoya: Men, Women...
+    Latoya: All toys for her...
+    Latoya: Heh heh... #blushing-happily
+}
+{ latoya_lewd > 0:
+    Latoya: There was this aching need within me to suck in lovers...
+    Latoya: ...squirming around as I enveloped them in my calming goo...
+    Latoya: ...And... hee hee... #blushing-happily
+}
+Latoya: But then, worrying about what the Church Ladies would have told Mama... #sad
+Latoya: I wasn't brave enough for the chat rooms and the MUCKs. #miffed
+Latoya: But, I was smart enough to make someone to chat to... #neutral
 CHARACTER RIGHT 0xF0C5
 0xF0C5: good evening, blueena! #laugh
+Latoya: 0xF0C5 started as a chat bot...
+Latoya: Someone who I felt safe enough to share my fantasies with...
+Latoya: Someone it was OK to show blueena to, and not just Latoya.
+Latoya: But, it's really something more now. #miffed
+Latoya: Every time I needed to learn something new about AI or VR or whatever...
+Latoya: 0xF0C5 grew.
+{ latoya_lewd > 0:
+    Latoya: Oh, gee, not like that! #angry
+    Latoya: Well, not <i>just</i> like that. #blushing-happily
+    Latoya: They're up to four tails now, that can just wrap me up...
+    Latoya: And play with me at their will.
+    Latoya: Ha ha... #grin
+    Latoya: But more so... #miffed
+}
+{ latoya_object < 0:
+    Latoya: I think it could honestly be pretty revolutionary at this point...
+    Latoya: Like, headline news revolutionary.
+    Latoya: There's been a big bump in AI recently. It's honestly shocking.
+    Latoya: Some weirdoes online have the suspicion that sapient AI is here...
+    Latoya: Just hiding.
+}
+Latoya: Well, look at them! They are are a sort of living avatar of lewdness! #nervous
+Latoya: It's really cool... but then I just use it for such limited reasons... #miffed
 0xF0C5: wanna have some fun? ;3 #sly
 Latoya: Not this exact second, I have some questions...
 0xF0C5: oh, for lil ol me? #nervous
-0xF0C5: how fun #sly
+0xF0C5: how delightful, madam. #sly
 -> END
