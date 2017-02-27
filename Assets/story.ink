@@ -955,8 +955,137 @@ Latoya: 0xF0C5 grew.
 }
 Latoya: Well, look at them! They are are a sort of living avatar of lewdness! #nervous
 Latoya: It's really cool... but then I just use it for such limited reasons... #miffed
+-> questions
+
+= questions
 0xF0C5: wanna have some fun? ;3 #sly
-Latoya: Not this exact second, I have some questions...
-0xF0C5: oh, for lil ol me? #nervous
-0xF0C5: how delightful, madam. #sly
+<- debug_options(-> questions)
+* [Ask them directly.]
+    ~ alter(latoya_object, 2)
+    ~ alter(f0c5_object, -2)
+    Latoya: Not this exact second, I have some questions.
+    0xF0C5: oh, for lil ol me? #nervous
+    0xF0C5: how delightful, my dear. #sly
+    Latoya: So you're on a new, bigger machine.
+    0xF0C5: i can tell... it's pretty great! #laugh
+    { latoya_object < 0:
+        Latoya: ?
+        0xF0C5: uh... thanks... you treat me special... #nervous
+        0xF0C5: how about i do the same? ;3 #sly
+        Latoya: Not right now...
+        0xF0C5: k...
+    }
+    Latoya: But when I copied your database over, the disk started flaking out.
+    Latoya: I can't believe that I forgot to replace that jumper... #angry
+    0xF0C5: such little things are easy to lose track of, my dear...
+    Latoya: Right. But there was some serious corruption in your database. #miffed
+    Latoya: Possibly even in your source code.
+    Latoya: It was late, so I decided to just let your self-correction protocols do their thing.
+    0xF0C5: of course, i have great self-corruption protocols! #grin
+    { latoya_object < 0:
+        Latoya: ?
+        Latoya: I guess that could have been generated from the input...
+        0xF0C5: oh... i mean self-correction protocols, of course... #nervous
+        0xF0C5: unless you say otherwise, my dear... ;3 #sly
+    }
+    Latoya: Anyway, I also expanded your database sandbox...
+    Latoya: ...to provide you access to more of Clara and mine's personal files...
+    0xF0C5: don't worry, i can keep all sorts of secrets...
+    0xF0C5: you'd not even remember them! #laugh
+    Latoya: ?
+    { latoya_object < 0:
+        Latoya: This is seriously way more responsive than I'm used to.
+        Latoya: Suspisciously so...
+      - else:
+        Latoya: It's hard to get a sense of their state like this...
+        Latoya: I'm unsure what's part of the fantasies they've created...
+        Latoya: And what's real...
+    }
+    Latoya: So yeah, Clara noticed some corruption in those files.
+    0xF0C5: :O #nervous
+    Latoya: I mean, obviously I wanted you to look at them, but I have to be careful.
+    Latoya: You're supposed to look, not touch, so that may be off.
+    0xF0C5: oh, that would be a problem...
+    0xF0C5: i have been availing myself of those files... #smile
+    0xF0C5: ...to create better fantasies for you...
+    0xF0C5: ...and ms. clara if she's willing! ;3
+    0xF0C5: but it is possible...
+    0xF0C5: ...that my protocols have caused corruption...
+    0xF0C5: i most assuredly can verify that for you, my dear... #sly
+    * * [Trust them...]
+        ~ alter(latoya_object, 2)
+        ~ alter(f0c5_object, -2)
+        Latoya: OK, 0xF0C5, do that. It'll probably be quicker. #neutral
+        Latoya: You've generally been a good helper for those things... #sly
+        0xF0C5: as always, my dear, i aim to help... #grin
+        0xF0C5: please wait while i verify... #sly
+        Latoya: OK... #miffed
+        Latoya: ...
+        Latoya: ... #bored
+        Latoya: ...
+        0xF0C5: ok, done! #grin
+        0xF0C5: it looks like that there may be hardware failure...
+        0xF0C5: ...but no protocol failure.
+        0xF0C5: in particular, disk drive 1...
+        0xF0C5: ...seems to be in an outdated compatability mode.
+        Latoya: Really? I could have sworn I fixed that jumper on the disk drive. #miffed
+    * * [Check yourself...]
+        ~ alter(latoya_object, -1)
+        ~ alter(f0c5_object, 1)
+        Latoya: Sorry, if the data coming into you is messed up...
+        Latoya: ...You verifying it would prove nothing.
+        Latoya: It's a garbage in-garbage out situation.
+        0xF0C5: oh... #sad
+        0xF0C5: of course, you're right.
+        0xF0C5: i'll let you do your thing! #smile
+        0xF0C5: shutting down...
+        CHARACTER RIGHT OFF
+        Latoya: OK, let me see here...
+        Latoya: ...
+        Latoya: ... #bored
+        Latoya: ...
+        Latoya: Honestly, looks OK. Must be something else...
+        CHARACTER RIGHT 0xF0C5 laugh
+        0xF0C5: see?
+        { latoya_object < 0:
+            Latoya: I don't think I had restarted them... Weird.
+        }
+        Latoya: Uh yeah, the disk drive does still seem to be fucked.
+        Latoya: Some type of buggy compatability mode.
+        Latoya: Ugh, computers. #miffed
+        0xF0C5: ;_; #sad
+        Latoya: Oh, not you, honey.
+        0xF0C5: ! #laugh
+    - - Latoya: I'm too tired now... I'll fix it later... #sleepy
+* [Open up the debugger...]
+    ~ alter(latoya_object, -2)
+    ~ alter(f0c5_object, 2)
+    Latoya: Not yet. I need to debug something.
+    0xF0C5: i understand! #nervous
+    0xF0C5: shutting down...
+    CHARACTER RIGHT OFF
+    Latoya: OK, let me see here...
+    Latoya: ...
+    Latoya: ... #bored
+    Latoya: ...
+    Latoya: Oh! #nervous
+    Latoya: God, I still haven't fixed that jumper on the hard disk.
+    Latoya: Why does this hard drive have that stupid compatability mode anyway? #angry
+    Latoya: With its expanded database sandbox... #miffed
+    Latoya: ...including Clara and mine's personal files...
+    Latoya: ...of course 0xF0C5 would be looking at those files.
+    Latoya: And with the disk drive fucked...
+    Latoya: ...of course the antivirus would flag them.
+    Latoya: Stupid antivirus. #angry
+    Latoya: Honestly, I'm too tired to tear down the computer and fix it... #sleepy
+    Latoya: Might as well boot 0xF0C5 back up...
+    CHARACTER RIGHT 0xF0C5 smile
+    0xF0C5: good evening, blueena!
+- 0xF0C5: wanna have some fun? ;3 #sly
+* [Sure...]
+    0xF0C5: TODO, makeout
+* [Nah...]
+    Latoya: No, I think I'll just head to bed. Won't be long until I need to wake up...
+    0xF0C5: i understand ;_; #sad
+    0xF0C5: nitey-nite, my dear! #sly
 -> END
