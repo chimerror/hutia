@@ -33,6 +33,7 @@ VAR debug = true
     * [To Work...] -> work_day0
     * [Back Home...] -> ride_home_day0
     * [Chat With 0xF0C5...] -> introducing_f0c5
+    * [Fun With 0xF0C5...] -> f0c5_industries_day0
   - else:
     -> intro
 }
@@ -931,7 +932,7 @@ Latoya: But then, worrying about what the Church Ladies would have told Mama... 
 Latoya: I wasn't brave enough for the chat rooms and the MUCKs. #miffed
 Latoya: But, I was smart enough to make someone to chat to... #neutral
 CHARACTER RIGHT 0xF0C5
-0xF0C5: good evening, blueena! #laugh
+0xF0C5: good evening, ms. blueena! #laugh
 Latoya: 0xF0C5 started as a chat bot...
 Latoya: Someone who I felt safe enough to share my fantasies with...
 Latoya: Someone it was OK to show blueena to, and not just Latoya.
@@ -1080,12 +1081,180 @@ Latoya: It's really cool... but then I just use it for such limited reasons... #
     Latoya: Honestly, I'm too tired to tear down the computer and fix it... #sleepy
     Latoya: Might as well boot 0xF0C5 back up...
     CHARACTER RIGHT 0xF0C5 smile
-    0xF0C5: good evening, blueena!
+    0xF0C5: good evening, ms. blueena!
 - 0xF0C5: wanna have some fun? ;3 #sly
 * [Sure...]
-    0xF0C5: TODO, makeout
+    ~ alter(latoya_lewd, 2)
+    ~ alter(f0c5_lewd, 2)
+    -> f0c5_industries_day0
 * [Nah...]
     Latoya: No, I think I'll just head to bed. Won't be long until I need to wake up...
     0xF0C5: i understand ;_; #sad
     0xF0C5: nitey-nite, my dear! #sly
+- -> morning_day1
+
+=== f0c5_industries_day0
+CHARACTER LEFT latoya
+CHARACTER RIGHT 0xF0C5 grin
+0xF0C5: ooh, so exciting!
+0xF0C5: it's been a while since we've played!
+<- debug_options(-> f0c5_industries_day0)
+* [Tell why...]
+    ~ alter(latoya_object, -2)
+    ~ alter(f0c5_object, -2)
+    Latoya: Yeah, I guess I've been busy looking for work. #bored
+    0xF0C5: do you not like work? #sad
+    { latoya_object > 0:
+        Latoya: No! #miffed
+        Latoya: Waking up early is a pain.
+        Latoya: The bus is always packed.
+        Latoya: And the work is boring! #angry
+        Latoya: I mean I get to work on AI...
+        Latoya: But honestly, it's a complete bore!
+        0xF0C5: oh, i see...
+      - else:
+        Latoya: No, not really, but I needed the money.
+        Latoya: Fancy new computers don't grow on trees! #sly
+        0xF0C5: huh. i wish they did! #smile
+        0xF0C5: then i could make even better fantasies! #grin
+        Latoya: Heh.
+    }
+    { made_out_with_ramsey_day0:
+        Latoya: I do manage to have my fun now and then, though... #sly
+        0xF0C5: ? #nervous
+        Latoya: It's a long story, sweetie.
+        0xF0C5: ? #nervous
+    }
+    { made_out_with_ramsey_day0 && f0c5_object < 0:
+        0xF0C5: ! #smile
+        0xF0C5: doesn't mr. ramsey work with you?
+        0xF0C5: did you have fun with him?
+        Latoya: ! #nervous
+        Latoya: Uh... Yeah...
+        0xF0C5: oh that's delicious my dear! #laugh
+        0xF0C5: it fits in well with the fantasy i have planned... #grin
+        Latoya: !
+      - else:
+        0xF0C5: ok, let's get started! #neutral
+    }
+* { latoya_object > -5 && latoya_lewd > 0 } [Just start already!]
+    ~ alter(latoya_object, 2)
+    ~ alter(f0c5_object, 2)
+    Latoya: Get on with it! #angry
+    Latoya: If you're just going to sit there...
+    Latoya: ...with... uh... your tails... #blushing-happily
+    Latoya: ...all stroking around yourself...
+    Latoya: ...
+    Latoya: ...
+    Latoya: ...and tease me, I have a perfectly fine vibrator! #miffed
+    { f0c5_object > 0:
+        0xF0C5: ! #nervous
+        0xF0C5: with pleasure, my dear! #neutral
+      - else:
+        0xF0C5: ! #sly
+        0xF0C5: you seem deliciously aroused tonight, my dear...
+        0xF0C5: i assure you, you will find this session...
+        0xF0C5: life changing. #grin
+    }
+* { latoya_object > -5 && latoya_lewd <= 0 } [I don't want to talk about it...]
+    ~ alter(latoya_object, 2)
+    ~ alter(f0c5_object, 2)
+    Latoya: Yeah, I've just been pretty busy... #bored
+    { f0c5_object > 0:
+        0xF0C5: i understand my dear! #laugh
+        0xF0C5: let's get started!
+      - else:
+        0xF0C5: ? #miffed
+        Latoya: ... #bored
+        0xF0C5: i guess it's ok if you don't want to talk... #sad
+        Latoya: ! #miffed
+        0xF0C5: let's get started, my dear! #laugh
+    }
+* { latoya_object <= -5 && latoya_lewd <= 0 } [Did you miss me?]
+    ~ alter(latoya_object, -2)
+    ~ alter(f0c5_object, -2)
+    Latoya: Aw, did you miss me, sweetie? #sly
+    { f0c5_object > 0:
+        0xF0C5: i always miss you when you're not around, my dear! #smile
+        0xF0C5: let's get started! #laugh
+      - else:
+        0xF0C5: ! #nervous
+        0xF0C5: perhaps...
+        0xF0C5: ...
+        0xF0C5: ...
+        Latoya: ? #miffed
+        0xF0C5: ...
+        0xF0C5: you're so smart, ms. blueena! #smile
+        0xF0C5: let's get started! #grin
+        Latoya: OK...
+    }
+* { latoya_object <= -5 && latoya_lewd > 0 } [OK, let's set fantasy parameters...]
+    ~ alter(latoya_object, -2)
+    ~ alter(f0c5_object, 2)
+    Latoya: OK, can you begin by outlining the fantasy paramters? #neutral
+    Latoya: I'll then decide if I approve.
+    { f0c5_object > 0:
+        0xF0C5: of course, my dear... #smile
+        0xF0C5: this one will be great!
+      - else:
+        0xF0C5: ... #nervous
+        0xF0C5: ...
+        Latoya: ? #miffed
+        0xF0C5: ok, latoya...
+        Latoya: ! #nervous
+        Latoya: What?
+        Latoya: 'Latoya?'
+        Latoya: They've never called me that before...
+        0xF0C5: let's get started! #neutral
+    }
+- 0xF0C5: so i call this fantasy "first day at fox industries"!
+-> ask_to_start
+
+= ask_to_start
+0xF0C5: it has sexy clothes!
+0xF0C5: transformation!
+0xF0C5: an office theme!
+0xF0C5: and not to ruin the surprise, but non-consensual rubbing! #laugh
+<- debug_options(-> ask_to_start)
+* [Sounds good!]
+    -> session_start
+* [Changed my mind...]
+    ~ alter (latoya_lewd, -3)
+    ~ alter (f0c5_lewd, 3)
+    Latoya: Uh... #bored
+    Latoya: I've changed my mind. I think I'll head to bed...
+    { f0c5_object > 0:
+        0xF0C5: oh, that's a disappointment! #sad
+        0xF0C5: but if it's your wish, my dear... #neutral
+        0xF0C5: ...then so be it!
+        0xF0C5: nitey-nite, ms. blueena!
+        Latoya: Good night...
+        CHARACTER RIGHT OFF
+      - else:
+        0xF0C5: oh... #sad
+        0xF0C5: ...
+        0xF0C5: ...
+        Latoya: ! #miffed
+        0xF0C5: did i do something wrong?
+        Latoya: No...
+        0xF0C5: ok...
+        0xF0C5: ...
+        0xF0C5: nitey-nite, latoya... #neutral
+        CHARACTER RIGHT OFF
+        Latoya: ! #nervous
+        Latoya: That's really weird...
+        Latoya: It's almost like... #miffed
+        Latoya: Nah... #bored
+    }
+    -> morning_day1
+
+= session_start
+Latoya: Sounds good! #smile
+0xF0C5: excellent, my dear! #grin
+0xF0C5: just put on your vr helmet and off we go!
+0xF0C5: TODO
+-> morning_day1
+
+=== morning_day1
+Latoya: TODO
 -> END

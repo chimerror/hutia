@@ -452,7 +452,7 @@ MonoBehaviour:
   showAudioFoldout: 1
   showEventFoldout: 1
   uiMode: 1
-  text: 
+  text: ' '
   drawText: Testing out something cool!
   hyphenedText: Testing out something cool!
   font: {fileID: 12800000, guid: 12c4fb8a0fd049e4f992a6c44d3191b7, type: 3}
@@ -1373,8 +1373,6 @@ MonoBehaviour:
   variables:
   - latoya_lewd
   - latoya_object
-  - clara_lewd
-  - clara_object
   trials: 500
   stoppingPoint: 
 --- !u!4 &1615480575
