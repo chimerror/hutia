@@ -35,16 +35,15 @@ public class DialogueBox : MonoBehaviour
             _speakerBox.gameObject.SetActive(true);
             _speakerText.text = speaker;
 
-            var clipPath = string.Format("assets/voices/{0}.ogg", speaker);
-            if (GameManager.Instance.Voices.Contains(clipPath))
+            string voiceName = speaker.ToLowerInvariant();
+            if (_dialogueText.data.voices.ContainsKey(voiceName))
             {
-                dialogue = string.Format("<v={0}>{1}", speaker.ToLowerInvariant(), dialogue);
+                dialogue = string.Format("<v={0}>{1}", voiceName, dialogue);
             }
         }
 
         switch (speaker)
         {
-            case "blueena":
             case "0xF0C5":
                 _dialogueText.font = aiFont;
                 break;
