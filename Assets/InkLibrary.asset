@@ -27,23 +27,25 @@ MonoBehaviour:
     warnings: []
     todos: []
   - compileAutomatically: 0
-    inkAsset: {fileID: 102900000, guid: bf3829731c004864797598bbe915fb99, type: 3}
+    inkAsset: {fileID: 102900000, guid: 66f351029b85aba4dae873509da4d2cb, type: 3}
     parent: {fileID: 0}
     master: {fileID: 0}
-    includePaths: []
-    includes: []
-    jsonAsset: {fileID: 4900000, guid: 0c2b740ffc51f9742a0ca8510fcddd34, type: 3}
+    includePaths:
+    - day0.ink
+    includes:
+    - {fileID: 102900000, guid: 6287a0fc2bf2991439d042fb0ab3cb65, type: 3}
+    jsonAsset: {fileID: 4900000, guid: 33e7fd5d0e1ee704d8c68b4082f4b14f, type: 3}
     compileErrors: []
     errors: []
     warnings: []
     todos: []
   - compileAutomatically: 0
-    inkAsset: {fileID: 102900000, guid: 66f351029b85aba4dae873509da4d2cb, type: 3}
-    parent: {fileID: 0}
-    master: {fileID: 0}
+    inkAsset: {fileID: 102900000, guid: 6287a0fc2bf2991439d042fb0ab3cb65, type: 3}
+    parent: {fileID: 102900000, guid: 66f351029b85aba4dae873509da4d2cb, type: 3}
+    master: {fileID: 102900000, guid: 66f351029b85aba4dae873509da4d2cb, type: 3}
     includePaths: []
     includes: []
-    jsonAsset: {fileID: 4900000, guid: 33e7fd5d0e1ee704d8c68b4082f4b14f, type: 3}
+    jsonAsset: {fileID: 0}
     compileErrors: []
     errors: []
     warnings: []
