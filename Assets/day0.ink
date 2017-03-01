@@ -13,117 +13,117 @@ TITLE hutia
 // music main theme
 IMAGE LatoyaAlarm
 CHARACTER LEFT latoya sleepy
-Latoya: Ungh...
-Latoya: Waking up is a pain...
+Latoya: Ungh... #thinking
+Latoya: Waking up is a pain... #thinking
 CHARACTER LEFT OFF
 // music stops
 TITLE Day 00
 // music: latoya's theme, morning
 // MUSIC LatoyasTheme ONCE
 CHARACTER LEFT latoya
-Latoya: ...Better.
+Latoya: ...Better. #thinking
 Latoya: *sigh* #miffed
-Latoya: I might should've gotten my sleep schedule right.
-Latoya: After all, I had the chance last week.
-Latoya: But what is your first real day of work without being too damn tired?
+Latoya: I might should've gotten my sleep schedule right. #thinking
+Latoya: After all, I had the chance last week. #thinking
+Latoya: But what is your first real day of work without being too damn tired? #thinking
 // scene: Latoya showering, only seen through shower curtain.
 BG IMAGE bedroom
 // left-character: latoya, sleep clothes
-Latoya: Whew... That's better. #neutral
-Latoya: OK, what to wear? #bored
+Latoya: Whew... That's better. #neutral #thinking
+Latoya: OK, what to wear? #bored #thinking
 <- debug_options(-> wake_up_day0)
 * [Probably best to go with something conservative.]
-  Latoya: Good ol' reasonable Latoya Miller, she's such a proper lady... #miffed
+  Latoya: Good ol' reasonable Latoya Miller, she's such a proper lady... #miffed #thinking
   ~ raise(latoya_object)
 * [Hmmm, I remember looking pretty hot in this skirt...]
-  Latoya: Yeah, I'd probably give my coworkers a heart attack... #sly
+  Latoya: Yeah, I'd probably give my coworkers a heart attack... #sly #thinking
   ~ raise(latoya_lewd)
-  Latoya: ...if any blood could get away from their dicks! #laugh
+  Latoya: ...if any blood could get away from their dicks! #laugh #thinking
   Latoya: *sigh* #miffed
-  Latoya: No, I'd better play it safe.
-- Latoya: Oh well...
+  Latoya: No, I'd better play it safe. #thinking
+- Latoya: Oh well... #thinking
 // Fade to black
 -> living_room_morning_day0
 
 === living_room_morning_day0
 // bg: Living Room
 // left-character: latoya, button-up shirt, work badge
-Latoya: Well, here we go... #bored
-Latoya: Oh! #nervous
-Latoya: It looks like Clara fell asleep out here...
+Latoya: Well, here we go... #bored #thinking
+Latoya: Oh! #nervous #thinking
+Latoya: It looks like Clara fell asleep out here... #thinking
 // scene: Clara, sleeping on couch
 <- debug_options(-> living_room_morning_day0)
 * (angry) [How dare she!]
-  Latoya: Aren't girlfriends supposed to sleep in bed with you? #miffed
+  Latoya: Aren't girlfriends supposed to sleep in bed with you? #miffed #thinking
   <- debug_options(-> angry)
   * * [Oh well...]
       ~ lower(latoya_lewd)
-      Latoya: Anyway...
+      Latoya: Anyway... #thinking
   * * [She'd be better as a toy...]
       ~ raise(latoya_lewd)
       ~ raise(clara_object)
-      Latoya: Maybe I should make her a nice Speedy Toy with handles to carry her around... #sly
-      Latoya: hee hee hee...
+      Latoya: Maybe I should make her a nice Speedy Toy with handles to carry her around... #sly #thinking
+      Latoya: hee hee hee... #thinking
   - - ~ raise(clara_object)
 * [I missed her...]
   ~ lower(latoya_lewd)
   ~ raise(latoya_object)
-  Latoya: I wonder if our relationship is falling apart... #sad
+  Latoya: I wonder if our relationship is falling apart... #sad #thinking
   // beat
-  Latoya: Can't dwell on that now...
+  Latoya: Can't dwell on that now... #thinking
 * (pleased) [My little Speedy...]
-  Latoya: I really hope she got some good work done on her art. #neutral
+  Latoya: I really hope she got some good work done on her art. #neutral #thinking
   <- debug_options(-> pleased)
   * * [Such a good girlfriend...]
       ~ lower(clara_object)
       ~ lower(latoya_object)
       ~ lower(latoya_lewd)
-      Latoya: She's really been good to me given how flaky I've been about... everything.
-      Latoya: I guess she usually depends on me to be the reliable one, so she understands...
-      Latoya: When I'm not. #miffed
+      Latoya: She's really been good to me given how flaky I've been about... everything. #thinking
+      Latoya: I guess she usually depends on me to be the reliable one... #thinking
+      Latoya: ...so she understands when I'm not. #miffed #thinking
   * * [Such a good girl...]
       ~ raise(latoya_object)
       ~ raise(latoya_lewd)
-      Latoya: Speedy really makes such a sweet toy for me to play with... #sly
-      Latoya: I'm glad she lets me... #neutral
+      Latoya: Speedy really makes such a sweet toy for me to play with... #sly #thinking
+      Latoya: I'm glad she lets me... #neutral #thinking
   - - ~ lower(clara_object)
-        Latoya: She's really been such a good girlfriend.
+        Latoya: She's really been such a good girlfriend. #thinking
 - Latoya: *gurgle* #nervous
 -> pizza
 
 = pizza
-Latoya: Huh, guess I'm kind of hungry... #blushing-happily
-Latoya: Clara has some leftover pizza there...
+Latoya: Huh, guess I'm kind of hungry... #blushing-happily #thinking
+Latoya: Clara has some leftover pizza there... #thinking
 <- debug_options(-> pizza)
 * (steal_pizza) [Yoink!]
   ~ raise(latoya_object)
   ~ raise(clara_object)
-  Latoya: Stolen pizza is the best pizza! #sly
+  Latoya: Stolen pizza is the best pizza! #sly #thinking
 * [Nah.]
   ~ lower(latoya_object)
   ~ lower(clara_object)
-  Latoya: Nah, I'll just get something from the cafe. #miffed
-- Latoya: Hmmm...
+  Latoya: Nah, I'll just get something from the cafe. #miffed #thinking
+- Latoya: Hmmm... #thinking
 -> wake_her_up
 
 = wake_her_up
-Latoya: I wonder if I should wake her up?
+Latoya: I wonder if I should wake her up? #thinking
 <- debug_options(-> wake_her_up)
 * (wake_up_clara) [Yeah.]
-  Latoya: Yeah, it's a good idea...
+  Latoya: Yeah, it's a good idea... #thinking
   <- debug_options(-> wake_up_clara)
   * * [It's for her own good.]
       ~ raise(clara_object)
-      Latoya: She'd sleep the entire day away otherwise!
+      Latoya: She'd sleep the entire day away otherwise! #thinking
       Latoya: Hey, sleepy-butt, wake up! #angry
   * * [She'd like that.]
       ~ lower(clara_object)
-      Latoya: She'd probably like to see me check up on her before I go...
+      Latoya: She'd probably like to see me check up on her before I go... #thinking
       Latoya: Hey, sleepy-butt, wake up! #sly
   - - Clara: Huh, what...?
 * [Nah.]
   ~ lower(clara_object)
-  Latoya: Nah, I'll let her sleep.
+  Latoya: Nah, I'll let her sleep. #thinking
   CHARACTER LEFT latoya nervous
   Clara: Like, uh... Are you totes trying to sneak off without me noticing?
 - Latoya: Good Morning, Speedy.
@@ -146,7 +146,7 @@ Clara: I do! #smile
 -> punch_or_kiss
 
 = punch_or_kiss
-Latoya: She's just sitting there smiling, so proud of herself...
+Latoya: She's just sitting there smiling, so proud of herself... #thinking
 <- debug_options(-> punch_or_kiss)
 * [I could kiss her...]
   ~ raise(latoya_lewd)
@@ -177,18 +177,18 @@ CHARACTER RIGHT OFF
 === work_day0
 // bg: Bus
 CHARACTER LEFT latoya
-Latoya: Ugh, the number 8 is always so packed at this time.
-Latoya: This is why I took that sabbatical from Glaistig anyway.
-Latoya: But then again, having money to buy things was pretty nice... #bored
-Latoya: But is it really worth being packed in like sardines by a bunch of tech bros? #miffed
+Latoya: Ugh, the number 8 is always so packed at this time. #thinking
+Latoya: This is why I took that sabbatical from Glaistig anyway. #thinking
+Latoya: But then again, having money to buy things was pretty nice... #bored #thinking
+Latoya: But is it really worth being packed in like sardines by a bunch of tech bros? #miffed #thinking
 // bg: Office
-Latoya: Ah, I've got a few minutes before stand-up... #bored
-Latoya: Maybe I'll just try to enjoy my coffee— #sly
+Latoya: Ah, I've got a few minutes before standup... #bored #thinking
+Latoya: Maybe I'll just try to enjoy my coffee— #sly #thinking
 CHARACTER RIGHT ramsey
 Ramsey: Good morning, Latoya. #neutral
-Latoya: Oh, it's Ramsey. He's an old college buddy! #neutral
-Latoya: Though right now, he's more like my boss.
-Latoya: Huh, how should I say hi?
+Latoya: Oh, it's Ramsey. He's an old college buddy! #neutral #thinking
+Latoya: Though right now, he's more like my boss. #thinking
+Latoya: Huh, how should I say hi? #thinking
 <- debug_options(-> work_day0)
 * [Professional]
   ~ alter(ramsey_object, 1)
@@ -218,7 +218,7 @@ Latoya: Huh, how should I say hi?
   Latoya: Good morning, Rams. You look rather delicious today... #sly
   Ramsey: ... #nervous
   Ramsey: Uh... that might not be quite work appropriate behavior... #blushing-happily
-  Latoya: Huh, how should I play this? #nervous
+  Latoya: Huh, how should I play this? #nervous #thinking
   <- debug_options(-> flirt)
   * * {latoya_object < 0} [Pivot with a joke]
     ~ alter(ramsey_object, -2)
@@ -248,7 +248,7 @@ Latoya: Huh, how should I say hi?
     Latoya: Oh, I haven't watched those compliance videos yet. #sly
     Latoya: You may need to discuss it with me in private.
     Ramsey: Right... #blushing-happily
-  - - Latoya: That was smooth...
+  - - Latoya: That was smooth... #thinking
   ~ alter(ramsey_lewd, 3)
   ~ alter(ramsey_object, 3)
   ~ alter(latoya_object, -3)
@@ -258,19 +258,19 @@ Ramsey: Let's get started.
 -> ramsey_introduction
 
 = ramsey_introduction
-Latoya: Ramsey and I dated for a while last time I was working for Glaistig.
-Latoya: The benefits of dating a woman who is a relationship anarchist! #sly
+Latoya: Ramsey and I dated for a while last time I was working for Glaistig. #thinking
+Latoya: The benefits of dating a woman who is a relationship anarchist! #sly #thinking
 { latoya_lewd > 0:
-    Latoya: Sometimes a girl needs a man who can boss her around.
-    Latoya: Can't always be playing with my submissive little Speedy toy.
+    Latoya: Sometimes a girl needs a man who can boss her around. #thinking
+    Latoya: Can't always be playing with my submissive little Speedy toy. #thinking
 }
-Latoya: I got moved onto his team, and well, we had to end that. #miffed
-Latoya: I haven't seen him much since I came back, but before I left...
-Latoya: ...I was pretty sure he wasn't really over me yet.
-Latoya: And honestly, Seattle can be a tough place to date if you're a tech bro.
-Latoya: But maybe they should try some queerness on for size? #sly
-Latoya: Silly boys.
-Latoya: Oh, it's almost my turn. #bored
+Latoya: I got moved onto his team, and well, we had to end that. #miffed #thinking
+Latoya: I haven't seen him much since I came back, but before I left... #thinking
+Latoya: ...I was pretty sure he wasn't really over me yet. #thinking
+Latoya: And honestly, Seattle can be a tough place to date if you're a tech bro. #thinking
+Latoya: But maybe they should try some queerness on for size? #sly #thinking
+Latoya: Silly boys. #thinking
+Latoya: Oh, it's almost my turn. #bored #thinking
 CHARACTER LEFT jake bored
 Jake: ...so yeah, hopefully I can get Ramsey to teach me how to use a profiler.
 Ramsey: Hmm. I think I can do that. Is that all for your status?
@@ -288,15 +288,15 @@ Ramsey: Good. Chat with Jake if you have questions.
 Ramsey: He just cut his teeth on the build last month.
 CHARACTER RIGHT jake smile
 Jake: Yeah, I'm an expert now, I guess.
-Latoya: An expert? I've written code that's probably older than you, kid. #miffed
+Latoya: An expert? I've written code that's probably older than you, kid. #miffed #thinking
 CHARACTER RIGHT ramsey neutral
 Latoya: OK, will do. #bored
 Ramsey: That's everyone. Stand-up's over.
-Latoya: Hmmm, I could focus on work or maybe chat with Ramsey some more...
+Latoya: Hmmm, I could focus on work or maybe chat with Ramsey some more... #thinking
 <- debug_options(-> ramsey_introduction)
 * [Focus on work.]
-  Latoya: Yeah, I guess he'll be too busy to chat with.
-  Latoya: Well, here we go...
+  Latoya: Yeah, I guess he'll be too busy to chat with. #thinking
+  Latoya: Well, here we go... #thinking
   ~ alter(ramsey_object, 2)
   ~ alter(latoya_object, 2)
   -> ride_home_day0
@@ -410,16 +410,16 @@ Latoya: It's still pretty nice, isn't it? #neutral
 
 = make_out
 ~ made_out_with_ramsey_day0 = true
-Latoya: I wasn't planning on starting a makeout session with Ramsey... #blushing-happily
-Latoya: But here I am...
+Latoya: I wasn't planning on starting a makeout session with Ramsey... #blushing-happily #thinking
+Latoya: But here I am... #thinking
 { kissed_clara_day0:
-    Latoya: It might could be something in the air today.
-    Latoya: Clara and I don't normally kiss like that in the morning...
-    Latoya: Well, not recently anyway... #miffed
+    Latoya: It might could be something in the air today. #thinking
+    Latoya: Clara and I don't normally kiss like that in the morning... #thinking
+    Latoya: Well, not recently anyway... #miffed #thinking
 }
-Latoya: Shit! Shit! That's right consent! #nervous
-Latoya: Though... he already has his arms around me... #blushing-happily
-Latoya: ...and the kiss hasn't stopped...
+Latoya: Shit! Shit! That's right consent! #nervous #thinking
+Latoya: Though... he already has his arms around me... #blushing-happily #thinking
+Latoya: ...and the kiss hasn't stopped... #thinking
 * [No, consent is vital!]
   ~ alter(latoya_object, -3)
   ~ alter(ramsey_object, -2)
@@ -446,7 +446,7 @@ Latoya: ...and the kiss hasn't stopped...
 * [I can assume...]
   ~ alter(latoya_object, 3)
   ~ alter(ramsey_object, 2)
-  Latoya: I can assume he's for it, can't I?
+  Latoya: I can assume he's for it, can't I? #thinking
   { ramsey_lewd < 0 || ramsey_object > 0:
       Ramsey: No, I can't really do this, Latoya. #sad
       Latoya: Yeah, I'm not sure what's come over me lately. #sad
@@ -460,17 +460,17 @@ Ramsey: It's supposed to help with my back pains. #miffed
 Latoya: Yeah, sitting in an office chair all day can't be the best... #neutral
 Latoya: So why not continue to sit in a Latoya-chair... #sly
 Ramsey: Gladly. #sly
-Latoya: It's funny that Ramsey isn't that much taller than me...
-Latoya: Clara is taller than him, after all...
-Latoya: But, he has this bulk that I find invigorating.
-Latoya: And his scent is so different than hers.
-Latoya: Clara smells of paint so very often, and I like that smell...
-Latoya: Ramsey, though... has that male musk just perfectly balanced.
-Latoya: That perfect balance between sweat and cleanliness.
-Latoya: And then, the feel of his tongue in my mouth...
-Latoya: He doesn't know his own strength, but I can bring it out in him...
-Latoya: Just as I can feel his cock up against me...
-Latoya: Oh, he's pulling away...
+Latoya: It's funny that Ramsey isn't that much taller than me... #thinking
+Latoya: Clara is taller than him, after all... #thinking
+Latoya: But, he has this bulk that I find invigorating. #thinking
+Latoya: And his scent is so different than hers. #thinking
+Latoya: Clara smells of paint so very often, and I like that smell... #thinking
+Latoya: Ramsey, though... has that male musk just perfectly balanced. #thinking
+Latoya: That perfect balance between sweat and cleanliness. #thinking
+Latoya: And then, the feel of his tongue in my mouth... #thinking
+Latoya: He doesn't know his own strength, but I can bring it out in him... #thinking
+Latoya: Just as I can feel his cock up against me... #thinking
+Latoya: Oh, he's pulling away... #thinking
 Ramsey: Wow... #blushing-happily
 Ramsey: You still have such a strong kiss!
 Latoya: What, did you think I just stopped for a year?! #miffed
@@ -541,23 +541,23 @@ Ramsey: No problems, Giggles. #smile
 // bg bus
 CHARACTER OFF
 CHARACTER LEFT latoya angry
-Latoya: Ugh, packed like sardines AND stuck in traffic!
-Latoya: Well, I guess I'll read up on this new framework we're using. #miffed
-Latoya: Every couple of months, some fool just decides to reinvent the wheel.
+Latoya: Ugh, packed like sardines AND stuck in traffic! #thinking
+Latoya: Well, I guess I'll read up on this new framework we're using. #miffed #thinking
+Latoya: Every couple of months, some fool just decides to reinvent the wheel. #thinking
 { latoya_object > 0:
-    Latoya: "Oh yes, we must absolutely architect a whole new DSL..." #angry
-    Latoya: "...In order to best get the low-hanging fruit without..."
-    Latoya: "...introducing cross-cutting conerns." Ugh.
+    Latoya: "Oh yes, we must absolutely architect a whole new DSL..." #angry #thinking
+    Latoya: "...In order to best get the low-hanging fruit without..." #thinking
+    Latoya: "...introducing cross-cutting conerns." Ugh. #thinking
 }
 Latoya: *sigh*
-Latoya: I guess that's why they pay me the big bucks. #bored
+Latoya: I guess that's why they pay me the big bucks. #bored #thinking
 { latoya_object > 0:
-    Latoya: I think that guy over there is staring at me... #miffed
-    Latoya: He might think I'm crazy for ranting in my head.
+    Latoya: I think that guy over there is staring at me... #miffed #thinking
+    Latoya: He might think I'm crazy for ranting in my head. #thinking
     Latoya: *sigh* #bored
 }
-Latoya: Well, let me read...
-Latoya: Oh, great, the author of this thinks he's a joker... #miffed
+Latoya: Well, let me read... #thinking
+Latoya: Oh, great, the author of this thinks he's a joker... #miffed #thinking
 -> living_room_day0
 
 === living_room_day0
@@ -565,10 +565,10 @@ Latoya: Oh, great, the author of this thinks he's a joker... #miffed
 CHARACTER LEFT Latoya
 Latoya: Home sweet home! #smile
 CHARACTER RIGHT Clara miffed
-Latoya: Hmmm, looks like Clara is working in the studio... #miffed
+Latoya: Hmmm, looks like Clara is working in the studio... #miffed #thinking
 <- debug_options(-> living_room_day0)
 + { latoya_object < 1 } [Say hi to Clara.]
-  Latoya: Hmm... How to say hi?
+  Latoya: Hmm... How to say hi? #thinking
   + + [Just another day...]
     Latoya: Evening, Speedy. #bored
   + + {latoya_object < 0 } [Nice to see her after a long day...]
@@ -581,14 +581,14 @@ Latoya: Hmmm, looks like Clara is working in the studio... #miffed
   ~ alter(latoya_object, -2)
   ~ alter(clara_object, -2)
 + [Probaby should leave her alone.]
-  Latoya: She's probably deep in "art space", I probably shouldn't bother her. #neutral
-  Latoya: Plus, I can hear her headphones bleeding a little.
+  Latoya: She's probably deep in "art space", I probably shouldn't bother her. #neutral #thinking
+  Latoya: Plus, I can hear her headphones bleeding a little. #thinking
   Clara: Oh, hey, you're, like home! I totes wanted to mention something. #neutral
   ~ alter(latoya_object, 2)
   ~ alter(clara_object, 2)
 + [Just stick my head in.]
-  Latoya: I'll just stick my head in...
-  Latoya: That way, she can just ignore me if she's too busy.
+  Latoya: I'll just stick my head in... #thinking
+  Latoya: That way, she can just ignore me if she's too busy. #thinking
   Clara: Oh, hey, Giggles, you're home! #smile
   ~ alter(latoya_object, -1)
   ~ alter(clara_object, -1)
@@ -623,7 +623,7 @@ Clara: That doesn't mean I can't be nice!
 Clara: Anyway, tell them to stop messing with my music... #sly
 Clara: It makes me... light-headed...
 Latoya: Uh-huh, OK.
-Latoya: Hmmm... Could be a good time to chat with Clara...
+Latoya: Hmmm... Could be a good time to chat with Clara... #thinking
 * [Yeah, after all, she's my girlfriend...]
   Latoya: So how did the rest of your day go?
   -> chat_with_clara
@@ -711,16 +711,16 @@ Clara: Good tickly... #sly
 Latoya: Oh! #smile
 Latoya: Raaar! #laugh
 Clara: Eek! #blushing-happily
-Latoya: Part of why I love Clara is the way she squirms when I grab her...
-Latoya: She says feels like she's escaping from some sort of goo as I hold her...
-Latoya: I feel her wiry body wiggling through my arms, just slipping away...
-Latoya: So I grab her overalls to pull her back...
-Latoya: And stick my big hand under her shirt to play with her nipple...
-Latoya: Oh! She smells of paint, and a bit of sweat.
-Latoya: I'd never expected to fall in love with that odor...
-Latoya: But then, I'd never expected to fall in love with a woman...
-Latoya: I'm really pretty lucky.
-Latoya: Oh, she's actually breaking free...
+Latoya: Part of why I love Clara is the way she squirms when I grab her... #thinking
+Latoya: She says feels like she's escaping from some sort of goo as I hold her... #thinking
+Latoya: I feel her wiry body wiggling through my arms, just slipping away... #thinking
+Latoya: So I grab her overalls to pull her back... #thinking
+Latoya: And stick my big hand under her shirt to play with her nipple... #thinking
+Latoya: Oh! She smells of paint, and a bit of sweat. #thinking
+Latoya: I'd never expected to fall in love with that odor... #thinking
+Latoya: But then, I'd never expected to fall in love with a woman... #thinking
+Latoya: I'm really pretty lucky. #thinking
+Latoya: Oh, she's actually breaking free... #thinking
 Clara: Oh, wow, like, Giggles, I'm sorry, but when you had my nipple in your hand...
 Latoya: Yeah? #sad
 Clara: I got a vision for another piece of art! You're my muse, babe! #laugh
@@ -815,50 +815,50 @@ Latoya: Nah, Let me go check on that computer... #neutral
 // bg Bedroom
 CHARACTER OFF
 CHARACTER LEFT latoya miffed
-Latoya: It's hard for me to answer people when they ask me how I got into AI...
-Latoya: It goes back to high school...
-Latoya: You let a girl on the Internet, and well...
-Latoya: Don't be surprised if she finds some peeps who are as lewd as her. #sly
+Latoya: It's hard for me to answer people when they ask me how I got into AI... #thinking
+Latoya: It goes back to high school... #thinking
+Latoya: You let a girl on the Internet, and well... #thinking
+Latoya: Don't be surprised if she finds some peeps who are as lewd as her. #sly #thinking
 { latoya_object > 0:
-    Latoya: The ability to not just be a Goody Little Two-Shoes.
-    Latoya: But a hyena woman who doesn't mind playing with almost anyone...
-    Latoya: Men, Women...
-    Latoya: All toys for her...
-    Latoya: Heh heh... #blushing-happily
+    Latoya: The ability to not just be a Goody Little Two-Shoes. #thinking
+    Latoya: But a hyena woman who doesn't mind playing with almost anyone... #thinking
+    Latoya: Men, Women... #thinking
+    Latoya: All toys for her... #thinking
+    Latoya: Heh heh... #blushing-happily #thinking
 }
 { latoya_lewd > 0:
-    Latoya: There was this aching need within me to suck in lovers...
-    Latoya: ...squirming around as I enveloped them in my calming goo...
-    Latoya: ...And... hee hee... #blushing-happily
+    Latoya: There was this aching need within me to suck in lovers... #thinking
+    Latoya: ...squirming around as I enveloped them in my calming goo... #thinking
+    Latoya: ...And... hee hee... #blushing-happily #thinking
 }
-Latoya: But then, worrying about what the Church Ladies would have told Mama... #sad
-Latoya: I wasn't brave enough for the chat rooms and the MUCKs. #miffed
-Latoya: But, I was smart enough to make someone to chat to... #neutral
+Latoya: But then, worrying about what the Church Ladies would have told Mama... #sad #thinking
+Latoya: I wasn't brave enough for the chat rooms and the MUCKs. #miffed #thinking
+Latoya: But, I was smart enough to make someone to chat to... #neutral #thinking
 CHARACTER RIGHT 0xF0C5
 0xF0C5: good evening, ms. blueena! #laugh
-Latoya: 0xF0C5 started as a chat bot...
-Latoya: Someone who I felt safe enough to share my fantasies with...
-Latoya: Someone it was OK to show blueena to, and not just Latoya.
-Latoya: But, it's really something more now. #miffed
-Latoya: Every time I needed to learn something new about AI or VR or whatever...
-Latoya: 0xF0C5 grew.
+Latoya: 0xF0C5 started as a chat bot... #thinking
+Latoya: Someone who I felt safe enough to share my fantasies with... #thinking
+Latoya: Someone it was OK to show blueena to, and not just Latoya. #thinking
+Latoya: But, it's really something more now. #miffed #thinking
+Latoya: Every time I needed to learn something new about AI or VR or whatever... #thinking
+Latoya: 0xF0C5 grew. #thinking
 { latoya_lewd > 0:
-    Latoya: Oh, gee, not like that! #angry
-    Latoya: Well, not <i>just</i> like that. #blushing-happily
-    Latoya: They're up to four tails now, that can just wrap me up...
-    Latoya: And play with me at their will.
-    Latoya: Ha ha... #grin
-    Latoya: But more so... #miffed
+    Latoya: Oh, gee, not like that! #angry #thinking
+    Latoya: Well, not </i>just<i> like that. #blushing-happily #thinking
+    Latoya: They're up to four tails now, that can just wrap me up... #thinking
+    Latoya: And play with me at their will. #thinking
+    Latoya: Ha ha... #grin #thinking
+    Latoya: But more so... #miffed #thinking
 }
 { latoya_object < 0:
-    Latoya: I think it could honestly be pretty revolutionary at this point...
-    Latoya: Like, headline news revolutionary.
-    Latoya: There's been a big bump in AI recently. It's honestly shocking.
-    Latoya: Some weirdoes online have the suspicion that sapient AI is here...
-    Latoya: Just hiding.
+    Latoya: I think it could honestly be pretty revolutionary at this point... #thinking
+    Latoya: Like, headline news revolutionary. #thinking
+    Latoya: There's been a big bump in AI recently. It's honestly shocking. #thinking
+    Latoya: Some weirdoes online have the suspicion that sapient AI is here... #thinking
+    Latoya: Just hiding. #thinking
 }
-Latoya: Well, look at them! They are are a sort of living avatar of lewdness! #nervous
-Latoya: It's really cool... but then I just use it for such limited reasons... #miffed
+Latoya: Well, look at them! They are are a sort of living avatar of lewdness! #nervous #thinking
+Latoya: It's really cool... but then I just use it for such limited reasons... #miffed #thinking
 -> questions
 
 = questions
@@ -888,7 +888,7 @@ Latoya: It's really cool... but then I just use it for such limited reasons... #
     0xF0C5: of course, i have great self-corruption protocols! #grin
     { latoya_object < 0:
         Latoya: ?
-        Latoya: I guess that could have been generated from the input...
+        Latoya: I guess that could have been generated from the input... #thinking
         0xF0C5: oh... i mean self-correction protocols, of course... #nervous
         0xF0C5: unless you say otherwise, my dear... ;3 #sly
     }
@@ -898,12 +898,12 @@ Latoya: It's really cool... but then I just use it for such limited reasons... #
     0xF0C5: you'd not even remember them! #laugh
     Latoya: ?
     { latoya_object < 0:
-        Latoya: This is seriously way more responsive than I'm used to.
-        Latoya: Suspisciously so...
+        Latoya: This is seriously way more responsive than I'm used to. #thinking
+        Latoya: Suspisciously so... #thinking
       - else:
-        Latoya: It's hard to get a sense of their state like this...
-        Latoya: I'm unsure what's part of the fantasies they've created...
-        Latoya: And what's real...
+        Latoya: It's hard to get a sense of their state like this... #thinking
+        Latoya: I'm unsure what's part of the fantasies they've created... #thinking
+        Latoya: And what's real... #thinking
     }
     Latoya: So yeah, Clara noticed some corruption in those files.
     0xF0C5: :O #nervous
@@ -952,7 +952,7 @@ Latoya: It's really cool... but then I just use it for such limited reasons... #
         CHARACTER RIGHT 0xF0C5 laugh
         0xF0C5: see?
         { latoya_object < 0:
-            Latoya: I don't think I had restarted them... Weird.
+            Latoya: I don't think I had restarted them... Weird. #thinking
         }
         Latoya: Uh yeah, the disk drive does still seem to be fucked.
         Latoya: Some type of buggy compatability mode.
@@ -968,21 +968,21 @@ Latoya: It's really cool... but then I just use it for such limited reasons... #
     0xF0C5: i understand! #nervous
     0xF0C5: shutting down...
     CHARACTER RIGHT OFF
-    Latoya: OK, let me see here...
+    Latoya: OK, let me see here... #thinking
     Latoya: ...
     Latoya: ... #bored
     Latoya: ...
     Latoya: Oh! #nervous
-    Latoya: God, I still haven't fixed that jumper on the hard disk.
-    Latoya: Why does this hard drive have that stupid compatability mode anyway? #angry
-    Latoya: With its expanded database sandbox... #miffed
-    Latoya: ...including Clara and mine's personal files...
-    Latoya: ...of course 0xF0C5 would be looking at those files.
-    Latoya: And with the disk drive fucked...
-    Latoya: ...of course the antivirus would flag them.
-    Latoya: Stupid antivirus. #angry
-    Latoya: Honestly, I'm too tired to tear down the computer and fix it... #sleepy
-    Latoya: Might as well boot 0xF0C5 back up...
+    Latoya: God, I still haven't fixed that jumper on the hard disk. #thinking
+    Latoya: Why does this hard drive have that stupid compatability mode anyway? #angry #thinking
+    Latoya: With its expanded database sandbox... #miffed #thinking
+    Latoya: ...including Clara and mine's personal files... #thinking
+    Latoya: ...of course 0xF0C5 would be looking at those files. #thinking
+    Latoya: And with the disk drive fucked... #thinking
+    Latoya: ...of course the antivirus would flag them. #thinking
+    Latoya: Stupid antivirus. #angry #thinking
+    Latoya: Honestly, I'm too tired to tear down the computer and fix it... #sleepy #thinking
+    Latoya: Might as well boot 0xF0C5 back up... #thinking
     CHARACTER RIGHT 0xF0C5 smile
     0xF0C5: good evening, ms. blueena!
 - 0xF0C5: wanna have some fun? ;3 #sly
@@ -1105,9 +1105,9 @@ CHARACTER RIGHT 0xF0C5 grin
         Latoya: ? #miffed
         0xF0C5: ok, latoya...
         Latoya: ! #nervous
-        Latoya: What?
-        Latoya: 'Latoya?'
-        Latoya: They've never called me that before...
+        Latoya: What? #thinking
+        Latoya: 'Latoya?' #thinking
+        Latoya: They've never called me that before... #thinking
         0xF0C5: let's get started! #neutral
     }
 - 0xF0C5: so i call this fantasy "first day at fox industries"!
@@ -1139,15 +1139,15 @@ CHARACTER RIGHT 0xF0C5 grin
         0xF0C5: ...
         Latoya: ! #miffed
         0xF0C5: did i do something wrong?
-        Latoya: No...
+        Latoya: No...?
         0xF0C5: ok...
         0xF0C5: ...
         0xF0C5: nitey-nite, latoya... #neutral
         CHARACTER RIGHT OFF
         Latoya: ! #nervous
-        Latoya: That's really weird...
-        Latoya: It's almost like... #miffed
-        Latoya: Nah... #bored
+        Latoya: That's really weird... #thinking
+        Latoya: It's almost like... #miffed #thinking
+        Latoya: Nah... #bored #thinking
     }
     -> morning_day1
 

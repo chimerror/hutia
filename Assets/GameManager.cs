@@ -123,7 +123,7 @@ public class GameManager : MonoBehaviour
 
         if (rawInput != null)
         {
-            UpdateDialogue(rawInput);
+            UpdateDialogue(rawInput, _story.currentTags);
         }
         else if (_story.currentChoices.Count > 0)
         {
@@ -410,7 +410,7 @@ public class GameManager : MonoBehaviour
         return false; // Don't wait for input
     }
 
-    private void UpdateDialogue(string rawDialogue)
+    private void UpdateDialogue(string rawDialogue, List<string> tags)
     {
         choiceBox.gameObject.SetActive(false);
         dialogueBox.gameObject.SetActive(true);
@@ -430,12 +430,20 @@ public class GameManager : MonoBehaviour
         }
 
         var mood = _story.currentTags.FirstOrDefault();
-        if (speaker != null && mood != null)
+        if (speaker != null && mood != null && MoodExists(speaker, mood))
         {
             UpdateCharacter(speaker, mood);
         }
 
-        dialogueBox.SetText(speaker, dialogue);
+        dialogueBox.SetText(speaker, dialogue, tags);
+    }
+
+    private bool MoodExists(string speaker, string mood)
+    {
+        var normalizedName = speaker.ToLowerInvariant();
+        var normalizedMood = mood.ToLowerInvariant();
+        var path = string.Format("assets/characters/{0}/{1}.png", normalizedName, normalizedMood);
+        return _characters.Contains(path);
     }
 
     private void Awake()

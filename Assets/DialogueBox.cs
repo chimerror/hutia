@@ -12,8 +12,15 @@ public class DialogueBox : MonoBehaviour
     private Text _speakerText;
     private SuperTextMesh _dialogueText;
 
-    public void SetText(string speaker, string dialogue)
+    public void SetText(string speaker, string dialogue, List<string> tags)
     {
+        dialogue = dialogue.Trim();
+
+        if (tags.Contains("thinking"))
+        {
+            dialogue = string.Format("<i>({0})</i>", dialogue);
+        }
+
         if (string.IsNullOrEmpty(speaker))
         {
             _speakerBox.gameObject.SetActive(false);
