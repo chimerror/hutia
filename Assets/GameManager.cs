@@ -105,7 +105,6 @@ public class GameManager : MonoBehaviour
     {
         if (choice > -1)
         {
-            Debug.Log(choice);
             _story.ChooseChoiceIndex(choice);
         }
 

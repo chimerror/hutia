@@ -822,6 +822,21 @@ Prefab:
       propertyPath: m_Name
       value: ChoiceButtonPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 114806226505864690, guid: 814a9b45a6c2dd448a0b8cee484432b8,
+        type: 2}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 0.14509805
+      objectReference: {fileID: 0}
+    - target: {fileID: 114806226505864690, guid: 814a9b45a6c2dd448a0b8cee484432b8,
+        type: 2}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 0.8666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 114806226505864690, guid: 814a9b45a6c2dd448a0b8cee484432b8,
+        type: 2}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 0.8666667
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 814a9b45a6c2dd448a0b8cee484432b8, type: 2}
   m_IsPrefabParent: 0
