@@ -1,6 +1,6 @@
 === intro ===
 BG COLOR black
-CHARACTER CENTER blueena sly
+CHARACTER CENTER blueena MOOD sly
 blueena: Present day... Present time... #sly
 blueena: hee hee hee heh... #grin
 blueena: HA HA HA HA HA HA HA HA! #laugh
@@ -12,7 +12,7 @@ TITLE hutia
 === wake_up_day0 ===
 // music main theme
 IMAGE LatoyaAlarm
-CHARACTER LEFT latoya sleepy
+CHARACTER LEFT latoya MOOD sleepy
 Latoya: Ungh... #thinking
 Latoya: Waking up is a pain... #thinking
 CHARACTER LEFT OFF
@@ -124,10 +124,10 @@ Latoya: I wonder if I should wake her up? #thinking
 * [Nah.]
   ~ lower(clara_object)
   Latoya: Nah, I'll let her sleep. #thinking
-  CHARACTER LEFT latoya nervous
+  CHARACTER LEFT latoya MOOD nervous
   Clara: Like, uh... Are you totes trying to sneak off without me noticing?
 - Latoya: Good Morning, Speedy.
-CHARACTER RIGHT clara sleepy
+CHARACTER RIGHT clara MOOD sleepy
 Clara: Good Morning, Giggles.
 { steal_pizza:
     Clara: And, like, uh don't think I didn't see you totally stealing my pizza... #sly
@@ -271,12 +271,12 @@ Latoya: And honestly, Seattle can be a tough place to date if you're a tech bro.
 Latoya: But maybe they should try some queerness on for size? #sly #thinking
 Latoya: Silly boys. #thinking
 Latoya: Oh, it's almost my turn. #bored #thinking
-CHARACTER LEFT jake bored
+CHARACTER LEFT jake MOOD bored
 Jake: ...so yeah, hopefully I can get Ramsey to teach me how to use a profiler.
 Ramsey: Hmm. I think I can do that. Is that all for your status?
 Jake: Yep.
 Ramsey: OK, Latoya?
-CHARACTER LEFT latoya bored
+CHARACTER LEFT latoya MOOD bored
 Latoya: Right. Well, I was hoping today would be my first day of real work.
 Latoya: Orientation is done, and it looks like my permissions have gone through.
 Latoya: So you can move those to done.
@@ -286,10 +286,10 @@ Latoya: I'm not too worried, it doesn't look like anything changed while I was g
 Latoya: No estimate updates. #neutral
 Ramsey: Good. Chat with Jake if you have questions.
 Ramsey: He just cut his teeth on the build last month.
-CHARACTER RIGHT jake smile
+CHARACTER RIGHT jake MOOD smile
 Jake: Yeah, I'm an expert now, I guess.
 Latoya: An expert? I've written code that's probably older than you, kid. #miffed #thinking
-CHARACTER RIGHT ramsey neutral
+CHARACTER RIGHT ramsey MOOD neutral
 Latoya: OK, will do. #bored
 Ramsey: That's everyone. Stand-up's over.
 Latoya: Hmmm, I could focus on work or maybe chat with Ramsey some more... #thinking
@@ -540,7 +540,7 @@ Ramsey: No problems, Giggles. #smile
 === ride_home_day0
 // bg bus
 CHARACTER OFF
-CHARACTER LEFT latoya angry
+CHARACTER LEFT latoya MOOD angry
 Latoya: Ugh, packed like sardines AND stuck in traffic! #thinking
 Latoya: Well, I guess I'll read up on this new framework we're using. #miffed #thinking
 Latoya: Every couple of months, some fool just decides to reinvent the wheel. #thinking
@@ -564,7 +564,7 @@ Latoya: Oh, great, the author of this thinks he's a joker... #miffed #thinking
 // bg living room
 CHARACTER LEFT Latoya
 Latoya: Home sweet home! #smile
-CHARACTER RIGHT Clara miffed
+CHARACTER RIGHT Clara MOOD miffed
 Latoya: Hmmm, looks like Clara is working in the studio... #miffed #thinking
 <- debug_options(-> living_room_day0)
 + { latoya_object < 1 } [Say hi to Clara.]
@@ -599,7 +599,7 @@ Clara: ...and like, the antivirus came up...
 Clara: ...and it was all narcing on corrupted files...
 Clara: ...but on <i>the original copies</i> of the music...
 Clara: ...like the ones on the <i>bedroom computer</i>...
-CHARACTER LEFT Latoya miffed
+CHARACTER LEFT Latoya MOOD miffed
 Clara: ...which is totes weird, right? #miffed
 Latoya: Yeah, it is...
 Clara: Cause like, why would those files be corrupted?
@@ -814,7 +814,7 @@ Latoya: Nah, Let me go check on that computer... #neutral
 === introducing_f0c5
 // bg Bedroom
 CHARACTER OFF
-CHARACTER LEFT latoya miffed
+CHARACTER LEFT latoya MOOD miffed
 Latoya: It's hard for me to answer people when they ask me how I got into AI... #thinking
 Latoya: It goes back to high school... #thinking
 Latoya: You let a girl on the Internet, and well... #thinking
@@ -848,7 +848,9 @@ Latoya: 0xF0C5 grew. #thinking
     Latoya: They're up to four tails now, that can just wrap me up... #thinking
     Latoya: And play with me at their will. #thinking
     Latoya: Ha ha... #grin #thinking
-    Latoya: But more so... #miffed #thinking
+    Latoya: Well.. only in my imagination, I guess... #miffed #thinking
+    Latoya: After all, VR can't actually </i>touch<i> you yet... #thinking
+    Latoya: But still... #thinking
 }
 { latoya_object < 0:
     Latoya: I think it could honestly be pretty revolutionary at this point... #thinking
@@ -949,7 +951,7 @@ Latoya: It's really cool... but then I just use it for such limited reasons... #
         Latoya: ... #bored
         Latoya: ...
         Latoya: Honestly, looks OK. Must be something else...
-        CHARACTER RIGHT 0xF0C5 laugh
+        CHARACTER RIGHT 0xF0C5 MOOD laugh
         0xF0C5: see?
         { latoya_object < 0:
             Latoya: I don't think I had restarted them... Weird. #thinking
@@ -983,7 +985,7 @@ Latoya: It's really cool... but then I just use it for such limited reasons... #
     Latoya: Stupid antivirus. #angry #thinking
     Latoya: Honestly, I'm too tired to tear down the computer and fix it... #sleepy #thinking
     Latoya: Might as well boot 0xF0C5 back up... #thinking
-    CHARACTER RIGHT 0xF0C5 smile
+    CHARACTER RIGHT 0xF0C5 MOOD smile
     0xF0C5: good evening, ms. blueena!
 - 0xF0C5: wanna have some fun? ;3 #sly
 * [Sure...]
@@ -998,7 +1000,7 @@ Latoya: It's really cool... but then I just use it for such limited reasons... #
 
 === f0c5_industries_day0
 CHARACTER LEFT latoya
-CHARACTER RIGHT 0xF0C5 grin
+CHARACTER RIGHT 0xF0C5 MOOD grin
 0xF0C5: ooh, so exciting!
 0xF0C5: it's been a while since we've played!
 <- debug_options(-> f0c5_industries_day0)
@@ -1155,7 +1157,16 @@ CHARACTER RIGHT 0xF0C5 grin
 Latoya: Sounds good! #smile
 0xF0C5: excellent, my dear! #grin
 0xF0C5: just put on your vr helmet and off we go!
-0xF0C5: TODO
+CHARACTER OFF
+// bg inverted office
+Starting fantasy 'First Day at Fox Industries'
+CHARACTER RIGHT Latoya
+{ latoya_object < 0:
+    Latoya: Oh, odd... I wasn't expecting to be in my human avatar... #miffed #thinking
+    Latoya: Though I guess that's why they said 'transformation'...
+    Latoya: Not sure I remember modelling these particular clothes, though...
+}
+0xF0C5: ah, are you ms. blueena?
 -> morning_day1
 
 === morning_day1
