@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ScrivenerProject Template="No" Version="1.5" Creator="SCRWIN-1.9.7.0" Device="JASMIT-COATL" Modified="2017-02-14 21:50:29 -0800" ModID="0627A1E3-AF7D-4D6E-B861-3080919C3985">
+<ScrivenerProject Template="No" Version="1.5" Creator="SCRWIN-1.9.7.0" Device="JASMIT-COATL" Modified="2017-03-05 08:09:22 -0800" ModID="BDFF300E-11CC-42E7-A79B-7E2BA6F250F4">
     <Binder>
         <BinderItem ID="0" UUID="B633558C-C89E-4743-88F4-E0714DE3BED2" Created="2017-02-02 11:01:49 -0800" Modified="2017-02-02 11:01:49 -0800" Type="DraftFolder">
             <Title>Draft</Title>
@@ -192,13 +192,13 @@
                                 <Target Type="Words">0</Target>
                             </TextSettings>
                         </BinderItem>
-                        <BinderItem ID="14" UUID="96580772-9342-4201-B16A-1C0ED68AA48C" Created="2017-02-03 20:12:02 -0800" Modified="2017-02-03 20:35:16 -0800" Type="Text">
+                        <BinderItem ID="14" UUID="96580772-9342-4201-B16A-1C0ED68AA48C" Created="2017-02-03 20:12:02 -0800" Modified="2017-03-04 00:15:55 -0800" Type="Text">
                             <Title>HOU-ND</Title>
                             <MetaData>
                                 <IncludeInCompile>Yes</IncludeInCompile>
                             </MetaData>
                             <TextSettings>
-                                <TextSelection>0,473</TextSelection>
+                                <TextSelection>1082,0</TextSelection>
                                 <Target Type="Words">0</Target>
                             </TextSettings>
                         </BinderItem>
@@ -263,6 +263,16 @@
                         <Target Type="Words">0</Target>
                     </TextSettings>
                 </BinderItem>
+                <BinderItem ID="29" UUID="C5DA9211-13E1-4CC5-8B48-A8FB1C05D6F9" Created="2017-03-04 01:18:29 -0800" Modified="2017-03-04 01:18:37 -0800" Type="Text">
+                    <Title>Original Story</Title>
+                    <MetaData>
+                        <IncludeInCompile>Yes</IncludeInCompile>
+                    </MetaData>
+                    <TextSettings>
+                        <TextSelection>4347,0</TextSelection>
+                        <Target Type="Words">0</Target>
+                    </TextSettings>
+                </BinderItem>
             </Children>
         </BinderItem>
         <BinderItem ID="2" UUID="172240BE-D6EF-4F5B-A33E-9A377736FE5E" Created="2017-02-02 11:01:49 -0800" Modified="2017-02-02 11:01:49 -0800" Type="TrashFolder">
@@ -308,7 +318,7 @@
     <ProjectTargets>
         <DraftTarget Type="Words" CountIncludedOnly="No" CurrentCompileGroupOnly="No">0</DraftTarget>
         <SessionTarget Type="Words" CountDraftOnly="No" AllowNegatives="No" ResetType="Midnight" DeterminedFromDeadline="No" CanWriteOnDeadlineDate="Yes" WritingDays="">0</SessionTarget>
-        <PreviousSession Words="0" Characters="0" Date="2017-02-14 09:48:40 -0800"/>
+        <PreviousSession Words="804" Characters="4347" Date="2017-03-04 00:13:53 -0800"/>
     </ProjectTargets>
     <Collections>
         <Collection Type="Binder" ID="3D48A03C-3A10-4802-AF5D-1C8EFD0D96A6" Color="0.901961 0.917647 0.933333">
