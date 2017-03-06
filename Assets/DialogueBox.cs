@@ -21,6 +21,9 @@ public class DialogueBox : MonoBehaviour
             dialogue = string.Format("<i>({0})</i>", dialogue);
         }
 
+        string normalizedSpeaker = null;
+        string alias = null;
+        bool hasAlias = false;
         if (string.IsNullOrEmpty(speaker))
         {
             _speakerBox.gameObject.SetActive(false);
@@ -28,10 +31,17 @@ public class DialogueBox : MonoBehaviour
         }
         else
         {
+            normalizedSpeaker = speaker.ToLowerInvariant();
+            hasAlias = GameManager.Instance.CharacterAliases.TryGetValue(normalizedSpeaker, out alias);
             Color color;
-            if (GameManager.Instance.CharacterColors.ContainsKey(speaker))
+            var characterColors = GameManager.Instance.CharacterColors;
+            if (characterColors.ContainsKey(normalizedSpeaker))
             {
-                color = GameManager.Instance.CharacterColors[speaker];
+                color = characterColors[normalizedSpeaker];
+            }
+            else if (hasAlias && characterColors.ContainsKey(alias))
+            {
+                color = characterColors[alias];
             }
             else
             {
@@ -42,22 +52,24 @@ public class DialogueBox : MonoBehaviour
             _speakerBox.gameObject.SetActive(true);
             _speakerText.text = speaker;
 
-            string voiceName = speaker.ToLowerInvariant();
+            string voiceName = hasAlias ? alias : normalizedSpeaker;
             if (_dialogueText.data.voices.ContainsKey(voiceName))
             {
                 dialogue = string.Format("<v={0}>{1}", voiceName, dialogue);
             }
         }
 
-        switch (speaker)
+        if (string.IsNullOrEmpty(speaker))
         {
-            case "0xF0C5":
-                _dialogueText.font = aiFont;
-                break;
-
-            default:
-                _dialogueText.font = defaultFont;
-                break;
+            _dialogueText.font = defaultFont;
+        }
+        else if (speaker.Equals("0xF0C5") || (hasAlias && alias.Equals("0xf0c5")))
+        {
+            _dialogueText.font = aiFont;
+        }
+        else
+        {
+            _dialogueText.font = defaultFont;
         }
 
         _dialogueText.Text = dialogue;

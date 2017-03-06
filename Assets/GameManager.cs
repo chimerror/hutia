@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     /// one or more other characters, grouped as 'parameters' followed by the end of
     /// the string.
     /// </remarks>
-    private readonly static Regex DirectiveRegex = new Regex(@"^(?<directive>BG|TITLE|MUSIC|IMAGE|CHARACTER|CHAR_COLOR)\s+(?<parameters>.+)$");
+    private readonly static Regex DirectiveRegex = new Regex(@"^(?<directive>BG|TITLE|MUSIC|IMAGE|CHARACTER|CHAR_COLOR|ALIAS)\s+(?<parameters>.+)$");
 
     private readonly static Regex BackgroundParameters = new Regex(@"^(?<type>IMAGE|COLOR)\s(?<value>.+)$");
 
@@ -37,9 +37,11 @@ public class GameManager : MonoBehaviour
 
     private readonly static Regex ImageParameters = new Regex(@"^(?<name>[\w-]+)(\s+(?<delay>.+))?$");
 
-    private readonly static Regex CharacterParameters = new Regex(@"^(?<position>FAR_LEFT|LEFT|CENTER|RIGHT|FAR_RIGHT|OFF)(\s+(?<name>\w+))?(\s+MOOD (?<mood>[\w-]+))?$");
+    private readonly static Regex CharacterParameters = new Regex(@"^(?<position>FAR_LEFT|LEFT|CENTER|RIGHT|FAR_RIGHT|OFF)(\s+(?<name>.+?))?(\s+MOOD (?<mood>[\w-]+))?$");
 
     private readonly static Regex CharColorParameters = new Regex(@"^(?<color>#?\w+)\s+(?<name>.+)$");
+
+    private readonly static Regex AliasParameters = new Regex(@"^(?<forget>FORGET\s+)?(?<alias>.+?)(\s+AS\s+(?<base>\w+))?$");
 
     /// <summary>
     /// Regular expression for catching dialogue.
@@ -48,7 +50,7 @@ public class GameManager : MonoBehaviour
     /// The start of the string, followed by one or more word characters grouped as 'speaker', followed by a colon,
     /// followed by any number of characters grouped as 'dialogue', followed by the end of the string.
     /// </remarks>
-    private readonly static Regex DialogueRegex = new Regex(@"^(?<speaker>\w+):\s+(?<dialogue>.*)$");
+    private readonly static Regex DialogueRegex = new Regex(@"^(?<speaker>.+?):\s+(?<dialogue>.*)$");
 
     public Color defaultBackgroundColor;
     public Color defaultCharacterColor;
@@ -84,6 +86,7 @@ public class GameManager : MonoBehaviour
     private bool _imageDelayOver = false;
     private Dictionary<string, Color> _characterColors = new Dictionary<string, Color>();
     private Dictionary<string, Image> _characterPositions = new Dictionary<string, Image>();
+    private Dictionary<string, string> _characterAliases = new Dictionary<string, string>();
 
     public Dictionary<string, Color> CharacterColors
     {
@@ -93,11 +96,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public AssetBundle Voices
+    public Dictionary<string, string> CharacterAliases
     {
         get
         {
-            return _voices;
+            return _characterAliases;
         }
     }
 
@@ -163,6 +166,9 @@ public class GameManager : MonoBehaviour
 
             case "CHAR_COLOR":
                 return SetCharacterColor(parameters);
+
+            case "ALIAS":
+                return HandleAlias(parameters);
 
             default:
                 Debug.LogErrorFormat("Unknown directive: {0}", rawInput);
@@ -385,7 +391,8 @@ public class GameManager : MonoBehaviour
         var normalizedMood = mood.ToLowerInvariant();
         Debug.AssertFormat(_characterPositions.ContainsKey(normalizedName), "Attempted to update non-displayed character: {0}", name);
         var positionImage = _characterPositions[normalizedName];
-        var path = string.Format("assets/characters/{0}/{1}.png", normalizedName, normalizedMood);
+        var filename = _characterAliases.ContainsKey(normalizedName) ? _characterAliases[normalizedName] : normalizedName;
+        var path = string.Format("assets/characters/{0}/{1}.png", filename, normalizedMood);
         var character = _characters.LoadAsset<Sprite>(path);
         Debug.AssertFormat(character != null, "Unable to load character asset: {0}", path);
         positionImage.sprite = character;
@@ -403,8 +410,31 @@ public class GameManager : MonoBehaviour
             Debug.LogWarningFormat("Unable to parse color: {0}", parameters);
             color = defaultCharacterColor;
         }
-        var characterName = regexMatch.Groups["name"].Value;
+        var characterName = regexMatch.Groups["name"].Value.ToLowerInvariant();
         _characterColors[characterName] = color;
+
+        return false; // Don't wait for input
+    }
+
+    private bool HandleAlias(string parameters)
+    {
+        var regexMatch = AliasParameters.Match(parameters);
+        Debug.AssertFormat(regexMatch.Success, "Unknown ALIAS parameters: {0}", parameters);
+
+        var alias = regexMatch.Groups["alias"].Value.ToLowerInvariant();
+        if (regexMatch.Groups["forget"].Success)
+        {
+            Debug.AssertFormat(_characterAliases.ContainsKey(alias), "Attempted to remove unadded alias: {0}", alias);
+            _characterAliases.Remove(alias);
+        }
+        else if (regexMatch.Groups["base"].Success)
+        {
+            _characterAliases[alias] = regexMatch.Groups["base"].Value.ToLowerInvariant();
+        }
+        else
+        {
+            Debug.LogAssertionFormat("Neither FORGET or AS parameters provided to ALIAS directive: {0}", parameters);
+        }
 
         return false; // Don't wait for input
     }
@@ -441,7 +471,8 @@ public class GameManager : MonoBehaviour
     {
         var normalizedName = speaker.ToLowerInvariant();
         var normalizedMood = mood.ToLowerInvariant();
-        var path = string.Format("assets/characters/{0}/{1}.png", normalizedName, normalizedMood);
+        var filename = _characterAliases.ContainsKey(normalizedName) ? _characterAliases[normalizedName] : normalizedName;
+        var path = string.Format("assets/characters/{0}/{1}.png", filename, normalizedMood);
         return _characters.Contains(path);
     }
 

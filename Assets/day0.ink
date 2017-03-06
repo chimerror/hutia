@@ -1161,12 +1161,33 @@ CHARACTER OFF
 // bg inverted office
 Starting fantasy 'First Day at Fox Industries'
 CHARACTER RIGHT Latoya
+Latoya: Oh, odd... I wasn't expecting to be in my human avatar... #miffed #thinking
+Latoya: Though I guess that's why they said 'transformation'...
 { latoya_object < 0:
-    Latoya: Oh, odd... I wasn't expecting to be in my human avatar... #miffed #thinking
-    Latoya: Though I guess that's why they said 'transformation'...
     Latoya: Not sure I remember modelling these particular clothes, though...
 }
-0xF0C5: ah, are you ms. blueena?
+ALIAS Mx. Secretary AS 0xF0C5
+CHARACTER LEFT Mx. Secretary MOOD neutral
+Mx. Secretary: ah, are you ms. blueena?
+Latoya: Uh... kinda... #nervous
+Mx. Secretary: kinda? #nervous
+Latoya: I mean, that's a character of mine?
+Latoya: But she's a blue hyena...
+Mx. Secretary: i see! #laugh
+Mx. Secretary: there's a way we can fix that rather easily, madam... #sly
+Latoya: What do you mean? #neutral
+Mx. Secretary: why, it's as easy as...
+CHARACTER RIGHT OFF
+ALIAS Latoya AS blueena
+CHARACTER RIGHT Latoya MOOD neutral
+Mx. Secretary: ...a snap! #laugh
+Latoya: What?
+Latoya: What did you...
+Latoya: ! #nervous
+Mx. Secretary: ah, there you are, ms. blueena! #grin
+Mx. Secretary: a strange human tried to take your place... #sad
+Mx. Secretary: but now you're here to start your orientation! #laugh
+ALIAS FORGET Latoya
 -> morning_day1
 
 === morning_day1
