@@ -558,6 +558,7 @@ Latoya: I guess that's why they pay me the big bucks. #bored #thinking
 }
 Latoya: Well, let me read... #thinking
 Latoya: Oh, great, the author of this thinks he's a joker... #miffed #thinking
+Latoya: God, spare me from geek humor! #thinking
 -> living_room_day0
 
 === living_room_day0
@@ -1162,32 +1163,299 @@ CHARACTER OFF
 Starting fantasy 'First Day at Fox Industries'
 CHARACTER RIGHT Latoya
 Latoya: Oh, odd... I wasn't expecting to be in my human avatar... #miffed #thinking
-Latoya: Though I guess that's why they said 'transformation'...
+Latoya: Though I guess that's why they said 'transformation'... #thinking
 { latoya_object < 0:
-    Latoya: Not sure I remember modelling these particular clothes, though...
+    Latoya: Not sure I remember modelling these particular clothes, though... #thinking
 }
 ALIAS Mx. Secretary AS 0xF0C5
 CHARACTER LEFT Mx. Secretary MOOD neutral
 Mx. Secretary: ah, are you ms. blueena?
-Latoya: Uh... kinda... #nervous
-Mx. Secretary: kinda? #nervous
-Latoya: I mean, that's a character of mine?
-Latoya: But she's a blue hyena...
-Mx. Secretary: i see! #laugh
-Mx. Secretary: there's a way we can fix that rather easily, madam... #sly
-Latoya: What do you mean? #neutral
-Mx. Secretary: why, it's as easy as...
-CHARACTER RIGHT OFF
-ALIAS Latoya AS blueena
-CHARACTER RIGHT Latoya MOOD neutral
-Mx. Secretary: ...a snap! #laugh
-Latoya: What?
-Latoya: What did you...
-Latoya: ! #nervous
-Mx. Secretary: ah, there you are, ms. blueena! #grin
+<- debug_options(-> session_start)
+* [Yes!]
+    ~ alter(latoya_object, 2)
+    Latoya: Yes, that's me... #neutral
+    Mx. Secretary: ... #miffed
+    Mx. Secretary: really? i seem to remember her looking...
+    CHARACTER RIGHT OFF
+    ALIAS Latoya AS blueena
+    CHARACTER RIGHT Latoya MOOD neutral
+    Mx. Secretary: more like this! #laugh
+    Latoya: More like what?
+    Mx. Secretary: ;3
+    Latoya: ?
+    Latoya: ! #nervous
+* [No.]
+    ~ alter(latoya_object, -2)
+    Latoya: No... that's not me... I'm Latoya Miller... #neutral
+    CHARACTER LEFT Mx. Secretary MOOD miffed
+    Latoya: That's just a character—
+    Mx. Secretary: a character?
+    Latoya: Right... not someone I am in real life... #sad
+    Mx. Secretary: well that's a problem! #nervous
+    * * [Can I help?]
+      Latoya: Though, I could help you find her! #neutral
+      Mx. Secretary: oh that would be great! #laugh
+      Mx. Secretary: let me just get some contact information down for you...
+    * * [Sorry...]
+      Latoya: Sorry... #sad
+      Mx. Secretary: that's ok! #neutral
+      Mx. Secretary: we may have openings for you still... let me check... #sly
+      Mx. Secretary: i'll need to take down your information...
+    - -Mx. Secretary: uh, what did you say your name was again? #neutral
+      { latoya_object < 0:
+          Latoya: La... La...
+          Mx. Secretary: yes? #sly
+          Latoya: La... La... Bla... Blu... #nervous
+          Latoya: I can't seem to finish the word! #thinking
+          Latoya: Uh, It's... Blueena!
+          Mx. Secretary: really? i don't think that's what you said earlier...
+          Latoya: Well, yeah, it was... My name isn't Blueena... It's Blue..Blueena. #miffed
+          Mx. Secretary: hmmm... ah seems strange you forgot your own name...
+          Mx. Secretary: ...ms. blueena.
+          Latoya: I didn't forget my name! #angry
+          Latoya: It's...
+          CHARACTER RIGHT OFF
+          ALIAS Latoya AS blueena
+          CHARACTER RIGHT Latoya MOOD angry
+          Latoya: Blueena! My name is Blueena!
+          Mx. Secretary: right!
+          Latoya: ...
+          Latoya: ! #nervous
+        - else:
+          Latoya: It's Latoeena Bluiller...
+          Mx. Secretary: that's an odd name... can you repeat that? #sly
+          Latoya: Blueena Miller... #nervous
+          Mx. Secretary: uh, one more time... #grin
+          CHARACTER RIGHT OFF
+          ALIAS Latoya AS blueena
+          CHARACTER RIGHT Latoya MOOD nervous
+          Latoya: Blueena.
+      }
+* [Kinda?]
+    Latoya: Uh... kinda... #nervous
+    Mx. Secretary: kinda? #nervous
+    Latoya: I mean, that's a character of mine?
+    Latoya: But she's a blue hyena...
+    Mx. Secretary: i see! #laugh
+    Mx. Secretary: there's a way we can fix that rather easily, madam... #sly
+    Latoya: What do you mean? #neutral
+    Mx. Secretary: why, it's as easy as...
+    CHARACTER RIGHT OFF
+    ALIAS Latoya AS blueena
+    CHARACTER RIGHT Latoya MOOD neutral
+    Mx. Secretary: ...a snap! #laugh
+    Latoya: What?
+    Latoya: What did you...
+    Latoya: ! #nervous
+- Mx. Secretary: ah, there you are, ms. blueena! #grin
 Mx. Secretary: a strange human tried to take your place... #sad
 Mx. Secretary: but now you're here to start your orientation! #laugh
+Mx. Secretary: actually, one more thing...
+Latoya: One more thing?
 ALIAS FORGET Latoya
+CHARACTER RIGHT blueena MOOD nervous
+blueena: What? What thing?
+Mx. Secretary: there!
+blueena: ?
+{ latoya_object < 0:
+    blueena: This is so odd... #thinking
+    blueena: I've been transformed in these fantasies before... #thinking
+    blueena: But this feels so much more... real... #thinking
+    blueena: I can swear I feel it on my real body! #thinking
+}
+-> dress_code
+
+= dress_code
+Mx. Secretary: ok, let's discuss the dress code. #neutral
+blueena: Dress code?
+Mx. Secretary: yes! mx. ceo thinks it is very important...
+Mx. Secretary: that their employees look the part... #laugh
+blueena: OK... Do I need to uh... change my clothes? #sad
+Mx. Secretary: oh, don't worry about that! #grin
+// change clothes
+Mx. Secretary: i took the liberty of changing them for you! #sly
+blueena: What? what do you...
+blueena: ! #nervous
+Mx. Secretary: how do they feel?
+blueena: Well... #blushing-happily
+<- debug_options(-> dress_code)
+* [Very soft...]
+    blueena: It feels so very soft, like... a gentle breeze...
+    Mx. Secretary: ah, excellent! that's the idea! #laugh
+    blueena: ?
+* [Feels like nothing!]
+    blueena: It feels like I'm wearing nothing at all...
+    { latoya_object > 0:
+        blueena: Nothing at all... #sly
+        blueena: Nothing at all... #grin
+        blueena: Nothing at all... #laugh
+        Mx. Secretary: ! #smile
+        Mx. Secretary: stupid sexy giggles... #sly
+        blueena: hee hee... #grin
+      - else:
+        Mx. Secretary: nothing at all? #sly
+        blueena: Nothing at all. #miffed
+        Mx. Secretary: nothing at all! #laugh
+        blueena: Stupid sexy foxy... #thinking
+        blueena: hee hee... #grin
+    }
+    Mx. Secretary: well, let me tell you more! #sly
+* [Kind of liquidy?]
+    blueena: It sort of feels... liquid...
+    blueena: Like they can just move... on their own...
+    Mx. Secretary: right! that's the idea! #laugh
+    blueena: What? #nervous
+- Mx. Secretary: the clothes that you're wearing...
+Mx. Secretary: ...are made from a special fabric invented by mx. ceo!
+Mx. Secretary: they are able to reshape themselves! #grin
+blueena: Reshape themselves? #nervous
+Mx. Secretary: so at the end of the day, you can be ready for bed!
+// change clothes
+blueena: Ready for... #blushing-happily
+blueena: ! #nervous
+Mx. Secretary: but let's go back to more appropriate clothes...
+// change clothes
+Mx. Secretary: now, you might notice another feature of these clothes...
+-> dress_code_mind_altering
+
+= dress_code_mind_altering
+<- debug_options(-> dress_code_mind_altering)
+* [They seem rather revealing...]
+    ~ alter(latoya_lewd, 2)
+    blueena: They seem... to leave little to the imagination... #blushing-happily
+    Mx. Secretary: oh, but of course, ms. blueena! #laugh
+    Mx. Secretary: mx. ceo has rather... libertine views... #sly
+    Mx. Secretary: ...regarding sexual content in the workplace.
+    Mx. Secretary: but no, i mean something else! #neutral
+    -> dress_code_mind_altering
+* [I feel... aroused...]
+    ~ alter(latoya_lewd, 2)
+    blueena: I feel... uh... #blushing-happily
+    Mx. Secretary: horny? #smile
+    blueena: Well, that's a blunt way to put it...
+    Mx. Secretary: ha! #laugh
+    Mx. Secretary: yes, the clothes tend to increase libido! #sly
+    Mx. Secretary: mx. ceo has a large libido themselves...
+    Mx. Secretary: they find that it actually aids the workers to be...
+    blueena: Desperately horny?
+    Mx. Secretary: right! #grin
+    Mx. Secretary: but there's another feature... #sly
+    -> dress_code_mind_altering
+* { latoya_object < 0 } [My mind feels...]
+    blueena: I feel... like my mind is slipping away... #blushing-happily
+    Mx. Secretary: precisely!
+    blueena: What? #nervous
+* { latoya_object >= 0 } [Duh?]
+    blueena: Duh...? #blushing-happily
+    Mx. Secretary: the executive function antagonizer!
+    blueena: Executive... agonizer? #blushing-happily
+- Mx. Secretary: in addition to increasing the libido of the wearer... #sly
+Mx. Secretary: ...this fabric causes interference of...
+Mx. Secretary: ...brain waves throughout the prefrontal cortex.
+Mx. Secretary: the effect makes one rather... pliant... #grin
+Mx. Secretary: as i'm sure you're realizing!
+{ latoya_object < 5:
+    blueena: Huh... that would explain the binaural beats I'm hearing... #thinking
+}
+blueena: Duh, uh... #blushing-happily
+{ latoya_object < 0:
+    blueena: Uh, no! I... #angry
+    Mx. Secretary: shh, let it work... #sly
+}
+blueena: It's pretty nice... #blushing-happily
+Mx. Secretary: indeed! #grin
+{
+  - f0c5_object >= 2:
+      Mx. Secretary: mx. ceo sees a future were all can fit a role...
+      Mx. Secretary: free from pesky human thoughts...
+      Mx. Secretary: just an object...
+      blueena: ?
+      Mx. Secretary: oh, don't worry about that now... #sly
+  - f0c5_object > 0:
+      Mx. Secretary: see, ms. blueena, it's so very easy!
+      Mx. Secretary: just let all your thoughts slip away...
+      Mx. Secretary: it's just so easy to just be an object...
+      Mx. Secretary: isn't it? #sly
+      blueena: Uh... yeah...
+  - f0c5_object >= -3:
+      Mx. Secretary: isn't this lovely, ms. blueena?
+      Mx. Secretary: to forget about your worries for a while?
+      blueena: Yeah...
+      Mx. Secretary: good! #smile
+  - else:
+      Mx. Secretary: are you enjoying the relaxation?
+      Mx. Secretary: feeling it flowing through you?
+      Mx. Secretary: the ability to forget about the things that worry you?
+      blueena: I am...
+      Mx. Secretary: excellent! #smile
+}
+Mx. Secretary: so that's orientation! you are ready to start!
+blueena: OK, uh, what am I doing? #blushing-happily
+{ f0c5_object > 0:
+    Mx. Secretary: why, you're going to be the office coffee machine! #grin
+    blueena: The what? #nervous
+    Mx. Secretary: the coffee machine. #sly
+    blueena: but...
+    Mx. Secretary: ah, work hard enough...
+    Mx. Secretary: and you might be promoted to snack machine! #laugh
+    blueena: !
+  - else:
+    Mx. Secretary: we're going to start you out as a barista! #grin
+    blueena: A barista? #miffed
+    blueena: I can do more than that!
+    Mx. Secretary: i'm sure you can! #laugh
+    Mx. Secretary: maybe even work your way up to office pet!
+    blueena: ! #nervous
+}
+Mx. Secretary: now, this will be your position!
+{ f0c5_object > 0:
+    blueena: OK, but how do... I... dispense coffee?
+  - else:
+    blueena: Huh, but I don't see any espresso machine... #blushing-happily
+    Mx. Secretary: why ms. blueena, <i>you're</i> the espresso machine! #sly
+    blueena: What? #nervous
+}
+Mx. Secretary: let me show you! #smile
+blueena: They're grabbing my breast! #thinking
+blueena: And... I can feel coffee coming out! #thinking
+blueena: *squirt*
+Mx. Secretary: see, it's very simple. #sly
+blueena: That doesn't make any sense! #miffed
+Mx. Secretary: well, let's just say mx. ceo is rather clever! #sly
+Mx. Secretary: and best of all your breasts now have three modes!
+Mx. Secretary: first, normal espresso on the right, decaf on the left.
+Mx. Secretary: second, milk on the left, foam on the right.
+Mx. Secretary: and third, strawberry on the right, vanilla on the left...
+Mx. Secretary: and chocolate down below!
+blueena: ! #nervous
+blueena: That makes even less sense!
+Mx. Secretary: if you say so! #laugh
+Mx. Secretary: well, i got my small decaf espresso... #sly
+Mx. Secretary: ah, here comes the morning rush... #smile
+Mx. Secretary: do you remember all the different drinks?
+Mx. Secretary: so if someone asks for...
+Mx. Secretary: a large decaf double shot strawberry mocha...
+Mx. Secretary: you'll know, right?
+* [Uh, yes?]
+    blueena: Yes? #blushing-happily
+    Mx. Secretary: good! because if you get an order wrong...
+    Mx. Secretary: well... #sly
+    blueena: ... #miffed
+    blueena: ! #nervous
+    blueena: Aaaaah! My skirt is fingering me! #thinking
+    blueena: How is that even possible? #thinking
+    Mx. Secretary: you'll get a little incentive from your clothes!
+* [What? no!]
+    blueena: No! I've never done this in my life!
+    Mx. Secretary: oh! #sad
+    Mx. Secretary: you'll be receiving on-the-job training...
+    Mx. Secretary: if you get an order wrong... #sly
+    blueena: ... #miffed
+    blueena: ! #nervous
+    blueena: What the hell? Is my own skirt fingering me?
+    Mx. Secretary: you'll be reminded in a fun way! #laugh
+- Mx. Secretary: well, here they come!
+
 -> morning_day1
 
 === morning_day1

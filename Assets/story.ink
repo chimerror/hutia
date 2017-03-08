@@ -34,8 +34,7 @@ VAR debug = true
     * [Beginning...] -> intro
     * [To Work...] -> work_day0
     * [Back Home...] -> ride_home_day0
-    * [Chat With 0xF0C5...] -> introducing_f0c5
-    * [Fun With 0xF0C5...] -> f0c5_industries_day0
+    * [Fun with 0xf0c5] -> f0c5_industries_day0
   - else:
     -> intro
 }
@@ -65,7 +64,7 @@ VAR debug = true
 ->->
 
 === modify_character(name, ref lewd_var, ref object_var)
-Modifying {name}. L: {lewd_var} O: {object_var}
+Modifying {name}. L- {lewd_var} O- {object_var}
 + [Make Lewder]
   ~ raise(lewd_var)
 + [Make Purer]
