@@ -8,7 +8,7 @@
   \relative g' {
     <<
       \new Staff {
-        \set Staff.midiInstrument = #"acoustic grand"
+        \set Staff.midiInstrument = #"flute"
         \key g \major
         \time 6/8
         \tempo 8 = 170
