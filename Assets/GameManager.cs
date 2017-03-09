@@ -522,6 +522,22 @@ public class GameManager : MonoBehaviour
         _story.ObserveVariable("f0c5_lewd", (varName, newValue) => f0c5Lewd = (int)newValue);
         _story.ObserveVariable("f0c5_object", (varName, newValue) => f0c5Object = (int)newValue);
 
+        _story.BindExternalFunction("makeNewDesiredOrder", () =>
+            {
+                CoffeeMinigame.Instance.MakeNewDesiredOrder();
+                return CoffeeMinigame.Instance.CurrentDesiredOrder.ToString().ToLowerInvariant();
+            });
+        _story.BindExternalFunction("setCaffeine", (bool caffeinated) => CoffeeMinigame.Instance.SetCaffeine(caffeinated));
+        _story.BindExternalFunction("setShots", (int number) => CoffeeMinigame.Instance.SetShots(number));
+        _story.BindExternalFunction("addMilk", () => CoffeeMinigame.Instance.AddMilk());
+        _story.BindExternalFunction("addFoam", () => CoffeeMinigame.Instance.AddFoam());
+        _story.BindExternalFunction("addVanilla", () => CoffeeMinigame.Instance.AddVanilla());
+        _story.BindExternalFunction("addStrawberry", () => CoffeeMinigame.Instance.AddStrawberry());
+        _story.BindExternalFunction("addChocolate", () => CoffeeMinigame.Instance.AddChocolate());
+        _story.BindExternalFunction("finishCreatedOrder", () => { return CoffeeMinigame.Instance.FinishCreatedOrder(); });
+        _story.BindExternalFunction("getCreatedOrder", () => CoffeeMinigame.Instance.CurrentCreatedOrder.ToString().ToLowerInvariant());
+        _story.BindExternalFunction("keepTakingOrders", () => { return CoffeeMinigame.Instance.KeepTakingOrders(); });
+
         _storyStarted = false;
         dialogueBox.gameObject.SetActive(false);
         choiceBox.gameObject.SetActive(false);

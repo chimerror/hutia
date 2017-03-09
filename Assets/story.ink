@@ -1,4 +1,6 @@
 INCLUDE day0.ink
+INCLUDE CoffeeMinigame.ink
+INCLUDE day1.ink
 
 // ------------------------------------------------------------------------------------------------
 // VARIABLES
@@ -34,7 +36,7 @@ VAR debug = true
     * [Beginning...] -> intro
     * [To Work...] -> work_day0
     * [Back Home...] -> ride_home_day0
-    * [Fun with 0xf0c5] -> f0c5_industries_day0
+    * [Coffee Minigame] -> coffee_minigame_start
   - else:
     -> intro
 }

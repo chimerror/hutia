@@ -1433,8 +1433,8 @@ Mx. Secretary: if you say so! #laugh
 Mx. Secretary: well, i got my small decaf espresso... #sly
 Mx. Secretary: ah, here comes the morning rush... #smile
 Mx. Secretary: do you remember all the different drinks?
-Mx. Secretary: so if someone asks for...
-Mx. Secretary: a large decaf double shot strawberry mocha...
+Mx. Secretary: so if someone asks for a...
+Mx. Secretary: Medium Triple Shot Decaf Strawberry Cappuccino
 Mx. Secretary: you'll know, right?
 * [Uh, yes?]
     blueena: Yes? #blushing-happily
@@ -1448,16 +1448,32 @@ Mx. Secretary: you'll know, right?
 * [What? no!]
     blueena: No! I've never done this in my life!
     Mx. Secretary: oh! #sad
-    Mx. Secretary: you'll be receiving on-the-job training...
-    Mx. Secretary: if you get an order wrong... #sly
+    Mx. Secretary: ok, here's a quick overview! #smile
+    Mx. Secretary: small, medium, and large drinks have... #sly
+    Mx. Secretary: one, two, and three shots normally...
+    Mx. Secretary: but you can always get less or more! #smile
+    Mx. Secretary: drinks can be decaf if the customer wants!
+    Mx. Secretary: espressoes have no milk or foam!
+    Mx. Secretary: cappuccinoes have both milk and foam!
+    Mx. Secretary: machiattoes have only foam!
+    Mx. Secretary: our lattes are "flat white" lattes... #sly
+    Mx. Secretary: that means our lattes only have milk! #smile
+    Mx. Secretary: mochas are lattes with chocolate syrup!
+    Mx. Secretary: got all that?
+    * * [No...]
+          blueena: No! That's a lot of information! #miffed
+          blueena: Especially when your clothes are making you horny and stupid! #angry
+          Mx. Secretary: oh... #sad
+          Mx. Secretary: unfortunately, we don't have time to go back over it...
+          Mx. Secretary: but you'll be receiving on-the-job training!
+    * * [Yes...]
+          blueena: I think so... #blushing-happily
+          Mx. Secretary: good! because... #smile
+    - - Mx. Secretary: if you get an order wrong... #sly
     blueena: ... #miffed
     blueena: ! #nervous
     blueena: What the hell? Is my own skirt fingering me?
     Mx. Secretary: you'll be reminded in a fun way! #laugh
-- Mx. Secretary: well, here they come!
-
--> morning_day1
-
-=== morning_day1
-Latoya: TODO
--> END
+- Mx. Secretary: ah, here come the customers!
+ALIAS FORGET Mx. Secretary
+-> coffee_minigame_start
