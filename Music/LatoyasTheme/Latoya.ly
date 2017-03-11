@@ -11,7 +11,7 @@
         \set Staff.midiInstrument = #"flute"
         \key g \major
         \time 6/8
-        \tempo 8 = 170
+        \tempo 8 = 176
         g2 r8 b8 | d8 d4 r4. |
         f,2 a8 b8 | d8 d4 r4. |
         e,2 r8 g8 | b8 a8 g8 e8 r4 |
