@@ -12,7 +12,7 @@
         \set Staff.midiInstrument = #"acoustic guitar (steel)"
         \key g \major
         \time 6/8
-        \tempo 8 = 160
+        \tempo 8 = 176
         d4. g8 g4~ | g8 e8 fs8 g4 fs8 |
         g4. c,8 e4~ | e8 d8 e8 fs4 a8 |
         d,4. g8 g4~ | g8 fs8 e8 g4 b8 |

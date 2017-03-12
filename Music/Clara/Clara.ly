@@ -11,7 +11,7 @@
         \set Staff.midiInstrument = #"viola"
         \key g \major
         \time 6/8
-        \tempo 8 = 208
+        \tempo 8 = 176
         a8 a8 d8 d8 fs4 | r8 c4 e4. |
         e8 e8 g8 r8 b8 g8 | r8 f4 a4. |
         bf,8 bf8 d8 d8 f4 | g,8 g8 c8 c8 e4 |

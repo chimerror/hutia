@@ -12,7 +12,7 @@
         \set Staff.midiInstrument = #"lead 1 (square)"
         \key g \major
         \time 6/8
-        \tempo 8 = 192
+        \tempo 8 = 176
         b8. d8. b8 e,8. r16 | c'8. a8. d8 fs8. r16 |
         c8. e8. g,8 b8. r16 | c8. a8. e8 r16 b'8. |
         b8. d8. b8 e,8. r16 | c'8. a8. d8 fs8. r16 |
