@@ -6,17 +6,28 @@
 }
 \score {
   \relative g {
+    <<
       \new Staff {
         \clef "bass"
         \set Staff.midiInstrument = #"acoustic guitar (steel)"
         \key g \major
         \time 6/8
         \tempo 8 = 160
-        e4. fs8 e4~ | e8 b8 c8 e4 fs8 |
-        e4. a8 g4~ | g8 c,8 d8 fs4 g8 |
-        e4. fs8 e4~ | e8 b8 c8 e4 fs8 |
-        e4. a8 g4 | c,8 d8 c8 a4 r8 |
+        d4. g8 g4~ | g8 e8 fs8 g4 fs8 |
+        g4. c,8 e4~ | e8 d8 e8 fs4 a8 |
+        d,4. g8 g4~ | g8 fs8 e8 g4 b8 |
+        c,4. e8 g4 | e8 d8 e8 fs4 a8 |
       }
+      \new Staff {
+        \set Staff.midiInstrument = #"acoustic guitar (steel)"
+        \chordmode {
+          g2. | e2.:m |
+          c2. | d2. |
+          g2. | e2.:m |
+          c2. | d2. |
+        }
+      }
+    >>
   }
   \layout { }
   \midi { }
