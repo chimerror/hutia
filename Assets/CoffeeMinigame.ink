@@ -69,19 +69,31 @@ blueena: OK, first is espresso... decaf or regular? #nervous
 - -> milk_and_foam
 
 = milk_and_foam
+VAR added_milk = false
+VAR added_foam = false
+{ added_milk && added_foam:
+    ~ added_milk = false
+    ~ added_foam = false
+    -> syrup
+}
 - blueena: OK, now milk and foam...
-+ [Left]
++ { !added_milk } [Left]
     ~ addMilk()
+    ~ added_milk = true
     -> milk_and_foam
-+ [Right]
++ { !added_foam } [Right]
     ~ addFoam()
+    ~ added_foam = true
     -> milk_and_foam
 + [Done]
-    blueena: That's it for milk and foam...
-- blueena: OK, syrup. There's vanilla, strawberry, chocolate...
+    ~ added_milk = false
+    ~ added_foam = false
+    blueena: Whew!
+- blueena: That's it for milk and foam...
 -> syrup
 
 = syrup
+blueena: OK, syrup. There's vanilla, strawberry, chocolate...
 <- debug_options(-> syrup)
 + [Left]
     ~ addVanilla()
