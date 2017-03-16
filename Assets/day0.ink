@@ -1434,7 +1434,7 @@ Mx. Secretary: well, i got my small decaf espresso... #sly
 Mx. Secretary: ah, here comes the morning rush... #smile
 Mx. Secretary: do you remember all the different drinks?
 Mx. Secretary: so if someone asks for a...
-Mx. Secretary: Medium Triple Shot Decaf Strawberry Cappuccino
+Mx. Secretary: medium triple shot decaf strawberry cappuccino
 Mx. Secretary: you'll know, right?
 * [Uh, yes?]
     blueena: Yes? #blushing-happily
