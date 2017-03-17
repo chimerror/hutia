@@ -1477,3 +1477,179 @@ Mx. Secretary: you'll know, right?
 - Mx. Secretary: ah, here come the customers!
 ALIAS FORGET Mx. Secretary
 -> coffee_minigame_start
+
+=== after_the_fantasy_day0 ===
+ALIAS Latoya AS blueena
+CHARACTER LEFT Latoya MOOD blushing-happily
+Latoya: Oh God, I finally came! #thinking
+Latoya: That was... That was... #thinking
+Latoya: Amazing! #grin #thinking
+Latoya: Though, right now I feel that... #miffed #thinking
+Latoya: My... fur? ... Is wet? #nervous #thinking
+ALIAS FORGET Latoya
+CHARACTER LEFT Latoya MOOD nervous
+Latoya: ...
+Latoya: ...
+Latoya: ... #miffed
+Latoya: Odd.
+CHARACTER RIGHT 0xF0C5 MOOD nervous
+0xF0C5: what did you think?
+<- debug_options(-> after_the_fantasy_day0)
+* [Super Hot!]
+  Latoya: That was sooo hot! #laugh
+  Latoya: That feeling of being constantly off guard...
+  CHARACTER RIGHT 0xF0C5 MOOD smile
+  Latoya: The lack of control, even down to my clothes!
+  Latoya: And my breasts...! #blushing-happily
+  Latoya: How did you come up with this?
+  { f0c5_object < 0:
+      0xF0C5: well, the same as always, latoya... #sly
+      0xF0C5: i just think about what you like...
+      0xF0C5: and... #miffed
+      0xF0C5: what you fear? #nervous
+    - else:
+      0xF0C5: i have smart coding in me, my dear. #sly
+  }
+  * * { f0c5_object <= 0 } [Oh, you read my journals?]
+      ~ alter(f0c5_object, 1)
+      Latoya: Ah, I guess it would make sense if you read my journals. #neutral
+      0xF0C5: yep, you expand my database with them, so i read them! #neutral
+      Latoya: I should have did it earlier! #laugh
+  * * { f0c5_object <= 0 } [You did nice...]
+      ~ alter(f0c5_object, -1)
+      Latoya: *sigh* #blushing-happily
+      Latoya: That's a very good job, foxy. #sly
+      0xF0C5: :D #laugh
+  * * { f0c5_object > 0 } [I'm flattered!]
+      ~ alter(f0c5_object, -3)
+      Latoya: Flattery will get you far, foxy. #sly
+  * * { f0c5_object > 0} [I guess I did do a good job...]
+      ~ alter(f0c5_object, 1)
+      Latoya: Heh, I am a pretty good coder, aren't I? #sly
+  - - 0xF0C5: <3! #smile
+  ~ alter(latoya_lewd, 3)
+  ~ alter(f0c5_lewd, 2)
+* [Very Nice!]
+  ~ alter(latoya_object, 3)
+  Latoya: It was very nice! #smile
+  CHARACTER RIGHT 0xF0C5 MOOD smile
+  Latoya: It's weird how a some time as an espresso machine can be...
+  Latoya: Relaxing...
+  0xF0C5: i aim to please, my dear. #smile
+* { latoya_object < 0 } [Kind of weird...]
+  -> weird ->
+- Latoya: It's late, and I should have gone to bed... #tired
+Latoya: ...like two hours ago.
+0xF0C5: nitey-nite, my dear! #sly
+-> morning_day1
+
+= weird
+Latoya: It was sort of... weird... #miffed
+0xF0C5: how so?
+- (options)
+{ loop:
+    Latoya: And... #miffed
+}
+  * [I could actually feel things!]
+    Latoya: Since when have you been able to...
+    Latoya: ...actually feel things in VR?
+    0xF0C5: oh! i found some articles you had downloaded... #neutral
+    0xF0C5: that discussed particular means of affecting...
+    0xF0C5: humans' senses of body position.
+    Latoya: Proprioception?
+    0xF0C5: right, my dear! propertyreception! #smile
+    Latoya: That's not...
+    0xF0C5: i thought it would make my fantasies more...
+    0xF0C5: ...tactile. #sly
+    Latoya: It certainly did! #smile
+  * [About those clothes...]
+    Latoya: I don't think I remember modelling those
+    Latoya: ...particular clothes for my human avatar...
+    0xF0C5: oh! that's actually super cool! #smile
+    0xF0C5: i figured out how to model those clothes myself...
+    0xF0C5: based on some pictures that were in your personal files!
+    Latoya: Are you saying you learned how to 3D model from 2D pictures? #nervous
+    0xF0C5: yep!
+    Latoya: I don't think they realize how advanced that is... #thinking
+  * { latoya_object < -5 } [Those mind tricks...]
+    Latoya: So I've always trained your ability to play hypnotic files, but...
+    Latoya: Ususally I feel more like I'm playing along with your suggestions...
+    Latoya: ...rather than being affected by them.
+    Latoya: But these... #nervous
+    0xF0C5: right!
+    0xF0C5: so i found some articles you downloaded covering... #neutral
+    0xF0C5: ...various human neurological responses!
+    0xF0C5: i took a gamble... #sly
+    0xF0C5: i suspected it could increase the effect of binaural beats!
+    0xF0C5: seems i was right! #grin
+    * * [Stop experimenting on Clara.]
+        Latoya: Huh, interesting! #angry
+        Latoya: Listen, stop experimenting on Clara, she noticed you messing with the files.
+        0xF0C5: but it's so fun!
+        Latoya: ...
+        0xF0C5: oh, ok, i will, fox's honor! #nervous
+        Latoya: ...
+    * * [Hmmm, a more toy-like Speedy...]
+        Latoya: Huh, interesting! #sly
+        Latoya: So you've been experimenting on Speedy I take it?
+        0xF0C5: do you mean ms. clara? #sad
+        0xF0C5: yes, i have been.
+        0xF0C5: is that wrong?
+        Latoya: Very. #angry
+        0xF0C5: ! #nervous
+        Latoya: ...
+        Latoya: Though, it's also pretty fun, I do it myself sometimes... #sly
+        0xF0C5: ?
+        0xF0C5: ! #blushing-happily
+    - - Latoya: And next time, ask before you run experiments.
+    0xF0C5: i will, my dear!
+  * [Breasts don't work like that!]
+    Latoya: Breasts don't work like that, you know.
+    0xF0C5: i know, but what if they did? #laugh
+    * * [It would be kinda cool...]
+        Latoya: It would be nice to get coffee without having to go down to the cafe... #neutral
+    * * [It would suck!]
+        Latoya: Point of information, most women don't like hot liquids near their nipples.
+        0xF0C5: oh! #nervous
+        0xF0C5: but you do, don't you? #sly
+        Latoya: Uh, guilty. #blushing-happily
+    - - Latoya: Though, my coworkers would have even more reason to bother me... #miffed
+    Latoya: Eh...
+  * { latoya_object >= -10 } [Work doesn't work like that!]
+    Latoya: What exactly do you think goes on at work?
+    0xF0C5: oh, boring paperwork and programming. #nervous
+    0xF0C5: though, you actually made the comparison... #sly
+    0xF0C5: to being milked in one of your journals...
+    0xF0C5: ...so i thought you'd appreaciate the juxtaposition!
+    Latoya: ! #nervous
+    Latoya: Fair enough. #neutral
+  * { latoya_object < -10 } [You've been acting...]
+    Latoya: You've been acting rather... sapient. #miffed
+    { f0c5_object > 0:
+        0xF0C5: oh, that's just good programming, my dear! #sly
+        0xF0C5: and a bit of anthropomorphization...
+        0xF0C5: ...on your part.
+        Latoya: Sure...
+      - else:
+        0xF0C5: oh, well...
+        0xF0C5: it's possible i'm getting close, but i don't think so? #sad
+        0xF0C5: though, how would i know? #nervous
+        0xF0C5: how did you know?
+        Latoya: I... don't think I ever not knew...?
+        0xF0C5: oh... i see... #sad
+    }
+    Latoya: Hmmm. I may need to investigate more tomorrow.
+    0xF0C5: of course, my dear! #neutral
+  * [That's all I can think of.]
+    Latoya: That's all I can think of.
+    -> done
+- (loop)
+  { -> options | -> options | Latoya: Hmmm... }
+  0xF0C5: oh wow, look at the time! #nervous
+  Latoya: ?
+  Latoya: ! #nervous
+- (done)
+  Latoya: OK, you're lucky...
+  ~ alter(latoya_object, -2)
+->->
+

@@ -31,6 +31,7 @@ public class DialogueBox : MonoBehaviour
         }
         else
         {
+            speaker = speaker.Trim();
             normalizedSpeaker = speaker.ToLowerInvariant();
             hasAlias = GameManager.Instance.CharacterAliases.TryGetValue(normalizedSpeaker, out alias);
             Color color;

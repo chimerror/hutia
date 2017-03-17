@@ -124,7 +124,8 @@ blueena: I hope I got it right... #thinking
     -> new_order
   - else:
     blueena: I... I... #blushing-happily
-    -> morning_day1
+    CHARACTER OFF
+    -> after_the_fantasy_day0
 }
 
 = correct_order
@@ -146,6 +147,17 @@ blueena: I hope I got it right... #thinking
     blueena: After all, I'm sure they'll be glad to hear... #thinking
     blueena: ...of my extensive virtual experience... #miffed #thinking
     blueena: ...as a three-breasted espresso machine. #thinking
+}
+{ orders_made == 3:
+    ALIAS Mx. Secretary AS 0xF0C5
+    CHARACTER LEFT Mx. Secretary MOOD laugh
+    Mx. Secretary: good job ms. blueena!
+    blueena: Thanks!
+    Mx. Secretary: now i'll activate your reinforcement!
+    blueena: What do you mean?
+    blueena: ! #nervous
+    blueena: Eeh, wow, that skirt is going to town... #thinking
+    ALIAS FORGET Mx.Secretary
 }
 ->->
 

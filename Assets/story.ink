@@ -34,9 +34,8 @@ VAR debug = true
 { debug:
     IN DEBUG MODE!
     * [Beginning...] -> intro
-    * [To Work...] -> work_day0
-    * [Back Home...] -> ride_home_day0
     * [Coffee Minigame] -> coffee_minigame_start
+    * [After The Fantasy...] -> after_the_fantasy_day0
   - else:
     -> intro
 }

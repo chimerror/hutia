@@ -21,14 +21,28 @@ public static class StoryStats
 
     public static VariableStats CalculateVariableStats(string storyJson, string variableName, int trials = Trials, string stoppingPoint = null)
     {
-        var varStats = new VariableStats();
 
         var story = new Story(storyJson);
+        story.BindExternalFunction("makeNewDesiredOrder", () =>
+            {
+                CoffeeMinigame.Instance.MakeNewDesiredOrder();
+                return CoffeeMinigame.Instance.CurrentDesiredOrder.ToString().ToLowerInvariant();
+            });
+        story.BindExternalFunction("setCaffeine", (bool caffeinated) => CoffeeMinigame.Instance.SetCaffeine(caffeinated));
+        story.BindExternalFunction("setShots", (int number) => CoffeeMinigame.Instance.SetShots(number));
+        story.BindExternalFunction("addMilk", () => CoffeeMinigame.Instance.AddMilk());
+        story.BindExternalFunction("addFoam", () => CoffeeMinigame.Instance.AddFoam());
+        story.BindExternalFunction("addVanilla", () => CoffeeMinigame.Instance.AddVanilla());
+        story.BindExternalFunction("addStrawberry", () => CoffeeMinigame.Instance.AddStrawberry());
+        story.BindExternalFunction("addChocolate", () => CoffeeMinigame.Instance.AddChocolate());
+        story.BindExternalFunction("finishCreatedOrder", () => { return CoffeeMinigame.Instance.FinishCreatedOrder(); });
+        story.BindExternalFunction("getCreatedOrder", () => CoffeeMinigame.Instance.CurrentCreatedOrder.ToString().ToLowerInvariant());
+        story.BindExternalFunction("keepTakingOrders", () => { return CoffeeMinigame.Instance.KeepTakingOrders(); });
+
+        var varStats = new VariableStats();
         var results = new List<int>();
         var rng = new Random();
-
         Regex stoppingPointRegex = string.IsNullOrEmpty(stoppingPoint) ? null : new Regex(stoppingPoint);
-
         for (int currTrial = 0; currTrial < trials; currTrial++)
         {
             while (true)
@@ -54,6 +68,7 @@ public static class StoryStats
 
             results.Add((int)story.variablesState[variableName]);
             story.ResetState();
+            CoffeeMinigame.Instance.Reset();
         }
 
         var doubleResults = results.Select(x => (double)x).OrderBy(x => x).ToList();

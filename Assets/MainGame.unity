@@ -1425,6 +1425,8 @@ MonoBehaviour:
   variables:
   - f0c5_lewd
   - f0c5_object
+  - latoya_lewd
+  - latoya_object
   trials: 500
   stoppingPoint: 
 --- !u!4 &1615480575

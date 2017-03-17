@@ -134,6 +134,11 @@ public class CoffeeMinigame
         OrdersMade++;
     }
 
+    public void Reset()
+    {
+        OrdersMade = 0;
+    }
+
     public void SetCaffeine(bool caffeinated)
     {
         _currentCreatedOrder.Caffeinated = caffeinated;
