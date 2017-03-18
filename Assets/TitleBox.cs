@@ -30,9 +30,17 @@ public class TitleBox : MonoBehaviour
 
     private void Update()
     {
+
         if (Input.GetButtonDown("Fire1") || Input.GetButtonDown("Submit"))
         {
-            GameManager.Instance.ContinueStory();
+            if (GameManager.Instance.GameState != GameState.Gameplay)
+            {
+                return; // GameManager handles this
+            }
+            else
+            {
+                GameManager.Instance.ContinueStory();
+            }
         }
     }
 }

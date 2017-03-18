@@ -1,6 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using Ink.Runtime;
@@ -11,6 +12,11 @@ public class ChoiceBox : MonoBehaviour
     private GameObject _firstChoice;
 
     public void SetChoices(List<Choice> choices)
+    {
+        ShowMenu(choices.Select(c => new KeyValuePair<string, UnityAction>(c.text, () => GameManager.Instance.ContinueStory(c.index))).ToList());
+    }
+
+    public void ShowMenu(List<KeyValuePair<string, UnityAction>> choices)
     {
         int childCount = transform.childCount;
         for (int currentChild = childCount - 1; currentChild >= 0; currentChild--)
@@ -25,17 +31,17 @@ public class ChoiceBox : MonoBehaviour
             var choice = choices[currentChoice];
             var choiceButton = Instantiate(ChoiceButtonPrefab);
             choiceButton.transform.SetParent(transform, false);
-            choiceButton.onClick.AddListener(() => GameManager.Instance.ContinueStory(choice.index));
 
             var choiceText = choiceButton.GetComponentInChildren<Text>();
-            choiceText.text = choice.text;
-
-            choiceButton.gameObject.SetActive(true);
+            choiceText.text = choice.Key;
+            choiceButton.onClick.AddListener(choice.Value);
 
             if (currentChoice == 0)
             {
                 _firstChoice = choiceButton.gameObject;
             }
+
+            choiceButton.gameObject.SetActive(true);
         }
     }
 

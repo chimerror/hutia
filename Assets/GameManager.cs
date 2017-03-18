@@ -6,10 +6,19 @@ using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.UI;
 using Ink.Runtime;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
+
+    public GameState GameState
+    {
+        get
+        {
+            return _gameState;
+        }
+    }
 
     /// <summary>
     /// Regular expression for catching directives
@@ -76,13 +85,13 @@ public class GameManager : MonoBehaviour
     public int f0c5Lewd;
     public int f0c5Object;
 
+    private GameState _gameState = GameState.TitleScreen;
     private AssetBundle _backgrounds;
     private AssetBundle _music;
     private AssetBundle _images;
     private AssetBundle _characters;
     private AssetBundle _voices;
     private Story _story;
-    private bool _storyStarted;
     private bool _imageDelayOver = false;
     private Dictionary<string, Color> _characterColors = new Dictionary<string, Color>();
     private Dictionary<string, Image> _characterPositions = new Dictionary<string, Image>();
@@ -538,25 +547,52 @@ public class GameManager : MonoBehaviour
         _story.BindExternalFunction("getCreatedOrder", () => CoffeeMinigame.Instance.CurrentCreatedOrder.ToString().ToLowerInvariant());
         _story.BindExternalFunction("keepTakingOrders", () => { return CoffeeMinigame.Instance.KeepTakingOrders(); });
 
-        _storyStarted = false;
         dialogueBox.gameObject.SetActive(false);
         choiceBox.gameObject.SetActive(false);
+
+        titleBox.gameObject.SetActive(true);
+        titleBox.SetText("hutia");
     }
 
     private void Update()
     {
-        if (!_storyStarted && (Input.GetButtonUp("Fire1") || Input.GetButtonUp("Submit")))
+        switch (_gameState)
         {
-            ContinueStory();
-            _storyStarted = true;
-        }
+            case GameState.TitleScreen:
+                if ((Input.GetButtonUp("Fire1") || Input.GetButtonUp("Submit")))
+                {
+                    ShowMainMenu();
+                }
+                break;
 
-        if (imageBox.gameObject.activeInHierarchy && _imageDelayOver && (Input.GetButtonUp("Fire1") || Input.GetButtonUp("Submit")))
-        {
-            imageBox.gameObject.SetActive(false);
-            imageBox.sprite = null;
-            imageBox.GetComponent<Animator>().runtimeAnimatorController = null;
-            ContinueStory();
+            case GameState.Gameplay:
+            default:
+                if (imageBox.gameObject.activeInHierarchy && _imageDelayOver && (Input.GetButtonUp("Fire1") || Input.GetButtonUp("Submit")))
+                {
+                    imageBox.gameObject.SetActive(false);
+                    imageBox.sprite = null;
+                    imageBox.GetComponent<Animator>().runtimeAnimatorController = null;
+                    ContinueStory();
+                }
+                break;
         }
+    }
+
+    private void ShowMainMenu()
+    {
+        titleBox.gameObject.SetActive(false);
+        var mainMenu = new List<KeyValuePair<string, UnityAction>>();
+        mainMenu.Add(new KeyValuePair<string, UnityAction>("Start A New Game", StartGame));
+        mainMenu.Add(new KeyValuePair<string, UnityAction>("Quit", Application.Quit));
+        choiceBox.gameObject.SetActive(true);
+        choiceBox.ShowMenu(mainMenu);
+        _gameState = GameState.MainMenu;
+    }
+
+    private void StartGame()
+    {
+        choiceBox.gameObject.SetActive(false);
+        _gameState = GameState.Gameplay;
+        ContinueStory();
     }
 }
