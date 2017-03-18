@@ -8,4 +8,5 @@ public enum GameState
     TitleScreen,
     MainMenu,
     Gameplay,
+    InGameMenu,
 }

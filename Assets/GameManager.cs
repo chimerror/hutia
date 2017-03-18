@@ -113,19 +113,29 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void ContinueStory(int choice = -1)
+    public void ContinueStory(int choice = -1, bool advanceIfAble = true)
     {
         if (choice > -1)
         {
             _story.ChooseChoiceIndex(choice);
         }
 
-        string rawInput = _story.canContinue ? _story.Continue() : null;
+        string rawInput = null;
+        if (advanceIfAble)
+        {
+            rawInput = _story.canContinue ? _story.Continue() : null;
+        }
+        else
+        {
+            rawInput = _story.currentText;
+        }
+
         while (rawInput != null && DirectiveRegex.IsMatch(rawInput))
         {
             var waitForInput = PerformDirective(rawInput);
             if (waitForInput)
             {
+                _gameState = GameState.Gameplay;
                 return;
             }
 
@@ -146,8 +156,10 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            // TODO: Game Over, YEAH!!!!!
             Debug.Log("Ran out of story!");
         }
+        _gameState = GameState.Gameplay;
     }
 
     private bool PerformDirective(string rawInput)
@@ -223,6 +235,7 @@ public class GameManager : MonoBehaviour
     private bool ShowTitle(string parameters)
     {
         dialogueBox.gameObject.SetActive(false);
+        choiceBox.gameObject.SetActive(false);
         titleBox.gameObject.SetActive(true);
 
         var regexMatch = TitleParameters.Match(parameters);
@@ -269,6 +282,7 @@ public class GameManager : MonoBehaviour
     private bool ShowImage(string parameters)
     {
         dialogueBox.gameObject.SetActive(false);
+        choiceBox.gameObject.SetActive(false);
         titleBox.gameObject.SetActive(false);
 
         var regexMatch = ImageParameters.Match(parameters);
@@ -565,8 +579,21 @@ public class GameManager : MonoBehaviour
                 }
                 break;
 
+            case GameState.InGameMenu:
+                if (Input.GetButtonDown("Fire2") || Input.GetButtonDown("Cancel"))
+                {
+                    ContinueStory(advanceIfAble: false);
+                }
+                break;
+
             case GameState.Gameplay:
             default:
+                if (Input.GetButtonDown("Fire2") || Input.GetButtonDown("Cancel"))
+                {
+                    ShowInGameMenu();
+                    return;
+                }
+
                 if (imageBox.gameObject.activeInHierarchy && _imageDelayOver && (Input.GetButtonUp("Fire1") || Input.GetButtonUp("Submit")))
                 {
                     imageBox.gameObject.SetActive(false);
@@ -580,7 +607,9 @@ public class GameManager : MonoBehaviour
 
     private void ShowMainMenu()
     {
+        dialogueBox.gameObject.SetActive(false);
         titleBox.gameObject.SetActive(false);
+
         var mainMenu = new List<KeyValuePair<string, UnityAction>>();
         mainMenu.Add(new KeyValuePair<string, UnityAction>("Start A New Game", StartGame));
         mainMenu.Add(new KeyValuePair<string, UnityAction>("Quit", Application.Quit));
@@ -592,7 +621,27 @@ public class GameManager : MonoBehaviour
     private void StartGame()
     {
         choiceBox.gameObject.SetActive(false);
+        _story.ResetState();
+        CoffeeMinigame.Instance.Reset();
+        HandleCharacter("OFF");
+        UpdateBackground("IMAGE bedroom");
+        imageBox.gameObject.SetActive(false);
+        imageBox.sprite = null;
+        imageBox.GetComponent<Animator>().runtimeAnimatorController = null;
         _gameState = GameState.Gameplay;
         ContinueStory();
+    }
+
+    private void ShowInGameMenu()
+    {
+        dialogueBox.gameObject.SetActive(false);
+        titleBox.gameObject.SetActive(false);
+
+        var mainMenu = new List<KeyValuePair<string, UnityAction>>();
+        mainMenu.Add(new KeyValuePair<string, UnityAction>("Start A New Game", StartGame));
+        mainMenu.Add(new KeyValuePair<string, UnityAction>("Quit", Application.Quit));
+        choiceBox.gameObject.SetActive(true);
+        choiceBox.ShowMenu(mainMenu);
+        _gameState = GameState.InGameMenu;
     }
 }
