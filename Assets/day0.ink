@@ -1,4 +1,6 @@
 === intro ===
+TIME Present Time
+LOCATION Present Day
 BG COLOR black
 CHARACTER CENTER blueena MOOD sly
 blueena: Present day... Present time... #sly
@@ -11,6 +13,8 @@ TITLE hutia
 
 === wake_up_day0 ===
 // music main theme
+TIME Day 00 Morning
+LOCATION Bedroom
 IMAGE LatoyaAlarm
 CHARACTER LEFT latoya MOOD sleepy
 Latoya: Ungh... #thinking
@@ -46,6 +50,7 @@ Latoya: OK, what to wear? #bored #thinking
 -> living_room_morning_day0
 
 === living_room_morning_day0
+LOCATION Living Room
 // bg: Living Room
 // left-character: latoya, button-up shirt, work badge
 Latoya: Well, here we go... #bored #thinking
@@ -176,12 +181,14 @@ CHARACTER RIGHT OFF
 
 === work_day0
 // bg: Bus
+LOCATION Bus
 CHARACTER LEFT latoya
 Latoya: Ugh, the number 8 is always so packed at this time. #thinking
 Latoya: This is why I took that sabbatical from Glaistig anyway. #thinking
 Latoya: But then again, having money to buy things was pretty nice... #bored #thinking
 Latoya: But is it really worth being packed in like sardines by a bunch of tech bros? #miffed #thinking
 // bg: Office
+LOCATION Work
 Latoya: Ah, I've got a few minutes before standup... #bored #thinking
 Latoya: Maybe I'll just try to enjoy my coffee— #sly #thinking
 CHARACTER RIGHT ramsey
@@ -314,6 +321,8 @@ Latoya: Hmmm, I could focus on work or maybe chat with Ramsey some more... #thin
 
 === chat_with_ramsey_day0
 // bg ramsey's office
+TIME Day 00 Midday
+LOCATION Ramsey's Office
 CHARACTER OFF
 CHARACTER RIGHT Ramsey
 Ramsey: See, it's pretty small... #miffed
@@ -539,6 +548,8 @@ Ramsey: No problems, Giggles. #smile
 
 === ride_home_day0
 // bg bus
+TIME Day 00 Evening
+LOCATION Bus
 CHARACTER OFF
 CHARACTER LEFT latoya MOOD angry
 Latoya: Ugh, packed like sardines AND stuck in traffic! #thinking
@@ -563,6 +574,7 @@ Latoya: God, spare me from geek humor! #thinking
 
 === living_room_day0
 // bg living room
+LOCATION Living Room
 CHARACTER LEFT Latoya
 Latoya: Home sweet home! #smile
 CHARACTER RIGHT Clara MOOD miffed
@@ -814,6 +826,7 @@ Latoya: Nah, Let me go check on that computer... #neutral
 
 === introducing_f0c5
 // bg Bedroom
+LOCATION Bedroom
 CHARACTER OFF
 CHARACTER LEFT latoya MOOD miffed
 Latoya: It's hard for me to answer people when they ask me how I got into AI... #thinking
@@ -1160,6 +1173,8 @@ Latoya: Sounds good! #smile
 0xF0C5: just put on your vr helmet and off we go!
 CHARACTER OFF
 // bg inverted office
+LOCATION Fox Industries
+CHARACTER OFF
 Starting fantasy 'First Day at Fox Industries'
 CHARACTER RIGHT Latoya
 Latoya: Oh, odd... I wasn't expecting to be in my human avatar... #miffed #thinking
@@ -1479,6 +1494,8 @@ ALIAS FORGET Mx. Secretary
 -> coffee_minigame_start
 
 === after_the_fantasy_day0 ===
+TIME Day 00 Night
+LOCATION Bedroom
 ALIAS Latoya AS blueena
 CHARACTER LEFT Latoya MOOD blushing-happily
 Latoya: Oh God, I finally came! #thinking

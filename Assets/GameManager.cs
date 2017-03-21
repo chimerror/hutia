@@ -20,6 +20,90 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public string StoryState
+    {
+        get
+        {
+            return _story.state.ToJson();
+        }
+
+        set
+        {
+            _story.state.LoadJson(value);
+        }
+    }
+
+    public EngineState EngineState
+    {
+        get
+        {
+            var newState = new EngineState();
+            newState.GameTime = _gameTime;
+            newState.GameLocation = _gameLocation;
+            newState.BackgroundParameters = _backgroundParameters;
+            newState.FarLeftCharacterParameters = _farLeftCharacterParameters;
+            newState.LeftCharacterParameters = _leftCharacterParameters;
+            newState.CenterCharacterParameters = _centerCharacterParameters;
+            newState.RightCharacterParameters = _rightCharacterParameters;
+            newState.FarRightCharacterParameters = _farRightCharacterParameters;
+            newState.CharacterColors = _characterColors.ToDictionary(kvp => kvp.Key, kvp => "#" + ColorUtility.ToHtmlStringRGBA(kvp.Value));
+            newState.CharacterAliases = new Dictionary<string, string>(_characterAliases);
+
+            return newState;
+        }
+
+        set
+        {
+            _characterAliases = new Dictionary<string, string>(value.CharacterAliases);
+            _characterColors = value.CharacterColors.ToDictionary(kvp => kvp.Key, kvp =>
+                {
+                    Color color;
+                    Debug.AssertFormat(ColorUtility.TryParseHtmlString(kvp.Value, out color), "Unable to parse color from saved file {0}", kvp.Value);
+                    return color;
+                });
+            HandleCharacter("OFF");
+            if (!string.IsNullOrEmpty(value.FarLeftCharacterParameters))
+            {
+                HandleCharacter(string.Format("FAR_LEFT {0}", value.FarLeftCharacterParameters));
+            }
+            if (!string.IsNullOrEmpty(value.LeftCharacterParameters))
+            {
+                HandleCharacter(string.Format("LEFT {0}", value.LeftCharacterParameters));
+            }
+            if (!string.IsNullOrEmpty(value.CenterCharacterParameters))
+            {
+            HandleCharacter(string.Format("CENTER {0}", value.CenterCharacterParameters));
+            }
+            if (!string.IsNullOrEmpty(value.RightCharacterParameters))
+            {
+            HandleCharacter(string.Format("RIGHT {0}", value.RightCharacterParameters));
+            }
+            if (!string.IsNullOrEmpty(value.FarRightCharacterParameters))
+            {
+                HandleCharacter(string.Format("FAR_RIGHT {0}", value.FarRightCharacterParameters));
+            }
+            UpdateBackground(value.BackgroundParameters);
+            _gameLocation = value.GameLocation;
+            _gameTime = value.GameTime;
+        }
+    }
+
+    public string GameTime
+    {
+        get
+        {
+            return _gameTime;
+        }
+    }
+
+    public string GameLocation
+    {
+        get
+        {
+            return _gameLocation;
+        }
+    }
+
     /// <summary>
     /// Regular expression for catching directives
     /// </summary>
@@ -36,7 +120,7 @@ public class GameManager : MonoBehaviour
     /// one or more other characters, grouped as 'parameters' followed by the end of
     /// the string.
     /// </remarks>
-    private readonly static Regex DirectiveRegex = new Regex(@"^(?<directive>BG|TITLE|MUSIC|IMAGE|CHARACTER|CHAR_COLOR|ALIAS)\s+(?<parameters>.+)$");
+    private readonly static Regex DirectiveRegex = new Regex(@"^(?<directive>BG|TITLE|MUSIC|IMAGE|CHARACTER|CHAR_COLOR|ALIAS|TIME|LOCATION)\s+(?<parameters>.+)$");
 
     private readonly static Regex BackgroundParameters = new Regex(@"^(?<type>IMAGE|COLOR)\s(?<value>.+)$");
 
@@ -76,6 +160,8 @@ public class GameManager : MonoBehaviour
     public Image rightCharacter;
     public Image farRightCharacter;
     public AudioSource musicSource;
+    public GameObject saveGameDialog;
+    public GameObject loadGameDialog;
     public int latoyaLewd;
     public int latoyaObject;
     public int claraLewd;
@@ -86,12 +172,20 @@ public class GameManager : MonoBehaviour
     public int f0c5Object;
 
     private GameState _gameState = GameState.TitleScreen;
+    private string _backgroundParameters;
+    private string _farLeftCharacterParameters;
+    private string _leftCharacterParameters;
+    private string _centerCharacterParameters;
+    private string _rightCharacterParameters;
+    private string _farRightCharacterParameters;
     private AssetBundle _backgrounds;
     private AssetBundle _music;
     private AssetBundle _images;
     private AssetBundle _characters;
     private AssetBundle _voices;
     private Story _story;
+    private string _gameTime;
+    private string _gameLocation;
     private bool _imageDelayOver = false;
     private Dictionary<string, Color> _characterColors = new Dictionary<string, Color>();
     private Dictionary<string, Image> _characterPositions = new Dictionary<string, Image>();
@@ -115,6 +209,9 @@ public class GameManager : MonoBehaviour
 
     public void ContinueStory(int choice = -1, bool advanceIfAble = true)
     {
+        saveGameDialog.SetActive(false);
+        loadGameDialog.SetActive(false);
+
         if (choice > -1)
         {
             _story.ChooseChoiceIndex(choice);
@@ -191,6 +288,12 @@ public class GameManager : MonoBehaviour
             case "ALIAS":
                 return HandleAlias(parameters);
 
+            case "TIME":
+                return HandleTime(parameters);
+
+            case "LOCATION":
+                return HandleLocation(parameters);
+
             default:
                 Debug.LogErrorFormat("Unknown directive: {0}", rawInput);
                 return false;
@@ -229,6 +332,7 @@ public class GameManager : MonoBehaviour
                 break;
         }
 
+        _backgroundParameters = parameters;
         return false; // Don't wait for input
     }
 
@@ -340,6 +444,11 @@ public class GameManager : MonoBehaviour
             centerCharacter.gameObject.SetActive(false);
             rightCharacter.gameObject.SetActive(false);
             farRightCharacter.gameObject.SetActive(false);
+            _farLeftCharacterParameters = null;
+            _leftCharacterParameters = null;
+            _centerCharacterParameters = null;
+            _rightCharacterParameters = null;
+            _farRightCharacterParameters = null;
             _characterPositions.Clear();
             return false; // Don't wait for input
         }
@@ -390,6 +499,26 @@ public class GameManager : MonoBehaviour
         if (name.Equals("off"))
         {
             positionImage.gameObject.SetActive(false);
+            if (positionImage.Equals(farLeftCharacter))
+            {
+                _farLeftCharacterParameters = null;
+            }
+            else if (positionImage.Equals(leftCharacter))
+            {
+                _leftCharacterParameters = null;
+            }
+            else if (positionImage.Equals(centerCharacter))
+            {
+                _centerCharacterParameters = null;
+            }
+            else if (positionImage.Equals(rightCharacter))
+            {
+                _rightCharacterParameters = null;
+            }
+            else if (positionImage.Equals(farRightCharacter))
+            {
+                _farRightCharacterParameters = null;
+            }
             return false; // Don't wait for input
         }
 
@@ -419,6 +548,28 @@ public class GameManager : MonoBehaviour
         var character = _characters.LoadAsset<Sprite>(path);
         Debug.AssertFormat(character != null, "Unable to load character asset: {0}", path);
         positionImage.sprite = character;
+
+        var updatedParameters = string.Format("{0} MOOD {1}", normalizedName, normalizedMood);
+        if (positionImage.Equals(farLeftCharacter))
+        {
+            _farLeftCharacterParameters = updatedParameters;
+        }
+        else if (positionImage.Equals(leftCharacter))
+        {
+            _leftCharacterParameters = updatedParameters;
+        }
+        else if (positionImage.Equals(centerCharacter))
+        {
+            _centerCharacterParameters = updatedParameters;
+        }
+        else if (positionImage.Equals(rightCharacter))
+        {
+            _rightCharacterParameters = updatedParameters;
+        }
+        else if (positionImage.Equals(farRightCharacter))
+        {
+            _farRightCharacterParameters = updatedParameters;
+        }
     }
 
     private bool SetCharacterColor(string parameters)
@@ -459,6 +610,20 @@ public class GameManager : MonoBehaviour
             Debug.LogAssertionFormat("Neither FORGET or AS parameters provided to ALIAS directive: {0}", parameters);
         }
 
+        return false; // Don't wait for input
+    }
+
+    private bool HandleTime(string parameters)
+    {
+        _gameTime = parameters.Trim();
+        Debug.LogFormat("Time Changed to: {0}", parameters);
+        return false; // Don't wait for input
+    }
+
+    private bool HandleLocation(string parameters)
+    {
+        _gameLocation = parameters.Trim();
+        Debug.LogFormat("Location Changed to: {0}", parameters);
         return false; // Don't wait for input
     }
 
@@ -579,6 +744,14 @@ public class GameManager : MonoBehaviour
                 }
                 break;
 
+            case GameState.MainMenu:
+                if (Input.GetButtonDown("Fire2") || Input.GetButtonDown("Cancel"))
+                {
+                    ShowMainMenu();
+                    return;
+                }
+                break;
+
             case GameState.InGameMenu:
                 if (Input.GetButtonDown("Fire2") || Input.GetButtonDown("Cancel"))
                 {
@@ -609,10 +782,21 @@ public class GameManager : MonoBehaviour
     {
         dialogueBox.gameObject.SetActive(false);
         titleBox.gameObject.SetActive(false);
+        loadGameDialog.SetActive(false);
 
         var mainMenu = new List<KeyValuePair<string, UnityAction>>();
         mainMenu.Add(new KeyValuePair<string, UnityAction>("Start A New Game", StartGame));
-        mainMenu.Add(new KeyValuePair<string, UnityAction>("Quit", Application.Quit));
+
+        if (SaveGameDialog.AnySavedGames)
+        {
+            mainMenu.Add(new KeyValuePair<string, UnityAction>("Load Game", () =>
+                {
+                    choiceBox.gameObject.SetActive(false);
+                    loadGameDialog.gameObject.SetActive(true);
+                }));
+        }
+
+        mainMenu.Add(new KeyValuePair<string, UnityAction>("Quit To Desktop", Application.Quit));
         choiceBox.gameObject.SetActive(true);
         choiceBox.ShowMenu(mainMenu);
         _gameState = GameState.MainMenu;
@@ -638,8 +822,21 @@ public class GameManager : MonoBehaviour
         titleBox.gameObject.SetActive(false);
 
         var mainMenu = new List<KeyValuePair<string, UnityAction>>();
-        mainMenu.Add(new KeyValuePair<string, UnityAction>("Start A New Game", StartGame));
-        mainMenu.Add(new KeyValuePair<string, UnityAction>("Quit", Application.Quit));
+        mainMenu.Add(new KeyValuePair<string, UnityAction>("Back to Game", () => ContinueStory(advanceIfAble: false)));
+        mainMenu.Add(new KeyValuePair<string, UnityAction>("Save Game", () =>
+            {
+                choiceBox.gameObject.SetActive(false);
+                saveGameDialog.gameObject.SetActive(true);
+            }));
+        if (SaveGameDialog.AnySavedGames)
+        {
+            mainMenu.Add(new KeyValuePair<string, UnityAction>("Load Game", () =>
+                {
+                    choiceBox.gameObject.SetActive(false);
+                    loadGameDialog.gameObject.SetActive(true);
+                }));
+        }
+        mainMenu.Add(new KeyValuePair<string, UnityAction>("Quit to Title", ShowMainMenu));
         choiceBox.gameObject.SetActive(true);
         choiceBox.ShowMenu(mainMenu);
         _gameState = GameState.InGameMenu;

@@ -57,4 +57,9 @@ public class ChoiceBox : MonoBehaviour
             EventSystem.current.SetSelectedGameObject(_firstChoice);
         }
     }
+
+    private void OnDisable()
+    {
+        EventSystem.current.SetSelectedGameObject(null);
+    }
 }

@@ -154,10 +154,10 @@ blueena: I hope I got it right... #thinking
     Mx. Secretary: good job ms. blueena!
     blueena: Thanks!
     Mx. Secretary: now i'll activate your reinforcement!
+    ALIAS FORGET Mx. Secretary
     blueena: What do you mean?
     blueena: ! #nervous
     blueena: Eeh, wow, that skirt is going to town... #thinking
-    ALIAS FORGET Mx.Secretary
 }
 ->->
 

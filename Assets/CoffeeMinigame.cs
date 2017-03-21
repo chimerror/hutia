@@ -205,7 +205,7 @@ public class CoffeeMinigame
 
     public bool KeepTakingOrders()
     {
-        return OrdersMade <= OrdersToMake;
+        return OrdersMade < OrdersToMake;
     }
 
     public struct Order
