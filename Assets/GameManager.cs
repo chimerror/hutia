@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
             _characterAliases = new Dictionary<string, string>(value.CharacterAliases);
             _characterColors = value.CharacterColors.ToDictionary(kvp => kvp.Key, kvp =>
                 {
-                    Color color;
+                    Color color = defaultCharacterColor;
                     Debug.AssertFormat(ColorUtility.TryParseHtmlString(kvp.Value, out color), "Unable to parse color from saved file {0}", kvp.Value);
                     return color;
                 });
@@ -120,13 +120,15 @@ public class GameManager : MonoBehaviour
     /// one or more other characters, grouped as 'parameters' followed by the end of
     /// the string.
     /// </remarks>
-    private readonly static Regex DirectiveRegex = new Regex(@"^(?<directive>BG|TITLE|MUSIC|IMAGE|CHARACTER|CHAR_COLOR|ALIAS|TIME|LOCATION)\s+(?<parameters>.+)$");
+    private readonly static Regex DirectiveRegex = new Regex(@"^(?<directive>BG|TITLE|SOUND|MUSIC|IMAGE|CHARACTER|CHAR_COLOR|ALIAS|TIME|LOCATION)\s+(?<parameters>.+)$");
 
     private readonly static Regex BackgroundParameters = new Regex(@"^(?<type>IMAGE|COLOR)\s(?<value>.+)$");
 
     private readonly static Regex TitleParameters = new Regex(@"^(COLOR\s+(?<color>#?\w+)\s+)?(?<title>.*)$");
 
     private readonly static Regex MusicParameters = new Regex(@"^(?<name>[\w-]+)(\s+(?<loopSettings>LOOP|ONCE))?$");
+
+    private readonly static Regex SoundParameters = new Regex(@"^(?<name>[\w-]+)(\s+(?<loopSettings>LOOP|ONCE))?$");
 
     private readonly static Regex ImageParameters = new Regex(@"^(?<name>[\w-]+)(\s+(?<delay>.+))?$");
 
@@ -159,6 +161,7 @@ public class GameManager : MonoBehaviour
     public Image centerCharacter;
     public Image rightCharacter;
     public Image farRightCharacter;
+    public AudioSource soundSource;
     public AudioSource musicSource;
     public GameObject saveGameDialog;
     public GameObject loadGameDialog;
@@ -179,6 +182,7 @@ public class GameManager : MonoBehaviour
     private string _rightCharacterParameters;
     private string _farRightCharacterParameters;
     private AssetBundle _backgrounds;
+    private AssetBundle _sounds;
     private AssetBundle _music;
     private AssetBundle _images;
     private AssetBundle _characters;
@@ -273,6 +277,9 @@ public class GameManager : MonoBehaviour
             case "TITLE":
                 return ShowTitle(parameters);
 
+            case "SOUND":
+                return PlaySound(parameters);
+
             case "MUSIC":
                 return PlayMusic(parameters);
 
@@ -358,6 +365,29 @@ public class GameManager : MonoBehaviour
         }
 
         return true; // Wait for input
+    }
+
+    private bool PlaySound(string parameters)
+    {
+        var regexMatch = SoundParameters.Match(parameters);
+        Debug.AssertFormat(regexMatch.Success, "Unknown SOUND parameters: {0}", parameters);
+
+        var name = regexMatch.Groups["name"].Value;
+        if (name.Equals("OFF"))
+        {
+            soundSource.Stop();
+            soundSource.clip = null;
+            return false; // Don't wait for input
+        }
+
+        var path = string.Format("assets/sounds/{0}.ogg", name);
+        var clip = _sounds.LoadAsset<AudioClip>(path);
+        Debug.AssertFormat(clip != null, "Unable to load sound clip: {0}", path);
+        soundSource.clip = clip;
+        soundSource.loop = regexMatch.Groups["loopSettings"].Success && regexMatch.Groups["loopSettings"].Value.Equals("LOOP");
+        soundSource.Play();
+
+        return false; // Don't wait for input
     }
 
     private bool PlayMusic(string parameters)
@@ -683,6 +713,7 @@ public class GameManager : MonoBehaviour
     {
         _backgrounds = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, "AssetBundles/backgrounds"));
         Debug.Assert(_backgrounds != null, "Couldn't load backgrounds!");
+        _sounds = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, "AssetBundles/sounds"));
         _music = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, "AssetBundles/music"));
         Debug.Assert(_backgrounds != null, "Couldn't load backgrounds!");
         _images = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, "AssetBundles/images"));

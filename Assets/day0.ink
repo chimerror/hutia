@@ -23,7 +23,7 @@ CHARACTER LEFT OFF
 // music stops
 TITLE Day 00
 // music: latoya's theme, morning
-// MUSIC LatoyasTheme ONCE
+MUSIC LatoyasTheme
 CHARACTER LEFT latoya
 Latoya: ...Better. #thinking
 Latoya: *sigh* #miffed
@@ -42,6 +42,7 @@ Latoya: OK, what to wear? #bored #thinking
 * [Hmmm, I remember looking pretty hot in this skirt...]
   Latoya: Yeah, I'd probably give my coworkers a heart attack... #sly #thinking
   ~ raise(latoya_lewd)
+  SOUND lewd
   Latoya: ...if any blood could get away from their dicks! #laugh #thinking
   Latoya: *sigh* #miffed
   Latoya: No, I'd better play it safe. #thinking
@@ -119,17 +120,23 @@ Latoya: I wonder if I should wake her up? #thinking
   <- debug_options(-> wake_up_clara)
   * * [It's for her own good.]
       ~ raise(clara_object)
+      MUSIC OFF
       Latoya: She'd sleep the entire day away otherwise! #thinking
       Latoya: Hey, sleepy-butt, wake up! #angry
+      MUSIC ClarasTheme
   * * [She'd like that.]
       ~ lower(clara_object)
+      MUSIC OFF
       Latoya: She'd probably like to see me check up on her before I go... #thinking
       Latoya: Hey, sleepy-butt, wake up! #sly
+      MUSIC ClarasTheme
   - - Clara: Huh, what...?
 * [Nah.]
   ~ lower(clara_object)
+  MUSIC OFF
   Latoya: Nah, I'll let her sleep. #thinking
   CHARACTER LEFT latoya MOOD nervous
+  MUSIC ClarasTheme
   Clara: Like, uh... Are you totes trying to sneak off without me noticing?
 - Latoya: Good Morning, Speedy.
 CHARACTER RIGHT clara MOOD sleepy
@@ -176,6 +183,7 @@ Latoya: She's just sitting there smiling, so proud of herself... #thinking
 - Latoya: Thanks for the vote of confidence...
 Clara: You're welcome. Have fun! #laugh
 Latoya: I'll try. #bored
+MUSIC OFF
 CHARACTER RIGHT OFF
 -> work_day0
 

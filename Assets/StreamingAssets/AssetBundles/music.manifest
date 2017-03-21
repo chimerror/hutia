@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 571563691
+CRC: 58021826
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 0b937a6670eeb72550b650dc5b935e3b
+    Hash: 3e71462f0b8730c54140eded33fb3381
   TypeTreeHash:
     serializedVersion: 2
     Hash: c516f2a3b2b6b67ef759f6410a790acd
@@ -13,4 +13,5 @@ ClassTypes:
   Script: {instanceID: 0}
 Assets:
 - Assets/Music/LatoyasTheme.ogg
+- Assets/Music/ClarasTheme.ogg
 Dependencies: []
