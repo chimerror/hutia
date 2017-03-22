@@ -54,3 +54,11 @@ of attribution. Edited by Jason Mitchell
 [CC BY-NC](https://creativecommons.org/licenses/by-nc/2.0/). Edited by Jason Mitchell
 
 [Some Phone Templates](http://opengameart.org/content/some-phone-templates-ctatz) by [CTatz](http://opengameart.org/users/ctatz), released into public domain, edited by Jason Mitchell
+
+[sound off](https://thenounproject.com/term/sound-off/865833/) by [Blair
+Adams](http://blairadamsdesign.com/) from [the Noun Project](https://thenounproject.com/) used under
+[CC BY](https://creativecommons.org/licenses/by/3.0/)
+
+[sound on](https://thenounproject.com/term/sound-on/865828/) by [Blair
+Adams](http://blairadamsdesign.com/) from [the Noun Project](https://thenounproject.com/) used under
+[CC BY](https://creativecommons.org/licenses/by/3.0/)

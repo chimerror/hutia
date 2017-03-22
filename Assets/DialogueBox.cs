@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,7 +15,7 @@ public class DialogueBox : MonoBehaviour
     {
         dialogue = dialogue.Trim();
 
-        if (tags.Contains("thinking"))
+        if (tags != null && tags.Contains("thinking"))
         {
             dialogue = string.Format("<i>({0})</i>", dialogue);
         }
@@ -96,6 +95,10 @@ public class DialogueBox : MonoBehaviour
             if (_dialogueText.reading)
             {
                 _dialogueText.SpeedRead();
+            }
+            else if (GameManager.Instance.GameState != GameState.Gameplay)
+            {
+                _dialogueText.Rebuild();
             }
             else if (!_dialogueText.unreading)
             {

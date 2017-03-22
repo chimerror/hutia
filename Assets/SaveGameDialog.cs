@@ -22,7 +22,6 @@ public class SaveGameDialog : MonoBehaviour
     {
         get
         {
-            Debug.LogFormat("Saved Games will be in: {0}", Application.persistentDataPath);
             return Directory.GetFiles(Application.persistentDataPath, "*.savedgame").Any();
         }
     }

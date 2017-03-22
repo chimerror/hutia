@@ -165,6 +165,7 @@ public class GameManager : MonoBehaviour
     public AudioSource musicSource;
     public GameObject saveGameDialog;
     public GameObject loadGameDialog;
+    public GameObject optionsDialog;
     public int latoyaLewd;
     public int latoyaObject;
     public int claraLewd;
@@ -786,7 +787,14 @@ public class GameManager : MonoBehaviour
             case GameState.InGameMenu:
                 if (Input.GetButtonDown("Fire2") || Input.GetButtonDown("Cancel"))
                 {
-                    ContinueStory(advanceIfAble: false);
+                    if (loadGameDialog.activeInHierarchy || optionsDialog.activeInHierarchy || saveGameDialog.activeInHierarchy)
+                    {
+                        ShowInGameMenu();
+                    }
+                    else
+                    {
+                        ContinueStory(advanceIfAble: false);
+                    }
                 }
                 break;
 
@@ -814,10 +822,10 @@ public class GameManager : MonoBehaviour
         dialogueBox.gameObject.SetActive(false);
         titleBox.gameObject.SetActive(false);
         loadGameDialog.SetActive(false);
+        optionsDialog.SetActive(false);
 
         var mainMenu = new List<KeyValuePair<string, UnityAction>>();
         mainMenu.Add(new KeyValuePair<string, UnityAction>("Start A New Game", StartGame));
-
         if (SaveGameDialog.AnySavedGames)
         {
             mainMenu.Add(new KeyValuePair<string, UnityAction>("Load Game", () =>
@@ -826,7 +834,11 @@ public class GameManager : MonoBehaviour
                     loadGameDialog.gameObject.SetActive(true);
                 }));
         }
-
+        mainMenu.Add(new KeyValuePair<string, UnityAction>("Options", () =>
+            {
+                choiceBox.gameObject.SetActive(false);
+                optionsDialog.gameObject.SetActive(true);
+            }));
         mainMenu.Add(new KeyValuePair<string, UnityAction>("Quit To Desktop", Application.Quit));
         choiceBox.gameObject.SetActive(true);
         choiceBox.ShowMenu(mainMenu);
@@ -851,6 +863,9 @@ public class GameManager : MonoBehaviour
     {
         dialogueBox.gameObject.SetActive(false);
         titleBox.gameObject.SetActive(false);
+        saveGameDialog.SetActive(false);
+        loadGameDialog.SetActive(false);
+        optionsDialog.SetActive(false);
 
         var mainMenu = new List<KeyValuePair<string, UnityAction>>();
         mainMenu.Add(new KeyValuePair<string, UnityAction>("Back to Game", () => ContinueStory(advanceIfAble: false)));
@@ -867,6 +882,11 @@ public class GameManager : MonoBehaviour
                     loadGameDialog.gameObject.SetActive(true);
                 }));
         }
+        mainMenu.Add(new KeyValuePair<string, UnityAction>("Options", () =>
+            {
+                choiceBox.gameObject.SetActive(false);
+                optionsDialog.gameObject.SetActive(true);
+            }));
         mainMenu.Add(new KeyValuePair<string, UnityAction>("Quit to Title", ShowMainMenu));
         choiceBox.gameObject.SetActive(true);
         choiceBox.ShowMenu(mainMenu);
