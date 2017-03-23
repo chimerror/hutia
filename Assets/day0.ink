@@ -187,7 +187,7 @@ CHARACTER RIGHT OFF
 -> work_day0
 
 === work_day0
-// bg: Bus
+BG IMAGE Bus
 LOCATION Bus
 CHARACTER LEFT latoya
 Latoya: Ugh, the number 8 is always so packed at this time. #thinking
@@ -554,7 +554,7 @@ Ramsey: No problems, Giggles. #smile
 -> ride_home_day0
 
 === ride_home_day0
-// bg bus
+BG IMAGE Bus
 TIME Day 00 Evening
 LOCATION Bus
 CHARACTER OFF
@@ -580,7 +580,7 @@ Latoya: God, spare me from geek humor! #thinking
 -> living_room_day0
 
 === living_room_day0
-// bg living room
+BG IMAGE LivingRoom
 LOCATION Living Room
 CHARACTER LEFT Latoya
 Latoya: Home sweet home! #smile
