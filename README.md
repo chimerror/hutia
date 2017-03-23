@@ -47,13 +47,50 @@ Unity asset.
 
 ### Art
 [bedroom](https://lemmasoft.renai.us/forums/viewtopic.php?p=349908) by sei.chan, used under request
-of attribution. Edited by Jason Mitchell
+of attribution. Edited by Jason Mitchell.
+
+[bathroom remodel](https://www.flickr.com/photos/brockbuilders/4071899861) by [Brock
+Builders](https://www.flickr.com/photos/brockbuilders/)  used under [CC
+BY](https://creativecommons.org/licenses/by/2.0/). Edited by Jason Mitchell.
+
+[Bus Interior, 2005](https://www.flickr.com/photos/seattlemunicipalarchives/2851696368) by [Seattle
+Municipal Archives](http://www.seattle.gov/cityarchives), used under [CC
+BY](https://creativecommons.org/licenses/by/2.0/). Edited by Jason Mitchell.
+
+[Cafe](https://lemmasoft.renai.us/forums/viewtopic.php?f=52&t=14277#p186935) by
+[Auro-Cyanide](http://auro-cyanide.tumblr.com/), used under [CC
+BY](https://creativecommons.org/licenses/by/2.0/). Edited by Jason Mitchell.
+
+[Doctor’s Office](https://pixabay.com/en/doctors-office-doctor-office-1944117/) by [Anne
+Karakash](https://pixabay.com/en/users/annekarakash-1527809/), released to public domain. Edited by
+Jason Mitchell.
 
 [Doodle-y Placeholder Sprite doll](https://lemmasoft.renai.us/forums/viewtopic.php?f=52&t=29421) by
-[M. Beatriz Garcia (dejinyucu)](https://about.me/mbeatrizgarcia) used as placeholder art under
-[CC BY-NC](https://creativecommons.org/licenses/by-nc/2.0/). Edited by Jason Mitchell
+[M. Beatriz Garcia (dejinyucu)](https://about.me/mbeatrizgarcia) used as placeholder art under [CC
+BY-NC](https://creativecommons.org/licenses/by-nc/2.0/). Edited by Jason Mitchell.
 
-[Some Phone Templates](http://opengameart.org/content/some-phone-templates-ctatz) by [CTatz](http://opengameart.org/users/ctatz), released into public domain, edited by Jason Mitchell
+[Living Room](https://lemmasoft.renai.us/forums/viewtopic.php?t=22595) by
+[tropicalmonsoon](https://lemmasoft.renai.us/forums/memberlist.php?mode=viewprofile&u=22890) used
+under request of attribution. Edited by Jason Mitchell.
+
+[New UPMC East: Emergency Patient Room](https://www.flickr.com/photos/daveynin/7417095278) by
+[daveynin](https://www.flickr.com/photos/daveynin/), used under [CC
+BY](https://creativecommons.org/licenses/by/2.0/). Edited by Jason Mitchell.
+
+[Nokia_24 (Ramsey’s Office](https://www.flickr.com/photos/k2space/14050079537/in/photostream/) by
+[K2 Space](https://www.flickr.com/photos/k2space/), used under [CC
+BY](https://creativecommons.org/licenses/by/2.0/). Edited by Jason Mitchell.
+
+[Public toilet in Tallinn](https://commons.wikimedia.org/wiki/File:Public_toilet_in_Tallinn.JPG) by
+[Dmitry G](https://commons.wikimedia.org/wiki/User:Dmitry_G), released to public domain. Edited by
+Jason Mitchell
+
+[RBC_04 (office)](https://www.flickr.com/photos/k2space/14235105332) by [K2
+Space](https://www.flickr.com/photos/k2space/), used under [CC
+BY](https://creativecommons.org/licenses/by/2.0/). Edited by Jason Mitchell.
+
+[Some Phone Templates](http://opengameart.org/content/some-phone-templates-ctatz) by
+[CTatz](http://opengameart.org/users/ctatz), released into public domain. Edited by Jason Mitchell.
 
 [sound off](https://thenounproject.com/term/sound-off/865833/) by [Blair
 Adams](http://blairadamsdesign.com/) from [the Noun Project](https://thenounproject.com/) used under
