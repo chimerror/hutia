@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3990643968
+CRC: 2828442446
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 5e735b7686362f61ca53bb06f1f1157b
+    Hash: 50160bc2e6511634a097034673d08477
   TypeTreeHash:
     serializedVersion: 2
     Hash: 4d24bf54f46935ed9e6cf78ac481bb9d
@@ -15,4 +15,5 @@ ClassTypes:
   Script: {instanceID: 0}
 Assets:
 - Assets/Backgrounds/Bedroom.png
+- Assets/Backgrounds/LivingRoom.png
 Dependencies: []

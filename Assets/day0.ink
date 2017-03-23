@@ -47,12 +47,11 @@ Latoya: OK, what to wear? #bored #thinking
   Latoya: *sigh* #miffed
   Latoya: No, I'd better play it safe. #thinking
 - Latoya: Oh well... #thinking
-// Fade to black
 -> living_room_morning_day0
 
 === living_room_morning_day0
 LOCATION Living Room
-// bg: Living Room
+BG IMAGE LivingRoom
 // left-character: latoya, button-up shirt, work badge
 Latoya: Well, here we go... #bored #thinking
 Latoya: Oh! #nervous #thinking
