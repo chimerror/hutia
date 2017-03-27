@@ -194,7 +194,7 @@ Latoya: Ugh, the number 8 is always so packed at this time. #thinking
 Latoya: This is why I took that sabbatical from Glaistig anyway. #thinking
 Latoya: But then again, having money to buy things was pretty nice... #bored #thinking
 Latoya: But is it really worth being packed in like sardines by a bunch of tech bros? #miffed #thinking
-// bg: Office
+BG IMAGE Office
 LOCATION Work
 Latoya: Ah, I've got a few minutes before standup... #bored #thinking
 Latoya: Maybe I'll just try to enjoy my coffee— #sly #thinking
@@ -327,7 +327,7 @@ Latoya: Hmmm, I could focus on work or maybe chat with Ramsey some more... #thin
   -> chat_with_ramsey_day0
 
 === chat_with_ramsey_day0
-// bg ramsey's office
+BG IMAGE RamseysOffice
 TIME Day 00 Midday
 LOCATION Ramsey's Office
 CHARACTER OFF
@@ -832,7 +832,7 @@ Latoya: Nah, Let me go check on that computer... #neutral
 -> introducing_f0c5
 
 === introducing_f0c5
-// bg Bedroom
+BG IMAGE Bedroom
 LOCATION Bedroom
 CHARACTER OFF
 CHARACTER LEFT latoya MOOD miffed
@@ -1179,7 +1179,7 @@ Latoya: Sounds good! #smile
 0xF0C5: excellent, my dear! #grin
 0xF0C5: just put on your vr helmet and off we go!
 CHARACTER OFF
-// bg inverted office
+BG IMAGE InvertedOffice
 LOCATION Fox Industries
 CHARACTER OFF
 Starting fantasy 'First Day at Fox Industries'
@@ -1503,6 +1503,7 @@ ALIAS FORGET Mx. Secretary
 === after_the_fantasy_day0 ===
 TIME Day 00 Night
 LOCATION Bedroom
+BG IMAGE Bedroom
 ALIAS Latoya AS blueena
 CHARACTER LEFT Latoya MOOD blushing-happily
 Latoya: Oh God, I finally came! #thinking
