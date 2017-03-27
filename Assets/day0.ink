@@ -198,6 +198,7 @@ BG IMAGE Office
 LOCATION Work
 Latoya: Ah, I've got a few minutes before standup... #bored #thinking
 Latoya: Maybe I'll just try to enjoy my coffee— #sly #thinking
+MUSIC RamseysTheme ONCE
 CHARACTER RIGHT ramsey
 Ramsey: Good morning, Latoya. #neutral
 Latoya: Oh, it's Ramsey. He's an old college buddy! #neutral #thinking
@@ -328,6 +329,7 @@ Latoya: Hmmm, I could focus on work or maybe chat with Ramsey some more... #thin
 
 === chat_with_ramsey_day0
 BG IMAGE RamseysOffice
+MUSIC RamseysTheme
 TIME Day 00 Midday
 LOCATION Ramsey's Office
 CHARACTER OFF
@@ -554,6 +556,7 @@ Ramsey: No problems, Giggles. #smile
 -> ride_home_day0
 
 === ride_home_day0
+MUSIC OFF
 BG IMAGE Bus
 TIME Day 00 Evening
 LOCATION Bus
@@ -652,6 +655,7 @@ Latoya: Hmmm... Could be a good time to chat with Clara... #thinking
   -> introducing_f0c5
 
 = chat_with_clara
+MUSIC ClarasTheme
 Clara: It went, like, really great! #smile
 Clara: Like, if you look over here, I finished three paintings today!
 Clara: I never finish even one, most days... #miffed
