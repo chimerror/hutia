@@ -31,9 +31,11 @@ Latoya: I might should've gotten my sleep schedule right. #thinking
 Latoya: After all, I had the chance last week. #thinking
 Latoya: But what is your first real day of work without being too damn tired? #thinking
 // scene: Latoya showering, only seen through shower curtain.
+BG IMAGE bathroom
+Latoya: Aaaah... #blushing-happily #thinking
 BG IMAGE bedroom
 // left-character: latoya, sleep clothes
-Latoya: Whew... That's better. #neutral #thinking
+Latoya: Whew... Nothing like a mostly hot shower to wake you up! #neutral #thinking
 Latoya: OK, what to wear? #bored #thinking
 <- debug_options(-> wake_up_day0)
 * [Probably best to go with something conservative.]
