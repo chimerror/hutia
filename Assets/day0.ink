@@ -840,6 +840,7 @@ BG IMAGE Bedroom
 LOCATION Bedroom
 CHARACTER OFF
 CHARACTER LEFT latoya MOOD miffed
+MUSIC OFF
 Latoya: It's hard for me to answer people when they ask me how I got into AI... #thinking
 Latoya: It goes back to high school... #thinking
 Latoya: You let a girl on the Internet, and well... #thinking
@@ -859,6 +860,7 @@ Latoya: Don't be surprised if she finds some peeps who are as lewd as her. #sly 
 Latoya: But then, worrying about what the Church Ladies would have told Mama... #sad #thinking
 Latoya: I wasn't brave enough for the chat rooms and the MUCKs. #miffed #thinking
 Latoya: But, I was smart enough to make someone to chat to... #neutral #thinking
+MUSIC 0xf0c5sTheme
 CHARACTER RIGHT 0xF0C5
 0xF0C5: good evening, ms. blueena! #laugh
 Latoya: 0xF0C5 started as a chat bot... #thinking
@@ -1179,6 +1181,7 @@ CHARACTER RIGHT 0xF0C5 MOOD grin
     -> morning_day1
 
 = session_start
+MUSIC OFF
 Latoya: Sounds good! #smile
 0xF0C5: excellent, my dear! #grin
 0xF0C5: just put on your vr helmet and off we go!

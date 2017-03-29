@@ -11,7 +11,7 @@
         \key g \major
         \time 6/8
         \tempo 8 = 176
-        \clef bass
+        \clef "bass_15"
         d16 fs16 r16 e8. r16 e16 fs16 e16 fs16. r32 |
       }
   }
