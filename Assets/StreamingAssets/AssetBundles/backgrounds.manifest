@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3733342742
+CRC: 2173638506
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 551a46e00a49bd843c744f1bf402e4ea
+    Hash: 2fec58ca813928600a13e60cd2b2faf3
   TypeTreeHash:
     serializedVersion: 2
     Hash: 4d24bf54f46935ed9e6cf78ac481bb9d
@@ -18,6 +18,7 @@ Assets:
 - Assets/Backgrounds/RamseysOffice.png
 - Assets/Backgrounds/InvertedOffice.png
 - Assets/Backgrounds/Office.png
+- Assets/Backgrounds/Cafe.png
 - Assets/Backgrounds/Bus.png
 - Assets/Backgrounds/Bathroom.png
 - Assets/Backgrounds/LivingRoom.png
