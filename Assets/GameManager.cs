@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
             newState.GameTime = _gameTime;
             newState.GameLocation = _gameLocation;
             newState.BackgroundParameters = _backgroundParameters;
+            newState.MusicParameters = _musicParameters;
             newState.FarLeftCharacterParameters = _farLeftCharacterParameters;
             newState.LeftCharacterParameters = _leftCharacterParameters;
             newState.CenterCharacterParameters = _centerCharacterParameters;
@@ -83,6 +84,7 @@ public class GameManager : MonoBehaviour
                 HandleCharacter(string.Format("FAR_RIGHT {0}", value.FarRightCharacterParameters));
             }
             UpdateBackground(value.BackgroundParameters);
+            PlayMusic(value.MusicParameters);
             _gameLocation = value.GameLocation;
             _gameTime = value.GameTime;
         }
@@ -177,6 +179,7 @@ public class GameManager : MonoBehaviour
 
     private GameState _gameState = GameState.TitleScreen;
     private string _backgroundParameters;
+    private string _musicParameters;
     private string _farLeftCharacterParameters;
     private string _leftCharacterParameters;
     private string _centerCharacterParameters;
@@ -401,6 +404,7 @@ public class GameManager : MonoBehaviour
         {
             musicSource.Stop();
             musicSource.clip = null;
+            _musicParameters = null;
             return false; // Don't wait for input
         }
 
@@ -410,6 +414,7 @@ public class GameManager : MonoBehaviour
         musicSource.clip = clip;
         musicSource.loop = !(regexMatch.Groups["loopSettings"].Success && regexMatch.Groups["loopSettings"].Value.Equals("ONCE"));
         musicSource.Play();
+        _musicParameters = parameters;
 
         return false; // Don't wait for input
     }

@@ -8,6 +8,7 @@ public struct EngineState
     public string GameTime { get; set; }
     public string GameLocation { get; set; }
     public string BackgroundParameters { get; set; }
+    public string MusicParameters { get; set; }
     public string FarLeftCharacterParameters { get; set; }
     public string LeftCharacterParameters { get; set; }
     public string CenterCharacterParameters { get; set; }
