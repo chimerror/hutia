@@ -9,4 +9,5 @@ public enum GameState
     MainMenu,
     Gameplay,
     InGameMenu,
+    Credits,
 }

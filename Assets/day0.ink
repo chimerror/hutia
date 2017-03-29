@@ -8,7 +8,7 @@ blueena: hee hee hee heh... #grin
 blueena: HA HA HA HA HA HA HA HA! #laugh
 blueena: ;3 #sly
 CHARACTER OFF
-TITLE hutia
+TITLE Object-Oriented
 -> wake_up_day0
 
 === wake_up_day0 ===

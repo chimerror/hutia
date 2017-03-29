@@ -4022,6 +4022,123 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.ScrollRect+ScrollRectEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!1 &1280721075
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1280721076}
+  - component: {fileID: 1280721080}
+  - component: {fileID: 1280721079}
+  - component: {fileID: 1280721078}
+  - component: {fileID: 1280721077}
+  m_Layer: 5
+  m_Name: Credits
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1280721076
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1280721075}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1649365887}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 9183.626}
+  m_Pivot: {x: 0.5, y: 1}
+--- !u!114 &1280721077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1280721075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8a8515b10eb54548b5bba989b10a605, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  creditsMusic: LatoyasTheme ONCE
+  scrollAmount: 15
+  scrollDelay: 0.1
+--- !u!114 &1280721078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1280721075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1741964061, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 0
+  m_VerticalFit: 2
+--- !u!114 &1280721079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1280721075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.9254902, g: 0.9254902, b: 0.9372549, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 12c4fb8a0fd049e4f992a6c44d3191b7, type: 3}
+    m_FontSize: 96
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 9
+    m_MaxSize: 96
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "<b>Object-Oriented</b>\r\nA game by Jayce \"Chimerror\" Mitchell\r\n\r\n<b>Programming,
+    Writing, Background Art, and Music</b>\r\nJayce \"Chimerror\" Mitchell\r\n\r\n<b>Character
+    and Scene Art</b>\r\nVirtualysis\r\n\r\n<b>Coding Assets</b>\r\n\r\n<i>Ink Library</i>\r\nInkle
+    Studios\r\n\r\n<i>Super Text Mesh</i>\r\nKai Clavier\r\n\r\n<i>Unity Game Engine</i>\r\nUnity
+    Technologies\r\n\r\n<b>Font Assets</b>\r\n\r\n<i>BioRhyme and BioRhyme Expanded</i>\r\nAoife
+    Mooney\r\n\r\n<i>Cutive Mono</i>\r\nVernon Adams\r\n\r\n<i>Rubik</i>\r\nMeir Sadan\r\n\r\n<b>Original
+    Background Images</b>\r\n\r\n<i>Bedroom</i>\r\nsei.chan\r\n\r\n<i>Bathroom</i>\r\nBrock
+    Builders\r\n\r\n<i>Bus</i>\r\nSeattle Municipal Archives\r\n\r\n<i>Cafe</i>\r\nAuro-Cyanide\r\n\r\n<i>Cafe
+    Bathroom</i>\r\nDmitry G\r\n\r\n<i>Doctor's Office</i>\r\nAnne Karakash\r\n\r\n<i>Emergency
+    Room</i>\r\ndaveynin\r\n\r\n<i>Living Room</i>\r\ntropicalmonsoon\r\n\r\n<i>Office</i>\r\n<i>Ramsey's
+    Office</i>\r\nK2 Space\r\n\r\n<b>Other Images</b>\r\n\r\n<i>Latoya's Phone</i>\r\nCTatz\r\n\r\n<i>Sound
+    Off</i>\r\n<i>Sound On</i>\r\nBlair Adams\r\n\r\n<b>Thanks to</b>\r\nShiboo Blalack\r\nEevee\r
+    for Creating the Strawberry Jam\nJess Hart\r\nHoward Kang\r\nSeattle Indies Meetup
+    Group\r\nSteve Kelsey\r\nStrawberry Jam Game Jam\r\nAnd Yes, You, the Player...
+    ;3\r\n\r\n<b>Object Oriented</b>\nCopyright \xA92017 Jayce \"Chimerror\" Mitchell\r"
+--- !u!222 &1280721080
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1280721075}
 --- !u!1 &1289758852
 GameObject:
   m_ObjectHideFlags: 0
@@ -5615,6 +5732,7 @@ RectTransform:
   - {fileID: 992708690}
   - {fileID: 2075664363}
   - {fileID: 1017674988}
+  - {fileID: 1280721076}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7404,6 +7522,7 @@ MonoBehaviour:
   saveGameDialog: {fileID: 992708689}
   loadGameDialog: {fileID: 2075664362}
   optionsDialog: {fileID: 1017674987}
+  credits: {fileID: 1280721077}
   latoyaLewd: 0
   latoyaObject: 0
   claraLewd: 0

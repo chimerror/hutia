@@ -168,6 +168,7 @@ public class GameManager : MonoBehaviour
     public GameObject saveGameDialog;
     public GameObject loadGameDialog;
     public GameObject optionsDialog;
+    public Credits credits;
     public int latoyaLewd;
     public int latoyaObject;
     public int claraLewd;
@@ -261,8 +262,8 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            // TODO: Game Over, YEAH!!!!!
-            Debug.Log("Ran out of story!");
+            ShowCredits();
+            return;
         }
         _gameState = GameState.Gameplay;
     }
@@ -767,7 +768,7 @@ public class GameManager : MonoBehaviour
         choiceBox.gameObject.SetActive(false);
 
         titleBox.gameObject.SetActive(true);
-        titleBox.SetText("hutia");
+        titleBox.SetText("Object-Oriented");
     }
 
     private void Update()
@@ -800,6 +801,15 @@ public class GameManager : MonoBehaviour
                     {
                         ContinueStory(advanceIfAble: false);
                     }
+                }
+                break;
+
+            case GameState.Credits:
+                if (!credits.gameObject.activeInHierarchy)
+                {
+                    PlayMusic("OFF");
+                    ShowMainMenu();
+                    return;
                 }
                 break;
 
@@ -844,6 +854,7 @@ public class GameManager : MonoBehaviour
                 choiceBox.gameObject.SetActive(false);
                 optionsDialog.gameObject.SetActive(true);
             }));
+        mainMenu.Add(new KeyValuePair<string, UnityAction>("Credits", ShowCredits));
         mainMenu.Add(new KeyValuePair<string, UnityAction>("Quit To Desktop", Application.Quit));
         choiceBox.gameObject.SetActive(true);
         choiceBox.ShowMenu(mainMenu);
@@ -896,5 +907,20 @@ public class GameManager : MonoBehaviour
         choiceBox.gameObject.SetActive(true);
         choiceBox.ShowMenu(mainMenu);
         _gameState = GameState.InGameMenu;
+    }
+
+    private void ShowCredits()
+    {
+        dialogueBox.gameObject.SetActive(false);
+        titleBox.gameObject.SetActive(false);
+        saveGameDialog.SetActive(false);
+        loadGameDialog.SetActive(false);
+        optionsDialog.SetActive(false);
+        choiceBox.gameObject.SetActive(false);
+
+        UpdateBackground(string.Format("COLOR #{0}", ColorUtility.ToHtmlStringRGBA(defaultBackgroundColor)));
+        PlayMusic(credits.creditsMusic);
+        credits.gameObject.SetActive(true);
+        _gameState = GameState.Credits;
     }
 }
