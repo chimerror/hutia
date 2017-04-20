@@ -23,10 +23,11 @@ CHAR_COLOR \#a4d648 Ramsey
 CHAR_COLOR \#c378ff 0xF0C5
 
 // Story variables.
-VAR demo_mode = true
+VAR demo_mode = false
 VAR kissed_clara_day0 = false
 VAR flirted_with_ramsey_day0 = false
 VAR made_out_with_ramsey_day0 = false
+VAR played_with_f0c5_day0 = false
 
 // ------------------------------------------------------------------------------------------------
 // DEBUG MODE
@@ -35,8 +36,8 @@ VAR debug = true
 { debug:
     IN DEBUG MODE!
     * [Beginning...] -> intro
-    * [After The Fantasy...] -> after_the_fantasy_day0
     * [Day 1...] -> morning_day1
+    * [Day 1 living room...] -> living_room_morning_day1
   - else:
     -> intro
 }

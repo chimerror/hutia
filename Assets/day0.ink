@@ -1183,6 +1183,7 @@ CHARACTER RIGHT 0xF0C5 MOOD grin
     -> morning_day1
 
 = session_start
+~ played_with_f0c5_day0 = true
 MUSIC OFF
 Latoya: Sounds good! #smile
 0xF0C5: excellent, my dear! #grin
