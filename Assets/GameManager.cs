@@ -742,7 +742,7 @@ public class GameManager : MonoBehaviour
         _story.ObserveVariable("latoya_lewd", (varName, newValue) => latoyaLewd = (int)newValue);
         _story.ObserveVariable("latoya_object", (varName, newValue) => latoyaObject = (int)newValue);
         _story.ObserveVariable("clara_lewd", (varName, newValue) => claraLewd = (int)newValue);
-        _story.ObserveVariable("clara_lewd", (varName, newValue) => claraLewd = (int)newValue);
+        _story.ObserveVariable("clara_object", (varName, newValue) => claraObject = (int)newValue);
         _story.ObserveVariable("ramsey_lewd", (varName, newValue) => ramseyLewd = (int)newValue);
         _story.ObserveVariable("ramsey_object", (varName, newValue) => ramseyObject = (int)newValue);
         _story.ObserveVariable("f0c5_lewd", (varName, newValue) => f0c5Lewd = (int)newValue);

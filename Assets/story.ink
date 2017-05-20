@@ -38,7 +38,7 @@ VAR debug = true
     IN DEBUG MODE!
     * [Beginning...] -> intro
     * [Day 1...] -> morning_day1
-    * [Day 1 Latest] -> latoya_notices_ramsey_day1
+    * [Day 1 Latest] -> lunch_day1.further_discussion
   - else:
     -> intro
 }

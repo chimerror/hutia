@@ -143,6 +143,7 @@ Latoya: She conked back out! #nervous
 -> bus_morning_day1
 
 === bus_morning_day1
+CHARACTER OFF
 BG IMAGE Bus
 CHARACTER LEFT latoya MOOD bored
 Latoya: It's been less than a month, and I'm already tired of the bus... #thinking
@@ -274,6 +275,7 @@ CHARACTER LEFT latoya MOOD blushing-happily
 CHARACTER RIGHT ramsey MOOD bored
 Latoya: Wait a second... #miffed #thinking
 Latoya: Does Ramsey have neon green on his hand? #thinking
+<- debug_options(-> latoya_notices_ramsey_day1)
 * [Ask him.]
   ~ alter(latoya_object, -3)
   ~ alter(ramsey_object, -1)
@@ -304,6 +306,238 @@ Latoya: Hmmm... Strange things are afoot... #miffed #thinking
     Latoya: ...at the Circle K... #laugh #thinking
     Latoya: Heh!
 }
+Latoya: Aw well, can't worry about that... #thinking
+Latoya: Let's get some work done so I'll be free when Clara shows up for lunch! #smile #thinking
+-> lunch_day1
+
+=== lunch_day1
+CHARACTER OFF
+BG IMAGE Cafe
+CHARACTER LEFT latoya MOOD miffed
+Latoya: OK, finally got a table... I wish this place took reservations... #thinking
+Latoya: Though the food is great! #laugh #thinking
+Latoya: I could have sworn these seats were more comfortable... #miffed #thinking
+Latoya: My ass itches all over. #thinking
+{ latoya_object < 0:
+    Latoya: Then again, my chair at work also felt a little like this... #bored #thinking
+    Latoya: I should check that spot... #thinking
+}
+{ latoya_object < -7:
+    Latoya: And everyone has been acting just a little bit... #miffed #thinking
+    Latoya: Weird... #thinking
+    Latoya: They keep glancing when I walk by, but then just turn back around... #thinking
+    { wore_punk_clothes_day1:
+        Latoya: Though I guess it really could be these "bitchin' threads" #grin #thinking
+    }
+}
+Latoya: Where is Clara, though? She should be here by now... #miffed #thinking
+* [She probably fell back asleep...]
+    ~ alter(clara_object, 2)
+    Latoya: I bet she fell back asleep. #thinking
+* [I'm sure she's on her way...]
+    ~ alter(clara_object, -2)
+    Latoya: I'm sure she's on her way... She may be late... #thinking
+    Latoya: ...disorganized... #bored #thinking
+    Latoya: And sometimes like an airhead, but she usually makes these lunches! #thinking
+- Latoya: Oh, here she is! #smile #thinking
+-> clara_shows_up
+
+= clara_shows_up
+CHARACTER RIGHT clara MOOD nervous
+Latoya: Uh... She's dressed kind of strangely... #nervous #thinking
+<- debug_options(-> clara_shows_up)
+* [Why are you dressed like that?]
+    ~ alter(latoya_object, -2)
+    ~ alter(clara_object, -2)
+    Latoya: Clara, it's 80 degrees outside, why are you wearing a thick hoodie?!
+    Clara: Well... It's, like totes weird...
+    * * [What do you mean weird?]
+        ~ alter(clara_object, -2)
+        Latoya: What do you mean?
+        Clara: I mean...
+    * * [Yeah, of course it is to be wearing thick hoodies in June!]
+        ~ alter(clara_object, 2)
+        Latoya: Well, yeah, it's June and it's beautiful out! #miffed
+        Latoya: Why would you have a hoodie on?
+        Clara: That's not what I meant, Latoya! #miffed
+    * * { latoya_object < -3 } [Wait, your head looks...]
+        ~ alter(clara_object, -4)
+        Latoya: Wait... Why is your head all... Bumpy?
+        Clara: Ah... You, like, noticed! #blushing-happily
+* [Just let it go...]
+    ~ alter(latoya_object, 3)
+    ~ alter(clara_object, 2)
+    Latoya: Hi, Speedy...
+    Clara: Latoya, like, something totes weird is happening to me!
+* { latoya_object > 7 } [Are you trying to hide, prey?]
+    ~ alter(latoya_lewd, 3)
+    ~ alter(latoya_object, 5)
+    ~ alter(clara_lewd, 3)
+    ~ alter(clara_object, 4)
+    Latoya: Oh, she smells delicious, right now... #sly #thinking
+    Latoya: You're hiding, aren't you, prey?
+    { clara_object < 0:
+        Clara: Prey!?
+        Clara: Like, Latoya, you're totes acting weird, and that's not the only thing... #miffed
+      - else:
+        Clara: Eeep!
+        Latoya: Why don't you show me what's under the hood... #grin
+    }
+- Clara: Here, let me show you...
+-> clara_reveals_herself
+
+= clara_reveals_herself
+CHARACTER OFF
+BG IMAGE Cafe
+CHARACTER LEFT latoya MOOD nervous
+CHARACTER RIGHT clara MOOD nervous
+Latoya: ...
+Clara: ...
+Latoya: Clara... You look...
+<- debug_options(-> clara_reveals_herself)
+* [Like a gazelle!]
+    Latoya: ...like a gazelle! Horns and everything!
+* [Like a toy!]
+    Latoya: ...like a pool toy! Your horns are all soft and everything!
+    Clara: I'm not even supposed to have horns!
+* { latoya_object > 7 } [Delicious...]
+    ~ alter(latoya_lewd, 3)
+    ~ alter(clara_lewd, 3)
+    Latoya: ...delicious! #sly
+    { clara_object < 0:
+        Clara: Latoya, like, what the hell is wrong with you? #angry
+        Latoya: Sorry, Clara, I've been acting odd all day... #nervous
+        Clara: hmph...
+      - else:
+        Clara: Eeep!
+    }
+- Clara: ... #nervous
+Clara: I actually painted something like this yesterday!
+Clara: A gazelle woman pool toy with, like, seven breasts...
+{ clara_lewd > 0:
+    Clara: Though I only have just the two right now...
+}
+Clara: But you know what's really weird? #miffed
+Latoya: What?
+Clara: Look around!
+{ latoya_object > 0 || latoya_lewd > 0:
+    Latoya: That would require me to stop looking at you... #sly
+    { clara_object < 0:
+        Clara: That's not as cute as you think it is right now...
+      - else:
+        Clara: ! #blushing-happily
+    }
+    Clara: But the point is...
+  - else:
+    Latoya: It looks... normal...?
+}
+Clara: Like, nobody seems to care I'm a gazelle! #nervous
+Latoya: That does seem strange... #miffed
+Clara: I was totally running to catch the bus and the hood slipped off..
+Clara: And I didn't notice... #sad
+Clara: And on the bus was Cecelia!
+Latoya: From the gallery, right? #nervous
+Clara: Like, yeah! #nervous
+Latoya: What did she do?
+Clara: She cocked her head like this, and then...
+Clara: ...just had a friendly conversation with me!
+Latoya: !
+Clara: I know, right?
+Clara: This must be like some weird dream, but... #miffed
+Latoya: No, I don't think it is...
+Clara: But like people just don't turn into gazelles! #nervous
+-> further_discussion
+
+= further_discussion
+CHARACTER OFF
+BG IMAGE Cafe
+CHARACTER LEFT latoya MOOD sad
+CHARACTER RIGHT clara MOOD nervous
+Latoya: I know... I know...
+- (options)
+{ loop:
+    Latoya: Well... #neutral
+}
+<- debug_options(-> further_discussion)
+* [I've got my own weird stuff!]
+    ~ alter(latoya_object, -3)
+    ~ alter(clara_object, -3)
+    Latoya: I'm dealing with my own weird stuff, Speedy! #miffed
+    Clara: Oh, really?
+    Latoya: Yeah, there was this blue spot on my ass this morning...
+    Latoya: ...and now my ass itches...
+    Latoya: ...and my underwear is all...
+    Latoya: ...funny...
+    Clara: Huh... Well, your ears are like, a smidge longer, too...
+    Latoya: ! #nervous
+    Clara: Your nose looks funny, too..
+    Latoya: !!! #nervous
+    Clara: Still a cutie, though! #blushing-happily
+    Latoya: ! #blushing-happily
+* [You make a cute gazelle, though...]
+    ~ alter(latoya_object, 3)
+    ~ alter(latoya_lewd, 3)
+    ~ alter(clara_object, 3)
+    ~ alter(clara_lewd, 3)
+    Latoya: You make a cute gazelle, though! #smile
+    { clara_object < 0:
+        Clara: Well, like yeah... but... #blushing-happily
+        Clara: I'd rather be my normal human self! #nervous
+      - else:
+        Clara: Eeep!
+        Latoya: ! #sly
+    }
+* [I want to go home and investigate, but...]
+    ~ alter(latoya_object, -5)
+    ~ alter(clara_object, -5)
+    Latoya: I should probably go home and investigate... #miffed
+    Clara: But... #nervous
+    Latoya: But I don't think I can leave work early...
+    Clara: But your girlfriend is turning into a gazelle! #sad
+    Latoya: Capitalism cares not, as does Glaistig. #sad
+* { latoya_object < 0 } [Ramsey has weirdness too!]
+    ~ alter(latoya_object, -3)
+    ~ alter(clara_object, -3)
+    ~ alter(ramsey_object, -3)
+    Latoya: Ramsey had a weird spot on his hand... #miffed
+    Clara: ! #nervous
+    Clara: So is it like, spreading?
+    Latoya: I have no idea....
+* { latoya_object > 5 } [It's kind of funny, isn't it?]
+    ~ alter(latoya_object, 5)
+    ~ alter(clara_object, 5)
+    Latoya: It's kind of funny, isn't it? #grin
+    { clara_object < 0:
+        Clara: No. #angry
+        Clara: It's grody.
+        Latoya: Oh... #sad
+      - else:
+        Clara: Eeep!
+        Clara: Like, stop scaring me!
+        Latoya: ! #sly
+        Latoya: Hee hee...
+    }
+* { played_with_f0c5_day0 && latoya_object < -5 } [I bet 0xF0C5 had something to do with this...]
+    ~ alter(clara_object, -5)
+    Latoya: I bet 0xF0C5 had something to do with this... #miffed
+    Clara: What? #nervous
+    Clara: How could your chat bot have turned me into a gazelle?
+    Latoya: I don't know...
+    Latoya: But when I "played" with them yesterday, there were...
+    Latoya: ...some things that didn't add up...
+* [Let's not talk about this right now...]
+    Latoya: I don't know if we can do anything about it now... #sad
+    Clara: Yeah... #sad
+    Latoya: We can talk more when I get home... #miffed
+    -> done
+- (loop)
+    { -> options | -> options | Clara: Let's talk more later... }
+    Latoya: OK. #sad
+- (done)
+  Latoya: Do you still want to get lunch?
+  Clara: I don't know... #sad
+  Clara: *sigh*
+  Clara: Let me go to the bathroom real quick, I'll see how I feel...
 -> END
 
 === teaser
