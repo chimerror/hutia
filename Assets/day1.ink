@@ -525,6 +525,7 @@ Latoya: I know... I know...
     Latoya: I don't know...
     Latoya: But when I "played" with them yesterday, there were...
     Latoya: ...some things that didn't add up...
+    Clara: Hmmm...
 * [Let's not talk about this right now...]
     Latoya: I don't know if we can do anything about it now... #sad
     Clara: Yeah... #sad
@@ -538,6 +539,38 @@ Latoya: I know... I know...
   Clara: I don't know... #sad
   Clara: *sigh*
   Clara: Let me go to the bathroom real quick, I'll see how I feel...
+CHARACTER RIGHT OFF
+{ latoya_object > 0:
+     Latoya: Huh, seeing her shake her ass... #miffed
+     Latoya: I have a strong urge to follow her... #blushing-happily
+   - else:
+     Latoya: Should I follow her? #bored
+     Latoya: Could be a good chance to check myself out...
+}
+* [Follow her...]
+    -> cafe_bathroom_day1 ->
+* [Nah.]
+    { latoya_object > 0:
+        Latoya: I'll just stay here. #miffed
+        Latoya: Though, I'm very hungry! #blushing-happily
+        Latoya: Even if she doesn't eat, I'll have some food! #grin
+      - else:
+        Latoya: I'll give her some privacy. #bored
+        Latoya: Women who've just turned into gazelles...
+        Latoya: ...don't need some hyena slobbering after them.
+    }
+- -> after_lunch_day1
+
+= cafe_bathroom_day1
+BG IMAGE CafeBathroom
+Latoya: TODO cafe bathroom scene
+->->
+
+=== after_lunch_day1
+CHARACTER OFF
+BG IMAGE Office
+CHARACTER LEFT latoya MOOD neutral
+Latoya: TODO!
 -> END
 
 === teaser

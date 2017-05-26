@@ -82,8 +82,8 @@ public class DialogueBox : MonoBehaviour
 
     private void Awake()
     {
-        _border = transform.FindChild("Border").GetComponent<Image>();
-        _speakerBox = transform.FindChild("Border/Speaker").GetComponent<Image>();
+        _border = transform.Find("Border").GetComponent<Image>();
+        _speakerBox = transform.Find("Border/Speaker").GetComponent<Image>();
         _speakerText = GetComponentInChildren<Text>();
         _dialogueText = GetComponentInChildren<SuperTextMesh>();
     }
