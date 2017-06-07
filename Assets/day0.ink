@@ -52,6 +52,7 @@ Latoya: OK, what to wear? #bored #thinking
 -> living_room_morning_day0
 
 === living_room_morning_day0
+ALIAS Clara AS clarahuman
 LOCATION Living Room
 BG IMAGE LivingRoom
 // left-character: latoya, button-up shirt, work badge
@@ -143,12 +144,12 @@ Latoya: I wonder if I should wake her up? #thinking
 CHARACTER RIGHT clara MOOD sleepy
 Clara: Good Morning, Giggles.
 { steal_pizza:
-    Clara: And, like, uh don't think I didn't see you totally stealing my pizza... #sly
-    Clara: ...you little scavenger.
+    Clara: And, like, uh don't think I didn't see you totally stealing my pizza... #smile
+    Clara: ...you little scavenger. #sly
     Latoya: Uh... #nervous
     Clara: You'll owe me...
 }
-Clara: So uh, you're off to, like, the code mines?
+Clara: So uh, you're off to, like, the code mines? #bored
 Latoya: Yep, this is probably going to be my first day of real work. #neutral
 Clara: Oh my God, totes exciting! #smile
 Latoya: It's not really that exciting. #bored
@@ -167,9 +168,9 @@ Latoya: She's just sitting there smiling, so proud of herself... #thinking
   ~ lower(latoya_object)
   ~ kissed_clara_day0 = true
   Latoya: *kiss* #smile
-  Clara: ! #nervous
-  Latoya: . #sly
   Clara: ! #blushing-happily
+  Latoya: . #sly
+  Clara: ! #laugh
 * [I could punch her...]
   ~ lower(latoya_lewd)
   ~ lower(clara_lewd)
@@ -585,6 +586,7 @@ Latoya: God, spare me from geek humor! #thinking
 -> living_room_day0
 
 === living_room_day0
+ALIAS Clara AS clarahuman
 BG IMAGE LivingRoom
 LOCATION Living Room
 CHARACTER LEFT Latoya
@@ -619,13 +621,13 @@ Latoya: Hmmm, looks like Clara is working in the studio... #miffed #thinking
   ~ alter(clara_object, -1)
 - Clara: So like, I noticed something really sketchy with like, the computer. #nervous
 Latoya: Oh! The one in the bedroom? What exactly? #neutral
-Clara: I was like, downloading music to the thumb drive...
+Clara: I was like, downloading music to the thumb drive... #neutral
 Clara: ...and like, the antivirus came up...
 Clara: ...and it was all narcing on corrupted files...
-Clara: ...but on <i>the original copies</i> of the music...
+Clara: ...but on <i>the original copies</i> of the music... #miffed
 Clara: ...like the ones on the <i>bedroom computer</i>...
 CHARACTER LEFT Latoya MOOD miffed
-Clara: ...which is totes weird, right? #miffed
+Clara: ...which is totes weird, right? #nervous
 Latoya: Yeah, it is...
 Clara: Cause like, why would those files be corrupted?
 Latoya: I'd expect your thumb drive to be corrupted.
@@ -634,7 +636,7 @@ Latoya: I'd expect your thumb drive to be corrupted.
     Clara: Heh. #sly
 }
 Clara: Yeah, and there's like a weird... noise when I listen to the music... #neutral
-Clara: Like you hear in some of those hypnosis files?
+Clara: Like you hear in some of those hypnosis files? #nervous
 Clara: Then again, it totes made me focus like a champ today! #smile
 Latoya: That's really nice. #smile
 Latoya: I'll figure out what's going on.
@@ -644,9 +646,9 @@ Clara: Ooh, your foxy AI boyfriend? #sly
 Latoya: Well, I wrote it to be very gender neutral. It uses 'they' pronouns. #neutral
 Clara: Oh, like, sorry! #nervous
 Latoya: You're apologizing to an AI, they're not... it's not a person.
-Clara: That doesn't mean I can't be nice!
+Clara: That doesn't mean I can't be nice! #miffed
 Clara: Anyway, tell them to stop messing with my music... #sly
-Clara: It makes me... light-headed...
+Clara: It makes me... light-headed... #blushing-happily
 Latoya: Uh-huh, OK.
 Latoya: Hmmm... Could be a good time to chat with Clara... #thinking
 * [Yeah, after all, she's my girlfriend...]
@@ -678,12 +680,12 @@ Latoya: Huh, these are interesting... #miffed
   ~ alter(clara_object, -2)
   Latoya: What is this? It's like a... savannah...
   Clara: Yeah, coming out of a swimming pool! #smile
-  Clara: Like, I was just staring at the mountains from the balcony... #nervous
+  Clara: Like, I was just staring at the mountains from the balcony... #sly
   Clara: Listening to some music...
   Clara: And it appeared before me like a dream...
   Clara: I leapt to it, and there you go! #laugh
   Latoya: And then this second one seems to be a bag for a toy?
-  Clara: Yeah, I remember seeing it next to the pool...
+  Clara: Yeah, I remember seeing it next to the pool... #smile
   Latoya: Honestly, the gazelle with the seven tits almost seems normal after those. #bored
   Clara: Seven! A magic number! #grin
   Latoya: Brightest bright orange, too. It's pretty good, Speedy. #smile
@@ -717,10 +719,10 @@ Latoya: Huh, these are interesting... #miffed
         Clara: Oh, you'd do that with me?
         Latoya: Oh, no, Ms. Takemura... Not together, I'd chase you down and nibble you all over! #grin
         Latoya: *nibble* *nibble* *nibble*
-        Clara: ! #nervous
+        Clara: ! #laugh
         Clara: !!! #blushing-happily
         Latoya: Hee hee hee...
-        Clara: Oh, like, grody. #miffed
+        Clara: Oh, like, grody. #bored
         Clara: Shh, call me after Daddy goes to bed. #sly
         -> makeout
     }
@@ -731,7 +733,7 @@ Latoya: Huh, these are interesting... #miffed
 = makeout
 Latoya: When Daddy goes to bed? Why wait? #sly
 Latoya: *nibble* *nibble* *nibble*
-Clara: Ahhh, tickly! #nervous
+Clara: Ahhh, tickly! #laugh
 Latoya: Oh... #sad
 Clara: Good tickly... #sly
 Latoya: Oh! #smile
@@ -797,7 +799,7 @@ Clara: Sure, Giggles, what's up? #neutral
   ~ alter(clara_object, -4)
   Latoya: So, I felt kind of like I was getting in your way around here... #miffed
   Latoya: ...when I was not working.
-  Clara: Oh, my God, Latoya, you can never be in my way! #nervous
+  Clara: Oh, my God, Latoya, you can never be in my way! #laugh
   Clara: I like, maybe did cut my art because I was afraid... #miffed
   Clara: ...of being totes weird and distant...
   Clara: ...Like I am when I get in my groove...
@@ -822,7 +824,7 @@ Clara: Sure, Giggles, what's up? #neutral
   ~ alter(clara_object, -3)
   ~ alter(clara_lewd, 1)
   Latoya: I... uh... made out with Ramsey today at work. #blushing-happily
-  Clara: Whoa! Totes exciting! #nervous
+  Clara: Whoa! Totes exciting! #laugh
   Clara: Does he still have that totally grabbable bubble butt? #sly
   Latoya: He does! But, it was just grabbing that and a long kiss. #smile
   Latoya: Huh, I was kind of worried you'd be upset. #blushing-happily

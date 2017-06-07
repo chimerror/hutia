@@ -85,6 +85,7 @@ Latoya: What to wear?
 -> living_room_morning_day1
 
 === living_room_morning_day1
+ALIAS Clara AS clarahuman
 CHARACTER LEFT latoya MOOD bored
 BG IMAGE LivingRoom
 Latoya: Ok...
@@ -114,7 +115,7 @@ Clara: Like, why is the couch so uncomfortable?
 * [It's not a bed, Speedy! (lovingly)]
   ~ alter(clara_object, -2)
   Latoya: It's not a bed, Speedy! #sly
-  Clara: Well, like, duh, giggles. #laugh
+  Clara: Well, like, duh, Giggles. #laugh
 - Clara: But it <i>does</i> feel more uncomfortable than usual... #miffed
 Latoya: Odd. Could be time for a new one. #neutral
 Latoya: Anyway, remember that we have lunch together at 1.
@@ -343,6 +344,7 @@ Latoya: Where is Clara, though? She should be here by now... #miffed #thinking
 -> clara_shows_up
 
 = clara_shows_up
+ALIAS Clara AS claragazelle
 CHARACTER RIGHT clara MOOD nervous
 Latoya: Uh... She's dressed kind of strangely... #nervous #thinking
 <- debug_options(-> clara_shows_up)
@@ -350,7 +352,7 @@ Latoya: Uh... She's dressed kind of strangely... #nervous #thinking
     ~ alter(latoya_object, -2)
     ~ alter(clara_object, -2)
     Latoya: Clara, it's 80 degrees outside, why are you wearing a thick hoodie?!
-    Clara: Well... It's, like totes weird...
+    Clara: Well... It's, like totes weird... #sad
     * * [What do you mean weird?]
         ~ alter(clara_object, -2)
         Latoya: What do you mean?
@@ -368,7 +370,7 @@ Latoya: Uh... She's dressed kind of strangely... #nervous #thinking
     ~ alter(latoya_object, 3)
     ~ alter(clara_object, 2)
     Latoya: Hi, Speedy...
-    Clara: Latoya, like, something totes weird is happening to me!
+    Clara: Latoya, like, something totes weird is happening to me! #sad
 * { latoya_object > 7 } [Are you trying to hide, prey?]
     ~ alter(latoya_lewd, 3)
     ~ alter(latoya_object, 5)
@@ -399,7 +401,7 @@ Latoya: Clara... You look...
     Latoya: ...like a gazelle! Horns and everything!
 * [Like a toy!]
     Latoya: ...like a pool toy! Your horns are all soft and everything!
-    Clara: I'm not even supposed to have horns!
+    Clara: I'm not even supposed to have horns! #miffed
 * { latoya_object > 7 } [Delicious...]
     ~ alter(latoya_lewd, 3)
     ~ alter(clara_lewd, 3)
@@ -412,7 +414,7 @@ Latoya: Clara... You look...
         Clara: Eeep!
     }
 - Clara: ... #nervous
-Clara: I actually painted something like this yesterday!
+Clara: I actually painted something like this yesterday! #neutral
 Clara: A gazelle woman pool toy with, like, seven breasts...
 { clara_lewd > 0:
     Clara: Though I only have just the two right now...
@@ -423,7 +425,7 @@ Clara: Look around!
 { latoya_object > 0 || latoya_lewd > 0:
     Latoya: That would require me to stop looking at you... #sly
     { clara_object < 0:
-        Clara: That's not as cute as you think it is right now...
+        Clara: That's not as cute as you think it is right now... #angry
       - else:
         Clara: ! #blushing-happily
     }
@@ -431,21 +433,21 @@ Clara: Look around!
   - else:
     Latoya: It looks... normal...?
 }
-Clara: Like, nobody seems to care I'm a gazelle! #nervous
+Clara: Like, nobody seems to care I'm a gazelle! #sad
 Latoya: That does seem strange... #miffed
-Clara: I was totally running to catch the bus and the hood slipped off..
-Clara: And I didn't notice... #sad
-Clara: And on the bus was Cecelia!
+Clara: I was totally running to catch the bus and the hood slipped off.. #nervous
+Clara: And I didn't notice...
+Clara: And on the bus was Cecelia! #sad
 Latoya: From the gallery, right? #nervous
 Clara: Like, yeah! #nervous
 Latoya: What did she do?
 Clara: She cocked her head like this, and then...
-Clara: ...just had a friendly conversation with me!
+Clara: ...just had a friendly conversation with me! #sad
 Latoya: !
 Clara: I know, right?
 Clara: This must be like some weird dream, but... #miffed
 Latoya: No, I don't think it is...
-Clara: But like people just don't turn into gazelles! #nervous
+Clara: But like people just don't turn into gazelles! #angry
 -> further_discussion
 
 = further_discussion

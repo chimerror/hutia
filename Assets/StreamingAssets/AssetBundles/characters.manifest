@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 3205608124
+CRC: 2487669984
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 540af162d6edc8ca39176e8199912428
+    Hash: 9e784e7f6bbb7b5f6da3b407bf0ed58f
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 4d24bf54f46935ed9e6cf78ac481bb9d
+    Hash: 4774d6da9b606debf00b5a5d61c4487c
 HashAppended: 0
 ClassTypes:
 - Class: 28
@@ -23,12 +23,17 @@ Assets:
 - Assets/Characters/blueena/blushing-happily.png
 - Assets/Characters/0XF0C5/smile.png
 - Assets/Characters/Clara/blushing-happily.png
+- Assets/Characters/ClaraHuman/angry.png
+- Assets/Characters/ClaraHuman/laugh.png
+- Assets/Characters/ClaraGazelle/laugh.png
 - Assets/Characters/Latoya/laugh.png
 - Assets/Characters/0XF0C5/neutral.png
 - Assets/Characters/0XF0C5/nervous.png
 - Assets/Characters/Latoya/bored.png
+- Assets/Characters/ClaraHuman/sly.png
 - Assets/Characters/Ramsey/smile.png
 - Assets/Characters/Jake/smile.png
+- Assets/Characters/ClaraGazelle/smile.png
 - Assets/Characters/blueena/sleepy.png
 - Assets/Characters/blueena/laugh.png
 - Assets/Characters/Clara/smile.png
@@ -43,36 +48,55 @@ Assets:
 - Assets/Characters/blueena/bored.png
 - Assets/Characters/Clara/sad.png
 - Assets/Characters/blueena/neutral.png
+- Assets/Characters/ClaraHuman/miffed.png
 - Assets/Characters/Latoya/neutral.png
 - Assets/Characters/0XF0C5/sad.png
 - Assets/Characters/blueena/angry.png
+- Assets/Characters/ClaraHuman/bored.png
 - Assets/Characters/Latoya/miffed.png
 - Assets/Characters/Ramsey/angry.png
 - Assets/Characters/Clara/sly.png
+- Assets/Characters/ClaraGazelle/miffed.png
 - Assets/Characters/Latoya/grin.png
+- Assets/Characters/ClaraHuman/grin.png
+- Assets/Characters/ClaraHuman/neutral.png
+- Assets/Characters/ClaraGazelle/sleepy.png
 - Assets/Characters/blueena/smile.png
 - Assets/Characters/blueena/grin.png
+- Assets/Characters/ClaraGazelle/sad.png
 - Assets/Characters/Latoya/sad.png
+- Assets/Characters/ClaraHuman/sleepy.png
 - Assets/Characters/Clara/angry.png
+- Assets/Characters/ClaraGazelle/bored.png
+- Assets/Characters/ClaraGazelle/neutral.png
+- Assets/Characters/ClaraHuman/blushing-happily.png
 - Assets/Characters/Latoya/blushing-happily.png
 - Assets/Characters/Ramsey/miffed.png
+- Assets/Characters/ClaraGazelle/angry.png
 - Assets/Characters/blueena/sad.png
+- Assets/Characters/ClaraHuman/nervous.png
 - Assets/Characters/Jake/bored.png
+- Assets/Characters/ClaraGazelle/blushing-happily.png
 - Assets/Characters/blueena/miffed.png
 - Assets/Characters/Clara/miffed.png
 - Assets/Characters/0XF0C5/sly.png
 - Assets/Characters/Clara/grin.png
 - Assets/Characters/blueena/sly.png
 - Assets/Characters/0XF0C5/grin.png
+- Assets/Characters/ClaraGazelle/sly.png
 - Assets/Characters/Latoya/angry.png
 - Assets/Characters/0XF0C5/angry.png
+- Assets/Characters/ClaraGazelle/grin.png
+- Assets/Characters/ClaraGazelle/nervous.png
 - Assets/Characters/0XF0C5/sleepy.png
 - Assets/Characters/Ramsey/blushing-happily.png
+- Assets/Characters/ClaraHuman/sad.png
 - Assets/Characters/blueena/nervous.png
 - Assets/Characters/Ramsey/grin.png
 - Assets/Characters/Ramsey/sleepy.png
 - Assets/Characters/Clara/bored.png
 - Assets/Characters/Ramsey/bored.png
+- Assets/Characters/ClaraHuman/smile.png
 - Assets/Characters/0XF0C5/laugh.png
 - Assets/Characters/Clara/sleepy.png
 - Assets/Characters/Ramsey/laugh.png
