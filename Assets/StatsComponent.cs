@@ -12,9 +12,10 @@ public class StatsComponent : MonoBehaviour
 
     private void Start()
     {
-        foreach (string variable in variables)
+        var statsDictionary = StoryStats.CalculateVariableStats(storyAsset.text, variables, trials, stoppingPoint);
+        foreach (var variable in statsDictionary.Keys)
         {
-            var stats = StoryStats.CalculateVariableStats(storyAsset.text, variable, trials, stoppingPoint);
+            var stats = statsDictionary[variable];
             Debug.LogFormat("{0} -- Min: {1} Max: {2} Mean: {3} Median: {4} Modes: {5} Std. Dev: {6}",
                 variable,
                 stats.Minimum,
