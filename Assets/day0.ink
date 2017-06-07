@@ -731,6 +731,7 @@ Latoya: Huh, these are interesting... #miffed
 -> relationship_talk
 
 = makeout
+~ made_out_with_clara_day0 = true
 Latoya: When Daddy goes to bed? Why wait? #sly
 Latoya: *nibble* *nibble* *nibble*
 Clara: Ahhh, tickly! #laugh

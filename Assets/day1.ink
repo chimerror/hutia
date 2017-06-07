@@ -451,6 +451,7 @@ Clara: But like people just don't turn into gazelles! #angry
 -> further_discussion
 
 = further_discussion
+ALIAS Clara AS claragazelle
 CHARACTER OFF
 BG IMAGE Cafe
 CHARACTER LEFT latoya MOOD sad
@@ -543,13 +544,19 @@ Latoya: I know... I know...
   Clara: Let me go to the bathroom real quick, I'll see how I feel...
 CHARACTER RIGHT OFF
 { latoya_object > 0:
-     Latoya: Huh, seeing her shake her ass... #miffed
-     Latoya: I have a strong urge to follow her... #blushing-happily
+     Latoya: Huh, seeing her shake her ass... #miffed #thinking
+     Latoya: I have a strong urge to follow her... #blushing-happily #thinking
    - else:
-     Latoya: Should I follow her? #bored
-     Latoya: Could be a good chance to check myself out...
+     Latoya: Should I follow her? #bored #thinking
+     Latoya: Could be a good chance to check myself out... #thinking
 }
 * [Follow her...]
+    Latoya: ...
+    Latoya: Better get low so I have a chance to catch up #miffed #thinking
+    Latoya: ...
+    Latoya: Let's see, prey is in a contained area, minimizing... #thinking
+    Latoya: ...
+    Latoya: Wait... What am I thinking about? #nervous #thinking
     -> cafe_bathroom_day1 ->
 * [Nah.]
     { latoya_object > 0:
@@ -564,15 +571,144 @@ CHARACTER RIGHT OFF
 - -> after_lunch_day1
 
 = cafe_bathroom_day1
+CHARACTER OFF
 BG IMAGE CafeBathroom
-Latoya: TODO cafe bathroom scene
+\*slam*
+CHARACTER LEFT latoya MOOD neutral
+Latoya: Ah, looks like Clara just went into that stall... #thinking
+<- debug_options(-> cafe_bathroom_day1)
+* { latoya_object > 5 } [Strike now!]
+    Latoya: *bat bat*
+    { clara_object > 0:
+        Clara: Occupied!
+      - else:
+        Clara: Eeep!
+    }
+    Latoya: Hmmm... will have to wait for her to come out... #miffed #thinking
+* { latoya_object <= 5 } [Check on her.]
+    Latoya: *knock knock*
+    Latoya: Clara? #nervous
+    Clara: Like, give me a minute, jeez!
+    Latoya: !
+    Latoya: Sorry.
+* [Check yourself out first.]
+    Latoya: I gotta find out what's the deal with this itching... #thinking
+- Latoya: Let me go into this stall... #thinking
+Latoya: Jesus! My entire waist is... fuzzy... no... #nervous #thinking
+Latoya: The fuzz is somehow... gooey? #thinking
+Latoya: And I can definitely feel a tail forming in back... #miffed #thinking
+Latoya: And another on my... front? #thinking
+Latoya: ... #thinking
+Latoya: Oh... My clit is huge! It's like a penis... #angry #thinking
+Latoya: Though, luckily, my pussy lips are not shut like a real hyena... #miffed #thinking
+Latoya: So yeah, I seem to be turning into blueena. Somehow. #neutral #thinking
+Latoya: How is this even possible? #angry #thinking
+{ clara_lewd > 0:
+    Clara: Ooooh...
+    Latoya: Wait, that sounded... #nervous #thinking
+    Clara: God! I can't believe I'm like totally horny...
+    -> cafe_bathroom_sex ->
+  - else:
+    Clara: *sigh*
+    \*slam*
+    Latoya: Huh, guess she finished up... #neutral #thinking
+    Latoya: I guess I should have go have lunch... #thinking
+}
+->->
+
+= cafe_bathroom_sex
+Latoya: You're horny? #nervous
+Clara: !
+Clara: Latoya?
+Latoya: Yeah...
+Clara: I've been like this... all day...
+Clara: It's half the reason I didn't just stay at home...
+Clara: Can you...
+{ latoya_lewd <= 0:
+    Latoya: Ah... Speedy, I don't think I can right now...
+    Clara: *whine*
+    Clara: But I know you dig this public stuff!
+    Latoya: With me turning into a hyena and you a gazelle...
+    Latoya: It just doesn't feel right.
+    Latoya: Maybe tonight...
+    Clara: OK...
+    ->->
+}
+~ sex_with_clara_day1 = true
+Latoya: OK, open my door quietly... #sly #thinking
+Clara: Latoya?...
+Latoya: Now, let's jimmy this lock...
+ALIAS Clara AS claragazelle
+CHARACTER RIGHT clara MOOD nervous
+Clara: !
+{ latoya_object > 0:
+    Latoya: blueena always gets her prey! #grin
+  - else:
+    Latoya: Hi, Speedy... #grin
+}
+Clara: Eeep!
+Clara: How did you?
+Latoya: *kiss*
+Clara: Oooooh...
+{ made_out_with_clara_day0:
+    Latoya: Even though we had a little fun yesterday... #thinking
+}
+Latoya: I've been craving this for a while now... #thinking
+Latoya: So what say, you, prey? Green light?
+Clara: Please... Green light. #blushing-happily
+Latoya: Ah, seems she has a handle... #grin #thinking
+Clara: Eeep! #nervous
+Latoya: You're much better flipped around, you know.
+Clara: How did you, what did you just grab on me? #angry
+Clara: Eeep! #nervous
+Clara: I have handles!
+Latoya: I told you that you make an excellent toy...
+Clara: Eeep! #nervous
+Latoya: Yes, "Eeep" indeed.
+Latoya: *chomp*
+Clara: Eeeee... #laugh
+Latoya: I can feel her skin turning to latex under my teeth... #thinking
+Latoya: ...which are getting longer... #thinking
+Latoya: Hmph, air is not as enjoyable to bite as meat... #miffed
+Clara: Ha! #grin
+Clara: Does that mean you'll have to let me go, pred?
+Latoya: Not on your life! #grin
+Clara: Eeep! #nervous
+Latoya: If I can't have fun with my teeth, I'll just use my hands!
+Latoya: You're much easier to hold down when you're so light...
+Clara: No, it's unfair, I can normally kick free! #sad
+Clara: Eeeee... #nervous
+Clara: What's that?
+Clara: Are you actually packing in public? You've not done that in years...
+Latoya: ...
+Latoya: Not quite, prey.
+Clara: ...
+Clara: It's growing! You have a dick!
+Latoya: Not quite, prey...
+Clara: I... may need it...
+Latoya: Just stick a finger in... #thinking
+Latoya: This is all you're getting...
+Clara: Eeeee...
+Latoya: It may have been a while, but I know my girlfriend... #thinking
+Latoya: Now she's quite a bit more stretchy, her walls so puffy... #thinking
+Latoya: I can idly nibble on her ear and play with her down there all day... #thinking
+Latoya: Oh, some... latex came out? #thinking
+Clara: Latoya...?
+Latoya: Done, prey?
+Clara: Yeah...
+Latoya: Good... We'll continue this at home...
+\*creak*
+Latoya: Shit! #angry
 ->->
 
 === after_lunch_day1
 CHARACTER OFF
 BG IMAGE Office
 CHARACTER LEFT latoya MOOD neutral
-Latoya: TODO!
+Latoya: Well, that was kind of awkward...
+{ sex_with_clara_day1:
+    Latoya: I'm not sure if that relieved something or just made me...
+}
 -> END
 
 === teaser

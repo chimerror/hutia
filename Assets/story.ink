@@ -27,8 +27,10 @@ VAR demo_mode = false
 VAR kissed_clara_day0 = false
 VAR flirted_with_ramsey_day0 = false
 VAR made_out_with_ramsey_day0 = false
+VAR made_out_with_clara_day0 = false
 VAR played_with_f0c5_day0 = false
 VAR wore_punk_clothes_day1 = false
+VAR sex_with_clara_day1 = false
 
 // ------------------------------------------------------------------------------------------------
 // DEBUG MODE
@@ -38,7 +40,7 @@ VAR debug = true
     IN DEBUG MODE!
     * [Beginning...] -> intro
     * [Day 1...] -> morning_day1
-    * [Day 1 Latest] -> lunch_day1.further_discussion
+    * [Day 1 Latest] -> lunch_day1.cafe_bathroom_day1
   - else:
     -> intro
 }
