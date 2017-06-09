@@ -30,6 +30,7 @@ VAR made_out_with_ramsey_day0 = false
 VAR made_out_with_clara_day0 = false
 VAR played_with_f0c5_day0 = false
 VAR wore_punk_clothes_day1 = false
+VAR went_to_bathroom_day1 = false
 VAR sex_with_clara_day1 = false
 
 // ------------------------------------------------------------------------------------------------
@@ -40,7 +41,7 @@ VAR debug = true
     IN DEBUG MODE!
     * [Beginning...] -> intro
     * [Day 1...] -> morning_day1
-    * [Day 1 Latest] -> lunch_day1.cafe_bathroom_day1
+    * [Day 1 Latest] -> after_lunch_day1
   - else:
     -> intro
 }

@@ -571,6 +571,7 @@ CHARACTER RIGHT OFF
 - -> after_lunch_day1
 
 = cafe_bathroom_day1
+~ went_to_bathroom_day1 = true
 CHARACTER OFF
 BG IMAGE CafeBathroom
 \*slam*
@@ -692,7 +693,7 @@ Clara: Eeeee...
 Latoya: It may have been a while, but I know my girlfriend... #thinking
 Latoya: Now she's quite a bit more stretchy, her walls so puffy... #thinking
 Latoya: I can idly nibble on her ear and play with her down there all day... #thinking
-Latoya: Oh, some... latex came out? #thinking
+Latoya: Oh, some... latex... came out? #thinking
 Clara: Latoya...?
 Latoya: Done, prey?
 Clara: Yeah...
@@ -704,11 +705,82 @@ Latoya: Shit! #angry
 === after_lunch_day1
 CHARACTER OFF
 BG IMAGE Office
-CHARACTER LEFT latoya MOOD neutral
-Latoya: Well, that was kind of awkward...
+CHARACTER LEFT latoya MOOD miffed
+Latoya: Well, that was kind of awkward... #thinking
 { sex_with_clara_day1:
-    Latoya: I'm not sure if that relieved something or just made me...
+    Latoya: I'm not sure if that relieved anything or just made it worse... #blushing-happily #thinking
 }
+{ went_to_bathroom_day1:
+    Latoya: It seems the fur has spread up my belly... #miffed #thinking
+    Latoya: And now I've got to figure out how to sit with this tail... #thinking
+  - else:
+    Latoya: OK, I'm pretty sure I have a tail now, though it's pretty short. #miffed #thinking
+    Latoya: I also think that speck has spread up my belly... #thinking
+}
+Latoya: Just a few more hours and I can go home and figure this out... #bored #thinking
+CHARACTER RIGHT Ramsey MOOD neutral
+CHARACTER FAR_RIGHT Jake MOOD smile
+Ramsey: Hi, Latoya!
+Latoya: ... #nervous
+Latoya: Ramsey... You have...
+Ramsey: Yeah, I need you to help Jake out a bit with this ticket that just came in.
+Latoya: No, I mean... #sad
+Latoya: He has horns! Like a ram! #thinking
+* [You have horns!]
+    Latoya: You have ram's horns! #nervous
+    Ramsey: Yeah... #nervous
+    Jake: But he's always had them. #bored
+    Ramsey: ...
+    Latoya: ...
+    Jake: You guys are acting weird.
+    Ramsey: Sorry, personal joke between us.
+    Jake: Ah, I see, it must be cool to work with friends. #smile
+* [Better not mention it...]
+    Latoya: You have... Uh... #nervous
+    Ramsey: Yes? #nervous
+    Latoya: Something for me to do?
+- Latoya: I need to help Jake?
+Jake: Yeah, we had a trouble ticket come in from one of our client teams. #bored
+Jake: Something about the AI not respecting sandbox boundaries.
+Ramsey: Right. #neutral
+Jake: I've been investigating it, but I need some help. #smile
+Ramsey: Right. I'm still too busy with meetings, so I need you to help him.
+* [But... You have horns!]
+    Latoya: But... Well uh, let me know later about uh, the horns...
+    Ramsey: Oh, right, the uh, work uh, appropriatness of it... I uh... can do that.
+    Jake: You guys are weird, but that's cool. #bored
+* [OK.]
+    Latoya: OK.
+- Latoya: I think I have two misbehaving AIs to figure out. #nervous #thinking
+Latoya: Let's get to a machine, Jake. #bored
+Jake: Roger!
+Ramsey: OK, I have to get to my next meeting...
+Ramsey: Good luck, you two. #smile
+CHARACTER RIGHT OFF
+\*ring ring*
+Latoya: Oh, give me a sec, Jake.
+Jake: No problem. #bored
+CHARACTER FAR_RIGHT OFF
+Latoya: Hello?
+Secretary: Hello, this is Janice from Dr. Clark's office...
+Janice: reminding you of your appointment for tomorrow morning.
+Latoya: Oh, OK. Thank you. #nervous
+Janice: Additionally, we are required to inform you that Dr. Clark will...
+Janice: ...be seeing you in conjunction with a diagnostic artifical intelligence.
+Janice: The AI is HIPAA certified, but if you have any concerns...
+Janice: ...you may express them now so that alternative arrangements can be made.
+Latoya: Oh... OK. I, uh...
+* [I don't have any concerns...]
+    Latoya: I don't have any concerns.
+* [I have some concerns...]
+    Latoya: I have some concerns...
+    Secretary: I see, Madam. Unfortunately, we may have to reschedule you...
+    Latoya: Yeah. Never mind. #miffed
+    Latoya: It took weeks to get this appointment, I need to get this over with! #thinking
+    Latoya: Even if I </i>am<i> turning into a hyena. #thinking
+- Janice: Thank you, see you tomorrow!
+\*click*
+Latoya: Boy, I wonder how Dr. Clark is going to handle me being a hyena? #nervous #thinking
 -> END
 
 === teaser
