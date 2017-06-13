@@ -762,7 +762,7 @@ Latoya: Oh, give me a sec, Jake.
 Jake: No problem. #bored
 CHARACTER FAR_RIGHT OFF
 Latoya: Hello?
-Secretary: Hello, this is Janice from Dr. Clark's office...
+Janice: Hello, this is Janice from Dr. Clark's office...
 Janice: reminding you of your appointment for tomorrow morning.
 Latoya: Oh, OK. Thank you. #nervous
 Janice: Additionally, we are required to inform you that Dr. Clark will...
@@ -781,6 +781,80 @@ Latoya: Oh... OK. I, uh...
 - Janice: Thank you, see you tomorrow!
 \*click*
 Latoya: Boy, I wonder how Dr. Clark is going to handle me being a hyena? #nervous #thinking
+-> bus_ride_home_day1
+
+=== bus_ride_home_day1
+CHARACTER OFF
+BG IMAGE Bus
+CHARACTER LEFT latoya MOOD bored
+Latoya: OK, lets go over the changes so far... #thinking
+Latoya: I'm fuzzy all over my torso... #thinking
+Latoya: And it's insanely flexible, like liquid... #thinking
+Latoya: My clit may as well be a dick... #thinking
+Latoya: I have a short tail... #thinking
+Latoya: My ears are longer and pointed... #thinking
+Latoya: And I have the beginnings of a muzzle... #thinking
+Latoya: Clara is almost completely a pool toy gazelle... #thinking
+Latoya: And Ramsey is becoming some type of ram... #thinking
+Latoya: How is this even possible? #nervous #thinking
+Latoya: How can I be turning into a hyena? #nervous #thinking
+- (options)
+{ loop:
+    Latoya: Hmmm... #neutral #thinking
+}
+* [I must be imagining it...]
+    Latoya: I might could be imagining all of this, but it's really vivid! #miffed #thinking
+    Latoya: Plus, other people seem to be reacting to me... #thinking
+    Latoya: It seems unlikely that I'm imagining it. #thinking
+* [I must be dreaming...]
+    Latoya: I might could be dreaming. #bored #thinking
+    Latoya: But I don't think I've ever been this lucid in a dream. #thinking
+    Latoya: And there's so many little things that would have been weirder in a dream... #miffed #thinking
+    Latoya: I've coded in dreams before, and you can tell something is off... #bored #thinking
+    Latoya: It's not real code, just how I feel when coding. #thinking
+    Latoya: But now, code here is real code and reading is real reading. #thinking
+    Latoya: Nah, I'm not dreaming. #miffed #thinking
+* [Genetic engineering, perhaps?]
+    Latoya: Could it be genetic engineering? #nervous #thinking
+    Latoya: I really don't know enough about it... #thinking
+    Latoya: but I'm pretty sure this type of thing isn't possible yet. #bored #thinking
+    Latoya: I'd have to be engineered at birth, or something. #thinking
+    Latoya: Though I've been hearing a thing or two about CRISPR... #miffed #thinking
+    Latoya: I just don't know. #thinking
+* [Nanites?]
+    Latoya: Small nanoscopic robots could be responsible. #nervous #thinking
+    Latoya: But that's really far out tech. #thinking
+    Latoya: I mean, it'd be big news if we'd some how made nanites. #bored #thinking
+    Latoya: Like, wall-to-wall coverage and deep political discussions. #miffed #thinking
+    Latoya: Then again with the current bunch in power... #thinking
+    Latoya: Eh, probably not. #bored #thinking
+* [It just is...]
+    Latoya: Is it really important how? I mean, I am, and I need to deal with it. #miffed #thinking
+    Latoya: Wondering why will just slow me down, if becoming goo doesn't first. #thinking
+    Latoya: Is that really the best attitude to have about this? #bored #thinking
+    -> done
+- (loop)
+    { -> options | -> options | -> options | -> done }
+- (done)
+Latoya: Ugh, this makes no sense, I must be in a simulation. #thinking
+Latoya: That would be more likely, but ooh-wee, the philosophical effects. #thinking
+Latoya: Though, it's not like </i>I<i> can hack the simulation... #thinking
+Latoya: So really, what's the difference between that and a real reality? #bored #thinking
+Latoya: *sigh* #thinking
+Latoya: Another thing seems to be that I am progressing slower than everyone else. #miffed #thinking
+Latoya: Probably because I'm not listening to the music 0xF0C5 has altered... #thinking
+Latoya: Though, does it really have to be their fault? #thinking
+* [It has to be.]
+    Latoya: Besides the fact this is reality... #thinking
+    Latoya: This is very much like the fantasies they create. #thinking
+    Latoya: A little silly and cartoony, with only loose ties to reality. #neutral #thinking
+    Latoya: Though is it their fault or mine, really? #thinking
+    Latoya: I trained him like this... #smile #thinking
+* [It could be someone else...]
+    Latoya: I don't know why anyone else would seem to be so localized... #thinking
+    Latoya: But it's definitely possible. #thinking
+- Latoya: Well, I guess we're about to find out! #miffed #thinking
+Latoya: The punchline to this better be hilarious. #thinking
 -> END
 
 === teaser
