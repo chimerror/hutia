@@ -136,7 +136,7 @@ public class GameManager : MonoBehaviour
 
     private readonly static Regex ImageParameters = new Regex(@"^(?<name>[\w-]+)(\s+(?<delay>.+))?$");
 
-    private readonly static Regex CharacterParameters = new Regex(@"^(?<position>FAR_LEFT|LEFT|CENTER|RIGHT|FAR_RIGHT|OFF)(\s+(?<name>.+?))?(\s+MOOD (?<mood>[\w-]+))?(\s+VARIANT (?<variant>[\w-]+))?$");
+    private readonly static Regex CharacterParameters = new Regex(@"^(?<position>FAR_LEFT|LEFT|CENTER|RIGHT|FAR_RIGHT|OFF)(\s+(?<name>.+?))?(\s+MOOD (?<mood>[\w-]+))?(\s+VARIANT (?<variant>[\w-]+))?(\s+FLIPPED (?<flipped>(yes|no)))?$");
 
     private readonly static Regex CharColorParameters = new Regex(@"^(?<color>#?\w+)\s+(?<name>.+)$");
 
@@ -577,6 +577,12 @@ public class GameManager : MonoBehaviour
 
         var mood = regexMatch.Groups["mood"].Success ? regexMatch.Groups["mood"].Value : "neutral";
         var variant = regexMatch.Groups["variant"].Success ? regexMatch.Groups["variant"].Value : string.Empty;
+        bool flipped = false;
+        if (regexMatch.Groups["flipped"].Success)
+        {
+            flipped = regexMatch.Groups["flipped"].Value.Equals("yes");
+        }
+        _characterPositions[name].transform.localScale = flipped ? new Vector3(-1f, 1f, 1f) : new Vector3(1f, 1f, 1f);
         UpdateCharacter(name, variant, mood);
         positionImage.gameObject.SetActive(true);
 
