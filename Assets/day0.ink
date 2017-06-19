@@ -52,7 +52,6 @@ Latoya: OK, what to wear? #bored #thinking
 -> living_room_morning_day0
 
 === living_room_morning_day0
-ALIAS Clara AS clarahuman
 LOCATION Living Room
 BG IMAGE LivingRoom
 // left-character: latoya, button-up shirt, work badge
@@ -586,7 +585,6 @@ Latoya: God, spare me from geek humor! #thinking
 -> living_room_day0
 
 === living_room_day0
-ALIAS Clara AS clarahuman
 BG IMAGE LivingRoom
 LOCATION Living Room
 CHARACTER LEFT Latoya

@@ -49,12 +49,14 @@ public class GameManager : MonoBehaviour
             newState.FarRightCharacterParameters = _farRightCharacterParameters;
             newState.CharacterColors = _characterColors.ToDictionary(kvp => kvp.Key, kvp => "#" + ColorUtility.ToHtmlStringRGBA(kvp.Value));
             newState.CharacterAliases = new Dictionary<string, string>(_characterAliases);
+            newState.CharacterVariants = new Dictionary<string, string>(_characterVariants);
 
             return newState;
         }
 
         set
         {
+            _characterVariants = new Dictionary<string, string>(value.CharacterVariants);
             _characterAliases = new Dictionary<string, string>(value.CharacterAliases);
             _characterColors = value.CharacterColors.ToDictionary(kvp => kvp.Key, kvp =>
                 {
@@ -134,7 +136,7 @@ public class GameManager : MonoBehaviour
 
     private readonly static Regex ImageParameters = new Regex(@"^(?<name>[\w-]+)(\s+(?<delay>.+))?$");
 
-    private readonly static Regex CharacterParameters = new Regex(@"^(?<position>FAR_LEFT|LEFT|CENTER|RIGHT|FAR_RIGHT|OFF)(\s+(?<name>.+?))?(\s+MOOD (?<mood>[\w-]+))?$");
+    private readonly static Regex CharacterParameters = new Regex(@"^(?<position>FAR_LEFT|LEFT|CENTER|RIGHT|FAR_RIGHT|OFF)(\s+(?<name>.+?))?(\s+MOOD (?<mood>[\w-]+))?(\s+VARIANT (?<variant>[\w-]+))?$");
 
     private readonly static Regex CharColorParameters = new Regex(@"^(?<color>#?\w+)\s+(?<name>.+)$");
 
@@ -199,6 +201,7 @@ public class GameManager : MonoBehaviour
     private Dictionary<string, Color> _characterColors = new Dictionary<string, Color>();
     private Dictionary<string, Image> _characterPositions = new Dictionary<string, Image>();
     private Dictionary<string, string> _characterAliases = new Dictionary<string, string>();
+    private Dictionary<string, string> _characterVariants = new Dictionary<string, string>();
 
     public Dictionary<string, Color> CharacterColors
     {
@@ -397,6 +400,11 @@ public class GameManager : MonoBehaviour
 
     private bool PlayMusic(string parameters)
     {
+        if (string.IsNullOrEmpty(parameters))
+        {
+            return false; // Don't wait for input
+        }
+
         var regexMatch = MusicParameters.Match(parameters);
         Debug.AssertFormat(regexMatch.Success, "Unknown MUSIC parameters: {0}", parameters);
 
@@ -568,19 +576,38 @@ public class GameManager : MonoBehaviour
         _characterPositions[name] = positionImage;
 
         var mood = regexMatch.Groups["mood"].Success ? regexMatch.Groups["mood"].Value : "neutral";
-        UpdateCharacter(name, mood);
+        var variant = regexMatch.Groups["variant"].Success ? regexMatch.Groups["variant"].Value : string.Empty;
+        UpdateCharacter(name, variant, mood);
         positionImage.gameObject.SetActive(true);
 
         return false; // Don't wait for input
     }
 
-    private void UpdateCharacter(string name, string mood)
+    private void UpdateCharacter(string name, string variant, string mood)
     {
         var normalizedName = name.ToLowerInvariant();
+        var normalizedVariant = variant.ToLowerInvariant();
         var normalizedMood = mood.ToLowerInvariant();
         Debug.AssertFormat(_characterPositions.ContainsKey(normalizedName), "Attempted to update non-displayed character: {0}", name);
         var positionImage = _characterPositions[normalizedName];
         var filename = _characterAliases.ContainsKey(normalizedName) ? _characterAliases[normalizedName] : normalizedName;
+        if (!string.IsNullOrEmpty(normalizedVariant))
+        {
+            if (normalizedVariant.Equals("default") && _characterVariants.ContainsKey(filename))
+            {
+                _characterVariants.Remove(filename);
+            }
+            else
+            {
+                _characterVariants[filename] = normalizedVariant;
+                filename = string.Format("{0}/{1}", filename, normalizedVariant);
+            }
+        }
+        else if (_characterVariants.ContainsKey(filename))
+        {
+            filename = string.Format("{0}/{1}", filename, _characterVariants[filename]);
+        }
+        // Otherwise, use top folder
         var path = string.Format("assets/characters/{0}/{1}.png", filename, normalizedMood);
         var character = _characters.LoadAsset<Sprite>(path);
         Debug.AssertFormat(character != null, "Unable to load character asset: {0}", path);
@@ -686,7 +713,7 @@ public class GameManager : MonoBehaviour
         var mood = _story.currentTags.FirstOrDefault();
         if (speaker != null && mood != null && MoodExists(speaker, mood))
         {
-            UpdateCharacter(speaker, mood);
+            UpdateCharacter(speaker, string.Empty, mood);
         }
 
         dialogueBox.SetText(speaker, dialogue, tags);

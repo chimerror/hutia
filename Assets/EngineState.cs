@@ -16,4 +16,5 @@ public struct EngineState
     public string FarRightCharacterParameters { get; set; }
     public Dictionary<string, string> CharacterColors { get; set; }
     public Dictionary<string, string> CharacterAliases { get; set; }
+    public Dictionary<string, string> CharacterVariants { get; set; }
 }

@@ -85,7 +85,6 @@ Latoya: What to wear?
 -> living_room_morning_day1
 
 === living_room_morning_day1
-ALIAS Clara AS clarahuman
 CHARACTER LEFT latoya MOOD bored
 BG IMAGE LivingRoom
 Latoya: Ok...
@@ -344,8 +343,7 @@ Latoya: Where is Clara, though? She should be here by now... #miffed #thinking
 -> clara_shows_up
 
 = clara_shows_up
-ALIAS Clara AS claragazelle
-CHARACTER RIGHT clara MOOD nervous
+CHARACTER RIGHT clara MOOD nervous VARIANT gazelle
 Latoya: Uh... She's dressed kind of strangely... #nervous #thinking
 <- debug_options(-> clara_shows_up)
 * [Why are you dressed like that?]
@@ -451,7 +449,6 @@ Clara: But like people just don't turn into gazelles! #angry
 -> further_discussion
 
 = further_discussion
-ALIAS Clara AS claragazelle
 CHARACTER OFF
 BG IMAGE Cafe
 CHARACTER LEFT latoya MOOD sad
@@ -639,7 +636,6 @@ Clara: Can you...
 Latoya: OK, open my door quietly... #sly #thinking
 Clara: Latoya?...
 Latoya: Now, let's jimmy this lock...
-ALIAS Clara AS claragazelle
 CHARACTER RIGHT clara MOOD nervous
 Clara: !
 { latoya_object > 0:
