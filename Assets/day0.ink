@@ -2,7 +2,7 @@
 TIME Present Time
 LOCATION Present Day
 BG COLOR black
-CHARACTER CENTER blueena MOOD sly
+CHARACTER CENTER blueena MOOD sly VARIANT punk
 blueena: Present day... Present time... #sly
 blueena: hee hee hee heh... #grin
 blueena: HA HA HA HA HA HA HA HA! #laugh
@@ -54,8 +54,9 @@ Latoya: OK, what to wear? #bored #thinking
 === living_room_morning_day0
 LOCATION Living Room
 BG IMAGE LivingRoom
+CHARACTER LEFT latoya MOOD bored VARIANT work
 // left-character: latoya, button-up shirt, work badge
-Latoya: Well, here we go... #bored #thinking
+Latoya: Well, here we go... #thinking
 Latoya: Oh! #nervous #thinking
 Latoya: It looks like Clara fell asleep out here... #thinking
 // scene: Clara, sleeping on couch
@@ -288,7 +289,7 @@ Latoya: And honestly, Seattle can be a tough place to date if you're a tech bro.
 Latoya: But maybe they should try some queerness on for size? #sly #thinking
 Latoya: Silly boys. #thinking
 Latoya: Oh, it's almost my turn. #bored #thinking
-CHARACTER LEFT jake MOOD bored
+CHARACTER LEFT jake MOOD bored FLIPPED yes
 Jake: ...so yeah, hopefully I can get Ramsey to teach me how to use a profiler.
 Ramsey: Hmm. I think I can do that. Is that all for your status?
 Jake: Yep.
