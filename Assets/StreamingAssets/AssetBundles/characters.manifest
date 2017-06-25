@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2851465502
+CRC: 3220518327
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: f556ab15b0905862baa4d5538b443a76
+    Hash: 21ea990fde9ffdea66fffb518db01425
   TypeTreeHash:
     serializedVersion: 2
     Hash: 4774d6da9b606debf00b5a5d61c4487c
@@ -17,6 +17,7 @@ Assets:
 - Assets/Characters/0XF0C5/bored.png
 - Assets/Characters/blueena/work/smile.png
 - Assets/Characters/Latoya/smile.png
+- Assets/Characters/Ramsey/ram/nervous.png
 - Assets/Characters/Ramsey/nervous.png
 - Assets/Characters/blueena/work/nervous.png
 - Assets/Characters/Latoya/nervous.png
@@ -37,6 +38,7 @@ Assets:
 - Assets/Characters/0XF0C5/nervous.png
 - Assets/Characters/Latoya/bored.png
 - Assets/Characters/blueena/work/nervous-open.png
+- Assets/Characters/Ramsey/ram/laugh.png
 - Assets/Characters/Ramsey/smile.png
 - Assets/Characters/Jake/smile.png
 - Assets/Characters/Clara/Gazelle/smile.png
@@ -44,6 +46,8 @@ Assets:
 - Assets/Characters/blueena/laugh.png
 - Assets/Characters/Clara/smile.png
 - Assets/Characters/Clara/laugh.png
+- Assets/Characters/Ramsey/ram/sleepy.png
+- Assets/Characters/Ramsey/nervous-open.png
 - Assets/Characters/0XF0C5/blushing-happily.png
 - Assets/Characters/Latoya/work/nervous-open.png
 - Assets/Characters/Ramsey/sly.png
@@ -63,7 +67,9 @@ Assets:
 - Assets/Characters/hou-nd/no-sunglasses/thinking.png
 - Assets/Characters/Latoya/work/angry.png
 - Assets/Characters/Latoya/punk/blushing-happily.png
+- Assets/Characters/Ramsey/ram/nervous-open.png
 - Assets/Characters/Clara/sad.png
+- Assets/Characters/Clara/Gazelle/nervous-open.png
 - Assets/Characters/blueena/neutral.png
 - Assets/Characters/Latoya/work/miffed.png
 - Assets/Characters/blueena/work/sad.png
@@ -71,11 +77,14 @@ Assets:
 - Assets/Characters/Latoya/neutral.png
 - Assets/Characters/0XF0C5/sad.png
 - Assets/Characters/blueena/angry.png
+- Assets/Characters/Clara/nervous-open.png
+- Assets/Characters/Ramsey/ram/neutral.png
 - Assets/Characters/blueena/punk/nervous.png
 - Assets/Characters/Latoya/punk/sad.png
 - Assets/Characters/Latoya/miffed.png
 - Assets/Characters/blueena/punk/miffed.png
 - Assets/Characters/blueena/punk/angry.png
+- Assets/Characters/Ramsey/ram/smile.png
 - Assets/Characters/Ramsey/angry.png
 - Assets/Characters/blueena/work/bored.png
 - Assets/Characters/Latoya/punk/grin.png
@@ -83,6 +92,7 @@ Assets:
 - Assets/Characters/Clara/sly.png
 - Assets/Characters/Clara/Gazelle/miffed.png
 - Assets/Characters/blueena/punk/sly.png
+- Assets/Characters/Ramsey/ram/sad.png
 - Assets/Characters/Latoya/grin.png
 - Assets/Characters/blueena/punk/bored.png
 - Assets/Characters/Clara/Gazelle/sleepy.png
@@ -98,16 +108,19 @@ Assets:
 - Assets/Characters/blueena/work/sleepy.png
 - Assets/Characters/DrClark/thinking.png
 - Assets/Characters/Latoya/sad.png
+- Assets/Characters/Ramsey/ram/grin.png
 - Assets/Characters/Clara/angry.png
 - Assets/Characters/Latoya/punk/nervous.png
 - Assets/Characters/blueena/punk/smile.png
 - Assets/Characters/Clara/Gazelle/bored.png
 - Assets/Characters/Clara/Gazelle/neutral.png
 - Assets/Characters/Latoya/blushing-happily.png
+- Assets/Characters/Ramsey/ram/miffed.png
 - Assets/Characters/Latoya/work/blushing-happily.png
 - Assets/Characters/Ramsey/miffed.png
 - Assets/Characters/Clara/Gazelle/angry.png
 - Assets/Characters/blueena/sad.png
+- Assets/Characters/Ramsey/ram/blushing-happily.png
 - Assets/Characters/hou-nd/thinking.png
 - Assets/Characters/Latoya/work/laugh.png
 - Assets/Characters/blueena/work/neutral.png
@@ -124,6 +137,7 @@ Assets:
 - Assets/Characters/blueena/sly.png
 - Assets/Characters/hou-nd/neutral.png
 - Assets/Characters/0XF0C5/grin.png
+- Assets/Characters/0XF0C5/nervous-open.png
 - Assets/Characters/Clara/Gazelle/sly.png
 - Assets/Characters/Latoya/punk/bored.png
 - Assets/Characters/blueena/nervous-open.png
@@ -132,15 +146,18 @@ Assets:
 - Assets/Characters/blueena/work/laugh.png
 - Assets/Characters/0XF0C5/angry.png
 - Assets/Characters/Clara/Gazelle/grin.png
+- Assets/Characters/Ramsey/ram/sly.png
 - Assets/Characters/Clara/Gazelle/nervous.png
 - Assets/Characters/0XF0C5/sleepy.png
 - Assets/Characters/Ramsey/blushing-happily.png
 - Assets/Characters/blueena/nervous.png
 - Assets/Characters/Ramsey/grin.png
+- Assets/Characters/Ramsey/ram/bored.png
 - Assets/Characters/Ramsey/sleepy.png
 - Assets/Characters/Latoya/work/sleepy.png
 - Assets/Characters/Latoya/work/grin.png
 - Assets/Characters/Clara/bored.png
+- Assets/Characters/Ramsey/ram/angry.png
 - Assets/Characters/hou-nd/no-sunglasses/neutral.png
 - Assets/Characters/Ramsey/bored.png
 - Assets/Characters/0XF0C5/laugh.png
