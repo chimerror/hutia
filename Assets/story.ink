@@ -16,7 +16,7 @@ VAR ramsey_object = 0
 VAR f0c5_lewd = 0
 VAR f0c5_object = 0
 
-CHAR_COLOR \#25dddd Latoya
+CHAR_COLOR \#1fc4c4 Latoya
 CHAR_COLOR \#1cb3b3 blueena
 CHAR_COLOR \#ffac43 Clara
 CHAR_COLOR \#a4d648 Ramsey
