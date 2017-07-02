@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 791696732
+CRC: 943715853
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 2e8d7ab90e42558442668dc61abb6db3
+    Hash: cedf8cdca15e003ad62e6d772f1b207b
   TypeTreeHash:
     serializedVersion: 2
     Hash: 4774d6da9b606debf00b5a5d61c4487c
@@ -16,9 +16,11 @@ ClassTypes:
 Assets:
 - Assets/Characters/0XF0C5/bored.png
 - Assets/Characters/blueena/work/smile.png
+- Assets/Characters/Ramsey/overlays/horns.png
 - Assets/Characters/Latoya/smile.png
 - Assets/Characters/Ramsey/ram/nervous.png
 - Assets/Characters/Ramsey/nervous.png
+- Assets/Characters/Clara/underlays/tail.png
 - Assets/Characters/blueena/work/nervous.png
 - Assets/Characters/Latoya/nervous.png
 - Assets/Characters/blueena/work/miffed.png
@@ -29,6 +31,7 @@ Assets:
 - Assets/Characters/blueena/blushing-happily.png
 - Assets/Characters/Latoya/punk/sleepy.png
 - Assets/Characters/0XF0C5/smile.png
+- Assets/Characters/Latoya/overlays/ears.png
 - Assets/Characters/Clara/blushing-happily.png
 - Assets/Characters/blueena/work/angry.png
 - Assets/Characters/Clara/Gazelle/laugh.png
@@ -84,6 +87,7 @@ Assets:
 - Assets/Characters/Latoya/miffed.png
 - Assets/Characters/blueena/punk/miffed.png
 - Assets/Characters/blueena/punk/angry.png
+- Assets/Characters/Latoya/overlays/ears-nose.png
 - Assets/Characters/Ramsey/ram/smile.png
 - Assets/Characters/Ramsey/angry.png
 - Assets/Characters/blueena/work/bored.png
@@ -102,6 +106,7 @@ Assets:
 - Assets/Characters/Latoya/punk/nervous-open.png
 - Assets/Characters/Clara/Gazelle/sad.png
 - Assets/Characters/Latoya/punk/smile.png
+- Assets/Characters/Latoya/underlays/tail.png
 - Assets/Characters/Latoya/punk/angry.png
 - Assets/Characters/Latoya/work/nervous.png
 - Assets/Characters/Latoya/nervous-open.png
@@ -122,6 +127,7 @@ Assets:
 - Assets/Characters/blueena/sad.png
 - Assets/Characters/Ramsey/ram/blushing-happily.png
 - Assets/Characters/hou-nd/thinking.png
+- Assets/Characters/Clara/overlays/ears-antlers.png
 - Assets/Characters/Latoya/work/laugh.png
 - Assets/Characters/blueena/work/neutral.png
 - Assets/Characters/Jake/bored.png

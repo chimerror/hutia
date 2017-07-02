@@ -343,7 +343,7 @@ Latoya: Where is Clara, though? She should be here by now... #miffed #thinking
 -> clara_shows_up
 
 = clara_shows_up
-CHARACTER RIGHT clara MOOD nervous VARIANT gazelle
+CHARACTER RIGHT clara MOOD nervous OVERLAY ears-antlers
 Latoya: Uh... She's dressed kind of strangely... #nervous #thinking
 <- debug_options(-> clara_shows_up)
 * [Why are you dressed like that?]

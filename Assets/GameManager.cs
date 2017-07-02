@@ -50,12 +50,14 @@ public class GameManager : MonoBehaviour
             newState.CharacterColors = _characterColors.ToDictionary(kvp => kvp.Key, kvp => "#" + ColorUtility.ToHtmlStringRGBA(kvp.Value));
             newState.CharacterAliases = new Dictionary<string, string>(_characterAliases);
             newState.CharacterVariants = new Dictionary<string, string>(_characterVariants);
+            newState.CharacterOverlays = new Dictionary<string, string>(_characterOverlays);
 
             return newState;
         }
 
         set
         {
+            _characterOverlays = new Dictionary<string, string>(value.CharacterOverlays);
             _characterVariants = new Dictionary<string, string>(value.CharacterVariants);
             _characterAliases = new Dictionary<string, string>(value.CharacterAliases);
             _characterColors = value.CharacterColors.ToDictionary(kvp => kvp.Key, kvp =>
@@ -136,7 +138,7 @@ public class GameManager : MonoBehaviour
 
     private readonly static Regex ImageParameters = new Regex(@"^(?<name>[\w-]+)(\s+(?<delay>.+))?$");
 
-    private readonly static Regex CharacterParameters = new Regex(@"^(?<position>FAR_LEFT|LEFT|CENTER|RIGHT|FAR_RIGHT|OFF)(\s+(?<name>.+?))?(\s+MOOD (?<mood>[\w-]+))?(\s+VARIANT (?<variant>[\w-]+))?(\s+FLIPPED (?<flipped>(yes|no)))?$");
+    private readonly static Regex CharacterParameters = new Regex(@"^(?<position>FAR_LEFT|LEFT|CENTER|RIGHT|FAR_RIGHT|OFF)(\s+(?<name>.+?))?(\s+MOOD (?<mood>[\w-]+))?(\s+VARIANT (?<variant>[\w-]+))?(\s+OVERLAY (?<overlay>[\w-]+))?(\s+FLIPPED (?<flipped>(yes|no)))?$");
 
     private readonly static Regex CharColorParameters = new Regex(@"^(?<color>#?\w+)\s+(?<name>.+)$");
 
@@ -202,6 +204,7 @@ public class GameManager : MonoBehaviour
     private Dictionary<string, Image> _characterPositions = new Dictionary<string, Image>();
     private Dictionary<string, string> _characterAliases = new Dictionary<string, string>();
     private Dictionary<string, string> _characterVariants = new Dictionary<string, string>();
+    private Dictionary<string, string> _characterOverlays = new Dictionary<string, string>();
 
     public Dictionary<string, Color> CharacterColors
     {
@@ -577,6 +580,21 @@ public class GameManager : MonoBehaviour
 
         var mood = regexMatch.Groups["mood"].Success ? regexMatch.Groups["mood"].Value : "neutral";
         var variant = regexMatch.Groups["variant"].Success ? regexMatch.Groups["variant"].Value : string.Empty;
+
+        var overlay = regexMatch.Groups["overlay"].Success ? regexMatch.Groups["overlay"].Value : string.Empty;
+        if (!string.IsNullOrEmpty(overlay))
+        {
+            if (overlay.Equals("OFF"))
+            {
+                Debug.AssertFormat(_characterOverlays.ContainsKey(name), "Attempted to turn off overlay for character with no overlay: {0}", name);
+                _characterOverlays.Remove(name);
+            }
+            else
+            {
+                _characterOverlays[name] = overlay;
+            }
+        }
+
         bool flipped = false;
         if (regexMatch.Groups["flipped"].Success)
         {
@@ -618,6 +636,22 @@ public class GameManager : MonoBehaviour
         var character = _characters.LoadAsset<Sprite>(path);
         Debug.AssertFormat(character != null, "Unable to load character asset: {0}", path);
         positionImage.sprite = character;
+
+        var overlay = positionImage.transform.GetChild(0).GetComponent<Image>();
+        Debug.AssertFormat(overlay != null, "Unable to find overlay object for character: {0}", positionImage.name);
+        if (_characterOverlays.ContainsKey(normalizedName))
+        {
+            var overlayPath = string.Format("assets/characters/{0}/overlays/{1}.png", normalizedName, _characterOverlays[normalizedName]);
+            var overlaySprite = _characters.LoadAsset<Sprite>(overlayPath);
+            Debug.AssertFormat(overlaySprite != null, "Unable to load character overlay: {0}", overlayPath);
+            overlay.sprite = overlaySprite;
+            overlay.gameObject.SetActive(true);
+        }
+        else
+        {
+            overlay.sprite = null;
+            overlay.gameObject.SetActive(false);
+        }
 
         var updatedParameters = string.Format("{0} MOOD {1}", normalizedName, normalizedMood);
         if (positionImage.Equals(farLeftCharacter))
