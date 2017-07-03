@@ -18,4 +18,5 @@ public struct EngineState
     public Dictionary<string, string> CharacterAliases { get; set; }
     public Dictionary<string, string> CharacterVariants { get; set; }
     public Dictionary<string, string> CharacterOverlays { get; set; }
+    public Dictionary<string, string> CharacterUnderlays { get; set; }
 }

@@ -51,6 +51,7 @@ public class GameManager : MonoBehaviour
             newState.CharacterAliases = new Dictionary<string, string>(_characterAliases);
             newState.CharacterVariants = new Dictionary<string, string>(_characterVariants);
             newState.CharacterOverlays = new Dictionary<string, string>(_characterOverlays);
+            newState.CharacterUnderlays = new Dictionary<string, string>(_characterUnderlays);
 
             return newState;
         }
@@ -58,6 +59,7 @@ public class GameManager : MonoBehaviour
         set
         {
             _characterOverlays = new Dictionary<string, string>(value.CharacterOverlays);
+            _characterUnderlays = new Dictionary<string, string>(value.CharacterUnderlays);
             _characterVariants = new Dictionary<string, string>(value.CharacterVariants);
             _characterAliases = new Dictionary<string, string>(value.CharacterAliases);
             _characterColors = value.CharacterColors.ToDictionary(kvp => kvp.Key, kvp =>
@@ -138,7 +140,7 @@ public class GameManager : MonoBehaviour
 
     private readonly static Regex ImageParameters = new Regex(@"^(?<name>[\w-]+)(\s+(?<delay>.+))?$");
 
-    private readonly static Regex CharacterParameters = new Regex(@"^(?<position>FAR_LEFT|LEFT|CENTER|RIGHT|FAR_RIGHT|OFF)(\s+(?<name>.+?))?(\s+MOOD (?<mood>[\w-]+))?(\s+VARIANT (?<variant>[\w-]+))?(\s+OVERLAY (?<overlay>[\w-]+))?(\s+FLIPPED (?<flipped>(yes|no)))?$");
+    private readonly static Regex CharacterParameters = new Regex(@"^(?<position>FAR_LEFT|LEFT|CENTER|RIGHT|FAR_RIGHT|OFF)(\s+(?<name>.+?))?(\s+MOOD (?<mood>[\w-]+))?(\s+VARIANT (?<variant>[\w-]+))?(\s+OVERLAY (?<overlay>[\w-]+))?(\s+UNDERLAY (?<underlay>[\w-]+))?(\s+FLIPPED (?<flipped>(yes|no)))?$");
 
     private readonly static Regex CharColorParameters = new Regex(@"^(?<color>#?\w+)\s+(?<name>.+)$");
 
@@ -205,6 +207,7 @@ public class GameManager : MonoBehaviour
     private Dictionary<string, string> _characterAliases = new Dictionary<string, string>();
     private Dictionary<string, string> _characterVariants = new Dictionary<string, string>();
     private Dictionary<string, string> _characterOverlays = new Dictionary<string, string>();
+    private Dictionary<string, string> _characterUnderlays = new Dictionary<string, string>();
 
     public Dictionary<string, Color> CharacterColors
     {
@@ -595,6 +598,20 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        var underlay = regexMatch.Groups["underlay"].Success ? regexMatch.Groups["underlay"].Value : string.Empty;
+        if (!string.IsNullOrEmpty(underlay))
+        {
+            if (underlay.Equals("OFF"))
+            {
+                Debug.AssertFormat(_characterUnderlays.ContainsKey(name), "Attempted to turn off underlay for character with no underlay: {0}", name);
+                _characterUnderlays.Remove(name);
+            }
+            else
+            {
+                _characterUnderlays[name] = underlay;
+            }
+        }
+
         bool flipped = false;
         if (regexMatch.Groups["flipped"].Success)
         {
@@ -651,6 +668,22 @@ public class GameManager : MonoBehaviour
         {
             overlay.sprite = null;
             overlay.gameObject.SetActive(false);
+        }
+
+        var underlay = positionImage.transform.GetChild(1).GetComponent<Image>();
+        Debug.AssertFormat(underlay != null, "Unable to find underlay object for character: {0}", positionImage.name);
+        if (_characterUnderlays.ContainsKey(normalizedName))
+        {
+            var underlayPath = string.Format("assets/characters/{0}/underlays/{1}.png", normalizedName, _characterUnderlays[normalizedName]);
+            var underlaySprite = _characters.LoadAsset<Sprite>(underlayPath);
+            Debug.AssertFormat(underlaySprite != null, "Unable to load character underlay: {0}", underlayPath);
+            underlay.sprite = underlaySprite;
+            underlay.gameObject.SetActive(true);
+        }
+        else
+        {
+            underlay.sprite = null;
+            underlay.gameObject.SetActive(false);
         }
 
         var updatedParameters = string.Format("{0} MOOD {1}", normalizedName, normalizedMood);
