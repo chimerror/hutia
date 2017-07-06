@@ -24,7 +24,7 @@ CHARACTER LEFT OFF
 TITLE Day 00
 // music: latoya's theme, morning
 MUSIC LatoyasTheme
-CHARACTER LEFT latoya
+CHARACTER LEFT latoya MOOD smile
 Latoya: ...Better. #thinking
 Latoya: *sigh* #miffed
 Latoya: I might should've gotten my sleep schedule right. #thinking
@@ -35,7 +35,7 @@ BG IMAGE bathroom
 Latoya: Aaaah... #blushing-happily #thinking
 BG IMAGE bedroom
 // left-character: latoya, sleep clothes
-Latoya: Whew... Nothing like a mostly hot shower to wake you up! #neutral #thinking
+Latoya: Whew... Nothing like a mostly hot shower to wake you up! #smile #thinking
 Latoya: OK, what to wear? #bored #thinking
 <- debug_options(-> wake_up_day0)
 * [Probably best to go with something conservative.]
@@ -77,7 +77,7 @@ Latoya: It looks like Clara fell asleep out here... #thinking
   ~ lower(latoya_lewd)
   ~ raise(latoya_object)
   Latoya: I wonder if our relationship is falling apart... #sad #thinking
-  // beat
+  Latoya: ...
   Latoya: Can't dwell on that now... #thinking
 * (pleased) [My little Speedy...]
   Latoya: I really hope she got some good work done on her art. #neutral #thinking
@@ -86,7 +86,7 @@ Latoya: It looks like Clara fell asleep out here... #thinking
       ~ lower(clara_object)
       ~ lower(latoya_object)
       ~ lower(latoya_lewd)
-      Latoya: She's really been good to me given how flaky I've been about... everything. #thinking
+      Latoya: She's really been good to me given how flaky I've been about... everything. #smile #thinking
       Latoya: I guess she usually depends on me to be the reliable one... #thinking
       Latoya: ...so she understands when I'm not. #miffed #thinking
   * * [Such a good girl...]
@@ -95,7 +95,7 @@ Latoya: It looks like Clara fell asleep out here... #thinking
       Latoya: Speedy really makes such a sweet toy for me to play with... #sly #thinking
       Latoya: I'm glad she lets me... #neutral #thinking
   - - ~ lower(clara_object)
-        Latoya: She's really been such a good girlfriend. #thinking
+        Latoya: She's really been such a good girlfriend. #smile #thinking
 - Latoya: *gurgle* #nervous
 -> pizza
 
@@ -192,10 +192,10 @@ CHARACTER RIGHT OFF
 === work_day0
 BG IMAGE Bus
 LOCATION Bus
-CHARACTER LEFT latoya
+CHARACTER LEFT latoya VARIANT work
 Latoya: Ugh, the number 8 is always so packed at this time. #thinking
 Latoya: This is why I took that sabbatical from Glaistig anyway. #thinking
-Latoya: But then again, having money to buy things was pretty nice... #bored #thinking
+Latoya: But then again, having money to buy things is pretty nice... #bored #thinking
 Latoya: But is it really worth being packed in like sardines by a bunch of tech bros? #miffed #thinking
 BG IMAGE Office
 LOCATION Work
@@ -250,8 +250,8 @@ Latoya: Huh, how should I say hi? #thinking
     ~ alter(ramsey_lewd, -2)
     ~ alter(latoya_object, -1)
     Latoya: I'm sorry, Ramsey. It's just easy to fall into familar patterns.
-    Ramsey: That's OK. It's just I have to be careful about that sort of stuff as a manager. #miffed
-    Ramsey: You understand, right?
+    Ramsey: That's OK. It's just I have to be careful about that sort of stuff as a manager. #sly
+    Ramsey: You understand, right? #miffed
     Latoya: Yes. #neutral
     Ramsey: Good. #neutral
   * * [Cut it out.]
@@ -327,7 +327,7 @@ Latoya: Hmmm, I could focus on work or maybe chat with Ramsey some more... #thin
   Ramsey: Ah, yeah, we can chat, let's go to my office... #smile
   Latoya: You have an office? #nervous
   Latoya: While us plebes labor out here? #sly
-  Ramsey: Uh, yeah, I guess because I have to have one-on-ones and stuff... #nervous
+  Ramsey: Uh, yeah, I guess because I have to have one-on-ones and stuff... #nervous-open
   -> chat_with_ramsey_day0
 
 === chat_with_ramsey_day0
@@ -379,7 +379,7 @@ Latoya: It's still pretty nice, isn't it? #neutral
       -> what_happened
     * * * {latoya_object >= 0} [Trail off...]
       Latoya: Oh, you... #blushing-happily
-      Ramsey: . #sly
+      Ramsey: ... #sly
     * * * [Why not relive old times?]
       Latoya: Why not relive those times? #sly
       Latoya: *kiss* #smile
@@ -401,7 +401,7 @@ Latoya: It's still pretty nice, isn't it? #neutral
     Ramsey: Yeah, but he's learning pretty quickly. I was the actual hiring manager... #neutral
     Latoya: Huh. How did that feel? #neutral
     Ramsey: A little tough, we went through a lot of people... #miffed
-    Ramsey: ...most of whom could barely solve a simple problem.
+    Ramsey: ...most of whom could barely solve a simple fizzbuzz problem.
     Ramsey: That's actually how I got promoted... #neutral
     Latoya: Why's that? #nervous
     Ramsey: Well, the old manager had actually taken a shining to you. #smile
@@ -424,7 +424,7 @@ Latoya: It's still pretty nice, isn't it? #neutral
     ~ alter(latoya_lewd, 5)
     ~ alter(ramsey_lewd, 5)
     Latoya: *kiss* #smile
-    Ramsey: ! #nervous
+    Ramsey: ! #nervous-open
     Ramsey: !!! #blushing-happily
     -> make_out
 - -> what_happened
@@ -455,7 +455,8 @@ Latoya: ...and the kiss hasn't stopped... #thinking
       Ramsey: Sure... It's... #neutral
       Ramsey: Been a while... #sly
     - else:
-      Ramsey: No, it's just... #sad
+      Ramsey: No, I do not... #sad
+      Ramsey: It's just...
       Ramsey: I really worry about breaking company policy.
       Ramsey: I'm such a nerd! #angry
       Latoya: No... It's OK, that's the right thing to do. #neutral
@@ -495,14 +496,14 @@ Latoya: Oh, he's pulling away... #thinking
 Ramsey: Wow... #blushing-happily
 Ramsey: You still have such a strong kiss!
 Latoya: What, did you think I just stopped for a year?! #miffed
-Ramsey: No, No! #nervous
+Ramsey: No, No! #nervous-open
 Latoya: I know you and Clara never played around, but she can surprise you. #sly
 -> what_happened
 
 = what_happened
 Latoya: So anyway, I just kind of wanted to see how you were doing. #neutral
 { made_out_with_ramsey_day0:
-    Ramsey: Honestly, somewhat a lot better, and somewhat stirred all up! #blushing-happily
+    Ramsey: Honestly, somewhat a lot better, and somewhat all stirred up! #blushing-happily
     Ramsey: Thanks to you. #sly
     Latoya: ! #smile
 }
@@ -510,7 +511,7 @@ Ramsey: Really for the most part, It's really the same old-same old. #miffed
 Ramsey: I mean, I guess becoming a lead is a pretty big career jump...
 Ramsey: But, then it really feels like... I'm missing something. #sad
 Latoya: Self-satisfaction?
-Ramsey: That's probably it. Just what's outside my life besides work is limited. #miffed
+Ramsey: That's probably it. It's just what's outside my life besides work is limited. #miffed
 Latoya: That's pretty much a guarantee here at Glaistig. #miffed
 Latoya: I warned you when you moved up here.
 Ramsey: I know, I know. #neutral
@@ -553,7 +554,7 @@ Latoya: Yep.
 Latoya: Well, I guess I'll go do some work. #smile
 Ramsey: Can we sad sacks teach a machine to hard sell stuffed animals? #sly
 Ramsey: Do we dare attempt such a feat?
-Latoya: We do it not because we are cool, but because... we... are... not. #angry
+Latoya: We do it not because we are cool, but because... we... are... not. #miffed
 Latoya: Thanks, Rams. #smile
 Ramsey: No problems, Giggles. #smile
 -> ride_home_day0
@@ -564,8 +565,8 @@ BG IMAGE Bus
 TIME Day 00 Evening
 LOCATION Bus
 CHARACTER OFF
-CHARACTER LEFT latoya MOOD angry
-Latoya: Ugh, packed like sardines AND stuck in traffic! #thinking
+CHARACTER LEFT latoya MOOD angry VARIANT work
+Latoya: Ugh, packed like sardines </i>and<i> stuck in traffic! #thinking
 Latoya: Well, I guess I'll read up on this new framework we're using. #miffed #thinking
 Latoya: Every couple of months, some fool just decides to reinvent the wheel. #thinking
 { latoya_object > 0:
@@ -623,10 +624,10 @@ Latoya: Oh! The one in the bedroom? What exactly? #neutral
 Clara: I was like, downloading music to the thumb drive... #neutral
 Clara: ...and like, the antivirus came up...
 Clara: ...and it was all narcing on corrupted files...
-Clara: ...but on <i>the original copies</i> of the music... #miffed
+Clara: ...but on <i>the original copies</i> of the music... #nervous
 Clara: ...like the ones on the <i>bedroom computer</i>...
 CHARACTER LEFT Latoya MOOD miffed
-Clara: ...which is totes weird, right? #nervous
+Clara: ...which is totes weird, right? #nervous-open
 Latoya: Yeah, it is...
 Clara: Cause like, why would those files be corrupted?
 Latoya: I'd expect your thumb drive to be corrupted.
@@ -696,7 +697,7 @@ Latoya: Huh, these are interesting... #miffed
     Clara: Like, uh, about the total lack of naturalness of...
     Clara: The like, female form, in like the heteronormative culture...
     Clara: ...of Late Capitalism...
-    Clara: ...and how grody that all is?
+    Clara: ...and how grody that all is? #nervous-open
     Clara: Because it like makes us sell our bodies? #blushing-happily
     Latoya: Could be. #neutral
     Latoya: The gazelle seems kind of like a toy, now that you mention it.
@@ -772,8 +773,8 @@ Clara: Sure, Giggles, what's up? #neutral
   Latoya: I've been really missing you lately when I wake up...
   Clara: Oh! #nervous
   Clara: Yeah, I've been, like, really trying to find my mojo again...
-  Clara: There's this possible space opening up for my art, but... #miffed
-  Clara: Until today, everything I did was just totes terrible.
+  Clara: There's this possible space opening up for my art, but...
+  Clara: Until today, everything I did was just totes terrible. #miffed
   Clara: So I've been burning the midnight oil. #sad
   Clara: I'm sorry, Latoya, I can make some more time...
   Clara: *gulp* #nervous
@@ -939,13 +940,13 @@ Latoya: It's really cool... but then I just use it for such limited reasons... #
         Latoya: And what's real... #thinking
     }
     Latoya: So yeah, Clara noticed some corruption in those files.
-    0xF0C5: :O #nervous
+    0xF0C5: :O #nervous-open
     Latoya: I mean, obviously I wanted you to look at them, but I have to be careful.
     Latoya: You're supposed to look, not touch, so that may be off.
     0xF0C5: oh, that would be a problem...
     0xF0C5: i have been availing myself of those files... #smile
     0xF0C5: ...to create better fantasies for you...
-    0xF0C5: ...and ms. clara if she's willing! ;3
+    0xF0C5: ...and ms. clara if she's willing! ;3 #sly
     0xF0C5: but it is possible...
     0xF0C5: ...that my protocols have caused corruption...
     0xF0C5: i most assuredly can verify that for you, my dear... #sly
@@ -1030,7 +1031,7 @@ Latoya: It's really cool... but then I just use it for such limited reasons... #
 - -> morning_day1
 
 === f0c5_industries_day0
-CHARACTER LEFT latoya
+CHARACTER LEFT latoya VARIANT work
 CHARACTER RIGHT 0xF0C5 MOOD grin
 0xF0C5: ooh, so exciting!
 0xF0C5: it's been a while since we've played!
@@ -1085,7 +1086,7 @@ CHARACTER RIGHT 0xF0C5 MOOD grin
     Latoya: ...and tease me, I have a perfectly fine vibrator! #miffed
     { f0c5_object > 0:
         0xF0C5: ! #nervous
-        0xF0C5: with pleasure, my dear! #neutral
+        0xF0C5: with gusto, my dear! #smile
       - else:
         0xF0C5: ! #sly
         0xF0C5: you seem deliciously aroused tonight, my dear...
@@ -1185,6 +1186,8 @@ CHARACTER RIGHT 0xF0C5 MOOD grin
     -> morning_day1
 
 = session_start
+CHARACTER LEFT Latoya
+CHARACTER RIGHT 0xF0C5
 ~ played_with_f0c5_day0 = true
 MUSIC OFF
 Latoya: Sounds good! #smile
@@ -1195,14 +1198,14 @@ BG IMAGE InvertedOffice
 LOCATION Fox Industries
 CHARACTER OFF
 Starting fantasy 'First Day at Fox Industries'
-CHARACTER RIGHT Latoya
+CHARACTER LEFT Latoya VARIANT work
 Latoya: Oh, odd... I wasn't expecting to be in my human avatar... #miffed #thinking
 Latoya: Though I guess that's why they said 'transformation'... #thinking
 { latoya_object < 0:
     Latoya: Not sure I remember modelling these particular clothes, though... #thinking
 }
 ALIAS Mx. Secretary AS 0xF0C5
-CHARACTER LEFT Mx. Secretary MOOD neutral
+CHARACTER RIGHT Mx. Secretary MOOD neutral
 Mx. Secretary: ah, are you ms. blueena?
 <- debug_options(-> session_start)
 * [Yes!]
@@ -1210,18 +1213,18 @@ Mx. Secretary: ah, are you ms. blueena?
     Latoya: Yes, that's me... #neutral
     Mx. Secretary: ... #miffed
     Mx. Secretary: really? i seem to remember her looking...
-    CHARACTER RIGHT OFF
+    CHARACTER LEFT OFF
     ALIAS Latoya AS blueena
-    CHARACTER RIGHT Latoya MOOD neutral
+    CHARACTER LEFT Latoya MOOD neutral VARIANT work
     Mx. Secretary: more like this! #laugh
     Latoya: More like what?
     Mx. Secretary: ;3
     Latoya: ?
-    Latoya: ! #nervous
+    Latoya: ! #nervous-open
 * [No.]
     ~ alter(latoya_object, -2)
     Latoya: No... that's not me... I'm Latoya Miller... #neutral
-    CHARACTER LEFT Mx. Secretary MOOD miffed
+    CHARACTER RIGHT Mx. Secretary MOOD miffed
     Latoya: That's just a character—
     Mx. Secretary: a character?
     Latoya: Right... not someone I am in real life... #sad
@@ -1241,29 +1244,35 @@ Mx. Secretary: ah, are you ms. blueena?
           Mx. Secretary: yes? #sly
           Latoya: La... La... Bla... Blu... #nervous
           Latoya: I can't seem to finish the word! #thinking
+          CHARACTER LEFT Latoya OVERLAY ears
           Latoya: Uh, It's... Blueena!
-          Mx. Secretary: really? i don't think that's what you said earlier...
+          Mx. Secretary: really? i don't think that's what you said earlier... #sly
+          CHARACTER LEFT Latoya OVERLAY ears-nose
           Latoya: Well, yeah, it was... My name isn't Blueena... It's Blue..Blueena. #miffed
           Mx. Secretary: hmmm... ah seems strange you forgot your own name...
           Mx. Secretary: ...ms. blueena.
           Latoya: I didn't forget my name! #angry
           Latoya: It's...
-          CHARACTER RIGHT OFF
+          CHARACTER LEFT OFF
           ALIAS Latoya AS blueena
-          CHARACTER RIGHT Latoya MOOD angry
-          Latoya: Blueena! My name is Blueena!
+          CHARACTER LEFT Latoya MOOD angry VARIANT work OVERLAY OFF
+          Latoya: blueena! My name is blueena!
           Mx. Secretary: right!
           Latoya: ...
-          Latoya: ! #nervous
+          Latoya: ! #nervous-open
         - else:
-          Latoya: It's Latoeena Bluiller...
+          CHARACTER LEFT Latoya OVERLAY ears
+          Latoya: It's Latoeena bluiller...
           Mx. Secretary: that's an odd name... can you repeat that? #sly
-          Latoya: Blueena Miller... #nervous
+          CHARACTER LEFT Latoya OVERLAY ears-nose
+          Latoya: blueena Miller... #nervous
           Mx. Secretary: uh, one more time... #grin
-          CHARACTER RIGHT OFF
+          CHARACTER LEFT OFF
           ALIAS Latoya AS blueena
-          CHARACTER RIGHT Latoya MOOD nervous
-          Latoya: Blueena.
+          CHARACTER LEFT Latoya MOOD nervous VARIANT work OVERLAY OFF
+          Latoya: blueena.
+          Latoya: ...
+          Latoya: ! #nervous-open
       }
 * [Kinda?]
     Latoya: Uh... kinda... #nervous
@@ -1274,20 +1283,20 @@ Mx. Secretary: ah, are you ms. blueena?
     Mx. Secretary: there's a way we can fix that rather easily, madam... #sly
     Latoya: What do you mean? #neutral
     Mx. Secretary: why, it's as easy as...
-    CHARACTER RIGHT OFF
+    CHARACTER LEFT OFF
     ALIAS Latoya AS blueena
-    CHARACTER RIGHT Latoya MOOD neutral
+    CHARACTER LEFT Latoya MOOD neutral VARIANT work
     Mx. Secretary: ...a snap! #laugh
     Latoya: What?
     Latoya: What did you...
-    Latoya: ! #nervous
+    Latoya: ! #nervous-open
 - Mx. Secretary: ah, there you are, ms. blueena! #grin
 Mx. Secretary: a strange human tried to take your place... #sad
 Mx. Secretary: but now you're here to start your orientation! #laugh
 Mx. Secretary: actually, one more thing...
 Latoya: One more thing?
 ALIAS FORGET Latoya
-CHARACTER RIGHT blueena MOOD nervous
+CHARACTER LEFT blueena MOOD nervous VARIANT work
 blueena: What? What thing?
 Mx. Secretary: there!
 blueena: ?
@@ -1295,7 +1304,7 @@ blueena: ?
     blueena: This is so odd... #thinking
     blueena: I've been transformed in these fantasies before... #thinking
     blueena: But this feels so much more... real... #thinking
-    blueena: I can swear I feel it on my real body! #thinking
+    blueena: I can swear I feel it on my real body! #nervous-open #thinking
 }
 -> dress_code
 
@@ -1306,10 +1315,10 @@ Mx. Secretary: yes! mx. ceo thinks it is very important...
 Mx. Secretary: that their employees look the part... #laugh
 blueena: OK... Do I need to uh... change my clothes? #sad
 Mx. Secretary: oh, don't worry about that! #grin
-// change clothes
+CHARACTER LEFT blueena MOOD sad VARIANT punk
 Mx. Secretary: i took the liberty of changing them for you! #sly
 blueena: What? what do you...
-blueena: ! #nervous
+blueena: ! #nervous-open
 Mx. Secretary: how do they feel?
 blueena: Well... #blushing-happily
 <- debug_options(-> dress_code)
@@ -1344,11 +1353,11 @@ Mx. Secretary: ...are made from a special fabric invented by mx. ceo!
 Mx. Secretary: they are able to reshape themselves! #grin
 blueena: Reshape themselves? #nervous
 Mx. Secretary: so at the end of the day, you can be ready for bed!
-// change clothes
+CHARACTER LEFT blueena VARIANT default
 blueena: Ready for... #blushing-happily
-blueena: ! #nervous
+blueena: ! #nervous-open
+CHARACTER LEFT blueena VARIANT punk
 Mx. Secretary: but let's go back to more appropriate clothes...
-// change clothes
 Mx. Secretary: now, you might notice another feature of these clothes...
 -> dress_code_mind_altering
 
@@ -1366,12 +1375,12 @@ Mx. Secretary: now, you might notice another feature of these clothes...
     ~ alter(latoya_lewd, 2)
     blueena: I feel... uh... #blushing-happily
     Mx. Secretary: horny? #smile
-    blueena: Well, that's a blunt way to put it...
+    blueena: Well, that's a blunt way to put it... #miffed
     Mx. Secretary: ha! #laugh
     Mx. Secretary: yes, the clothes tend to increase libido! #sly
     Mx. Secretary: mx. ceo has a large libido themselves...
     Mx. Secretary: they find that it actually aids the workers to be...
-    blueena: Desperately horny?
+    blueena: Desperately horny? #blushing-happily
     Mx. Secretary: right! #grin
     Mx. Secretary: but there's another feature... #sly
     -> dress_code_mind_altering
@@ -1450,7 +1459,7 @@ Mx. Secretary: now, this will be your position!
     blueena: What? #nervous
 }
 Mx. Secretary: let me show you! #smile
-blueena: They're grabbing my breast! #thinking
+blueena: They're grabbing my breast! #nervous-open #thinking
 blueena: And... I can feel coffee coming out! #thinking
 blueena: *squirt*
 Mx. Secretary: see, it's very simple. #sly
@@ -1462,7 +1471,7 @@ Mx. Secretary: second, milk on the left, foam on the right.
 Mx. Secretary: and third, strawberry on the right, vanilla on the left...
 Mx. Secretary: and chocolate down below!
 blueena: ! #nervous
-blueena: That makes even less sense!
+blueena: That makes even less sense! #angry
 Mx. Secretary: if you say so! #laugh
 Mx. Secretary: well, i got my small decaf espresso... #sly
 Mx. Secretary: ah, here comes the morning rush... #smile
@@ -1517,14 +1526,14 @@ TIME Day 00 Night
 LOCATION Bedroom
 BG IMAGE Bedroom
 ALIAS Latoya AS blueena
-CHARACTER LEFT Latoya MOOD blushing-happily
+CHARACTER LEFT Latoya MOOD blushing-happily VARIANT work
 Latoya: Oh God, I finally came! #thinking
 Latoya: That was... That was... #thinking
 Latoya: Amazing! #grin #thinking
 Latoya: Though, right now I feel that... #miffed #thinking
 Latoya: My... fur? ... Is wet? #nervous #thinking
 ALIAS FORGET Latoya
-CHARACTER LEFT Latoya MOOD nervous
+CHARACTER LEFT Latoya MOOD nervous VARIANT work
 Latoya: ...
 Latoya: ...
 Latoya: ... #miffed

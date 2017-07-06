@@ -47,8 +47,8 @@ EXTERNAL keepTakingOrders()
 VAR orders_made = 0
 VAR orders_wrong = 0
 CHARACTER OFF
-CHARACTER LEFT 0xF0C5 MOOD laugh
-CHARACTER RIGHT blueena MOOD nervous
+CHARACTER RIGHT 0xF0C5 MOOD laugh
+CHARACTER LEFT blueena MOOD nervous
 -> new_order
 
 = new_order
@@ -150,7 +150,7 @@ blueena: I hope I got it right... #thinking
 }
 { orders_made == 3:
     ALIAS Mx. Secretary AS 0xF0C5
-    CHARACTER LEFT Mx. Secretary MOOD laugh
+    CHARACTER RIGHT Mx. Secretary MOOD laugh
     Mx. Secretary: good job ms. blueena!
     blueena: Thanks!
     Mx. Secretary: now i'll activate your reinforcement!

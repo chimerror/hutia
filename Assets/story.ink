@@ -41,7 +41,7 @@ VAR debug = true
     IN DEBUG MODE!
     * [Beginning...] -> intro
     * [Day 1...] -> morning_day1
-    * [Day 1 Latest] -> lunch_day1
+    * [Integration Latest] -> after_the_fantasy_day0
   - else:
     -> intro
 }
