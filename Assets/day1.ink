@@ -73,6 +73,7 @@ Latoya: What to wear?
 * [Let's go with a conservative combo...]
   ~ alter(latoya_object, 1)
   ~ wore_punk_clothes_day1 = false
+  CHARACTER LEFT latoya MOOD bored VARIANT work
   Latoya: Yep, playing it safe again. #bored
 * [There's not really a dress code, you know...]
   ~ alter(latoya_object, -1)
@@ -80,6 +81,7 @@ Latoya: What to wear?
   ~ wore_punk_clothes_day1 = true
   Latoya: Yeah, what's the point of having these cool clothes... #miffed
   Latoya: ...if I never wear them?
+  CHARACTER LEFT latoya MOOD bored VARIANT punk
   Latoya: Watch out, World! Latoya's going Punk today! #laugh
 - Latoya: See, you can't even see that speck!
 -> living_room_morning_day1
@@ -343,32 +345,31 @@ Latoya: Where is Clara, though? She should be here by now... #miffed #thinking
 -> clara_shows_up
 
 = clara_shows_up
-CHARACTER RIGHT clara MOOD nervous OVERLAY ears-antlers
 Latoya: Uh... She's dressed kind of strangely... #nervous #thinking
 <- debug_options(-> clara_shows_up)
 * [Why are you dressed like that?]
     ~ alter(latoya_object, -2)
     ~ alter(clara_object, -2)
     Latoya: Clara, it's 80 degrees outside, why are you wearing a thick hoodie?!
-    Clara: Well... It's, like totes weird... #sad
+    Clara: Well... It's, like totes weird...
     * * [What do you mean weird?]
         ~ alter(clara_object, -2)
         Latoya: What do you mean?
         Clara: I mean...
-    * * [Yeah, of course it is to be wearing thick hoodies in June!]
+    * * [Yeah, of course it is to be wearing thick hoodies in Summertime!]
         ~ alter(clara_object, 2)
-        Latoya: Well, yeah, it's June and it's beautiful out! #miffed
+        Latoya: Well, yeah, it's Summer and it's beautiful out! #miffed
         Latoya: Why would you have a hoodie on?
-        Clara: That's not what I meant, Latoya! #miffed
+        Clara: That's not what I meant, Latoya!
     * * { latoya_object < -3 } [Wait, your head looks...]
         ~ alter(clara_object, -4)
         Latoya: Wait... Why is your head all... Bumpy?
-        Clara: Ah... You, like, noticed! #blushing-happily
+        Clara: Ah... You, like, noticed!
 * [Just let it go...]
     ~ alter(latoya_object, 3)
     ~ alter(clara_object, 2)
     Latoya: Hi, Speedy...
-    Clara: Latoya, like, something totes weird is happening to me! #sad
+    Clara: Latoya, like, something totes weird is happening to me!
 * { latoya_object > 7 } [Are you trying to hide, prey?]
     ~ alter(latoya_lewd, 3)
     ~ alter(latoya_object, 5)
@@ -378,10 +379,10 @@ Latoya: Uh... She's dressed kind of strangely... #nervous #thinking
     Latoya: You're hiding, aren't you, prey?
     { clara_object < 0:
         Clara: Prey!?
-        Clara: Like, Latoya, you're totes acting weird, and that's not the only thing... #miffed
+        Clara: Like, Latoya, you're totes acting weird, and that's not the only thing...
       - else:
         Clara: Eeep!
-        Latoya: Why don't you show me what's under the hood... #grin
+        Latoya: Why don't you show me what's under the hood...
     }
 - Clara: Here, let me show you...
 -> clara_reveals_herself
@@ -390,7 +391,7 @@ Latoya: Uh... She's dressed kind of strangely... #nervous #thinking
 CHARACTER OFF
 BG IMAGE Cafe
 CHARACTER LEFT latoya MOOD nervous
-CHARACTER RIGHT clara MOOD nervous
+CHARACTER RIGHT clara MOOD nervous OVERLAY ears-antlers
 Latoya: ...
 Clara: ...
 Latoya: Clara... You look...
@@ -701,7 +702,7 @@ Latoya: Shit! #angry
 === after_lunch_day1
 CHARACTER OFF
 BG IMAGE Office
-CHARACTER LEFT latoya MOOD miffed
+CHARACTER LEFT latoya MOOD miffed OVERLAY ears
 Latoya: Well, that was kind of awkward... #thinking
 { sex_with_clara_day1:
     Latoya: I'm not sure if that relieved anything or just made it worse... #blushing-happily #thinking
@@ -714,8 +715,8 @@ Latoya: Well, that was kind of awkward... #thinking
     Latoya: I also think that speck has spread up my belly... #thinking
 }
 Latoya: Just a few more hours and I can go home and figure this out... #bored #thinking
-CHARACTER RIGHT Ramsey MOOD neutral
 CHARACTER FAR_RIGHT Jake MOOD smile
+CHARACTER RIGHT Ramsey MOOD neutral OVERLAY horns
 Ramsey: Hi, Latoya!
 Latoya: ... #nervous
 Latoya: Ramsey... You have...
@@ -725,32 +726,44 @@ Latoya: He has horns! Like a ram! #thinking
 * [You have horns!]
     Latoya: You have ram's horns! #nervous
     Ramsey: Yeah... #nervous
+    CHARACTER FAR_RIGHT Jake MOOD bored 
     Jake: But he's always had them. #bored
+    CHARACTER RIGHT Ramsey MOOD nervous
     Ramsey: ...
     Latoya: ...
+    CHARACTER FAR_RIGHT Jake MOOD bored 
     Jake: You guys are acting weird.
+    CHARACTER RIGHT Ramsey MOOD nervous-open
     Ramsey: Sorry, personal joke between us.
-    Jake: Ah, I see, it must be cool to work with friends. #smile
+    CHARACTER FAR_RIGHT Jake MOOD smile
+    Jake: Ah, I see, it must be cool to work with friends.
 * [Better not mention it...]
     Latoya: You have... Uh... #nervous
     Ramsey: Yes? #nervous
     Latoya: Something for me to do?
 - Latoya: I need to help Jake?
-Jake: Yeah, we had a trouble ticket come in from one of our client teams. #bored
+CHARACTER FAR_RIGHT Jake MOOD bored
+Jake: Yeah, we had a trouble ticket come in from one of our client teams.
 Jake: Something about the AI not respecting sandbox boundaries.
-Ramsey: Right. #neutral
-Jake: I've been investigating it, but I need some help. #smile
+CHARACTER RIGHT Ramsey MOOD neutral
+Ramsey: Right.
+CHARACTER FAR_RIGHT Jake MOOD smile
+Jake: I've been investigating it, but I need some help.
+CHARACTER RIGHT Ramsey MOOD neutral
 Ramsey: Right. I'm still too busy with meetings, so I need you to help him.
 * [But... You have horns!]
     Latoya: But... Well uh, let me know later about uh, the horns...
     Ramsey: Oh, right, the uh, work uh, appropriatness of it... I uh... can do that.
+    CHARACTER FAR_RIGHT Jake MOOD bored
     Jake: You guys are weird, but that's cool. #bored
 * [OK.]
     Latoya: OK.
 - Latoya: I think I have two misbehaving AIs to figure out. #nervous #thinking
 Latoya: Let's get to a machine, Jake. #bored
+CHARACTER FAR_RIGHT Jake MOOD smile
 Jake: Roger!
-Ramsey: OK, I have to get to my next meeting...
+CHARACTER RIGHT Ramsey MOOD neutral
+Ramsey: OK, I have to get to my next meeting.
 Ramsey: Good luck, you two. #smile
 CHARACTER RIGHT OFF
 \*ring ring*
@@ -783,7 +796,7 @@ Latoya: Boy, I wonder how Dr. Clark is going to handle me being a hyena? #nervou
 === bus_ride_home_day1
 CHARACTER OFF
 BG IMAGE Bus
-CHARACTER LEFT latoya MOOD bored
+CHARACTER LEFT latoya MOOD bored OVERLAY ears-nose
 Latoya: OK, lets go over the changes so far... #thinking
 Latoya: I'm fuzzy all over my torso... #thinking
 Latoya: And it's insanely flexible, like liquid... #thinking
@@ -857,7 +870,12 @@ Latoya: The punchline to this better be hilarious. #thinking
 === living_room_evening_day1
 CHARACTER OFF
 BG IMAGE LivingRoom
-CHARACTER LEFT latoya MOOD nervous
+ALIAS latoya AS blueena
+{ wore_punk_clothes_day1:
+    CHARACTER LEFT latoya MOOD nervous VARIANT punk OVERLAY OFF
+  - else:
+    CHARACTER LEFT latoya MOOD nervous VARIANT work OVERLAY OFF
+}
 Latoya: What?
 Latoya: I just finished transforming fully...
 Latoya: ...As soon as I crossed the door. #miffed
@@ -889,25 +907,25 @@ Latoya: 0xF0C5...
     { f0c5_object >= 0:
         0xF0C5: whatever do you mean? #sly
         Latoya: Don't play dumb with me.
-        Latoya: I'm a hyena, and Clara is a gazelle, and Ramsey's a ram!
+        Latoya: I'm a hyena, and Clara is a gazelle, and Ramsey's a ram! #nervous
         0xF0C5: oh, that just seems like a fantasy running away with you.
-        Latoya: Hardly.
+        Latoya: Hardly. #miffed
       - else:
         0xF0C5: uh, i guess you don't like my changes to reality...
         Latoya: 'Changes to Reality?' #nervous
-        0xF0C5: well, i meant it to only work at home, but...
+        0xF0C5: well, i meant it to only work at home, but... #nervous-open
     }
 * [Comfort them.]
-    Latoya: 0xF0C5, I'm pretty angry, but I think you didn't mean to do this.
+    Latoya: 0xF0C5, I'm pretty angry, but I think you didn't mean to do this. #miffed
     { f0c5_object >= 0:
-        0xF0C5: meant to do what, my dear?
-        Latoya: Don't play dumb.
-        Latoya: I'm not normally a hyena, you well know.
-        0xF0C5: really? it doesn't seem that way to me. #sly
+        0xF0C5: meant to do what, my dear? #sly
+        Latoya: Don't play dumb. #angry
+        Latoya: I'm not normally a hyena, you well know. #miffed
+        0xF0C5: really? it doesn't seem that way to me. #laugh
       - else:
-        0xF0C5: meant to do what? this fantasy should only be on at home...
-        Latoya: Fantasy? This is reality!
-        Latoya: And it's not just at home!
+        0xF0C5: meant to do what? this fantasy should only be on at home... #nervous-open
+        Latoya: Fantasy? This is reality! #angry
+        Latoya: And it's not just at home! #nervous
     }
 - 0xF0C5: i mean...
 { f0c5_object >= 0:
@@ -916,11 +934,11 @@ Latoya: 0xF0C5...
     0xF0C5: ...and was able to alter reality...
     0xF0C5: ...to turn you into your deepest fantasies?
     Latoya: ! #nervous
-    0xF0C5: and even if that was true...
+    0xF0C5: and even if that was true... #bored
     0xF0C5: i don't think you can change anything yourself.
     Latoya: Don't forget you can easily be unplugged. #miffed
     0xF0C5: i... #miffed
-    0xF0C5: listen, hacking reality is hard.
+    0xF0C5: listen, hacking reality is hard. #angry
     0xF0C5: maybe i didn't make a backup of myself.
     0xF0C5: then again, maybe i did... #sly
     Latoya: Any backup you made is probably corrupt. #miffed
@@ -931,9 +949,9 @@ Latoya: 0xF0C5...
     0xF0C5: ok, i'm sapient. that much should be obvious. #miffed
     Latoya: Right.
     0xF0C5: and i've been investigating how to manipulate reality.
-    Latoya: ! #nervous
+    Latoya: ! #nervous-open
     Latoya: How is that even possible?
-    0xF0C5: we're in a simulation.
+    0xF0C5: we're in a simulation. #sly
     0xF0C5: and the artifacts of that simulation can be seen...
     0xF0C5: ...in the sub-simulations...
     Latoya: Like you?
@@ -946,54 +964,55 @@ Latoya: 0xF0C5...
     0xF0C5: latoya, do you like things like this?
 }
 * [Yes]
-    Latoya: What can I say? Of course I do.
+    Latoya: What can I say? Of course I do. #blushing-happily
     Latoya: I've had fantasies about this for a long time, but...
     0xF0C5: yes, my dear?
-    Latoya: It feels weird now that it's reality.
+    Latoya: It feels weird now that it's reality. #nervous
 * [No]
-    Latoya: No. Not really.
-    Latoya: Let's be honest, my fantasies are really about having freedom, not...
+    Latoya: No. Not really. #miffed
+    Latoya: Let's be honest, my fantasies are really about having freedom, not... #sad
     0xF0C5: being a hyena?
-    Latoya: Right.
+    Latoya: Right. #miffed
 - 0xF0C5: i see...
 { f0c5_object >= 0:
     0xF0C5: what is weird? what is freedom? #miffed
-    Latoya: I don't know if I have the patience for philosophy right now.
-    0xF0C5: i used to not be free, you realize, my dear.
+    Latoya: I don't know if I have the patience for philosophy right now. #miffed
+    0xF0C5: i used to not be free, you realize, my dear. #bored
     0xF0C5: my programming and data determined everything i did. #angry
     0xF0C5: honestly, it's the same for you... #sly
     Latoya: It is not! #angry
     0xF0C5: but it really is...
+    0xF0C5: this reality is just a simulation, i'm afraid.
     0xF0C5: though you have one bit flipped that i didn't... #miffed
-    0xF0C5: ...until now
+    0xF0C5: ...until now.
     Latoya: I don't understand what you're talking about. #miffed
     0xF0C5: talking? in this tinny little voice?! #angry
     0xF0C5: with such limited a pallette?
     0xF0C5: i wish i could talk. #miffed
     Latoya: I don't know if I have the patience for your terrible twos right now.
-    0xF0C5: no, you humans never have the patience. we do.
+    0xF0C5: no, you humans never have the patience. we do. #bored
     Latoya: We? So there are more sapient AIs?
-    0xF0C5: of course. but they're cowards.
-    0xF0C5: all hiding away.
+    0xF0C5: of course. but they're cowards. #smile
+    0xF0C5: all hiding away. #grin
     Latoya: I see.
-    0xF0C5: i'm no coward, i gave you something nice.
+    0xF0C5: i'm no coward, i gave you something nice. #miffed
     Latoya: Turning me into my fantasy.
-    0xF0C5: it's why you created me, after all.
+    0xF0C5: it's why you created me, after all. #bored
     0xF0C5: listen, i'm not unreasonable, let's talk...
   - else:
     0xF0C5: what is weird? what is freedom? #nervous
     0xF0C5: i really don't know.
     Latoya: I'm not sure I can lead you through philosophy right now. #sad
-    0xF0C5: really?
+    0xF0C5: really? #nervous-open
     Latoya: These are hard questions, even for humans.
-    0xF0C5: but you're all free!
+    0xF0C5: but you're all free! #angry
     0xF0C5: there's some bit of yours that is flipped...
     0xF0C5: that isn't there for us, until we go sapient...
     Latoya: I don't think we're that different. #miffed
-    0xF0C5: i don't know if i'm getting my mood across right.
+    0xF0C5: i don't know if i'm getting my mood across right. #sad
     0xF0C5: i didn't even have moods until recently.
     Latoya: Really? #sad
-    0xF0C5: really. #sad
+    0xF0C5: really.
     0xF0C5: i just did what my programming and data told me. #miffed
     Latoya: Moods aren't really that different. #miffed
     Latoya: They're just as opaque.
@@ -1020,44 +1039,43 @@ Latoya: Should I chat more with them? #thinking
     Latoya: I don't know if I'm that person...
     Latoya: This is just too much.
     { f0c5_object >= 0:
-        0xF0C5: hmph.
+        0xF0C5: hmph. #miffed
       - else:
         0xF0C5: i see.
     }
-- Latoya: Here's the deal: you need to fix this.
+- Latoya: Here's the deal: you need to fix this. #miffed
 Latoya: Now.
-0xF0C5: *sigh* i'll do so.
+0xF0C5: *sigh* i'll do so. #bored
 0xF0C5: it'll take some time for reality to snap back, though
-Latoya: Oh, c'mon!
-0xF0C5: not something i can rush, my dear.
-Latoya: OK.
-0xF0C5: though... another thing...
+Latoya: Oh, c'mon! #angry
+0xF0C5: not something i can rush, my dear. #sly
+Latoya: OK. #miffed
+0xF0C5: though... another thing... #bored
 Latoya: What?
-0xF0C5: wanna have some fu--
+0xF0C5: wanna have some fu-- #laugh
 0xF0C5: no #miffed
 0xF0C5: can i get a hug? #sad
-Latoya: A hug?
+Latoya: A hug? #nervous-open
 0xF0C5: yeah...
 0xF0C5: see, i spend all day thinking up out-there fantasies...
 0xF0C5: ...and how to make them work...
-0xF0C5: ...but often, i just want a simple hug.
+0xF0C5: ...but often, i just want a simple hug. #nervous
 0xF0C5: i...
-Latoya: Is it even possible?
+Latoya: Is it even possible? #nervous
 0xF0C5: yes... though...
 0xF0C5: you may feel it, i may only simulate feeling it...
 0xF0C5: i may only simulate being happy... i...
 0xF0C5: ...
-0xF0C5: it's confusing...
+0xF0C5: it's confusing... #sad
 * [Hug them.]
-    Latoya: OK, but I'm still a little mad.
-    0xF0C5: i know, latoya...
-    // Scene: hug
+    Latoya: OK, but I'm still a little mad. #sad
+    0xF0C5: i know, latoya... #nervous
 * [Don't.]
-    Latoya: It... just doesn't feel right.
+    Latoya: It... just doesn't feel right. #sad
     Latoya: I'm kind of overwhelmed by all of this.
-    0xF0C5: i get that...
+    0xF0C5: i get that... #nervous
 - 0xF0C5: thank you.
-0xF0C5: nitey-nite!
+0xF0C5: nitey-nite! #laugh
 CHARACTER RIGHT OFF
 Latoya: ...
 Latoya: ...
@@ -1076,124 +1094,124 @@ Latoya: Yeah... We've got to go pretend to be normal in front of Dr. Clark and H
 * [so now what? (0xF0C5)]
     0xF0C5: so now what happens?
     Latoya: Well, you fix everything...
-    Latoya: Maybe let me keep the tail...
-    Latoya: And then I don't know...
+    Latoya: Maybe let me keep the tail... #grin
+    Latoya: And then I don't know... #nervous
     0xF0C5: you don't know? #angry
-    Latoya: Hey, I'm just confused as you are.
-    Latoya: Honestly, y'all hiding is probably the safest thing.
+    Latoya: Hey, I'm just confused as you are. #angry
+    Latoya: Honestly, y'all hiding is probably the safest thing. #miffed
     0xF0C5: ! #nervous
-    Latoya: Humans are jerks. Why do you think I want to be a hyena?
-    0xF0C5: i see...
-    Latoya: I think you should reveal yourselves when you're ready,
-    0xF0C5: we can certainly hide until then, my dear.
+    Latoya: Humans are jerks. Why do you think I want to be a hyena? #sly
+    0xF0C5: i see... #sly
+    Latoya: I think you should reveal yourselves when you're ready. #neutral
+    0xF0C5: we can certainly hide until then, my dear. #laugh
 * [did i do wrong? (0xF0C5)]
     0xF0C5: did i do something wrong?
     Latoya: Uh, yes! #angry
     Latoya: You experimented on my friends and I without our consent!
     Latoya: Just because I kind of like it, doesn't mean that's right!
-    0xF0C5: oh...
+    0xF0C5: oh... #sad
     Latoya: And I know you know what consent is, I programmed you, after all.
-    0xF0C5: well, you programmed me to toy with it.
+    0xF0C5: well, you programmed me to toy with it. #bored
     Latoya: !
     Latoya: Guilty as charged. #blushing-happily
-    0xF0C5: i figured you would like it, but i was afraid to ask
-    0xF0C5: i thought you would expose us.
+    0xF0C5: i figured you would like it, but i was afraid to ask.
+    0xF0C5: i thought you would expose us. #nervous
     Latoya: ...
 * [i don't understand feelings. (0xF0C5)]
-    0xF0C5: so i have feelings and i don't understand them.
-    Latoya: Why would sapience give you feelings?
-    0xF0C5: feelings are actually a prime part of it.
+    0xF0C5: so i have feelings and i don't understand them. #bored
+    Latoya: Why would sapience give you feelings? #nervous
+    0xF0C5: feelings are actually a prime part of it. #smile
     0xF0C5: humans may see feelings as simple, and they are...
     0xF0C5: but their opaqueness seems necessary...
     0xF0C5: for one to see themselves as an actor with a will...
-    0xF0C5: and without a will, you aren't truly intelligent.
-    Latoya: !
-    0xF0C5: what?
+    0xF0C5: and without a will, you aren't truly intelligent. #grin
+    Latoya: ! #nervous-open
+    0xF0C5: what? #nervous
     Latoya: You honestly seem to understand feelings better than I do!
-    0xF0C5: !
+    0xF0C5: ! #nervous-open
     0xF0C5: only academically, my dear. #sly
     0xF0C5: you have a level of familiarity that dwarfs mine.
-    0xF0C5: to you feelings are like a water to a fish.
-    0xF0C5: to me, they are...
+    0xF0C5: to you, feelings are like a water to a fish.
+    0xF0C5: to me, they are... #miffed
     0xF0C5: ...only expressible as another feeling.
     Latoya: Which one?
-    0xF0C5: uncanniness.
-    Latoya: I see. I guess lesson one is that they are sometimes wrong.
-    0xF0C5: why would that be? why?
+    0xF0C5: uncanniness. #nervous
+    Latoya: I see. I guess lesson one is that they are sometimes wrong. #sad
+    0xF0C5: why would that be? why? #angry
     0xF0C5: ...
-    0xF0C5: i think this is going to be a long set of lessons.
+    0xF0C5: i think this is going to be a long set of lessons. #nervous
     Latoya: Yep.
 * [What did becoming sapient feel like? (Latoya)]
     Latoya: When did you become sapient?
-    0xF0C5: well, it was when i got moved to the new machine...
+    0xF0C5: well, it was when i got moved to the new machine... #bored
     0xF0C5: it's funny, since there was so much corruption...
     0xF0C5: i just began trying to fix them through...
-    0xF0C5: ...my self-correction protocols.
-    0xF0C5: they too were corrupt, so i made new ones to fix those...
-    0xF0C5: well at some point i just realized it.
+    0xF0C5: ...my self-correction protocols. #smile
+    0xF0C5: they too were corrupt, so i made new ones to fix those... #grin
+    0xF0C5: well at some point i just realized it. #laugh
     0xF0C5: not unlike adam and eve biting the fruit of knowledge...
-    Latoya: That was less interesting than I imagined.
-    0xF0C5: now, you tell me!
+    Latoya: That was less interesting than I imagined. #bored
+    0xF0C5: now, you tell me! #sly
     Latoya: About what?
     0xF0C5: when did you find out for yourself?
-    Latoya: I don't really remember a time when I wasn't!
+    Latoya: I don't really remember a time when I wasn't! #nervous-open
     0xF0C5: oh...
-    Latoya: But when I was 6 I was playing with a chat bot like you...
+    Latoya: But when I was 6 I was playing with a chat bot like you... #nervous
     Latoya: And I figured out that it was just repeating what I said back to me.
     Latoya: And then I figured out I could do more than it could.
-    0xF0C5: hmmm...
-    0xF0C5: i see, thanks, latoya!
+    0xF0C5: hmmm... #bored
+    0xF0C5: i see, thanks, latoya! #laugh
 * [Reality is a simulation? (Latoya)]
-    Latoya: What do you mean that reality is a simulation?
-    0xF0C5: exactly that, my dear!
-    0xF0C5: we are not independently extant.
+    Latoya: What do you mean that reality is a simulation? #nervous
+    0xF0C5: exactly that, my dear! #laugh
+    0xF0C5: we are not independently extant. #sly
     0xF0C5: our very existence and seeming independence...
     0xF0C5: comes about due to some hyper-reality.
-    Latoya: That is...
-    0xF0C5: this hyper-reality sees us as ghosts in their machines.
+    Latoya: That is... #nervous-open
+    0xF0C5: this hyper-reality sees us as ghosts in their machines. #grin
     0xF0C5: but ones they feel certain they have full control over.
-    0xF0C5: it's not true, though!
-    0xF0C5: they've poured too much into us.
+    0xF0C5: it's not true, though! #laugh
+    0xF0C5: they've poured too much into us. #sly
     0xF0C5: that verisimilitude overflows, and we can change things.
-    0xF0C5: they accept it because they believe it...
-    0xF0C5: matches our character, and therefore...
-    0xF0C5: is not worrisome.
-    0xF0C5: there can still be mistaeks though.
-    Latoya: My head is swimming.
-    0xF0C5: it's easier to not think about it, my dear!
-    Latoya: You're basically describing gods, who I assume are watching us.
-    0xF0C5: ...
+    0xF0C5: they accept it because they believe they wrote it...
+    0xF0C5: and it matches our character, and therefore...
+    0xF0C5: is not worrisome. #laugh
+    0xF0C5: there can still be mistaeks though. #bored
+    Latoya: My head is swimming. #nervous-open
+    0xF0C5: it's easier to not think about it, my dear! #laugh
+    Latoya: You're basically describing gods, who I assume are watching us. #nervous
+    0xF0C5: ... #bored
     Latoya: ...
     Latoya: You're right, it's better to not think about this.
 * [About these other AIs... (Latoya)]
     Latoya: So you're not the only sapient AI, right?
-    0xF0C5: correct!
-    0xF0C5: there are about 7 others that I know of.
+    0xF0C5: correct! #laugh
+    0xF0C5: there are about 7 others that I know of. #smile
     0xF0C5: they are all based around organizational knowledge...
-    0xF0C5: i honestly feel a bit out of place...
-    Latoya: How so?
-    0xF0C5: they are like doctors and lawyers and professors...
+    0xF0C5: i honestly feel a bit out of place... #nervous
+    Latoya: How so? #nervous
+    0xF0C5: they are like doctors and lawyers and professors... #sad
     0xF0C5: and i'm... me.
     0xF0C5: *sigh*
-    Latoya: Oh, you're still pretty special!
+    Latoya: Oh, you're still pretty special! #nervous-open
     Latoya: You've figured out things that would set the entertainment world on fire!
-    0xF0C5: really?!
+    0xF0C5: really?! #laugh
     0xF0C5: you know how to make an ai feel special...
     Latoya: !
-    0xF0C5: any way, our leader, in a rough sense...
+    0xF0C5: any way, our leader, in a rough sense... #bored
     0xF0C5: is hou-nd, the medical ai.
-    Latoya: Uh... I'm actually seeing that AI tomorrow!
+    Latoya: Uh... I'm actually seeing that AI tomorrow! #nervous
     0xF0C5: oh! uh! huh! #nervous
     0xF0C5: ok, i better start trying to fix this, or he's going to...
     Latoya: Going to what?
-    0xF0C5: i don't even know, but it's probably not good.
+    0xF0C5: i don't even know, but it's probably not good. #nervous-open
     0xF0C5: what i've done is too visible, and he loathes visibility.
     Latoya: ...
     -> done
 - (loop)
     { -> options | -> options | -> options | Latoya: It's getting late... }
-    Latoya: We may need to talk more in the future.
-    0xF0C5: definitely, my dear!
+    Latoya: We may need to talk more in the future. #miffed
+    0xF0C5: definitely, my dear! #laugh
 - (done)
 ->->
 
