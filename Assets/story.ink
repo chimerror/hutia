@@ -1,6 +1,7 @@
 INCLUDE day0.ink
 INCLUDE CoffeeMinigame.ink
 INCLUDE day1.ink
+INCLUDE day2.ink
 
 // ------------------------------------------------------------------------------------------------
 // VARIABLES
@@ -41,6 +42,7 @@ VAR debug = true
     IN DEBUG MODE!
     * [Beginning...] -> intro
     * [Day 1...] -> morning_day1
+    * [Day 2...] -> morning_day2
     * [Integration Latest] -> bedroom_day1
   - else:
     -> intro

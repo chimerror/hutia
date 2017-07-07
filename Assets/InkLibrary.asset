@@ -56,10 +56,12 @@ MonoBehaviour:
     - day0.ink
     - CoffeeMinigame.ink
     - day1.ink
+    - day2.ink
     includes:
     - {fileID: 102900000, guid: 6287a0fc2bf2991439d042fb0ab3cb65, type: 3}
     - {fileID: 102900000, guid: bd2590522f860704c91307e21136720b, type: 3}
     - {fileID: 102900000, guid: b24a4134a2d43004889cc228f5a37fac, type: 3}
+    - {fileID: 102900000, guid: 3f46b82befb9b9149a85889b5ea9175a, type: 3}
     jsonAsset: {fileID: 4900000, guid: 33e7fd5d0e1ee704d8c68b4082f4b14f, type: 3}
     compileErrors: []
     errors: []
@@ -72,6 +74,17 @@ MonoBehaviour:
     includePaths: []
     includes: []
     jsonAsset: {fileID: 4900000, guid: 6cf48bb6d89824cc69e35b43f9a1aca6, type: 3}
+    compileErrors: []
+    errors: []
+    warnings: []
+    todos: []
+  - compileAutomatically: 0
+    inkAsset: {fileID: 102900000, guid: 3f46b82befb9b9149a85889b5ea9175a, type: 3}
+    parent: {fileID: 102900000, guid: 66f351029b85aba4dae873509da4d2cb, type: 3}
+    master: {fileID: 102900000, guid: 66f351029b85aba4dae873509da4d2cb, type: 3}
+    includePaths: []
+    includes: []
+    jsonAsset: {fileID: 0}
     compileErrors: []
     errors: []
     warnings: []

@@ -1053,7 +1053,7 @@ Latoya: OK. #miffed
 0xF0C5: though... another thing... #bored
 Latoya: What?
 0xF0C5: wanna have some fu-- #laugh
-0xF0C5: no #miffed
+0xF0C5: no. #miffed
 0xF0C5: can i get a hug? #sad
 Latoya: A hug? #nervous-open
 0xF0C5: yeah...
@@ -1079,12 +1079,12 @@ Latoya: Is it even possible? #nervous
 CHARACTER RIGHT OFF
 Latoya: ...
 Latoya: ...
-CHARACTER FAR_LEFT Clara MOOD nervous FLIPPED yes
+CHARACTER FAR_LEFT Clara MOOD nervous VARIANT gazelle FLIPPED yes
 Latoya: How much of that did you hear?
 Clara: Like, most of it.
 Clara: Let's go to bed...
 Latoya: Yeah... We've got to go pretend to be normal in front of Dr. Clark and HOU-ND.
--> END
+-> morning_day2
 
 = further_discussion
 - (options)

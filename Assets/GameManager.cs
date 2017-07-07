@@ -638,7 +638,7 @@ public class GameManager : MonoBehaviour
             {
                 _characterVariants.Remove(filename);
             }
-            else
+            else if (!normalizedVariant.Equals("default"))
             {
                 _characterVariants[filename] = normalizedVariant;
                 filename = string.Format("{0}/{1}", filename, normalizedVariant);
