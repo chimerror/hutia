@@ -1,15 +1,18 @@
-﻿using System.Collections;
+﻿using Ink.Runtime;
+using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using System.IO;
+using System.Linq;
 using System.Text.RegularExpressions;
 using UnityEngine;
-using UnityEngine.UI;
-using Ink.Runtime;
+using UnityEngine.Analytics;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    private string StatsEventName = "StoryVariables";
+
     public static GameManager Instance { get; private set; }
 
     public GameState GameState
@@ -128,7 +131,7 @@ public class GameManager : MonoBehaviour
     /// one or more other characters, grouped as 'parameters' followed by the end of
     /// the string.
     /// </remarks>
-    private readonly static Regex DirectiveRegex = new Regex(@"^(?<directive>BG|TITLE|SOUND|MUSIC|IMAGE|CHARACTER|CHAR_COLOR|ALIAS|TIME|LOCATION)\s+(?<parameters>.+)$");
+    private readonly static Regex DirectiveRegex = new Regex(@"^(?<directive>BG|TITLE|SOUND|MUSIC|IMAGE|CHARACTER|CHAR_COLOR|ALIAS|TIME|LOCATION|STATS)\s*(?<parameters>.+)?$");
 
     private readonly static Regex BackgroundParameters = new Regex(@"^(?<type>IMAGE|COLOR)\s(?<value>.+)$");
 
@@ -319,6 +322,9 @@ public class GameManager : MonoBehaviour
 
             case "LOCATION":
                 return HandleLocation(parameters);
+
+            case "STATS":
+                return HandleStats(); // No parameters for stats yet.
 
             default:
                 Debug.LogErrorFormat("Unknown directive: {0}", rawInput);
@@ -768,6 +774,18 @@ public class GameManager : MonoBehaviour
         Debug.LogFormat("Location Changed to: {0}", parameters);
         return false; // Don't wait for input
     }
+
+    private bool HandleStats()
+    {
+        var variables = _story.variablesState.ToDictionary(x => x, x => _story.variablesState[x]);
+        foreach (var variable in variables)
+        {
+            Debug.LogFormat("{0}: {1}", variable.Key, variable.Value);
+        }
+        Analytics.CustomEvent(StatsEventName, variables);
+        return false; // Don't wait for input
+    }
+
 
     private void UpdateDialogue(string rawDialogue, List<string> tags)
     {

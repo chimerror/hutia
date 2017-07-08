@@ -49,6 +49,7 @@ Latoya: OK, what to wear? #bored #thinking
   Latoya: *sigh* #miffed
   Latoya: No, I'd better play it safe. #thinking
 - Latoya: Oh well... #thinking
+STATS
 -> living_room_morning_day0
 
 === living_room_morning_day0
