@@ -17,10 +17,15 @@ public static class StoryStats
         public double StandardDeviation;
     }
 
+    public const string WordCountVariableName = "word_count";
     public const int Trials = 100;
+
+    private readonly static Regex FlagRegex = new Regex(@"#\w+\s+");
+    private readonly static Regex WhitespaceRegex = new Regex(@"\s+");
 
     public static Dictionary<string, VariableStats> CalculateVariableStats(string storyJson, IEnumerable<string> variableNames, int trials = Trials, string stoppingPoint = null)
     {
+        var suppliedVariableNames = variableNames.ToList();
         var story = new Story(storyJson);
         story.BindExternalFunction("makeNewDesiredOrder", () =>
             {
@@ -43,6 +48,8 @@ public static class StoryStats
         Regex stoppingPointRegex = string.IsNullOrEmpty(stoppingPoint) ? null : new Regex(stoppingPoint);
         for (int currTrial = 0; currTrial < trials; currTrial++)
         {
+            int wordCount = 0;
+            string line;
             while (true)
             {
                 if (stoppingPointRegex != null && stoppingPointRegex.IsMatch(story.currentText))
@@ -52,7 +59,14 @@ public static class StoryStats
 
                 if (story.canContinue)
                 {
-                    story.Continue();
+                    line = story.Continue();
+                    if (!GameManager.IsDirective(line))
+                    {
+                        line = line.Substring(line.IndexOf(':') + 1).Trim();
+                        line = FlagRegex.Replace(line, string.Empty).Trim();
+                        var splitLine = WhitespaceRegex.Split(line);
+                        wordCount += splitLine.Length;
+                    }
                 }
                 else if (story.currentChoices.Count > 0)
                 {
@@ -64,7 +78,15 @@ public static class StoryStats
                 }
             }
 
-            foreach (var variableName in variableNames)
+            if (!suppliedVariableNames.Contains(WordCountVariableName))
+            {
+                if (!results.ContainsKey(WordCountVariableName))
+                {
+                    results[WordCountVariableName] = new List<int>();
+                }
+                results[WordCountVariableName].Add(wordCount);
+            }
+            foreach (var variableName in suppliedVariableNames)
             {
                 if (!results.ContainsKey(variableName))
                 {
@@ -76,8 +98,13 @@ public static class StoryStats
             CoffeeMinigame.Instance.Reset();
         }
 
+        var allVariableNames = new List<String>(suppliedVariableNames);
+        if (!allVariableNames.Contains(WordCountVariableName))
+        {
+            allVariableNames.Add(WordCountVariableName);
+        }
         Dictionary<string, VariableStats> output = new Dictionary<string, VariableStats>();
-        foreach (var variableName in variableNames)
+        foreach (var variableName in allVariableNames)
         {
             var varStats = new VariableStats();
             var doubleResults = results[variableName].Select(x => (double)x).OrderBy(x => x).ToList();

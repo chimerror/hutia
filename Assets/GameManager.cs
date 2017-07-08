@@ -225,6 +225,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public static bool IsDirective(string input)
+    {
+        return DirectiveRegex.IsMatch(input);
+    }
+
     public void ContinueStory(int choice = -1, bool advanceIfAble = true)
     {
         saveGameDialog.SetActive(false);

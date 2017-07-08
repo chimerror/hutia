@@ -6463,8 +6463,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   storyAsset: {fileID: 4900000, guid: 33e7fd5d0e1ee704d8c68b4082f4b14f, type: 3}
   variables:
-  - f0c5_lewd
-  - f0c5_object
+  - clara_lewd
+  - clara_object
   - latoya_lewd
   - latoya_object
   trials: 1500
