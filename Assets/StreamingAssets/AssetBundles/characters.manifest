@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 943715853
+CRC: 2207533477
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: cedf8cdca15e003ad62e6d772f1b207b
+    Hash: 22e50f814541e53ea3dacdbe1e966e70
   TypeTreeHash:
     serializedVersion: 2
     Hash: 4774d6da9b606debf00b5a5d61c4487c
@@ -67,7 +67,7 @@ Assets:
 - Assets/Characters/Latoya/work/smile.png
 - Assets/Characters/blueena/work/grin.png
 - Assets/Characters/blueena/bored.png
-- Assets/Characters/hou-nd/no-sunglasses/thinking.png
+- Assets/Characters/hou-nd/no-sunglasses/in-thought.png
 - Assets/Characters/Latoya/work/angry.png
 - Assets/Characters/Latoya/punk/blushing-happily.png
 - Assets/Characters/Ramsey/ram/nervous-open.png
@@ -111,7 +111,7 @@ Assets:
 - Assets/Characters/Latoya/work/nervous.png
 - Assets/Characters/Latoya/nervous-open.png
 - Assets/Characters/blueena/work/sleepy.png
-- Assets/Characters/DrClark/thinking.png
+- Assets/Characters/DrClark/in-thought.png
 - Assets/Characters/Latoya/sad.png
 - Assets/Characters/Ramsey/ram/grin.png
 - Assets/Characters/Clara/angry.png
@@ -126,7 +126,7 @@ Assets:
 - Assets/Characters/Clara/Gazelle/angry.png
 - Assets/Characters/blueena/sad.png
 - Assets/Characters/Ramsey/ram/blushing-happily.png
-- Assets/Characters/hou-nd/thinking.png
+- Assets/Characters/hou-nd/in-thought.png
 - Assets/Characters/Clara/overlays/ears-antlers.png
 - Assets/Characters/Latoya/work/laugh.png
 - Assets/Characters/blueena/work/neutral.png

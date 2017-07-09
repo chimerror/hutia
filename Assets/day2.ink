@@ -68,8 +68,133 @@ Latoya: Let's get going.
 
 === bus_morning_day2
 BG IMAGE bus
+{ latoya_object <= -14:
+    Latoya: Hmmm, we didn't change any once we stepped outside the house... #thinking
+}
 Clara: Whoa! This bus is like, totes packed. #nervous-open
 Latoya: Yeah, it bites. #bored
 Clara: You know all about biting. #sly
 Latoya: Be careful I don't bite you! #miffed
+Clara: Do you have to like, put up with this every day? #sad
+Latoya: Yep.
+Clara: Aw, dude, that bites. And all on my account...
+* [Well, not just on your account!]
+    Latoya: Hey, I also do it because I like to buy nice things. #smile
+    Clara: Like foxy AI... uh foxfriends? #grin
+    Latoya: Like handles to carry you around! #laugh
+    Clara: Eeep. #sly
+* [You're worth it!]
+    Latoya: Oh, don't worry, you're worth it.
+    Clara: Really? #blushing-happily
+    Latoya: Yeah, a pool toy girlfriend probably would only fetch me $1000 online.
+    Clara: Hey! #miffed
+- Clara: Oh, we're here, let's go! #neutral
+-> doctors_appointment_day2
+
+=== doctors_appointment_day2
+ALIAS Latoya AS blueena
+BG IMAGE DoctorsOffice
+CHARACTER OFF
+CHARACTER FAR_LEFT Clara MOOD neutral VARIANT gazelle FLIPPED yes
+CHARACTER CENTER Latoya MOOD neutral VARIANT punk
+Latoya: OK, remember, act naturally. If Dr. Clark is like everyone else...
+Latoya: ...they'll think we've always been like this.
+Clara: So it's OK if I stick my hand through your arm? #sly
+Latoya: No, it's not OK! #angry
+Latoya: Maybe when we get home... #blushing-happily
+ALIAS Dr. Clark AS DrClark
+CHARACTER FAR_RIGHT Dr. Clark MOOD in-thought
+Dr. Clark: ...
+Latoya: ...
+Clara: ...
+Dr. Clark: Good morning. #neutral
+Latoya: Good morning! #nervous-open
+Dr. Clark: So this is just a yearly check-up, but let's start with you.
+Dr. Clark: Do you have any specific problems? #in-thought
+Latoya: No, not that I can think of...
+Dr. Clark: Really? So the anxiety has been better?
+Latoya: Well, it was a lot better when I wasn't working, but it flared up. #miffed
+Clara: Yeah, she was pretty relaxed until she started checking the bank account. #smile
+Dr. Clark: That will do that. I get pretty stressed out doing it myself. #neutral
+Clara: Really? #nervous
+Dr. Clark: Well, it's more about if I can continue to afford my second house, but...
+Clara: Oh. #neutral
+Dr. Clark: Mo' Money, Mo' Problems, as they say. #in-thought
+Dr. Clark: So I'm looking at your chart, when was the last time we took... blood work?
+Dr. Clark: I must be confused. #neutral
+CHARACTER FAR_LEFT Clara MOOD nervous FLIPPED yes
+Latoya: What do you mean? #nervous
+Dr. Clark: Well, I'm not sure why I would have requested blood work...
+Dr. Clark: ...rather than goo work...
+// Sound: HOU-ND
+HOU-ND: Excuse me, Doctor.
+Dr. Clark: Ah, yes, HOU-ND? #in-thought
+CHARACTER FAR_RIGHT hou-nd MOOD in-thought
+Dr. Clark: Ladies, this is HOU-ND, a diagnostic AI we've begun using rather recently.
+HOU-ND: Right. Doctor, have you not noticed anything strange about these... women?
+CHARACTER FAR_RIGHT Dr. Clark MOOD neutral
+Dr. Clark: No, I've not noticed. What do you mean?
+CHARACTER FAR_RIGHT hou-nd MOOD neutral
+HOU-ND: You don't notice that they're not hu...
+HOU-ND: I see. #in-thought
+CHARACTER FAR_RIGHT Dr. Clark MOOD in-thought
+Dr. Clark: I don't follow, HOU-ND.
+CHARACTER FAR_RIGHT hou-nd MOOD neutral VARIANT no-sunglasses
+HOU-ND: Don't worry about it.
+HOU-ND: So you're Latoya Miller, is that right, madam? #in-thought
+Latoya: Yes...
+HOU-ND: And you've been made of goo your whole life.
+Latoya: That's right! #nervous-open
+HOU-ND: Hmph.
+HOU-ND: And I'm not sure where to begin with you, Ms. Takemura. #neutral
+Clara: Well, one, I'm awesome! And two-- #angry
+Latoya: Not the time... #miffed
+CHARACTER FAR_LEFT Clara MOOD nervous FLIPPED yes
+HOU-ND: Right.
+HOU-ND: Doctor, this is unconventional... #in-thought
+HOU-ND: I have little in my database about these women in particular.
+HOU-ND: I may need to do a bit of research.
+CHARACTER FAR_RIGHT Dr. Clark MOOD neutral
+Dr. Clark: The hound has sniffed out a fox, I take it.
+CHARACTER FAR_RIGHT hou-nd MOOD neutral VARIANT no-sunglasses
+HOU-ND: ...
+HOU-ND: I do not find the allusions to beasts amusing, Doctor. #in-thought
+CHARACTER FAR_RIGHT Dr. Clark MOOD neutral
+Dr. Clark: Right.
+CHARACTER FAR_RIGHT hou-nd MOOD neutral VARIANT no-sunglasses
+HOU-ND: If Dr. Clark allows it, I may call you back in tomorrow. #neutral
+CHARACTER FAR_RIGHT Dr. Clark MOOD neutral
+Dr. Clark: If you think it's necessary, HOU-ND.
+CHARACTER FAR_RIGHT hou-nd MOOD neutral VARIANT no-sunglasses
+HOU-ND: Quite. There may be others like this... and I want to help them.
+HOU-ND: That is all.
+CHARACTER FAR_RIGHT Dr. Clark MOOD neutral
+Dr. Clark: OK, I'll have Janice open up time on the schedule. Can you make it?
+* [Sure...]
+    Latoya: Yes, I think we can make it.
+* [I don't know...]
+    Latoya: I'm not sure, work could be rather busy...
+    CHARACTER FAR_RIGHT hou-nd MOOD neutral VARIANT default
+    HOU-ND: Would you rather I make a house call?
+    Latoya: ...
+    Clara: ...
+    HOU-ND: ...
+    Latoya: No. I'll find a way to make it here.
+    CHARACTER FAR_RIGHT Dr. Clark MOOD in-thought
+- Dr. Clark: Good.
+Dr. Clark: That's all for this appointment. We'll see you ladies tomorrow.
+CHARACTER FAR_RIGHT OFF
+Clara: I don't like that HOU-ND.
+Clara: He's not as fun as your fox.
+Latoya: Doctors aren't supposed to be fun! #grin
+Clara: Aren't you, like, worried? #nervous-open
+* [Yes, but 0xF0C5 can handle it...]
+    Latoya: Yes, but I think 0xF0C5 can handle it. #miffed
+    Clara: I hope so... #neutral
+* [Yes, because I don't know...]
+    Latoya: Yeah, but I don't know what else to do besides carrying on... #nervous
+    Clara: Yeah... Bummer. #sad
+- Latoya: Anyway, let's--
+Latoya: Oh, I just got paged. Better head into work, see you at home. #nervous
+Clara: Right. #sad
 -> END
