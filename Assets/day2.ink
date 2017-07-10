@@ -197,4 +197,150 @@ Clara: Aren't you, like, worried? #nervous-open
 - Latoya: Anyway, let's--
 Latoya: Oh, I just got paged. Better head into work, see you at home. #nervous
 Clara: Right. #sad
+-> work_day2
+
+=== work_day2
+CHARACTER OFF
+BG IMAGE Office
+CHARACTER RIGHT Jake MOOD smile
+Jake: Hi, Latoya.
+ALIAS Latoya AS blueena
+CHARACTER LEFT Latoya MOOD nervous VARIANT punk
+Latoya: Hi, Jake. So what's the page about?
+Jake: Oh, Ramsey actually knows more than me, but I think someone was trying to... #bored
+Jake: ...crack into our public-facing servers.
+Latoya: Our team has public-facing servers? Why? #angry
+Jake: Some corporate directive, I think.
+Jake: Something about exposing AIs to human input. Yeah, it's dumb. #smile
+Latoya: Hmph. #miffed
+Jake: Either way, Ramsey is debugging it in his office, and wanted your help. #bored
+Latoya: I'm surprised I'm already getting pulled into the rotation. #miffed
+Jake: Oh, I think Ramsey paged you directly for some reason.
+Jake: But yeah, I considered it a coup I didn't have to be on call for six months. #smile
+Latoya: Such is the dev life.
+Jake: We didn't choose the dev life, the dev life chose us.
+Latoya: OK, let me go join Ramsey in his office.
+Jake: Cool, Ramsey gave me some of your work to handle since...
+Jake: ...you're getting pulled in on this. So I'll get on that.
+-> ramseys_office_day2
+
+=== ramseys_office_day2
+CHARACTER OFF
+BG IMAGE RamseysOffice
+ALIAS Latoya AS blueena
+CHARACTER LEFT Latoya MOOD nervous VARIANT punk
+Latoya: Hey, Ramsey, I'm finally--
+// scene: Ramsey revealed
+Latoya: Oh, my God, you--
+CHARACTER RIGHT Ramsey MOOD neutral VARIANT ram
+Ramsey: Are some type of ram-centaur thing, I know.
+Latoya: I'm sorry, this is kind of my fault...
+Ramsey: What do you mean?
+* [Well, my AI went sapient and...]
+    Latoya: Well, I have a sex fantasy AI at home, and it went sapient and...
+    Latoya: ...and figured out how to alter reality. And it got you too.
+    Latoya: You can see I'm a hyena, and Clara has become a gazelle.
+    Ramsey: Ah, that's better than my theory, which was that I was going crazy. #smile
+* [It's a long story.]
+    Latoya: It's a long story. But don't worry, you should be back to normal...
+    Latoya: I hope. If my sapient AI isn't lying to me.
+    Ramsey: Sapient AI? Really?
+    Latoya: Yep.
+    Ramsey: Ah, OK. At least I'm not going crazy if you see it too.. #smile
+- Ramsey: Well, can we start debugging this crack?
+Latoya: How can you be so calm at a time like this?
+Ramsey: My mom made me practice yoga for many years. I think it's all crap...
+Ramsey: ...but it does keep me calm.
+Latoya: So you can handle having a ram for your butt because of yoga. #bored
+Latoya: I don't buy it. #miffed
+Ramsey: Buy it or not, it's true. Anyway...
+Ramsey: I've figured out the cracker has come from an interesting place.
+Latoya: Let me guess... The hospital?
+Ramsey: Whoa! #nervous-open
+Ramsey: How did you know?
+Latoya: Remember I said it was my fault?
+Latoya: I think the cracker was trying to get to me.
+Ramsey: That... makes sense. #neutral
+Ramsey: Essentially, it used a hole our source control app...
+Ramsey: ...to get your information from HR.
+Latoya: Wait, so that hole I pointed out two years ago...
+Ramsey: Still not fixed. I expect that team is meeting with the CEO right now... #miffed
+Latoya: Aw, man... #sad
+Ramsey: So you seem to have an idea who the cracker is. Who is it?
+* [It's another AI.]
+    Latoya: It's another sapient AI. The medical diagnostic AI HOU-ND. #miffed
+    Ramsey: Why would that be after... #nervous
+    Ramsey: Wait, another sapient AI?
+    Ramsey: I guess all that stuff about a singularity was bullshit. #grin
+* [It's an even longer story.]
+    Latoya: It's an even longer story. But yes, it's a rival AI.
+    Ramsey: It's fine. You don't have to tell it now.
+- Ramsey: Well, I think with what you've told me so far, I have enough to work with.
+{ ramsey_lewd >= 0:
+    -> ramsey_sex_scene_day2 ->
+}
+Ramsey: You should get home and check up on your AI.
 -> END
+
+=== ramsey_sex_scene_day2
+CHARACTER OFF
+BG IMAGE RamseysOffice
+ALIAS Latoya AS blueena
+CHARACTER LEFT Latoya MOOD sad VARIANT punk
+CHARACTER RIGHT Ramsey MOOD nervous VARIANT ram
+Ramsey: And I... ergh... have something else...
+Latoya: Let me guess, you're desperately horny. #bored
+Ramsey: Yes? #blushing-happily
+Latoya: This is why I shouldn't have let a sex AI alter reality. #miffed
+Latoya: It's like we're living in some porno or something.
+Ramsey: Well, can you help? #sad
+{ made_out_with_ramsey_day0:
+    Ramsey: Like you did a couple of days ago?
+}
+* [Yes!]
+    Latoya: Of course! In fact, let me just bend down and... #sly
+    CHARACTER LEFT OFF
+    CHARACTER RIGHT OFF
+    CHARACTER CENTER Ramsey MOOD smile VARIANT ram
+    Latoya: Uh...
+    Ramsey: No, it's in back now... #bored
+    Latoya: I see...
+    Latoya: Let me just...
+    CHARACTER FAR_RIGHT Latoya MOOD sly VARIANT punk FLIPPED yes
+    Latoya: Rams, did you see this?
+    Ramsey: Uh, what? #nervous
+    Latoya: You have a tag!
+    Ramsey: Oh, a tag...
+    Latoya: You're a Plushie Rams! #grin
+    Ramsey: A plushie? You mean like a stuffed animal?
+    Latoya: Exactly! I should see if our AI can sell you! #laugh
+    Ramsey: Hey! #miffed
+    Latoya: I just want to pounce on your back end and hug all the stuffing out...
+    Ramsey: Like you're doing... #miffed
+    Latoya: Hee Hee... #sly
+    Latoya: Feels good doesn't it?
+    Ramsey: Yeah... #blushing-happily
+    Latoya: Let me get back to business.
+    CHARACTER FAR_RIGHT OFF
+    Ramsey: Ah, what are you doing down there? #nervous
+    Latoya: Shh... Your knobbly little thing is just enveloped in my arm...
+    \*ring ring*
+    Ramsey: Uh, should I answer that?
+    Latoya: No, dingus!
+    Ramsey: Uh, too late.... #nervous-open
+    Ramsey: Ramsey Garcia-Mishra...
+    Ramsey: Oh, Namaste, Mom...
+    Latoya: You just keep speaking in Hindi, I'll keep working back here...
+    Ramsey: I'll talk to you later, Mom!
+    Ramsey: Ungh!
+    CHARACTER FAR_RIGHT Latoya MOOD sly VARIANT punk FLIPPED yes
+    Latoya: Aw, that didn't take long enough at all...
+    Latoya: And look on the bright side, you don't need to clean up, it was all...
+    Latoya: ...in me?
+    Ramsey: Quit flipping my tag... #miffed
+    Latoya: Hee Hee... #grin
+* [No...]
+    Latoya: I know it's tough, but I think the sooner I get us back to normal... #sad
+    Latoya: The better.
+    Ramsey: I see.
+->->
