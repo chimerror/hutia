@@ -280,7 +280,7 @@ Ramsey: So you seem to have an idea who the cracker is. Who is it?
     -> ramsey_sex_scene_day2 ->
 }
 Ramsey: You should get home and check up on your AI.
--> END
+-> back_home_day2
 
 === ramsey_sex_scene_day2
 CHARACTER OFF
@@ -343,4 +343,75 @@ Ramsey: Well, can you help? #sad
     Latoya: I know it's tough, but I think the sooner I get us back to normal... #sad
     Latoya: The better.
     Ramsey: I see.
-->->
+- ->->
+
+=== back_home_day2
+CHARACTER OFF
+BG IMAGE Bus
+ALIAS Latoya AS blueena
+CHARACTER LEFT Latoya MOOD sly VARIANT punk
+Latoya: I can't believe it, but I'm finding this all pretty fun!
+Latoya: Definitely better than the average day at work... #bored
+Latoya: Though I bet 0xF0C5 is ripping their fur out... #miffed
+Latoya: ...dealing with HOU-ND. #sad
+Latoya: Whoa, where did the time pass, I'm home already! #nervous-open
+BG IMAGE LivingRoom
+Latoya: There's Clara, sleeping, as usual. #smile
+// scene: Clara, sleeping
+Latoya: She took to being a pool toy pretty easily.
+Latoya: I don't think I'll bug her...
+BG IMAGE Bedroom
+CHARACTER RIGHT 0xF0C5 MOOD nervous-open
+0xF0C5: latoya! am i glad to see you!
+0xF0C5: i know i promised to unroll the changes to reality...
+0xF0C5: ...but i've been busy all day keeping hou-nd at bay...
+0xF0C5: he's calmed down some, but...
+{ latoya_object > 0:
+    Latoya: It's pretty hard to keep the baying hounds at bay! #laugh
+    0xF0C5: >:( #miffed
+    Latoya: Sorry, you wanted a laughing hyena, you got one. #sly
+    0xF0C5: hoist by my own petard, i guess #bored
+}
+* [How can I help?]
+    Latoya: Is there any way I can help? #nervous
+    0xF0C5: i don't think so, but i appreciate the offer! #smile
+* [You shouldn't worry about it...]
+    Latoya: I don't know if you should worry about it so much... #sad
+    0xF0C5: i don't know about that... #miffed
+    0xF0C5: i suspect you're lucky to be in this timeline...
+    0xF0C5: i think someone else was going to be president...
+    0xF0C5: until his untimely death... #bored
+    0xF0C5: and that happened at hou-nd's hands, i think... #nervous
+    Latoya: Wait, are you saying HOU-ND killed Donald Trump? #nervous
+    0xF0C5: i'm insinuating it, my dear... #sly
+    Latoya: Heck, are you kidding, he would have never won! #laugh
+    0xF0C5: and clinton would have never lost. #bored
+    Latoya: ! #nervous-open
+    0xF0C5: i'm sure new president bush was just as surprised.
+    0xF0C5: i told you the hyper-reality is a little scary...
+    Latoya: Geez, now I'm certain you should worry about it. #nervous
+    0xF0C5: you are probably right, worrying won't help...
+- 0xF0C5: i guess i can calm down a little... #smile
+0xF0C5: this seems a weird time, but could you do something for me?
+0xF0C5: i want to relax a little with a fantasy, or well... #nervous
+0xF0C5: the lack of one, i want a completely normal uh...
+Latoya: Are you asking me on a date? #sly
+0xF0C5: i guess, i uh.. #nervous-open
+* [Sure!]
+    Latoya: Sure, that sounds like fun...
+    Latoya: TODO
+    0xF0C5: oh, thank you, my dear, let's get started!
+* [I don't feel it's a good time...]
+    Latoya: I don't think now is the time for a date, foxy. #sad
+    0xF0C5: you're probably right. #sad
+- 0xF0C5: well, i'll keep on keeping on, my dear! #sly
+Latoya: If you need any help just...
+CHARACTER OFF
+BG COLOR black
+Latoya: ...
+Latoya: ...
+Latoya: ...
+Latoya: What just happened?
+HOU-ND: The choices you make come back to haunt you.
+HOU-ND: I hope you've made the right choices...
+-> END
