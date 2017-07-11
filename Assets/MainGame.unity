@@ -1947,7 +1947,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4282990402
   richText: 1
-  readDelay: 0.005
+  readDelay: 0.025
   speedReadScale: 2
   ignoreTimeScale: 1
   disableAnimatedText: 0
