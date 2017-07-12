@@ -399,8 +399,8 @@ Latoya: Are you asking me on a date? #sly
 0xF0C5: i guess, i uh.. #nervous-open
 * [Sure!]
     Latoya: Sure, that sounds like fun...
-    Latoya: TODO
     0xF0C5: oh, thank you, my dear, let's get started!
+    -> a_normal_evening_day2 ->
 * [I don't feel it's a good time...]
     Latoya: I don't think now is the time for a date, foxy. #sad
     0xF0C5: you're probably right. #sad
@@ -415,3 +415,54 @@ Latoya: What just happened?
 HOU-ND: The choices you make come back to haunt you.
 HOU-ND: I hope you've made the right choices...
 -> END
+
+=== a_normal_evening_day2
+BG IMAGE Bedroom
+CHARACTER RIGHT 0xF0C5 MOOD smile
+0xF0C5: ok, this fantasy has...
+0xF0C5: dining at a nice restaurant.
+0xF0C5: ... #bored
+0xF0C5: that's it! #laugh
+Latoya: Let's go!
+CHARACTER OFF
+BG IMAGE InvertedCafe
+Starting fantasy 'A Night at Chez Fox'.
+Welcome to Chez Fox, the hippest restaurant in town.
+We guarantee that a night here will change you!
+ALIAS Latoya AS blueena
+CHARACTER LEFT Latoya MOOD sly VARIANT punk
+CHARACTER RIGHT 0xF0C5 MOOD nervous-open
+0xF0C5: uh, ignore that last part...
+Latoya: Right, this is just a normal evening for a hyena woman and a fox.
+0xF0C5: yep, completely normal! #laugh
+Server: Here are your menus and some water. I'll be back to get your order...
+Latoya: OK, 0xF0C5, what do you recommend? #grin
+0xF0C5: let me look... #nervous
+0xF0C5: ...
+0xF0C5: ok, the beef will turn you into a cow...
+0xF0C5: so not that...
+0xF0C5: the chicken breast gives you extra breasts...
+0xF0C5: so not that...
+0xF0C5: well...
+0xF0C5: maybe the water? #nervous-open
+Latoya: Are you sure? Seems I'm developing a few fish scales on my legs. #sly
+0xF0C5: augh! #miffed
+Latoya: Listen, I appreciate you trying to act normal, but that's not in you... #smile
+Latoya: ...You're weird, foxy, embrace it!
+0xF0C5: ok, then do you mind if i just end the fantasy...
+Latoya: ...And embrace? Not at all..
+CHARACTER OFF
+BG IMAGE Bedroom
+CHARACTER LEFT Latoya MOOD sly VARIANT punk
+CHARACTER RIGHT 0xF0C5 MOOD smile
+Latoya: C'mere, foxy.
+// SCENE: Hugging
+0xF0C5: thank you... i guess im just weird, but...
+Latoya: That's what you are. My weird foxy AI friend.
+Latoya: Lord knows when I try to be something I'm not...
+Latoya: ...I just end up being myself even more
+0xF0C5: so just be yourself!
+Latoya: Exactly.
+BG IMAGE Bedroom
+->->
+
