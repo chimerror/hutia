@@ -153,6 +153,12 @@ namespace Ink.Runtime
             }
         }
 
+		public int depth {
+			get {
+				return elements.Count;
+			}
+		}
+
         public Element currentElement { 
             get { 
                 return callStack [callStack.Count - 1];
@@ -236,8 +242,8 @@ namespace Ink.Runtime
         public void PushThread()
         {
             var newThread = currentThread.Copy ();
-            newThread.threadIndex = _threadCounter;
             _threadCounter++;
+            newThread.threadIndex = _threadCounter;
             _threads.Add (newThread);
         }
 

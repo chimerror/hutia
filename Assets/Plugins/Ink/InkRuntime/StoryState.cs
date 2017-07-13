@@ -17,7 +17,7 @@ namespace Ink.Runtime
         /// <summary>
         /// The current version of the state save file JSON-based format.
         /// </summary>
-        public const int kInkSaveStateVersion = 6;
+        public const int kInkSaveStateVersion = 7;
         const int kMinCompatibleLoadVersion = 6;
 
         /// <summary>
@@ -57,6 +57,12 @@ namespace Ink.Runtime
 
             return 0;
         }
+
+		internal int callstackDepth {
+			get {
+				return callStack.depth;
+			}
+		}
 
         // REMEMBER! REMEMBER! REMEMBER!
         // When adding state, update the Copy method, and serialisation.
@@ -250,11 +256,14 @@ namespace Ink.Runtime
             }
 
             copy.callStack = new CallStack (callStack);
+            if( _originalCallstack != null )
+                copy._originalCallstack = new CallStack(_originalCallstack);
 
             copy.variablesState = new VariablesState (copy.callStack, story.listDefinitions);
             copy.variablesState.CopyFrom (variablesState);
 
             copy.evaluationStack.AddRange (evaluationStack);
+            copy._originalEvaluationStackHeight = _originalEvaluationStackHeight;
 
             if (divertedTargetObject != null)
                 copy.divertedTargetObject = divertedTargetObject;
@@ -276,7 +285,7 @@ namespace Ink.Runtime
         /// Object representation of full JSON state. Usually you should use
         /// LoadJson and ToJson since they serialise directly to string for you.
         /// But it may be useful to get the object representation so that you
-        //// can integrate it into your own serialisation system.
+        /// can integrate it into your own serialisation system.
         /// </summary>
         public Dictionary<string, object> jsonToken
         {
@@ -810,16 +819,26 @@ namespace Ink.Runtime
             callStack = new CallStack (funcContainer);
             callStack.currentElement.type = PushPopType.Function;
 
+            // Change the callstack the variableState is looking at to be
+            // this temporary function evaluation one. We'll restore it afterwards
+            variablesState.callStack = callStack;
+
             // By setting ourselves in external function evaluation mode,
             // we're saying it's okay to end the flow without a Done or End,
             // but with a ~ return instead.
             _isExternalFunctionEvaluation = true;
 
+            PassArgumentsToEvaluationStack (arguments);
+        }
+
+        internal void PassArgumentsToEvaluationStack (params object [] arguments)
+        {
+
             // Pass arguments onto the evaluation stack
             if (arguments != null) {
                 for (int i = 0; i < arguments.Length; i++) {
                     if (!(arguments [i] is int || arguments [i] is float || arguments [i] is string)) {
-                        throw new System.ArgumentException ("ink arguments when calling EvaluateFunction must be int, float or string");
+                        throw new System.ArgumentException ("ink arguments when calling EvaluateFunction / ChoosePathStringWithParameters must be int, float or string");
                     }
 
                     PushEvaluationStack (Runtime.Value.Create (arguments [i]));
@@ -856,6 +875,9 @@ namespace Ink.Runtime
             callStack = _originalCallstack;
             _originalCallstack = null;
             _originalEvaluationStackHeight = 0;
+
+            // Restore the callstack that the variablesState uses
+            variablesState.callStack = callStack;
 
             // What did we get back?
             if (returnedObj) {

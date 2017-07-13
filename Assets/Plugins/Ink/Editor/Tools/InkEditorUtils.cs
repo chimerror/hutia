@@ -26,8 +26,6 @@ namespace Ink.UnityIntegration {
 				StreamReader streamReader = new StreamReader(templateFilePath);
 				text = streamReader.ReadToEnd();
 				streamReader.Close();
-			} else {
-				Debug.LogWarning("Could not find .ink template file at expected path '"+templateFilePath+"'. New file will be empty.");
 			}
 			UTF8Encoding encoding = new UTF8Encoding(true, false);
 			bool append = false;
@@ -39,14 +37,48 @@ namespace Ink.UnityIntegration {
 		}
 	}
 
+	[InitializeOnLoad]
 	public static class InkEditorUtils {
 		public const string inkFileExtension = ".ink";
+		const string lastCompileTimeKey = "InkIntegrationLastCompileTime";
+
+		static InkEditorUtils () {
+			float lastCompileTime = LoadAndSaveLastCompileTime();
+			if(EditorApplication.timeSinceStartup < lastCompileTime)
+				OnOpenUnityEditor();
+		}
+
+		static float LoadAndSaveLastCompileTime () {
+			float lastCompileTime = 0;
+			if(EditorPrefs.HasKey(lastCompileTimeKey))
+				lastCompileTime = EditorPrefs.GetFloat(lastCompileTimeKey);
+			EditorPrefs.SetFloat(lastCompileTimeKey, (float)EditorApplication.timeSinceStartup);
+			return lastCompileTime;
+		}
+
+		static void OnOpenUnityEditor () {
+			InkLibrary.Rebuild();
+		}
+
+		[MenuItem("Assets/Rebuild Ink Library", false, 60)]
+		public static void RebuildLibrary() {
+			InkLibrary.Rebuild();
+		}
+
+		[MenuItem("Assets/Recompile All Ink", false, 61)]
+		public static void RecompileAll() {
+			InkLibrary.Rebuild();
+			List<InkFile> masterInkFiles = InkLibrary.GetMasterInkFiles ();
+			foreach(InkFile masterInkFile in masterInkFiles)
+				InkCompiler.CompileInk(masterInkFile);
+		}
+
 
 		[MenuItem("Assets/Create/Ink", false, 120)]
 		public static void CreateNewInkFile () {
 			string fileName = "New Ink.ink";
 			string filePath = AssetDatabase.GenerateUniqueAssetPath(Path.Combine(GetSelectedPathOrFallback(), fileName));
-			CreateNewInkFile(filePath, InkLibrary.Instance.templateFilePath);
+			CreateNewInkFile(filePath, InkSettings.Instance.templateFilePath);
 		}
 
 		public static void CreateNewInkFile (string filePath, string templateFileLocation) {
@@ -141,8 +173,8 @@ namespace Ink.UnityIntegration {
 		}
 
 		public static string GetInklecateFilePath () {
-			if(InkLibrary.Instance.customInklecateOptions.inklecate != null) {
-				return Path.GetFullPath(AssetDatabase.GetAssetPath(InkLibrary.Instance.customInklecateOptions.inklecate));
+			if(InkSettings.Instance.customInklecateOptions.inklecate != null) {
+				return Path.GetFullPath(AssetDatabase.GetAssetPath(InkSettings.Instance.customInklecateOptions.inklecate));
 			} else {
 				#if UNITY_EDITOR
 				#if UNITY_EDITOR_WIN
@@ -165,7 +197,6 @@ namespace Ink.UnityIntegration {
 				string[] inklecateDirectories = Directory.GetFiles(Application.dataPath, inklecateName, SearchOption.AllDirectories);
 				if(inklecateDirectories.Length == 0)
 					return null;
-				Debug.Log(inklecateDirectories[0]+"   "+Path.GetFullPath(inklecateDirectories[0]));
 
 				return Path.GetFullPath(inklecateDirectories[0]);
 			}
@@ -193,6 +224,10 @@ namespace Ink.UnityIntegration {
 			return SanitizePathString(fullPath.Substring(Application.dataPath.Length-6));
 		}
 
+		public static string UnityRelativeToAbsolutePath(string filePath) {
+			return InkEditorUtils.CombinePaths(Application.dataPath, filePath.Substring(7));
+		}
+
 		/// <summary>
 		/// Draws a property field for a story using GUILayout, allowing you to attach stories to the player window for debugging.
 		/// </summary>
@@ -201,15 +236,21 @@ namespace Ink.UnityIntegration {
 		public static void DrawStoryPropertyField (Story story, GUIContent label) {
 			EditorGUILayout.BeginHorizontal();
 			EditorGUILayout.PrefixLabel(label);
-			InkPlayerWindow window = InkPlayerWindow.GetWindow(false);
-			if(EditorApplication.isPlaying && story != null/* && story.state != null*/) {
-				if(window.attached && window.story == story) {
-					if(GUILayout.Button("Detach")) {
-						InkPlayerWindow.Detach();
+			if(EditorApplication.isPlaying && story != null) {
+				if(EditorWindow.focusedWindow is InkPlayerWindow) {
+					InkPlayerWindow window = InkPlayerWindow.GetWindow(false);
+					if(window.attached && window.story == story) {
+						if(GUILayout.Button("Detach")) {
+							InkPlayerWindow.Detach();
+						}
+					} else {
+						if(GUILayout.Button("Attach")) {
+							InkPlayerWindow.Attach(story);
+						}
 					}
 				} else {
-					if(GUILayout.Button("Attach")) {
-						InkPlayerWindow.Attach(story);
+					if(GUILayout.Button("Open Player Window")) {
+						InkPlayerWindow.GetWindow();
 					}
 				}
 			} else {

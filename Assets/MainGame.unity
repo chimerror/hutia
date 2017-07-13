@@ -6467,6 +6467,10 @@ MonoBehaviour:
   - ramsey_object
   - latoya_lewd
   - latoya_object
+  - f0c5_lewd
+  - f0c5_object
+  - clara_lewd
+  - clara_object
   trials: 1500
   stoppingPoint: 
 --- !u!4 &1615480575

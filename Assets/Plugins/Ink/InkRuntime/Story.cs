@@ -15,7 +15,7 @@ namespace Ink.Runtime
         /// <summary>
         /// The current version of the ink story file format.
         /// </summary>
-        public const int inkVersionCurrent = 16;
+        public const int inkVersionCurrent = 17;
 
         // Version numbers are for engine itself and story file, rather
         // than the story state save format (which is um, currently nonexistant)
@@ -133,7 +133,7 @@ namespace Ink.Runtime
             } else if (formatFromFile < inkVersionMinimumCompatible) {
                 throw new System.Exception ("Version of ink used to build story is too old to be loaded by this verison of the engine");
             } else if (formatFromFile != inkVersionCurrent) {
-                Console.WriteLine ("WARNING: Version of ink used to build story doesn't match current version of engine. Non-critical, but recommend synchronising.");
+                System.Diagnostics.Debug.WriteLine ("WARNING: Version of ink used to build story doesn't match current version of engine. Non-critical, but recommend synchronising.");
             }
                 
             var rootToken = rootObject ["root"];
@@ -853,6 +853,7 @@ namespace Ink.Runtime
                     break;
 
                 case ControlCommand.CommandType.TurnsSince:
+                case ControlCommand.CommandType.ReadCount:
                     var target = state.PopEvaluationStack();
                     if( !(target is DivertTargetValue) ) {
                         string extraNote = "";
@@ -864,8 +865,14 @@ namespace Ink.Runtime
                         
                     var divertTarget = target as DivertTargetValue;
                     var container = ContentAtPath (divertTarget.targetPath) as Container;
-                    int turnCount = TurnsSinceForContainer (container);
-                    state.PushEvaluationStack (new IntValue (turnCount));
+
+                    int eitherCount;
+                    if (evalCommand.commandType == ControlCommand.CommandType.TurnsSince)
+                        eitherCount = TurnsSinceForContainer (container);
+                    else
+                        eitherCount = VisitCountForContainer (container);
+                    
+                    state.PushEvaluationStack (new IntValue (eitherCount));
                     break;
 
                 case ControlCommand.CommandType.Random:
@@ -953,7 +960,7 @@ namespace Ink.Runtime
 
                     ListDefinition foundListDef;
                     if (listDefinitions.TryGetDefinition (listNameVal.value, out foundListDef)) {
-                        RawListItem foundItem;
+                        InkListItem foundItem;
                         if (foundListDef.TryGetItemWithValue (intVal.value, out foundItem)) {
                             generatedListValue = new ListValue (foundItem, intVal.value);
                         }
@@ -1099,14 +1106,17 @@ namespace Ink.Runtime
         /// 
         /// </summary>
         /// <param name="path">A dot-separted path string, as specified above.</param>
-        public void ChoosePathString(string path)
+        /// <param name="arguments">Optional set of arguments to pass, if path is to a knot that takes them.</param>
+        public void ChoosePathString (string path, params object [] arguments)
         {
-            ChoosePath (new Path(path));
+            state.PassArgumentsToEvaluationStack (arguments);
+            ChoosePath (new Path (path));
         }
+
             
-        internal void ChoosePath(Path path)
+        internal void ChoosePath(Path p)
         {
-            state.SetChosenPath (path);
+            state.SetChosenPath (p);
 
             // Take a note of newly visited containers for read counts etc
             VisitChangedContainersDueToDivert ();
@@ -1711,6 +1721,15 @@ namespace Ink.Runtime
             mainContentContainer.BuildStringOfHierarchy (sb, 0, state.currentContentObject);
 
             return sb.ToString ();
+        }
+
+        string BuildStringOfContainer (Container container)
+        {
+        	var sb = new StringBuilder ();
+
+        	container.BuildStringOfHierarchy (sb, 0, state.currentContentObject);
+
+        	return sb.ToString();
         }
 
 		private void NextContent()

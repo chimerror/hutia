@@ -232,7 +232,7 @@ Latoya: Huh, how should I say hi? #thinking
   Ramsey: Uh, heh. #blushing-happily
   Ramsey: At ease, soldier. #sly
   Latoya: Roger! #sly
-* (flirt) {latoya_lewd > 2} [Flirty]
+* (flirt) {latoya_lewd >= 2} [Flirty]
   ~ flirted_with_ramsey_day0 = true
   Latoya: Good morning, Rams. You look rather delicious today... #sly
   Ramsey: ... #nervous
