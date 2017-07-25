@@ -16,15 +16,53 @@ MonoBehaviour:
     inkAsset: {fileID: 102900000, guid: bd2590522f860704c91307e21136720b, type: 3}
     jsonAsset: {fileID: 0}
   - compileAutomatically: 0
+    inkAsset: {fileID: 102900000, guid: dbd68b957a2231541a21cfb3bfdda340, type: 3}
+    jsonAsset: {fileID: 0}
+  - compileAutomatically: 0
     inkAsset: {fileID: 102900000, guid: 6287a0fc2bf2991439d042fb0ab3cb65, type: 3}
+    jsonAsset: {fileID: 0}
+  - compileAutomatically: 0
+    inkAsset: {fileID: 102900000, guid: aceebb63a2c970a4a8669b0e468f84fc, type: 3}
     jsonAsset: {fileID: 0}
   - compileAutomatically: 0
     inkAsset: {fileID: 102900000, guid: b24a4134a2d43004889cc228f5a37fac, type: 3}
     jsonAsset: {fileID: 0}
   - compileAutomatically: 0
+    inkAsset: {fileID: 102900000, guid: cc3b9b55f15c71e409e96e1f3f1c9722, type: 3}
+    jsonAsset: {fileID: 0}
+  - compileAutomatically: 0
     inkAsset: {fileID: 102900000, guid: 3f46b82befb9b9149a85889b5ea9175a, type: 3}
+    jsonAsset: {fileID: 0}
+  - compileAutomatically: 0
+    inkAsset: {fileID: 102900000, guid: 9949fb4f2b5fb874d9dedaab0f2c1a83, type: 3}
+    jsonAsset: {fileID: 0}
+  - compileAutomatically: 0
+    inkAsset: {fileID: 102900000, guid: fe8cbed60adebc7489be75409f581821, type: 3}
     jsonAsset: {fileID: 0}
   - compileAutomatically: 0
     inkAsset: {fileID: 102900000, guid: 66f351029b85aba4dae873509da4d2cb, type: 3}
     jsonAsset: {fileID: 4900000, guid: 33e7fd5d0e1ee704d8c68b4082f4b14f, type: 3}
-  compilationStack: []
+  - compileAutomatically: 0
+    inkAsset: {fileID: 102900000, guid: aa73c71c68afd01448f8c91823245fee, type: 3}
+    jsonAsset: {fileID: 4900000, guid: 33e7fd5d0e1ee704d8c68b4082f4b14f, type: 3}
+  compilationStack:
+  - state: 1
+    inkFile:
+      compileAutomatically: 0
+      inkAsset: {fileID: 102900000, guid: 66f351029b85aba4dae873509da4d2cb, type: 3}
+      jsonAsset: {fileID: 4900000, guid: 33e7fd5d0e1ee704d8c68b4082f4b14f, type: 3}
+    inkAbsoluteFilePath: C:/Users/foobardog/Projects/Coding/hutia/Assets/story.ink
+    jsonAbsoluteFilePath: C:/Users/foobardog/Projects/Coding/hutia/Assets/story.json
+    output: []
+    errorOutput: []
+    timeTaken: 0
+  - state: 1
+    inkFile:
+      compileAutomatically: 0
+      inkAsset: {fileID: 102900000, guid: aa73c71c68afd01448f8c91823245fee, type: 3}
+      jsonAsset: {fileID: 4900000, guid: 33e7fd5d0e1ee704d8c68b4082f4b14f, type: 3}
+    inkAbsoluteFilePath: C:/Users/foobardog/Projects/Coding/hutia/Assets/story.ink~
+    jsonAbsoluteFilePath: C:/Users/foobardog/Projects/Coding/hutia/Assets/story.json
+    output: []
+    errorOutput: []
+    timeTaken: 0
