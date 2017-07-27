@@ -1,13 +1,11 @@
 === morning_day1
-{ demo_mode:
-    -> teaser
-}
+MUSIC OFF
 CHARACTER OFF
 BG COLOR black
 TIME Day 01 Morning
 LOCATION Bedroom
 IMAGE LatoyaAlarm
-CHARACTER LEFT latoya MOOD sleepy
+CHARACTER LEFT latoya MOOD sleepy VARIANT default
 Latoya: Ugh... Morning again...
 CHARACTER LEFT OFF
 TITLE Day 01
@@ -27,6 +25,9 @@ Latoya: Huh, let me step out and check this in the mirror...
 Latoya: ...
 Latoya: ...
 Latoya: Is that a bright neon blue speck of paint?
+{ demo_mode:
+    -> teaser
+}
 Latoya: Hmmm... I must have picked it up from Clara... #bored
 -> wash_it_off
 
@@ -1216,5 +1217,50 @@ Latoya: Yeah... We've got to go pretend to be normal in front of Dr. Clark and H
 ->->
 
 === teaser
-Latoya: Buy my game! Buy my game! TODO
+BG COLOR black
+CHARACTER OFF
+CHARACTER CENTER 0xF0C5 MOOD laugh
+MUSIC 0xf0c5sTheme
+0xF0C5: ...
+0xF0C5: that's all you get for now, my dears!
+0xF0C5: presenting object-oriented... #sly
+0xF0C5: an erotic visual novel...
+0xF0C5: for windows, mac, and linux...
+0xF0C5: ...
+0xF0C5: i guess i can give you a bit more! #laugh
+0xF0C5: ;3
+CHARACTER OFF
+BG IMAGE Cafe
+CHARACTER LEFT latoya MOOD nervous VARIANT work
+CHARACTER RIGHT clara MOOD nervous OVERLAY ears-antlers
+Latoya: ...
+Clara: ...
+Latoya: Clara... You look...
+Latoya: ...like a gazelle! Horns and everything!
+ALIAS Latoya AS blueena
+BG IMAGE DoctorsOffice
+CHARACTER OFF
+CHARACTER FAR_LEFT Clara MOOD neutral VARIANT gazelle OVERLAY OFF FLIPPED yes
+CHARACTER CENTER Latoya MOOD neutral VARIANT punk
+Latoya: OK, remember, act naturally. If Dr. Clark is like everyone else...
+Latoya: ...they'll think we've always been like this.
+Clara: So it's OK if I stick my hand through your arm? #sly
+Latoya: No, it's not OK! #angry
+CHARACTER FAR_RIGHT hou-nd MOOD in-thought
+HOU-ND: Right. Doctor, have you not noticed anything strange about these... women?
+ALIAS Dr. Clark AS DrClark
+CHARACTER FAR_RIGHT Dr. Clark MOOD neutral
+Dr. Clark: No, I've not noticed. What do you mean?
+CHARACTER FAR_RIGHT hou-nd MOOD neutral
+HOU-ND: You don't notice that they're not hu...
+HOU-ND: I see. #in-thought
+CHARACTER OFF
+BG COLOR black
+CHARACTER CENTER 0xF0C5 MOOD laugh
+0xF0C5: ooh, exciting!
+0xF0C5: become a patron on patreon to get the full beta version! #sly
+0xF0C5: or the full game will be available on itch.io soon! #laugh
+0xF0C5: wanna have some fun, my dears? #sly
+0xF0C5: ;3
+TITLE Object-oriented
 -> END

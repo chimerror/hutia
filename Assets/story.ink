@@ -24,7 +24,7 @@ CHAR_COLOR \#a4d648 Ramsey
 CHAR_COLOR \#c378ff 0xF0C5
 
 // Story variables.
-VAR demo_mode = false
+VAR demo_mode = true
 VAR kissed_clara_day0 = false
 VAR flirted_with_ramsey_day0 = false
 VAR made_out_with_ramsey_day0 = false
