@@ -9,6 +9,10 @@ blueena: HA HA HA HA HA HA HA HA! #laugh
 blueena: ;3 #sly
 CHARACTER OFF
 TITLE Object-Oriented
+CHARACTER CENTER blueena MOOD sly VARIANT punk
+blueena: So how did I end up my beautiful self?
+blueena: Well, let's cover the normal me first...
+CHARACTER OFF
 -> wake_up_day0
 
 === wake_up_day0 ===
@@ -27,9 +31,11 @@ MUSIC LatoyasTheme
 CHARACTER LEFT latoya MOOD smile
 Latoya: ...Better. #thinking
 Latoya: *sigh* #miffed
-Latoya: I might should've gotten my sleep schedule right. #thinking
-Latoya: After all, I had the chance last week. #thinking
-Latoya: But what is your first real day of work without being too damn tired? #thinking
+There's boring ol' human me.
+Waking up too damn early for a job that's too damn boring.
+Of course, I could have fixed my sleep schedule.
+But you know, effort...
+Besides, maybe my brain is used to being half awake as I work...
 // scene: Latoya showering, only seen through shower curtain.
 BG IMAGE bathroom
 Latoya: Aaaah... #blushing-happily #thinking

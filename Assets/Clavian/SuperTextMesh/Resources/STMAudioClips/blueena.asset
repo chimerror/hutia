@@ -8,7 +8,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 459612ab98e7d41989b8b399de35c407, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f1c93d2feb874fd49d1e903476e914b, type: 3}
   m_Name: blueena
   m_EditorClassIdentifier: 
-  text: <audioClips=blueena>
+  clips:
+  - {fileID: 8300000, guid: 720e4bc829209e140985632711e56a9d, type: 3}
