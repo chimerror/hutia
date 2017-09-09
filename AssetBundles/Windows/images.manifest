@@ -1,0 +1,18 @@
+ManifestFileVersion: 0
+CRC: 958440919
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 6f070e5646159f7a4f437c6cb2c6f6aa
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: e24db83fdc2550b1615669a08e4339fa
+HashAppended: 0
+ClassTypes:
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+Assets:
+- Assets/Images/LatoyaAlarm.controller
+Dependencies: []

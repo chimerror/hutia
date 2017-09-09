@@ -37,13 +37,13 @@ VAR sex_with_clara_day1 = false
 // ------------------------------------------------------------------------------------------------
 // DEBUG MODE
 // ------------------------------------------------------------------------------------------------
-VAR debug = false
+VAR debug = true
 { debug:
     IN DEBUG MODE!
     * [Beginning...] -> intro
     * [Day 1...] -> morning_day1
     * [Day 2...] -> morning_day2
-    * [Latest] -> back_home_day2
+    * [Latest] -> work_day0
   - else:
     -> intro
 }

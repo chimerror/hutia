@@ -1,0 +1,42 @@
+ManifestFileVersion: 0
+CRC: 3134427247
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 9e305a39d363ee233392dfb8389056dc
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 21f0dc8ebad690f009368069428e0a1a
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/Characters/Ramsey/nervous.png
+- Assets/Characters/Ramsey/sad.png
+- Assets/Characters/Clara/Gazelle/laugh.png
+- Assets/Characters/Ramsey/smile.png
+- Assets/Characters/Clara/Gazelle/smile.png
+- Assets/Characters/Ramsey/nervous-open.png
+- Assets/Characters/Ramsey/sly.png
+- Assets/Characters/Ramsey/neutral.png
+- Assets/Characters/Clara/Gazelle/miffed.png
+- Assets/Characters/Clara/Gazelle/sleepy.png
+- Assets/Characters/Clara/Gazelle/sad.png
+- Assets/Characters/DrClark/in-thought.png
+- Assets/Characters/Clara/Gazelle/bored.png
+- Assets/Characters/Clara/Gazelle/neutral.png
+- Assets/Characters/Ramsey/miffed.png
+- Assets/Characters/Clara/Gazelle/angry.png
+- Assets/Characters/Clara/Gazelle/blushing-happily.png
+- Assets/Characters/Clara/Gazelle/sly.png
+- Assets/Characters/Clara/Gazelle/grin.png
+- Assets/Characters/Clara/Gazelle/nervous.png
+- Assets/Characters/Ramsey/blushing-happily.png
+- Assets/Characters/Ramsey/grin.png
+- Assets/Characters/Ramsey/sleepy.png
+- Assets/Characters/Ramsey/bored.png
+- Assets/Characters/Ramsey/laugh.png
+Dependencies: []

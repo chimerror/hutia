@@ -49,7 +49,7 @@ public class DialogueBox : MonoBehaviour
             }
             _border.color = color;
             _speakerBox.color = color;
-            _speakerBox.gameObject.SetActive(true);
+            _speakerBox.gameObject.SetActive(!tags.Contains("narration"));
             _speakerText.text = speaker;
 
             string voiceName = hasAlias ? alias : normalizedSpeaker;

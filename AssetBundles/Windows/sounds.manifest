@@ -1,0 +1,16 @@
+ManifestFileVersion: 0
+CRC: 2988600288
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 1f427dd6a0b77179b70638f05ef7a409
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 3f7d0c5e0986ec71841622bcb2f9be1c
+HashAppended: 0
+ClassTypes:
+- Class: 83
+  Script: {instanceID: 0}
+Assets:
+- Assets/Sounds/lewd.ogg
+Dependencies: []

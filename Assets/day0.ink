@@ -9,10 +9,6 @@ blueena: HA HA HA HA HA HA HA HA! #laugh
 blueena: ;3 #sly
 CHARACTER OFF
 TITLE Object-Oriented
-CHARACTER CENTER blueena MOOD sly VARIANT punk
-blueena: So how did I end up my beautiful self?
-blueena: Well, let's cover the normal me first...
-CHARACTER OFF
 -> wake_up_day0
 
 === wake_up_day0 ===
@@ -31,11 +27,15 @@ MUSIC LatoyasTheme
 CHARACTER LEFT latoya MOOD smile
 Latoya: ...Better. #thinking
 Latoya: *sigh* #miffed
-There's boring ol' human me.
-Waking up too damn early for a job that's too damn boring.
-Of course, I could have fixed my sleep schedule.
-But you know, effort...
-Besides, maybe my brain is used to being half awake as I work...
+Latoya: Here I am again... #thinking
+Latoya: Waking up too damn early for a job that's too damn boring. #thinking
+Latoya: I might should have fixed my sleep schedule. #bored #thinking
+Latoya: But then what's work without being too damn tired? #miffed #thinking
+Latoya: Maybe my brain is used to being half awake as I work... #thinking
+Latoya: This would be easier if Clara was in bed with me... #thinking
+Latoya: Seeing her gives me energy. #blushing-happily #thinking
+Latoya: But I guess she fell asleep out in the living room again... #miffed #thinking
+Latoya: Eh, shower time. #thinking
 // scene: Latoya showering, only seen through shower curtain.
 BG IMAGE bathroom
 Latoya: Aaaah... #blushing-happily #thinking
@@ -48,14 +48,15 @@ Latoya: OK, what to wear? #bored #thinking
   Latoya: Good ol' reasonable Latoya Miller, she's such a proper lady... #miffed #thinking
   ~ raise(latoya_object)
 * [Hmmm, I remember looking pretty hot in this skirt...]
-  Latoya: Yeah, I'd probably give my coworkers a heart attack... #sly #thinking
+  Latoya: Yeah, that skirt is pretty great... #sly #thinking
+  Latoya: It kind of turns me on just thinking about wearing it... #blushing-happily #thinking
+  Latoya: I'd probably give my coworkers a heart attack... #sly #thinking
   ~ raise(latoya_lewd)
-  SOUND lewd
   Latoya: ...if any blood could get away from their dicks! #laugh #thinking
   Latoya: *sigh* #miffed
-  Latoya: No, I'd better play it safe. #thinking
+  Latoya: No, I'd better play it safe at work. #thinking
+  Latoya: Maybe I'll find somewhere else to release this energy. #thinking
 - Latoya: Oh well... #thinking
-STATS
 -> living_room_morning_day0
 
 === living_room_morning_day0
@@ -65,7 +66,8 @@ CHARACTER LEFT latoya MOOD bored VARIANT work
 // left-character: latoya, button-up shirt, work badge
 Latoya: Well, here we go... #thinking
 Latoya: Oh! #nervous #thinking
-Latoya: It looks like Clara fell asleep out here... #thinking
+Latoya: There's Clara, asleep out here... #thinking
+Latoya: ...instead of in our bed... #thinking
 // scene: Clara, sleeping on couch
 <- debug_options(-> living_room_morning_day0)
 * (angry) [How dare she!]
@@ -103,7 +105,13 @@ Latoya: It looks like Clara fell asleep out here... #thinking
       Latoya: I'm glad she lets me... #neutral #thinking
   - - ~ lower(clara_object)
         Latoya: She's really been such a good girlfriend. #smile #thinking
-- Latoya: *gurgle* #nervous
+- Latoya: It really hasn't been easy, with me taking the sabbatical... #miffed #thinking
+Latoya: And then ending it once money got a little tight. #thinking
+Latoya: Though I don't know if she's going to miss me or be glad... #thinking
+Latoya: ...I'm not around bugging her anymore. #thinking
+Latoya: I wish we had spent some time working on something together while I was off. #sad #thinking
+Latoya: Oh, well... #bored #thinking
+Latoya: *gurgle* #nervous
 -> pizza
 
 = pizza
@@ -125,7 +133,7 @@ Latoya: Clara has some leftover pizza there... #thinking
 Latoya: I wonder if I should wake her up? #thinking
 <- debug_options(-> wake_her_up)
 * (wake_up_clara) [Yeah.]
-  Latoya: Yeah, it's a good idea... #thinking
+  Latoya: Yeah, that's a good idea... #thinking
   <- debug_options(-> wake_up_clara)
   * * [It's for her own good.]
       ~ raise(clara_object)
@@ -141,7 +149,7 @@ Latoya: I wonder if I should wake her up? #thinking
       MUSIC ClarasTheme
   - - Clara: Huh, what...?
 * [Nah.]
-  ~ lower(clara_object)
+  ~ raise(clara_object)
   MUSIC OFF
   Latoya: Nah, I'll let her sleep. #thinking
   CHARACTER LEFT latoya MOOD nervous
@@ -207,6 +215,9 @@ Latoya: But is it really worth being packed in like sardines by a bunch of tech 
 BG IMAGE Office
 LOCATION Work
 Latoya: Ah, I've got a few minutes before standup... #bored #thinking
+Latoya: A few more minutes that I don't have to think about... #thinking
+Latoya: ...making AI to sell people crap they don't need. #thinking
+Latoya: Working on AI is cool, but the what-fors are so boring. #thinking
 Latoya: Maybe I'll just try to enjoy my coffee— #sly #thinking
 MUSIC RamseysTheme ONCE
 CHARACTER RIGHT ramsey
@@ -238,7 +249,7 @@ Latoya: Huh, how should I say hi? #thinking
   Ramsey: Uh, heh. #blushing-happily
   Ramsey: At ease, soldier. #sly
   Latoya: Roger! #sly
-* (flirt) {latoya_lewd >= 2} [Flirty]
+* (flirt) {latoya_lewd > 0} [Flirty]
   ~ flirted_with_ramsey_day0 = true
   Latoya: Good morning, Rams. You look rather delicious today... #sly
   Ramsey: ... #nervous

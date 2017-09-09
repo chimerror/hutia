@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2005794698
+CRC: 2546740131
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 4f549d1513ebefefcfcc535af21e94cd
+    Hash: c4eb1632ce96304e5680ae0a7507f71c
   TypeTreeHash:
     serializedVersion: 2
-    Hash: c516f2a3b2b6b67ef759f6410a790acd
+    Hash: 3f7d0c5e0986ec71841622bcb2f9be1c
 HashAppended: 0
 ClassTypes:
 - Class: 83
@@ -14,6 +14,7 @@ ClassTypes:
 Assets:
 - Assets/Voices/Latoya.ogg
 - Assets/Voices/Default.ogg
+- Assets/Voices/blueena.ogg
 - Assets/Voices/0xF0C5.ogg
 - Assets/Voices/Clara.ogg
 - Assets/Voices/Ramsey.ogg
