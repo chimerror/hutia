@@ -43,7 +43,7 @@ VAR debug = true
     * [Beginning...] -> intro
     * [Day 1...] -> morning_day1
     * [Day 2...] -> morning_day2
-    * [Latest] -> work_day0
+    * [Latest] -> introducing_f0c5
   - else:
     -> intro
 }
